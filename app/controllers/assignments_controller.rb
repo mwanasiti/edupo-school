@@ -8,7 +8,7 @@ class AssignmentsController < ApplicationController
     
         assignment = Assignment.find_by(id: params[:id])
         if assignment
-            render json: assignment, status: :ok  mar
+            render json: assignment, status: :ok  ma
         else
             not_found_response
         end
