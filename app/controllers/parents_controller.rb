@@ -37,6 +37,32 @@ class ParentsController < ApplicationController
         format.json { render json: @parent.errors, status: :unprocessable_entity }
       end
     end
+  end  
+
+
+     
+     # PATCH/PUT /parents/1
+  # PATCH/PUT /parents/1.json
+  def update
+    respond_to do |format|
+      if @parent.update_without_password(parent_params)
+        format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
+        format.json { render :show, status: :ok, location: @parent }
+      else
+        format.html { render :edit }
+        format.json { render json: @parent.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /parents/1
+  # DELETE /parents/1.json
+  def destroy
+    @parent.destroy
+    respond_to do |format|
+      format.html { redirect_to parents_url, notice: 'Parent was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
 
