@@ -7,8 +7,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 const Login=()=>{
 
-    const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
-    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const paperStyle={padding :30,height:'50vh',width:280, margin:"150px auto"}
+    const avatarStyle={backgroundColor:'#5072A7'}
     const btnstyle={margin:'8px 0'}
     return(
         <Grid>
