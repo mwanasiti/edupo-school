@@ -55,6 +55,30 @@ function handleAdminSubmit(e) {
     });
   }
 
+  function handleStudentSubmit(e){
+    e.preventDefault();
+    fetch("/student_login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          setUser(user);
+        });
+        navigate("/student");
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+
+
 
 const Login=()=>{
 
