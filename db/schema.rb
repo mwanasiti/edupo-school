@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_103946) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_201951) do
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "full_name"
+    t.string "password_digest"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -73,13 +76,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_103946) do
     t.integer "parent_id"
     t.string "phone_no"
     t.integer "admission_no"
-    t.integer "class_id"
     t.integer "subject_id"
     t.string "full_name"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "classroom_id"
   end
 
   create_table "subject_teachers", force: :cascade do |t|
