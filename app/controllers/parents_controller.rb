@@ -18,6 +18,28 @@ class ParentsController < ApplicationController
     @parent = Parent.new
   end
 
+        
+      # GET /parents/1/edit
+  def edit
+  end
+
+  # POST /parents
+  # POST /parents.json
+  def create
+    @parent = Parent.new(parent_params)
+
+    respond_to do |format|
+      if @parent.save
+        format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
+        format.json { render :show, status: :created, location: @parent }
+      else
+        format.html { render :new }
+        format.json { render json: @parent.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
     def show
         parent = Parent.find_by(id: params[:id])
         if parent
