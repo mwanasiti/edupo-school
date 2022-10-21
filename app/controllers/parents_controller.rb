@@ -1,4 +1,6 @@
 class ParentsController < ApplicationController
+    before_action :set_parent, only: [:show, :edit, :update, :destroy]
+    
     def index
         parents = Parent.all
         render json: parents
