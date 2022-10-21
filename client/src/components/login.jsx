@@ -17,7 +17,15 @@ const Login=()=>{
                      <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                     <h2>Sign In</h2>
                 </Grid>
-                <TextField label='email' placeholder='Enter email' fullWidth required/>
+                <TextField label='Username' placeholder='Enter usernmame' fullWidth required/>
+                <input
+          required
+          className=" mt-2 h-8 rounded-lg"
+          type="text"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
                 <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
                
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
