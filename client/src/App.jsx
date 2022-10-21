@@ -3,7 +3,10 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Login from './components/login';
+
+
 function App() {
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     fetch("/admin_auth").then((r) => {
