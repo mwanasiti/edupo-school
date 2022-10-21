@@ -6,6 +6,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
+
+
+
 function handleAdminSubmit(e) {
     e.preventDefault();
     fetch("/admin_login", {
@@ -23,6 +26,29 @@ function handleAdminSubmit(e) {
           setUser(user);
         });
         navigate("/admin");
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+
+  function handleTeacherSubmit(e) {
+    e.preventDefault();
+    fetch("/teacher_login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((user) => {
+          setUser(user);
+        });
+        navigate("/teacher");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
