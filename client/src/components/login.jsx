@@ -6,100 +6,105 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
-
-
-
-function handleAdminSubmit(e) {
-    e.preventDefault();
-    fetch("/admin_login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          setUser(user);
-        });
-        navigate("/admin");
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
-  }
-
-  function handleTeacherSubmit(e) {
-    e.preventDefault();
-    fetch("/teacher_login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          setUser(user);
-        });
-        navigate("/teacher");
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
-  }
-
-  function handleStudentSubmit(e){
-    e.preventDefault();
-    fetch("/student_login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          setUser(user);
-        });
-        navigate("/student");
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
-  }
-
-  function handleParentSubmit(e){
-    e.preventDefault();
-    fetch("/parent_login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    }).then((r) => {
-      if (r.ok) {
-        r.json().then((user) => {
-          setUser(user);
-        });
-        navigate("/parent");
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
-    });
-  }
+function login({ setUser }) {
+    const navigate = useNavigate();
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
+}
+  
+    function handleAdminSubmit(e) {
+      e.preventDefault();
+      fetch("/admin_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            setUser(user);
+          });
+          navigate("/admin");
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
+  
+    function handleTeacherSubmit(e) {
+      e.preventDefault();
+      fetch("/teacher_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            setUser(user);
+          });
+          navigate("/teacher");
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
+  
+    function handleStudentSubmit(e){
+      e.preventDefault();
+      fetch("/student_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            setUser(user);
+          });
+          navigate("/student");
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
+  
+  
+    function handleParentSubmit(e){
+      e.preventDefault();
+      fetch("/parent_login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }).then((r) => {
+        if (r.ok) {
+          r.json().then((user) => {
+            setUser(user);
+          });
+          navigate("/parent");
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
 
 
 

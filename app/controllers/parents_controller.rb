@@ -77,6 +77,17 @@ class ParentsController < ApplicationController
 
     private
 
+    def set_parent
+      @parent = Parent.find(params[:id])
+    end
+
+
+          # UPDATE THE REQUIRE IN LINE 88
+
+    def parent_params
+      params.require(:parent).permit(:name, :email, :password, :phone, :address)
+    end
+
     def not_found_response
         render json: {error:"Parent not found"}, status: :not_found
     end
