@@ -24,6 +24,23 @@ function App() {
     });
   }, []);
 
+
+  useEffect(() => {
+    fetch("/student_auth").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    fetch("/parent_auth").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
   return (
     <div className="App">
       <Login />
