@@ -1,0 +1,2 @@
+class StudentAssesment < ApplicationRecord
+end

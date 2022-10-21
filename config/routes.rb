@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :subject_teachers
+  resources :student_assesments
+  resources :student_assignments
   resources :users, only: [:index, :show, :patch, :create]
   resources :admins, only: [:index, :show, :patch, :create]
   resources :assignments, only: [:index, :show, :patch, :create]
