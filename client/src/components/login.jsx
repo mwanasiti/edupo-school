@@ -19,15 +19,7 @@ const Login=()=>{
                 </Grid>
                 <TextField label='email' placeholder='Enter email' fullWidth required/>
                 <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
-                <FormControlLabel
-                    control={
-                    <Checkbox
-                        name="checkedB"
-                        color="primary"
-                    />
-                    }
-                    label="Remember me"
-                 />
+               
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
                
                

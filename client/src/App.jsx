@@ -44,6 +44,13 @@ function App() {
   return (
     <div className="App">
       <Login />
+
+      {/* <main className="min-h-[92vh]">
+        <Navbar user={user} setUser={setUser} />
+        <Routes>
+          <Route path="/login" element={<login setUser={setUser} />} />
+        </Routes>
+      </main> */}
     </div>
   );
 }
