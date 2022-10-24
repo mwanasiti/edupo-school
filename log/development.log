@@ -2749,3 +2749,111 @@ puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
 >>>>>>> f2c0ee9570a4f109bd71e6bf0de5fe7d8c3ce2cc
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-24 09:28:29 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-24 09:28:29 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-24 09:28:29 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-24 09:28:29 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-24 09:28:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#teacher as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:4:in `admin'
+Completed 401 Unauthorized in 122ms (Views: 1.2ms | ActiveRecord: 1.4ms | Allocations: 18620)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:4:in `admin'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 684)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:31:in `parent'
+Completed 401 Unauthorized in 184ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 26633)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:13:in `teacher'
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:31:in `parent'
+Completed 401 Unauthorized in 200ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 29239)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:31:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 684)
+
+
+Completed 401 Unauthorized in 218ms (Views: 24.1ms | ActiveRecord: 1.0ms | Allocations: 30684)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:13:in `teacher'
+Completed 401 Unauthorized in 101ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 10436)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:4:in `admin'
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 684)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:31:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 684)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:13:in `teacher'
+Completed 401 Unauthorized in 10ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 684)
+
+
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:22:in `student'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:22:in `student'
+Completed 401 Unauthorized in 192ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 18245)
+
+
+Completed 401 Unauthorized in 397ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 46648)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-24 09:28:30 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:22:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 684)
+
+
+Started POST "/teachers" for 127.0.0.1 at 2022-10-24 09:33:45 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}}
+[31mUnpermitted parameters: :role, :phone_no, :full_name. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fc15e926310>, params: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "controller"=>"teachers", "action"=>"create", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 2.2ms | Allocations: 19329)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<TeachersController:0x00000000007058>
+Did you mean?  respond_to?):
+  
+app/controllers/teachers_controller.rb:45:in `create'
+Started POST "/teacher" for ::1 at 2022-10-24 09:38:46 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/teacher"):
+  
