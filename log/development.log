@@ -3225,3 +3225,84 @@ ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing reque
   
 app/controllers/students_controller.rb:50:in `student_params'
 app/controllers/students_controller.rb:20:in `create'
+Started POST "/sujects" for 127.0.0.1 at 2022-10-24 10:40:27 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/sujects"):
+  
+Started POST "/subjects" for 127.0.0.1 at 2022-10-24 10:42:23 +0300
+Processing by SubjectsController#create as */*
+  Parameters: {"name"=>"Sociology", "subject"=>{"name"=>"Sociology"}}
+[31mUnpermitted parameter: :subject. Context: { controller: SubjectsController, action: create, request: #<ActionDispatch::Request:0x00007fc15def8280>, params: {"name"=>"Sociology", "controller"=>"subjects", "action"=>"create", "subject"=>{"name"=>"Sociology"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mSubject Create (4.0ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sociology"], ["created_at", "2022-10-24 07:42:23.304055"], ["updated_at", "2022-10-24 07:42:23.304055"]]
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+Completed 201 Created in 101ms (Views: 1.0ms | ActiveRecord: 13.1ms | Allocations: 14622)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2022-10-24 10:42:40 +0300
+Processing by SubjectsController#create as */*
+  Parameters: {"name"=>"Marine Biology", "subject"=>{"name"=>"Marine Biology"}}
+[31mUnpermitted parameter: :subject. Context: { controller: SubjectsController, action: create, request: #<ActionDispatch::Request:0x00007fc15db78628>, params: {"name"=>"Marine Biology", "controller"=>"subjects", "action"=>"create", "subject"=>{"name"=>"Marine Biology"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mSubject Create (2.5ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marine Biology"], ["created_at", "2022-10-24 07:42:40.224025"], ["updated_at", "2022-10-24 07:42:40.224025"]]
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+Completed 201 Created in 15ms (Views: 0.4ms | ActiveRecord: 6.0ms | Allocations: 1807)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2022-10-24 10:42:51 +0300
+Processing by SubjectsController#create as */*
+  Parameters: {"name"=>"Fisheries", "subject"=>{"name"=>"Fisheries"}}
+[31mUnpermitted parameter: :subject. Context: { controller: SubjectsController, action: create, request: #<ActionDispatch::Request:0x00007fc15da9d050>, params: {"name"=>"Fisheries", "controller"=>"subjects", "action"=>"create", "subject"=>{"name"=>"Fisheries"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mSubject Create (3.1ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fisheries"], ["created_at", "2022-10-24 07:42:51.259559"], ["updated_at", "2022-10-24 07:42:51.259559"]]
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+Completed 201 Created in 21ms (Views: 1.2ms | ActiveRecord: 9.9ms | Allocations: 1807)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2022-10-24 10:43:00 +0300
+Processing by SubjectsController#create as */*
+  Parameters: {"name"=>"Carpentry", "subject"=>{"name"=>"Carpentry"}}
+[31mUnpermitted parameter: :subject. Context: { controller: SubjectsController, action: create, request: #<ActionDispatch::Request:0x00007fc15d986ec8>, params: {"name"=>"Carpentry", "controller"=>"subjects", "action"=>"create", "subject"=>{"name"=>"Carpentry"}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mSubject Create (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Carpentry"], ["created_at", "2022-10-24 07:43:00.156063"], ["updated_at", "2022-10-24 07:43:00.156063"]]
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+Completed 201 Created in 12ms (Views: 1.1ms | ActiveRecord: 4.9ms | Allocations: 1807)
+
+
+Started POST "/subjects" for 127.0.0.1 at 2022-10-24 10:43:12 +0300
+Processing by SubjectsController#create as */*
+  Parameters: {"name"=>"Mechanics", "subject"=>{"name"=>"Mechanics"}}
+[31mUnpermitted parameter: :subject. Context: { controller: SubjectsController, action: create, request: #<ActionDispatch::Request:0x00007fc15d8d97a0>, params: {"name"=>"Mechanics", "controller"=>"subjects", "action"=>"create", "subject"=>{"name"=>"Mechanics"}} }[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mSubject Create (0.6ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mechanics"], ["created_at", "2022-10-24 07:43:12.414929"], ["updated_at", "2022-10-24 07:43:12.414929"]]
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/subjects_controller.rb:16:in `create'
+Completed 201 Created in 16ms (Views: 0.8ms | ActiveRecord: 4.8ms | Allocations: 1807)
+
+
+Started POST "/subjects/2" for 127.0.0.1 at 2022-10-24 10:43:16 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/subjects/2"):
+  
+Started GET "/subjects/2" for 127.0.0.1 at 2022-10-24 10:43:22 +0300
+Processing by SubjectsController#show as */*
+  Parameters: {"name"=>"Mechanics", "id"=>"2", "subject"=>{"name"=>"Mechanics"}}
+  [1m[36mSubject Load (0.7ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:10:in `show'
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 729)
+
+
