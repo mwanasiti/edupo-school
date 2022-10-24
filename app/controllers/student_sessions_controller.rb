@@ -3,6 +3,7 @@ class StudentSessionsController < ApplicationController
     #before_action :authorize
     def create
         student = Student.find_by(username: params[:username])
+        
         if student&.authenticate(params[:password])
             session[:student_id] = student.id
             render json: student
