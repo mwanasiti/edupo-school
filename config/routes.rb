@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :update, :create]
   resources :admins, only: [:index, :show, :update, :create]
 <<<<<<< HEAD
+<<<<<<< HEAD
   resources :assignments, only: [:index, :show, :update, :create]
   resources :assessments, only: [:index, :show, :update, :create]
   resources :classrooms, only: [:index, :show, :update, :create]
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   resources :parents, only: [:index, :show, :update, :create]
   resources :students, only: [:index, :show, :update, :create]
 =======
+=======
+>>>>>>> 35ba7d5c555f1cfd133e23e3311bdbcea33190d5
   resources :assignments
   resources :assessments
   resources :classrooms, only: [:index, :show]
@@ -20,7 +23,10 @@ Rails.application.routes.draw do
   resources :teachers
   resources :parents
   resources :students
+<<<<<<< HEAD
 >>>>>>> f8b27dc2863bf53946db92c401dba0a25581b218
+=======
+>>>>>>> 35ba7d5c555f1cfd133e23e3311bdbcea33190d5
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
