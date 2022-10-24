@@ -6,7 +6,7 @@ function Footer() {
       <footer class="bg-light text-center text-lg-start">
   <!-- Grid container -->
   <div class="container p-4">
-    <!--Grid row-->
+   
     <div class="row">
       
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
