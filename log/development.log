@@ -3199,3 +3199,29 @@ Processing by TeachersController#update as */*
 Completed 200 OK in 423ms (Views: 0.4ms | ActiveRecord: 12.2ms | Allocations: 4160)
 
 
+Started POST "/students" for 127.0.0.1 at 2022-10-24 10:27:54 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+  "role":"student",
+  "gender":"Female",
+  "image":"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg",
+  "parent_id":1,
+  "phone_no":"056788",
+  "admission_no":01,
+  "subject_id":1
+  "full_name":"Moree",
+  "email":"more@gmail.com",
+  "password":"1234",
+  "classroom_id":1
+}
+Processing by StudentsController#create as */*
+Completed 400 Bad Request in 1ms (Allocations: 138)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/students_controller.rb:50:in `student_params'
+app/controllers/students_controller.rb:20:in `create'
