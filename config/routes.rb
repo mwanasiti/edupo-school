@@ -11,11 +11,7 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :update, :create]
   resources :parents, only: [:index, :show, :update, :create]
   resources :students, only: [:index, :show, :update, :create]
-<<<<<<< HEAD
  
-=======
- 
->>>>>>> f8b27dc2863bf53946db92c401dba0a25581b218
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
