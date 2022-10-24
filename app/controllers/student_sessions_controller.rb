@@ -1,5 +1,6 @@
 class StudentSessionsController < ApplicationController
-
+    #skip_before_action :authorize, only: [:index, :create]
+    #before_action :authorize
     def create
         student = Student.find_by(username: params[:username])
         if student&.authenticate(params[:password])
@@ -9,6 +10,7 @@ class StudentSessionsController < ApplicationController
             render json: {errors: ["Invalid Username or Password"]}, status: 401
         end
     end
+
 
     def destroy
         if session[:student_id]
