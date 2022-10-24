@@ -3306,3 +3306,15 @@ Processing by SubjectsController#show as */*
 Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 729)
 
 
+Started DELETE "/subjects/2" for 127.0.0.1 at 2022-10-24 10:44:14 +0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/subjects/2"):
+  
+Started GET "/subjects/2" for 127.0.0.1 at 2022-10-24 10:44:20 +0300
+Processing by SubjectsController#show as */*
+  Parameters: {"name"=>"Mechanics", "id"=>"2", "subject"=>{"name"=>"Mechanics"}}
+  [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/subjects_controller.rb:10:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 587)
+
+

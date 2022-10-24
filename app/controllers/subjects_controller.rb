@@ -41,7 +41,6 @@ end
 
 end
 
-
 private
 def subject_params
   params.permit(:name)
