@@ -26,17 +26,9 @@ class ParentsController < ApplicationController
   # POST /parents
   # POST /parents.json
   def create
-    @parent = Parent.new(parent_params)
+    parent = Parent.create(parent_params)
+    render json: parent, status: :ok
 
-    respond_to do |format|
-      if @parent.save
-        format.html { redirect_to @parent, notice: 'Parent was successfully created.' }
-        format.json { render :show, status: :created, location: @parent }
-      else
-        format.html { render :new }
-        format.json { render json: @parent.errors, status: :unprocessable_entity }
-      end
-    end
   end  
 
 
@@ -85,7 +77,7 @@ class ParentsController < ApplicationController
           # UPDATE THE REQUIRE IN LINE 88
 
     def parent_params
-      params.require(:parent).permit(:name, :email, :password, :phone, :address)
+      params.require(:parent).permit(:name, :email, :password_digest, :phone, :address)
     end
 
     def not_found_response

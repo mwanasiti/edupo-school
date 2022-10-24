@@ -4,7 +4,7 @@ class Parent < ApplicationRecord
 
 
     validates :full_name, presence: true, uniqueness: true
-    validates :full_name, length: { minimum: 3 }
+    validates :full_name, length: { minimum: 2 }
     
     validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid' }
 
