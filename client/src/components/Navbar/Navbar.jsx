@@ -57,9 +57,9 @@ function Navbar({ user, setUser }) {
       </Link>
 
       {user ? (
-        <button onClick={handleLogout}>Logout</button>
+        <button className="btn btn-danger" data-mdb-ripple-color="dark" onClick={handleLogout}>Logout</button>
       ) : (
-        <Link style={{fontSize:'28px', fontWeight:'bold', fontFamily:'cursive'}} to="/login">Login</Link>
+        <Link  style={{fontSize:'28px', fontWeight:'bold', fontFamily:'cursive'}} to="/login">Login</Link>
       )}
     </nav>
   );
