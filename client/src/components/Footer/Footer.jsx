@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div>
       <footer class="bg-light text-center text-lg-start">
-  <!-- Grid container -->
+  
   <div class="container p-4">
    
     <div class="row">
