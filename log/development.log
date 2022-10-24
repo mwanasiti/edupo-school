@@ -2857,3 +2857,32 @@ Started POST "/teacher" for ::1 at 2022-10-24 09:38:46 +0300
   
 ActionController::RoutingError (No route matches [POST] "/teacher"):
   
+Started POST "/teachers" for 127.0.0.1 at 2022-10-24 09:41:13 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}}
+[31mUnpermitted parameters: :role, :phone_no, :full_name. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fc15dea1ac0>, params: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "controller"=>"teachers", "action"=>"create", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}} }[0m
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 2.5ms | Allocations: 4403)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<TeachersController:0x0000000000b220>
+Did you mean?  respond_to?):
+  
+app/controllers/teachers_controller.rb:45:in `create'
+Started POST "/teachers" for 127.0.0.1 at 2022-10-24 09:47:48 +0300
+Processing by TeachersController#create as */*
+  Parameters: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}}
+[31mUnpermitted parameter: :teacher. Context: { controller: TeachersController, action: create, request: #<ActionDispatch::Request:0x00007fc15eaa6898>, params: {"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com", "password"=>"[FILTERED]", "controller"=>"teachers", "action"=>"create", "teacher"=>{"role"=>"teacher", "gender"=>"female", "image"=>"https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg", "phone_no"=>"098765", "address"=>"23 west", "full_name"=>"Monoca lewinski", "email"=>"qwerty@gmail.com"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teachers_controller.rb:43:in `create'
+  [1m[36mTeacher Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Monoca lewinski"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:43:in `create'
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "qwerty@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/teachers_controller.rb:43:in `create'
+  [1m[36mTeacher Create (8.7ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", "https://i.pinimg.com/564x/f0/3f/bf/f03fbf21c3219f8dc3eca5cacc89b048.jpg"], ["phone_no", "098765"], ["address", "23 west"], ["full_name", "Monoca lewinski"], ["email", "qwerty@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-24 06:47:50.373488"], ["updated_at", "2022-10-24 06:47:50.373488"]]
+  ↳ app/controllers/teachers_controller.rb:43:in `create'
+  [1m[36mTRANSACTION (19.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teachers_controller.rb:43:in `create'
+Completed 201 Created in 1136ms (Views: 1.6ms | ActiveRecord: 32.6ms | Allocations: 6236)
+
+

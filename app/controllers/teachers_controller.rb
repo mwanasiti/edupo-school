@@ -40,17 +40,19 @@ class TeachersController < ApplicationController
     # POST /teachers
     # POST /teachers.json
     def create
-      @teacher = Teacher.new(teacher_params)
+      teacher = Teacher.create(teacher_params)
+      render json: teacher,  status: :created
+      # @teacher = Teacher.new(teacher_params)
   
-      respond_to do |format|
-        if @teacher.save
-          format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
-          format.json { render :show, status: :created, location: @teacher }
-        else
-          format.html { render :new }
-          format.json { render json: @teacher.errors, status: :unprocessable_entity }
-        end
-      end
+      # respond_to do |format|
+      #   if @teacher.save
+      #     format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
+      #     format.json { render :show, status: :created, location: @teacher }
+      #   else
+      #     format.html { render :new }
+      #     format.json { render json: @teacher.errors, status: :unprocessable_entity }
+      #   end
+      # end
     end
   
     # PATCH/PUT /teachers/1
@@ -85,11 +87,16 @@ class TeachersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    # TEACHER PARAMS PERMIT
+    def teacher_params
+      params.permit(:role, :gender, :image,:phone_no, :address, :full_name, :email, :password)
+      
+    end
 
     # CHANGE REQUIRE COLUMNS
-    def teacher_params
-      params.require(:teacher).permit(:name, :email, :password, :gender, :dob, :phone, :address, :lat, :long, :image, :image_cache)
-    end
+    # def teacher_params
+    #   params.require(:teacher).permit(:name, :email, :password, :gender, :dob, :phone, :address, :lat, :long, :image, :image_cache)
+    # end
 
     private
 
