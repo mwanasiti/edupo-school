@@ -1,106 +1,54 @@
 class TeachersController < ApplicationController
+  # before_action :set_teacher, only: [:show, :edit, :update, :destroy]
+
     def index
         teachers = Teacher.all
         render json: teachers
     end
-
+# SHOW
     def show
     
         teacher = Teacher.find_by(id: params[:id])
         if teacher
-            render json: teacher, status: :ok
+            render json: teacher
         else
-            not_found_response
+            render json: {error: "Teacher not found"}, status: :not_found
         end
     end
 
-
-    before_action :set_teacher, only: [:show, :edit, :update, :destroy]
-
-    # GET /teachers
-    # GET /teachers.json
-    def index
-      @teachers = Teacher.all
-    end
-  
-    # GET /teachers/1
-    # GET /teachers/1.json
-    def show
-    end
-  
-    # GET /teachers/new
-    def new
-      @teacher = Teacher.new
-    end
-  
-    # GET /teachers/1/edit
-    def edit
-    end
-  
-    # POST /teachers
-    # POST /teachers.json
+  #  CREATE
     def create
       teacher = Teacher.create(teacher_params)
       render json: teacher,  status: :created
-      # @teacher = Teacher.new(teacher_params)
-  
-      # respond_to do |format|
-      #   if @teacher.save
-      #     format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
-      #     format.json { render :show, status: :created, location: @teacher }
-      #   else
-      #     format.html { render :new }
-      #     format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      #   end
-      # end
     end
-  
-    # PATCH/PUT /teachers/1
-    # PATCH/PUT /teachers/1.json
+# UPDATE
     def update
-      respond_to do |format|
-        if @teacher.update_without_password(teacher_params)
-          format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
-          format.json { render :show, status: :ok, location: @teacher }
-        else
-          format.html { render :edit }
-          format.json { render json: @teacher.errors, status: :unprocessable_entity }
-        end
+      teacher =Teacher.find_by(id: params[:id])
+      
+      if teacher
+        teacher.update(teacher_params)
+        render json: teacher        
+      else
+        render json: {error: "Teacher not found"}, status: :not_found
       end
     end
-  
-    # DELETE /teachers/1
-    # DELETE /teachers/1.json
-    def destroy
-      @teacher.destroy
-      respond_to do |format|
-        format.html { redirect_to teachers_url, notice: 'Teacher was successfully destroyed.' }
-        format.json { head :no_content }
-      end
-    end
+# DELELET
+def destroy
+  teacher =Teacher.find_by(id: params[:id])
 
+  if teacher 
+    teacher.destroy
+    head :no_content 
+  else
+   render json: {error: "Teacher not found"}, status: :not_found
+  end
 
-    private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_teacher
-      @teacher = Teacher.find(params[:id])
-    end
+end
+   
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    # TEACHER PARAMS PERMIT
+private
     def teacher_params
       params.permit(:role, :gender, :image,:phone_no, :address, :full_name, :email, :password)
-      
     end
 
-    # CHANGE REQUIRE COLUMNS
-    # def teacher_params
-    #   params.require(:teacher).permit(:name, :email, :password, :gender, :dob, :phone, :address, :lat, :long, :image, :image_cache)
-    # end
-
-    private
-
-    def not_found_response
-        render json: {error:"Teacher not found"}, status: :not_found
-    end
 end
