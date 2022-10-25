@@ -51,9 +51,9 @@ function Navbar({ user, setUser }) {
   }
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-our-black p-6" style={{backgroundColor: '#fff'}}>
-      <Link to="/" className="heading" style={{fontSize:'35px',fontWeight:'bolder', fontFamily:'cursive',color:'black'}}>
-        EDUPO
+    <nav className="flex items-center justify-between flex-wrap p-6" style={{backgroundColor: '#fff'}}>
+      <Link to="/" className="heading" style={{fontSize:'35px',fontWeight:'bolder', fontFamily:'cursive', color:'#000080'}}>
+        EDUPO SCHOOL
       </Link>
 
       {user ? (
