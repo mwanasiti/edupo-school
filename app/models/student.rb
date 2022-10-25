@@ -11,9 +11,9 @@ class Student < ApplicationRecord
     has_many :assessments, through: :student_assessments
    
 
-    #validates :username, presence: true, uniqueness: true
-    #validates :username, length: { minimum: 3 }
+    validates :username, presence: true, uniqueness: true
+    validates :username, length: { minimum: 3 }
     
-    #validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid' }
+    validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid' }
 
 end

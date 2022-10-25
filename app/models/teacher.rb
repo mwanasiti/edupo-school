@@ -3,9 +3,9 @@ class Teacher < ApplicationRecord
 
     has_many :students
    
-    #validates :username, presence: true, uniqueness: true
-    #validates :username, length: { minimum: 3 }
+    validates :username, presence: true, uniqueness: true
+    validates :username, length: { minimum: 2}
     
-    #validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid' }
+    validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid' }
 
 end

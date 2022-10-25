@@ -15,6 +15,7 @@ function LoginForm({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [email, setEmail] = useState("");
 
   function handleAdminSubmit(e) {
     e.preventDefault();
@@ -26,6 +27,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
+        email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -49,6 +51,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
+        email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -72,6 +75,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
+        email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -96,6 +100,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
+        email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -123,6 +128,18 @@ function LoginForm({ setUser }) {
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+        
+
+        <label htmlFor="email" className="mt-5 text-xl">
+          email
+        </label>
+        <input
+          className="mt-2 h-8 rounded-lg"
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="password" className="mt-5 text-xl">
           Password:
