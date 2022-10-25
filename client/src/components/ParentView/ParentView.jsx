@@ -27,7 +27,7 @@ if (students.length === 0)
 
   <div className="overflow-x-auto relative dark">
     <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
-      <thead className="text- text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <thead className="text-gray-700 uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" className="py-3 px-6">
             Student Image

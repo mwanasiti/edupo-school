@@ -10,9 +10,9 @@ admin = Admin.create(username: "admin", email: "angelastephen14@gmail.com", role
 puts "Done Seeding Admin"
 
 puts "Seeding Teachers..."
-teacher1 = Teacher.create(username: "deno", email: "deno@gmail.com", role: "teacher", password: "deno")
-teacher2 = Teacher.create(username: "mburu", email: "awambuikanyi@gmail.com", role: "teacher", password: "mburu")
-teacher3 = Teacher.create(username: "bob", email: "bob@gmail.com", role: "teacher", password: "bob")
+teacher1 = Teacher.create(username: "deno", email: "deno@gmail.com", role: "teacher", password: "deno", gender: "Male", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", full_name: "Dennis Mburu")
+teacher2 = Teacher.create(username: "jose", email: "jose@gmail.com", role: "teacher", password: "jose", full_name: "Joseph Otwoma")
+teacher3 = Teacher.create(username: "bob", email: "bob@gmail.com", role: "teacher", password: "bob", full_name: "Bob Ross")
 puts "Done Seeding Teachers"
 
 puts "Seeding Parents..."
@@ -31,30 +31,51 @@ puts "Done Seeding Subjects"
 
 puts "Seeding Classrooms"
 classroom1 = Classroom.create(name: 'Pegion', teacher_id: 1)
-classroom2 = Classroom.create(name: 'Dove', teacher_id: 1)
-classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 1)
+classroom2 = Classroom.create(name: 'Dove', teacher_id: 2)
+classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 3)
 puts "Done Seeding Classrooms"
 
 puts "Seeding Students..."
-student1 = Student.create(role: "student",  gender: "female", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
-student2 = Student.create(role: "student",  gender: "male", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "2", subject_id: 1, full_name: "Angela Kanyi", email: "nina@gmail.com", password: "nina", classroom_id: 1, username: "nina")
-student3 = Student.create(role: "student",  gender: "male", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "3", subject_id: 1, full_name: "Angela Kanyi", email: "lisa@gmail.com", password: "lisa", classroom_id: 1, username: "lisa")
-student4 = Student.create(role: "student",  gender: "female", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "4", subject_id: 1, full_name: "Angela Kanyi", email: "win@gmail.com", password: "win", classroom_id: 1, username: "win")
-student5 = Student.create(role: "student",  gender: "female", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "5", subject_id: 1, full_name: "Angela Kanyi", email: "ally@gmail.com", password: "ally", classroom_id: 1, username: "ally")
-#student1 = Student.create(username: "ali", email: "ali@gmail.com", role: "student", password: "ali", subject_id: 2, classroom_id: 3)
-#student2 = Student.create(username: "mariam", email: "mariam@gmail.com", role: "student", password: "mariam")
-#student3 = Student.create(username: "siti", email: "siti@gmail.com", role: "student", password: "student")
+student = Student.create(role: "student",  gender: "female", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
+student = Student.create(role: "student",  gender: "male", image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+# student = Student.create(role: "student",  gender: "female", image: "", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
 puts "Done Seeding Students"
 
-
-puts "Seeding SubjectTeachers"
-subjectteacher1 = SubjectTeacher.create(subject_id: 2, teacher_id: 2)
-puts "Done Seeding SubjectTeachers"
+puts "Seeding Subject_Teachers"
+subject_teacher1 = SubjectTeacher.create(teacher_id: 1, subject_id: 1)
+subject_teacher2 = SubjectTeacher.create(teacher_id: 2, subject_id: 2)
+subject_teacher1 = SubjectTeacher.create(teacher_id: 3, subject_id: 3)
+subject_teacher1 = SubjectTeacher.create(teacher_id: 1, subject_id: 4)
+puts "Done Seeding Subject teachers"
 
 puts "Seeding Assignments"
-assignment1 = Assignment.create(name: "intro to sociology", subject_teacher_id: 1, due_date: ("09/01/2009"))
-puts "Done Seeding Assigments"
+
+assignment1 = Assignment.create(name: "bones", subject_teacher_id: 1, due_date: "1 week")
+assignment1 = Assignment.create(name: "social communication", subject_teacher_id: 2, due_date: "2 weeks")
+assignment1 = Assignment.create(name: "business development", subject_teacher_id: 3, due_date: "1 week")
+assignment1 = Assignment.create(name: "Oral skills", subject_teacher_id: 4, due_date: "1 week")
+
+puts "Done Seeding Assignments"
 
 puts "Seeding Assessments"
-assessment1 = Assessment.create(name: "sociology exam", subject_teacher_id: 1, total: 98)
-puts "Done Seeding Assigments"
+
+assessment1 = Assessment.create(name: "Final Project", subject_teacher_id: 1, total: 100)
+assessment1 = Assessment.create(name: "Main Exam", subject_teacher_id: 2, total: 100)
+assessment1 = Assessment.create(name: "Capstone Project", subject_teacher_id: 3, total: 100)
+assessment1 = Assessment.create(name: "Main Exam", subject_teacher_id: 4, total: 100)
+
+puts "Done Seeding Assessments"
+
+
+puts "Seeding Student Assignment"
+
+student_assignment1 = StudentAssignment.create(student_id:1, assignment_id:1)
+student_assignment2 = StudentAssignment.create(student_id:1, assignment_id:2)
+student_assignment3 = StudentAssignment.create(student_id:2, assignment_id:2)
+student_assignment4 = StudentAssignment.create(student_id:2, assignment_id:2)
+puts "Done Seeding Student Assignments"
+
+puts "Seeding Student Assessments"
+student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: )
+
+
