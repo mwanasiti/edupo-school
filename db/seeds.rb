@@ -27,3 +27,4 @@ parent2 = Parent.create(username: "okech", email: "okech@gmail.com", role: "pare
 parent3 = Parent.create(username: "tim", email: "tim@gmail.com", role: "parent", password: "parent")
 puts "Done Seeding Parents.."
 puts "Completed All Seeding"
+
