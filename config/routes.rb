@@ -23,6 +23,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+
+  #   GET A PARENT'S STUDENT
+  get "/student_parent", to: "students#student_parent"
+  
+
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"
     delete "/admin_logout", to: "admin_sessions#destroy"

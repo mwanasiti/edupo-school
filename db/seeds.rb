@@ -14,7 +14,7 @@ teacher2 = Teacher.create(username: "mburu", email: "awambuikanyi@gmail.com", ro
 teacher3 = Teacher.create(username: "bob", email: "bob@gmail.com", role: "teacher", password: "bob", full_name: "Bob Marley")
 puts "Done Seeding Teachers"
 puts "Seeding Parents..."
-parent1 =Parent.create(role: "parent", address:"23 west", phone_no: "12345", full_name:"Monica Lewinski",email:"monica@gmail.com",password:"jon", username: "jon")
+parent1 = Parent.create(role: "parent", address:"23 west", phone_no: "12345", full_name:"Monica Lewinski",email:"monica@gmail.com",password:"jon", username: "jon")
 parent2 = Parent.create(username: "okech", email: "okech@gmail.com", role: "parent", password: "okech", full_name: "Mana jonte")
 parent3 = Parent.create(username: "tim", email: "tim@gmail.com", role: "parent", password: "parent", full_name: "Tim Kut")
 puts "Done Seeding Parents"
@@ -32,7 +32,7 @@ classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 1)
 puts "Done Seeding Classrooms"
 
 puts "Seeding Students..."
-student = Student.create(role: "student",  gender: "female", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
+student = Student.create(role: "student",  gender: "female", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
 #student1 = Student.create(username: "ali", email: "ali@gmail.com", role: "student", password: "ali", subject_id: 2, classroom_id: 3)
 #student2 = Student.create(username: "mariam", email: "mariam@gmail.com", role: "student", password: "mariam")
 #student3 = Student.create(username: "siti", email: "siti@gmail.com", role: "student", password: "student")

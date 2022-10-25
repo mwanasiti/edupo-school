@@ -37,6 +37,17 @@ def destroy
   render json: {error: "student not found"}, status: :not_found
   end
 end
+
+  def student_parent
+    @parent = Parent.find_by(id: session[:parent_id])
+    if @parent
+      students = Student.where(parent_id: @parent.id)
+      render json: students
+    else
+    render json: {errors: ["Please Log in as parent to view your students"]}, status: 401  
+    end
+  end
+
 private
   def student_params
   params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id)
