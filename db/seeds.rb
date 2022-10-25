@@ -53,3 +53,7 @@ puts "Done Seeding SubjectTeachers"
 puts "Seeding Assignments"
 assignment1 = Assignment.create(name: "intro to sociology", subject_teacher_id: 1, due_date: ("09/01/2009"))
 puts "Done Seeding Assigments"
+
+puts "Seeding Assessments"
+assessment1 = Assessment.create(name: "sociology exam", subject_teacher_id: 1, total: 98)
+puts "Done Seeding Assigments"
