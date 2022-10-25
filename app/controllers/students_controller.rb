@@ -38,19 +38,17 @@ def destroy
   end
 end
 
-<<<<<<< HEAD
-=======
-  def student_parent
-    @parent = Parent.find_by(id: session[:parent_id])
-    if @parent
-      students = Student.where(parent_id: @parent.id)
-      render json: students
-    else
-    render json: {errors: ["Please Log in as parent to view your students"]}, status: 401  
-    end
-  end
 
->>>>>>> fbf5f80c36342a77809bab715faf0dcbd3d88829
+def student_parent
+  @parent = Parent.find_by(id: session[:parent_id])
+  if @parent
+    students = Student.where(parent_id: @parent.id)
+    render json: students
+  else
+  render json: {errors: ["Please Log in as parent to view your students"]}, status: 401
+  end
+end
+
 private
   def student_params
   params.permit(:role, :gender, :username, :image, :parent_id, :phone_no, :admission_no, :subject_id, :full_name, :email, :password, :classroom_id)

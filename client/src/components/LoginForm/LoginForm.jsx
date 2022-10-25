@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
-// import { Link } from "react-router-dom";
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+ import FormControlLabel from '@material-ui/core/FormControlLabel';
+ import Checkbox from '@material-ui/core/Checkbox';
+ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
 const avatarStyle={backgroundColor:'#1bbd7e'}
-const btnstyle={margin:'8px 0'}
+ const btnstyle={margin:'8px 0'}
 
-function LoginForm({ setUser }) {
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState("");
+  function LoginForm({ setUser }) {
+   
+  
 
+  
   function handleAdminSubmit(e) {
     e.preventDefault();
     fetch("/admin_login", {
@@ -127,6 +125,7 @@ function LoginForm({ setUser }) {
           type="text"
           name="username"
           value={username}
+          placeholder='Enter your username'
           onChange={(e) => setUsername(e.target.value)}
         />
         
@@ -138,7 +137,9 @@ function LoginForm({ setUser }) {
           className="mt-2 h-8 rounded-lg"
           type="email"
           name="email"
+
           value={email}
+          
           onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="password" className="mt-5 text-xl">
@@ -148,6 +149,7 @@ function LoginForm({ setUser }) {
           className="mt-2 h-8 rounded-lg"
           type="password"
           name="password"
+
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
