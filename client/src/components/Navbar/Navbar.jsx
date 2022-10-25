@@ -51,19 +51,21 @@ function Navbar({ user, setUser }) {
   }
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-our-blue p-6">
-      <Link to="/" className="font-black text-2xl">
+    <nav className="flex items-center justify-between flex-wrap bg-our-black p-6" style={{backgroundColor: '#fff'}}>
+      <Link to="/" className="heading" style={{fontSize:'35px',fontWeight:'bolder', fontFamily:'cursive',color:'black'}}>
         EDUPO
       </Link>
       
       
       {user ? (
-        <button onClick={handleLogout}>Logout</button>
+        <button className="btn btn-danger" data-mdb-ripple-color="dark" onClick={handleLogout}>Logout</button>
       ) : (
-        <Link to="/login">Login</Link>
+        <Link  style={{fontSize:'28px', fontWeight:'bold', fontFamily:'cursive'}} to="/login">Login</Link>
       )}
     </nav>
   );
 }
 
 export default Navbar;
+
+

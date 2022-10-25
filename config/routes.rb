@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   resources :student_assignments
   resources :users, only: [:index, :show, :update, :create]
   resources :admins, only: [:index, :show, :update, :create]
+  resources :assignments, only: [:index, :show, :update, :create]
+  resources :assessments, only: [:index, :show, :update, :create]
+  resources :classrooms, only: [:index, :show, :update, :create]
+  resources :subjects, only: [:index, :show, :update, :create]
+  resources :teachers, only: [:index, :show, :update, :create]
+  resources :parents, only: [:index, :show, :update, :create]
+  resources :students, only: [:index, :show, :update, :create]
   resources :assignments
   resources :assessments
   resources :classrooms, only: [:index, :show]
@@ -15,6 +22,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+
+  #   GET A PARENT'S STUDENT
+  get "/student_parent", to: "students#student_parent"
+  
 
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"
