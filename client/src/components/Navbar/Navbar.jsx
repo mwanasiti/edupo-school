@@ -55,7 +55,8 @@ function Navbar({ user, setUser }) {
       <Link to="/" className="font-black text-2xl">
         EDUPO
       </Link>
-
+      
+      
       {user ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (

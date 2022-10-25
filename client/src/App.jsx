@@ -54,6 +54,7 @@ function App() {
           <Route path="/student" element={<StudentView />} />
           <Route path="/parent" element={<ParentView />} />
           <Route path="/admin" element={<AdminView />} />
+        
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
         </Routes>
       </main>
