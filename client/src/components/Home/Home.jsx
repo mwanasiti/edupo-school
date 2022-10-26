@@ -7,7 +7,7 @@ function Home() {
      
           <div
             className="bg-image hover-overlay ripple"
-            style={{backgroundImage: "url('https://www.economist.com/sites/default/files/images/2019/01/articles/main/20190105_usp502.jpg')", 
+            style={{backgroundImage: "url('https://www.amny.com/wp-content/uploads/2022/02/GettyImages-1334063560-1200x800.jpg')", 
             height: '100vh'}}>
           <div className="mask" style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}>
               <div className="d-flex justify-content-center align-items-center h-100">
