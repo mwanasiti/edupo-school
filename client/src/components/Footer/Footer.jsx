@@ -15,7 +15,7 @@ function Footer() {
               </p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">Founder Ali Mariam</small>
             </div>
           </div>
         </div>
@@ -26,7 +26,7 @@ function Footer() {
               <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">Principal Alias Leighton</small>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Footer() {
               </p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Last updated 3 mins ago</small>
+              <small className="text-muted">Faculty ABDCEFG</small>
             </div>
           </div>
         </div>

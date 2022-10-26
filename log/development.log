@@ -10816,3 +10816,24 @@ Completed 401 Unauthorized in 5ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocati
 Completed 401 Unauthorized in 14ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2846)
 
 
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-25 07:23:00 -0400
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (1.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 401 Unauthorized in 15ms (Views: 1.0ms | ActiveRecord: 3.5ms | Allocations: 668)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-25 07:23:17 -0400
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 667ms (Views: 0.6ms | ActiveRecord: 2.5ms | Allocations: 17427)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-25 07:26:40 -0400
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 184)
+
+
