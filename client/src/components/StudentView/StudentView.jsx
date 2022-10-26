@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 //import axios from 'axios'
 import StudentGrid from './StudentGrid'
-import "./Student.css"
+// import "./Student.css"
 
 function StudentView() {
 
