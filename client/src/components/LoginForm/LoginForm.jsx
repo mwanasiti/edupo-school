@@ -77,6 +77,7 @@ function LoginForm({ setUser }) {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
+          console.log(user)
         });
         navigate("/student");
       } else {

@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :update, :create]
   resources :parents, only: [:index, :show, :update, :create]
   resources :students, only: [:index, :show, :update, :create]
-  resources :assignments
-  resources :assessments
-  resources :classrooms, only: [:index, :show]
-  resources :subjects, only: [:index, :show]
-  resources :teachers
-  resources :parents
-  resources :students
+  # resources :assignments
+  # resources :assessments
+  # resources :classrooms, only: [:index, :show]
+  # resources :subjects, only: [:index, :show]
+  # resources :teachers
+  # resources :parents
+  # resources :students
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

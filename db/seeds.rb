@@ -10,7 +10,7 @@ puts "Done Seeding Admin"
 
 puts "Seeding Teachers..."
 teacher1 = Teacher.create(username: "deno", email: "deno@gmail.com", role: "teacher", password: "deno", gender: "Male", image: "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg", full_name: "Dennis Mburu")
-teacher2 = Teacher.create(username: "jose", email: "jose@gmail.com", role: "teacher", password: "jose", full_name: "Joseph Otwoma")
+teacher2 = Teacher.create(username: "jose", email: "jose@gmail.com", role: "teacher", password: "jose", full_name: "Joseph Otwoma", gender: "true")
 teacher3 = Teacher.create(username: "bob", email: "bob@gmail.com", role: "teacher", password: "bob", full_name: "Bob Ross")
 puts "Done Seeding Teachers"
 puts "Seeding Parents..."
@@ -32,8 +32,8 @@ classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 3)
 puts "Done Seeding Classrooms"
 
 puts "Seeding Students..."
-student = Student.create(role: "student",  gender: "female", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
-student = Student.create(role: "student",  gender: "male", image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+student = Student.create(role: "student",  gender: "true", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
+student = Student.create(role: "student",  gender: "false", image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
 # student = Student.create(role: "student",  gender: "female", image: "", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
 puts "Done Seeding Students"
 
@@ -67,11 +67,17 @@ puts "Seeding Student Assignment"
 
 student_assignment1 = StudentAssignment.create(student_id:1, assignment_id:1)
 student_assignment2 = StudentAssignment.create(student_id:1, assignment_id:2)
-student_assignment3 = StudentAssignment.create(student_id:2, assignment_id:2)
-student_assignment4 = StudentAssignment.create(student_id:2, assignment_id:2)
+student_assignment3 = StudentAssignment.create(student_id:2, assignment_id:3)
+student_assignment4 = StudentAssignment.create(student_id:2, assignment_id:4)
 puts "Done Seeding Student Assignments"
 
 puts "Seeding Student Assessments"
-student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: )
+student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: 1)
+student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: 2)
+student_assessment1 = StudentAssesment.create(student_id: 2, assessment_id: 3)
+student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: 4)
+
+puts "Done Seeding Student Assessments"
+
 
 
