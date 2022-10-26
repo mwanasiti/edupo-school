@@ -29241,3 +29241,1266 @@ Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 1.1ms | Allocations: 542
 
 
   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" ORDER BY "assignments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar, "full_name" varchar, "password_digest" varchar, "username" varchar, "role" varchar, "user_name" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assessments"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "classrooms"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "parents"[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assesments"[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assessment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assignments"[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "classroom_id" varchar, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "subject_teachers"[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "subjects"[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar, "user_name" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221026100706)[0m
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221019110524),
+(20221019110545),
+(20221019110600),
+(20221019110639),
+(20221019110803),
+(20221019121614),
+(20221019121629),
+(20221019121657),
+(20221019121720),
+(20221021103729),
+(20221021103856),
+(20221021103946),
+(20221021200752),
+(20221021200850),
+(20221021201048),
+(20221021201435),
+(20221021201605),
+(20221021201706),
+(20221021201857),
+(20221021201951),
+(20221024075245),
+(20221024080209),
+(20221024080227),
+(20221024080241),
+(20221024082145);
+
+[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 10:54:18.433890"], ["updated_at", "2022-10-26 10:54:18.433890"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abd6828eeb6fbf54b3820da14e196d60eda97cd1"], ["created_at", "2022-10-26 10:54:18.454653"], ["updated_at", "2022-10-26 10:54:18.454653"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar, "full_name" varchar, "password_digest" varchar, "username" varchar, "role" varchar, "user_name" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assessments"[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "classrooms"[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "parents"[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assesments"[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assessment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assignments"[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "classroom_id" varchar, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "subject_teachers"[0m
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "subjects"[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar, "user_name" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221026100706)[0m
+  [1m[35m (8.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221019110524),
+(20221019110545),
+(20221019110600),
+(20221019110639),
+(20221019110803),
+(20221019121614),
+(20221019121629),
+(20221019121657),
+(20221019121720),
+(20221021103729),
+(20221021103856),
+(20221021103946),
+(20221021200752),
+(20221021200850),
+(20221021201048),
+(20221021201435),
+(20221021201605),
+(20221021201706),
+(20221021201857),
+(20221021201951),
+(20221024075245),
+(20221024080209),
+(20221024080227),
+(20221024080241),
+(20221024082145);
+
+[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 10:54:18.717059"], ["updated_at", "2022-10-26 10:54:18.717059"]]
+  [1m[36mTRANSACTION (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-10-26 10:54:18.733522"], ["key", "environment"]]
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "abd6828eeb6fbf54b3820da14e196d60eda97cd1"], ["created_at", "2022-10-26 10:54:18.749197"], ["updated_at", "2022-10-26 10:54:18.749197"]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Create (0.2ms)[0m  [1m[32mINSERT INTO "admins" ("created_at", "updated_at", "email", "full_name", "password_digest", "username", "role", "user_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2022-10-26 10:54:18.998962"], ["updated_at", "2022-10-26 10:54:18.998962"], ["email", "angelastephen14@gmail.com"], ["full_name", nil], ["password_digest", "[FILTERED]"], ["username", "admin"], ["role", "admin"], ["user_name", nil]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Dennis Mburu"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "deno@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username", "user_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg"], ["phone_no", nil], ["address", nil], ["full_name", "Dennis Mburu"], ["email", "deno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:19.248527"], ["updated_at", "2022-10-26 10:54:19.248527"], ["username", "deno"], ["user_name", nil]]
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Joseph Otwoma"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "jose@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username", "user_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Joseph Otwoma"], ["email", "jose@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:19.467458"], ["updated_at", "2022-10-26 10:54:19.467458"], ["username", "jose"], ["user_name", nil]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Bob Ross"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "bob@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username", "user_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", nil], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Bob Ross"], ["email", "bob@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:19.688607"], ["updated_at", "2022-10-26 10:54:19.688607"], ["username", "bob"], ["user_name", nil]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Monica Lewinski"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "monica@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", "23 west"], ["phone_no", "12345"], ["full_name", "Monica Lewinski"], ["email", "monica@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:19.920079"], ["updated_at", "2022-10-26 10:54:19.920079"], ["username", "jon"]]
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Mana jonte"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "okech@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Mana jonte"], ["email", "okech@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:20.142178"], ["updated_at", "2022-10-26 10:54:20.142178"], ["username", "okech"]]
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Tim Kut"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "tim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Tim Kut"], ["email", "tim@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:20.365129"], ["updated_at", "2022-10-26 10:54:20.365129"], ["username", "tim"]]
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marine Biology"], ["created_at", "2022-10-26 10:54:20.398818"], ["updated_at", "2022-10-26 10:54:20.398818"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sociology"], ["created_at", "2022-10-26 10:54:20.411590"], ["updated_at", "2022-10-26 10:54:20.411590"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Development Studies"], ["created_at", "2022-10-26 10:54:20.426294"], ["updated_at", "2022-10-26 10:54:20.426294"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Communications"], ["created_at", "2022-10-26 10:54:20.440591"], ["updated_at", "2022-10-26 10:54:20.440591"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.2ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Pegion"], ["teacher_id", 1], ["created_at", "2022-10-26 10:54:20.488682"], ["updated_at", "2022-10-26 10:54:20.488682"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dove"], ["teacher_id", 2], ["created_at", "2022-10-26 10:54:20.504480"], ["updated_at", "2022-10-26 10:54:20.504480"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sparrow"], ["teacher_id", 3], ["created_at", "2022-10-26 10:54:20.520818"], ["updated_at", "2022-10-26 10:54:20.520818"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Angela Kanyi"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "kanyi@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 1], ["image", "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "0707777772"], ["admission_no", 12543], ["subject_id", 1], ["full_name", "Angela Kanyi"], ["email", "kanyi@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:20.773779"], ["updated_at", "2022-10-26 10:54:20.773779"], ["classroom_id", "1"], ["username", "angela"]]
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Harry Potter"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "harry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 0], ["image", "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "12345678"], ["admission_no", 12544], ["subject_id", 2], ["full_name", "Harry Potter"], ["email", "harry@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 10:54:21.002197"], ["updated_at", "2022-10-26 10:54:21.002197"], ["classroom_id", "2"], ["username", "harry"]]
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 1], ["created_at", "2022-10-26 10:54:21.037653"], ["updated_at", "2022-10-26 10:54:21.037653"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["subject_id", 2], ["created_at", "2022-10-26 10:54:21.055709"], ["updated_at", "2022-10-26 10:54:21.055709"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["subject_id", 3], ["created_at", "2022-10-26 10:54:21.075077"], ["updated_at", "2022-10-26 10:54:21.075077"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 4], ["created_at", "2022-10-26 10:54:21.092607"], ["updated_at", "2022-10-26 10:54:21.092607"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bones"], ["subject_teacher_id", 1], ["due_date", nil], ["created_at", "2022-10-26 10:54:21.126666"], ["updated_at", "2022-10-26 10:54:21.126666"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "social communication"], ["subject_teacher_id", 2], ["due_date", nil], ["created_at", "2022-10-26 10:54:21.142356"], ["updated_at", "2022-10-26 10:54:21.142356"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "business development"], ["subject_teacher_id", 3], ["due_date", nil], ["created_at", "2022-10-26 10:54:21.159131"], ["updated_at", "2022-10-26 10:54:21.159131"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oral skills"], ["subject_teacher_id", 4], ["due_date", nil], ["created_at", "2022-10-26 10:54:21.173171"], ["updated_at", "2022-10-26 10:54:21.173171"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Final Project"], ["subject_teacher_id", 1], ["total", 100], ["created_at", "2022-10-26 10:54:21.205467"], ["updated_at", "2022-10-26 10:54:21.205467"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 2], ["total", 100], ["created_at", "2022-10-26 10:54:21.220730"], ["updated_at", "2022-10-26 10:54:21.220730"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.2ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Capstone Project"], ["subject_teacher_id", 3], ["total", 100], ["created_at", "2022-10-26 10:54:21.234747"], ["updated_at", "2022-10-26 10:54:21.234747"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 4], ["total", 100], ["created_at", "2022-10-26 10:54:21.250785"], ["updated_at", "2022-10-26 10:54:21.250785"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 1], ["score", nil], ["created_at", "2022-10-26 10:54:21.291340"], ["updated_at", "2022-10-26 10:54:21.291340"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 2], ["score", nil], ["created_at", "2022-10-26 10:54:21.309427"], ["updated_at", "2022-10-26 10:54:21.309427"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 3], ["score", nil], ["created_at", "2022-10-26 10:54:21.325559"], ["updated_at", "2022-10-26 10:54:21.325559"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 4], ["score", nil], ["created_at", "2022-10-26 10:54:21.341216"], ["updated_at", "2022-10-26 10:54:21.341216"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 1], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 10:54:21.376067"], ["updated_at", "2022-10-26 10:54:21.376067"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 2], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 10:54:21.391500"], ["updated_at", "2022-10-26 10:54:21.391500"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 3], ["student_id", 2], ["score", nil], ["created_at", "2022-10-26 10:54:21.411213"], ["updated_at", "2022-10-26 10:54:21.411213"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 4], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 10:54:21.430603"], ["updated_at", "2022-10-26 10:54:21.430603"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20221019110524)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "class_id" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110524"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateParents (20221019110545)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110545"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeachers (20221019110600)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110600"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjects (20221019110639)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110639"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClassrooms (20221019110803)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110803"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssessments (20221019121614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121614"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssignments (20221019121629)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121629"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdmins (20221019121657)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121657"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20221019121720)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121720"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssignments (20221021103729)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103729"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssesments (20221021103856)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assesment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103856"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjectTeachers (20221021103946)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103946"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to Drop (20221021200752)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200752"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToAdmin (20221021200850)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "admins" ADD "email" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200850"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFullNameDigestToAdmin (20221021201048)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "admins" ADD "full_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201048"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveClassIdFromStudents (20221021201435)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "class_id" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "students" ("id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201435"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddClassroomIdToStudents (20221021201605)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "students" ADD "classroom_id" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201605"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToAdmin (20221021201706)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "admins" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201706"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUsersTable (20221021201857)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201857"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUserTable (20221021201951)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201951"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToAdmin (20221024075245)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "admins" ADD "user_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024075245"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToStudent (20221024080209)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "students" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080209"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToTeacher (20221024080227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "teachers" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080227"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToParent (20221024080241)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "parents" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080241"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToAdmin (20221024082145)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "admins" ADD "role" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024082145"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameStudentAssessmentColumn (20221026100706)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudent_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "astudent_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assesment_id","student_id","score","created_at","updated_at" FROM "student_assesments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "student_assesments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "student_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assessment_id","student_id","score","created_at","updated_at" FROM "astudent_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "astudent_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221026100706"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 11:00:26.307868"], ["updated_at", "2022-10-26 11:00:26.307868"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20221019110524)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "class_id" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110524"]]
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateParents (20221019110545)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110545"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeachers (20221019110600)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110600"]]
+  [1m[36mTRANSACTION (11.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjects (20221019110639)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110639"]]
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClassrooms (20221019110803)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110803"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssessments (20221019121614)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121614"]]
+  [1m[36mTRANSACTION (10.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssignments (20221019121629)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121629"]]
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdmins (20221019121657)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121657"]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20221019121720)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121720"]]
+  [1m[36mTRANSACTION (10.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssignments (20221021103729)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103729"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssesments (20221021103856)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assesment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103856"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjectTeachers (20221021103946)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103946"]]
+  [1m[36mTRANSACTION (10.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to Drop (20221021200752)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200752"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToAdmin (20221021200850)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "admins" ADD "email" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200850"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFullNameDigestToAdmin (20221021201048)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "admins" ADD "full_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201048"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveClassIdFromStudents (20221021201435)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "class_id" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "astudents" ("id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "students"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "students" ("id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "astudents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201435"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddClassroomIdToStudents (20221021201605)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "students" ADD "classroom_id" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201605"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToAdmin (20221021201706)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201706"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUsersTable (20221021201857)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201857"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUserTable (20221021201951)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201951"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToAdmin (20221024075245)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "admins" ADD "user_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024075245"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToStudent (20221024080209)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "students" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080209"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToTeacher (20221024080227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "teachers" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080227"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToParent (20221024080241)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "parents" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080241"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToAdmin (20221024082145)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "admins" ADD "role" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024082145"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameStudentAssessmentColumn (20221026100706)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudent_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudent_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assesment_id","student_id","score","created_at","updated_at" FROM "student_assesments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "student_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "student_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assessment_id","student_id","score","created_at","updated_at" FROM "astudent_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "astudent_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221026100706"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 11:02:29.908296"], ["updated_at", "2022-10-26 11:02:29.908296"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("created_at", "updated_at", "email", "full_name", "password_digest", "user_name", "role", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2022-10-26 11:04:00.728026"], ["updated_at", "2022-10-26 11:04:00.728026"], ["email", "angelastephen14@gmail.com"], ["full_name", nil], ["password_digest", "[FILTERED]"], ["user_name", nil], ["role", "admin"], ["username", "admin"]]
+  [1m[36mTRANSACTION (14.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Dennis Mburu"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "deno@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg"], ["phone_no", nil], ["address", nil], ["full_name", "Dennis Mburu"], ["email", "deno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:00.982648"], ["updated_at", "2022-10-26 11:04:00.982648"], ["username", "deno"]]
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Joseph Otwoma"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "jose@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Joseph Otwoma"], ["email", "jose@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:01.206527"], ["updated_at", "2022-10-26 11:04:01.206527"], ["username", "jose"]]
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Bob Ross"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "bob@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", nil], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Bob Ross"], ["email", "bob@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:01.430756"], ["updated_at", "2022-10-26 11:04:01.430756"], ["username", "bob"]]
+  [1m[36mTRANSACTION (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Monica Lewinski"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "monica@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", "23 west"], ["phone_no", "12345"], ["full_name", "Monica Lewinski"], ["email", "monica@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:01.662315"], ["updated_at", "2022-10-26 11:04:01.662315"], ["username", "jon"]]
+  [1m[36mTRANSACTION (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Mana jonte"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "okech@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Mana jonte"], ["email", "okech@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:01.884812"], ["updated_at", "2022-10-26 11:04:01.884812"], ["username", "okech"]]
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Tim Kut"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "tim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Tim Kut"], ["email", "tim@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:02.108623"], ["updated_at", "2022-10-26 11:04:02.108623"], ["username", "tim"]]
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marine Biology"], ["created_at", "2022-10-26 11:04:02.144054"], ["updated_at", "2022-10-26 11:04:02.144054"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sociology"], ["created_at", "2022-10-26 11:04:02.158508"], ["updated_at", "2022-10-26 11:04:02.158508"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Development Studies"], ["created_at", "2022-10-26 11:04:02.171967"], ["updated_at", "2022-10-26 11:04:02.171967"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Communications"], ["created_at", "2022-10-26 11:04:02.184605"], ["updated_at", "2022-10-26 11:04:02.184605"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.2ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Pegion"], ["teacher_id", 1], ["created_at", "2022-10-26 11:04:02.237779"], ["updated_at", "2022-10-26 11:04:02.237779"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dove"], ["teacher_id", 2], ["created_at", "2022-10-26 11:04:02.253802"], ["updated_at", "2022-10-26 11:04:02.253802"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.2ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sparrow"], ["teacher_id", 3], ["created_at", "2022-10-26 11:04:02.268928"], ["updated_at", "2022-10-26 11:04:02.268928"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Angela Kanyi"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "kanyi@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 1], ["image", "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "0707777772"], ["admission_no", 12543], ["subject_id", 1], ["full_name", "Angela Kanyi"], ["email", "kanyi@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:02.524857"], ["updated_at", "2022-10-26 11:04:02.524857"], ["classroom_id", "1"], ["username", "angela"]]
+  [1m[36mTRANSACTION (14.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.0ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Harry Potter"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "harry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 0], ["image", "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "12345678"], ["admission_no", 12544], ["subject_id", 2], ["full_name", "Harry Potter"], ["email", "harry@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:04:02.755435"], ["updated_at", "2022-10-26 11:04:02.755435"], ["classroom_id", "2"], ["username", "harry"]]
+  [1m[36mTRANSACTION (67.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 1], ["created_at", "2022-10-26 11:04:02.843722"], ["updated_at", "2022-10-26 11:04:02.843722"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["subject_id", 2], ["created_at", "2022-10-26 11:04:02.858117"], ["updated_at", "2022-10-26 11:04:02.858117"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["subject_id", 3], ["created_at", "2022-10-26 11:04:02.876055"], ["updated_at", "2022-10-26 11:04:02.876055"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 4], ["created_at", "2022-10-26 11:04:02.895915"], ["updated_at", "2022-10-26 11:04:02.895915"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.5ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bones"], ["subject_teacher_id", 1], ["due_date", nil], ["created_at", "2022-10-26 11:04:02.929651"], ["updated_at", "2022-10-26 11:04:02.929651"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "social communication"], ["subject_teacher_id", 2], ["due_date", nil], ["created_at", "2022-10-26 11:04:02.946593"], ["updated_at", "2022-10-26 11:04:02.946593"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "business development"], ["subject_teacher_id", 3], ["due_date", nil], ["created_at", "2022-10-26 11:04:02.959955"], ["updated_at", "2022-10-26 11:04:02.959955"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oral skills"], ["subject_teacher_id", 4], ["due_date", nil], ["created_at", "2022-10-26 11:04:02.974612"], ["updated_at", "2022-10-26 11:04:02.974612"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Final Project"], ["subject_teacher_id", 1], ["total", 100], ["created_at", "2022-10-26 11:04:03.008542"], ["updated_at", "2022-10-26 11:04:03.008542"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 2], ["total", 100], ["created_at", "2022-10-26 11:04:03.024072"], ["updated_at", "2022-10-26 11:04:03.024072"]]
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Capstone Project"], ["subject_teacher_id", 3], ["total", 100], ["created_at", "2022-10-26 11:04:03.040986"], ["updated_at", "2022-10-26 11:04:03.040986"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 4], ["total", 100], ["created_at", "2022-10-26 11:04:03.056044"], ["updated_at", "2022-10-26 11:04:03.056044"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 1], ["score", nil], ["created_at", "2022-10-26 11:04:03.092279"], ["updated_at", "2022-10-26 11:04:03.092279"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.0ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 2], ["score", nil], ["created_at", "2022-10-26 11:04:03.105802"], ["updated_at", "2022-10-26 11:04:03.105802"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 3], ["score", nil], ["created_at", "2022-10-26 11:04:03.122163"], ["updated_at", "2022-10-26 11:04:03.122163"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 4], ["score", nil], ["created_at", "2022-10-26 11:04:03.137771"], ["updated_at", "2022-10-26 11:04:03.137771"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 1], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:04:03.177272"], ["updated_at", "2022-10-26 11:04:03.177272"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 2], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:04:03.194040"], ["updated_at", "2022-10-26 11:04:03.194040"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 3], ["student_id", 2], ["score", nil], ["created_at", "2022-10-26 11:04:03.211877"], ["updated_at", "2022-10-26 11:04:03.211877"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 4], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:04:03.228348"], ["updated_at", "2022-10-26 11:04:03.228348"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+Started DELETE "/parent_logout" for 127.0.0.1 at 2022-10-26 14:06:56 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParentSessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 201)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-26 14:07:06 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Admin (0.45ms)
+Completed 201 Created in 213ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 3536)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-26 14:07:15 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+Started POST "/student_login" for 127.0.0.1 at 2022-10-26 14:07:27 +0300
+Processing by StudentSessionsController#create as */*
+  Parameters: {"username"=>"angela", "password"=>"[FILTERED]", "student_session"=>{"username"=>"angela", "password"=>"[FILTERED]"}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."username" = ? LIMIT ?[0m  [["username", "angela"], ["LIMIT", 1]]
+  ↳ app/controllers/student_sessions_controller.rb:5:in `create'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered StudentSerializer with ActiveModelSerializers::Adapter::Attributes (19.49ms)
+Completed 200 OK in 237ms (Views: 20.2ms | ActiveRecord: 1.0ms | Allocations: 22494)
+
+
+Started DELETE "/student_logout" for 127.0.0.1 at 2022-10-26 14:07:33 +0300
+Processing by StudentSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 178)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2022-10-26 14:07:43 +0300
+Processing by ParentSessionsController#create as */*
+  Parameters: {"username"=>"jon", "password"=>"[FILTERED]", "parent_session"=>{"username"=>"jon", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."username" = ? LIMIT ?[0m  [["username", "jon"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Parent (0.48ms)
+Completed 200 OK in 212ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 4595)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-26 14:07:43 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.51ms)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 1.6ms | Allocations: 5661)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-26 14:07:43 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.34ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 1.2ms | Allocations: 5445)
+
+
+Started DELETE "/parent_logout" for 127.0.0.1 at 2022-10-26 14:07:51 +0300
+Processing by ParentSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started POST "/teacher_login" for 127.0.0.1 at 2022-10-26 14:08:45 +0300
+Processing by TeacherSessionsController#create as */*
+  Parameters: {"username"=>"deno", "password"=>"[FILTERED]", "teacher_session"=>{"username"=>"deno", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."username" = ? LIMIT ?[0m  [["username", "deno"], ["LIMIT", 1]]
+  ↳ app/controllers/teacher_sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.37ms)
+Completed 200 OK in 205ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1160)
+
+
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20221019110524)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "class_id" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110524"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateParents (20221019110545)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110545"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeachers (20221019110600)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" boolean, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110600"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjects (20221019110639)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110639"]]
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClassrooms (20221019110803)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110803"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssessments (20221019121614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121614"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssignments (20221019121629)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121629"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdmins (20221019121657)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121657"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20221019121720)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121720"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssignments (20221021103729)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103729"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudentAssesments (20221021103856)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assesment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103856"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjectTeachers (20221021103946)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021103946"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to Drop (20221021200752)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200752"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEmailToAdmin (20221021200850)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "email" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021200850"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFullNameDigestToAdmin (20221021201048)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "full_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201048"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RemoveClassIdFromStudents (20221021201435)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudents" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "class_id" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudents" ("id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","class_id","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "students"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "students"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer NOT NULL PRIMARY KEY, "role" varchar DEFAULT NULL, "gender" boolean DEFAULT NULL, "image" varchar DEFAULT NULL, "parent_id" integer DEFAULT NULL, "phone_no" varchar DEFAULT NULL, "admission_no" integer DEFAULT NULL, "subject_id" integer DEFAULT NULL, "full_name" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "students" ("id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at")
+                     SELECT "id","role","gender","image","parent_id","phone_no","admission_no","subject_id","full_name","email","password_digest","created_at","updated_at" FROM "astudents"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "astudents"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201435"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddClassroomIdToStudents (20221021201605)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "students" ADD "classroom_id" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201605"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPasswordToAdmin (20221021201706)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "admins" ADD "password_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201706"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUsersTable (20221021201857)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201857"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DropUserTable (20221021201951)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221021201951"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToAdmin (20221024075245)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "admins" ADD "user_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024075245"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToStudent (20221024080209)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "students" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080209"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToTeacher (20221024080227)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "teachers" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080227"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserNameToParent (20221024080241)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "parents" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024080241"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRoleToAdmin (20221024082145)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "admins" ADD "role" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221024082145"]]
+  [1m[36mTRANSACTION (7.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to RenameStudentAssessmentColumn (20221026100706)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "astudent_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "astudent_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assesment_id","student_id","score","created_at","updated_at" FROM "student_assesments"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "student_assesments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer NOT NULL PRIMARY KEY, "assessment_id" integer DEFAULT NULL, "student_id" integer DEFAULT NULL, "score" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "student_assesments" ("id","assessment_id","student_id","score","created_at","updated_at")
+                     SELECT "id","assessment_id","student_id","score","created_at","updated_at" FROM "astudent_assesments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "astudent_assesments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "username" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221026100706"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-26 11:34:46.339424"], ["updated_at", "2022-10-26 11:34:46.339424"]]
+  [1m[36mTRANSACTION (54.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Create (0.3ms)[0m  [1m[32mINSERT INTO "admins" ("created_at", "updated_at", "email", "full_name", "password_digest", "user_name", "role", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2022-10-26 11:34:57.287792"], ["updated_at", "2022-10-26 11:34:57.287792"], ["email", "angelastephen14@gmail.com"], ["full_name", nil], ["password_digest", "[FILTERED]"], ["user_name", nil], ["role", "admin"], ["username", "admin"]]
+  [1m[36mTRANSACTION (100.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Dennis Mburu"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "deno@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg"], ["phone_no", nil], ["address", nil], ["full_name", "Dennis Mburu"], ["email", "deno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:57.629978"], ["updated_at", "2022-10-26 11:34:57.629978"], ["username", "deno"]]
+  [1m[36mTRANSACTION (77.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Joseph Otwoma"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "jose@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", 1], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Joseph Otwoma"], ["email", "jose@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:57.926658"], ["updated_at", "2022-10-26 11:34:57.926658"], ["username", "jose"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Bob Ross"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "bob@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", nil], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Bob Ross"], ["email", "bob@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:58.148893"], ["updated_at", "2022-10-26 11:34:58.148893"], ["username", "bob"]]
+  [1m[36mTRANSACTION (13.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Monica Lewinski"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "monica@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", "23 west"], ["phone_no", "12345"], ["full_name", "Monica Lewinski"], ["email", "monica@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:58.399636"], ["updated_at", "2022-10-26 11:34:58.399636"], ["username", "jon"]]
+  [1m[36mTRANSACTION (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Mana jonte"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "okech@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.3ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Mana jonte"], ["email", "okech@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:58.634037"], ["updated_at", "2022-10-26 11:34:58.634037"], ["username", "okech"]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Tim Kut"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "tim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Tim Kut"], ["email", "tim@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:58.864051"], ["updated_at", "2022-10-26 11:34:58.864051"], ["username", "tim"]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marine Biology"], ["created_at", "2022-10-26 11:34:58.896325"], ["updated_at", "2022-10-26 11:34:58.896325"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sociology"], ["created_at", "2022-10-26 11:34:58.908375"], ["updated_at", "2022-10-26 11:34:58.908375"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.4ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Development Studies"], ["created_at", "2022-10-26 11:34:58.922553"], ["updated_at", "2022-10-26 11:34:58.922553"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Communications"], ["created_at", "2022-10-26 11:34:58.935631"], ["updated_at", "2022-10-26 11:34:58.935631"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Pegion"], ["teacher_id", 1], ["created_at", "2022-10-26 11:34:58.982567"], ["updated_at", "2022-10-26 11:34:58.982567"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.6ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dove"], ["teacher_id", 2], ["created_at", "2022-10-26 11:34:58.997407"], ["updated_at", "2022-10-26 11:34:58.997407"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.2ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sparrow"], ["teacher_id", 3], ["created_at", "2022-10-26 11:34:59.011345"], ["updated_at", "2022-10-26 11:34:59.011345"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Angela Kanyi"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "kanyi@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 1], ["image", "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "0707777772"], ["admission_no", 12543], ["subject_id", 1], ["full_name", "Angela Kanyi"], ["email", "kanyi@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:59.267160"], ["updated_at", "2022-10-26 11:34:59.267160"], ["classroom_id", "1"], ["username", "angela"]]
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.0ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Harry Potter"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "harry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", 0], ["image", "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"], ["parent_id", 1], ["phone_no", "12345678"], ["admission_no", 12544], ["subject_id", 2], ["full_name", "Harry Potter"], ["email", "harry@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-26 11:34:59.493390"], ["updated_at", "2022-10-26 11:34:59.493390"], ["classroom_id", "2"], ["username", "harry"]]
+  [1m[36mTRANSACTION (16.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 1], ["created_at", "2022-10-26 11:34:59.529376"], ["updated_at", "2022-10-26 11:34:59.529376"]]
+  [1m[36mTRANSACTION (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["subject_id", 2], ["created_at", "2022-10-26 11:34:59.546128"], ["updated_at", "2022-10-26 11:34:59.546128"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["subject_id", 3], ["created_at", "2022-10-26 11:34:59.571264"], ["updated_at", "2022-10-26 11:34:59.571264"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 4], ["created_at", "2022-10-26 11:34:59.584800"], ["updated_at", "2022-10-26 11:34:59.584800"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.5ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bones"], ["subject_teacher_id", 1], ["due_date", nil], ["created_at", "2022-10-26 11:34:59.613899"], ["updated_at", "2022-10-26 11:34:59.613899"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "social communication"], ["subject_teacher_id", 2], ["due_date", nil], ["created_at", "2022-10-26 11:34:59.629526"], ["updated_at", "2022-10-26 11:34:59.629526"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "business development"], ["subject_teacher_id", 3], ["due_date", nil], ["created_at", "2022-10-26 11:34:59.643569"], ["updated_at", "2022-10-26 11:34:59.643569"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oral skills"], ["subject_teacher_id", 4], ["due_date", nil], ["created_at", "2022-10-26 11:34:59.658732"], ["updated_at", "2022-10-26 11:34:59.658732"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Final Project"], ["subject_teacher_id", 1], ["total", 100], ["created_at", "2022-10-26 11:34:59.686498"], ["updated_at", "2022-10-26 11:34:59.686498"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.4ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 2], ["total", 100], ["created_at", "2022-10-26 11:34:59.704589"], ["updated_at", "2022-10-26 11:34:59.704589"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Capstone Project"], ["subject_teacher_id", 3], ["total", 100], ["created_at", "2022-10-26 11:34:59.720671"], ["updated_at", "2022-10-26 11:34:59.720671"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.3ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 4], ["total", 100], ["created_at", "2022-10-26 11:34:59.736180"], ["updated_at", "2022-10-26 11:34:59.736180"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 1], ["score", nil], ["created_at", "2022-10-26 11:34:59.769627"], ["updated_at", "2022-10-26 11:34:59.769627"]]
+  [1m[36mTRANSACTION (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 2], ["score", nil], ["created_at", "2022-10-26 11:34:59.789371"], ["updated_at", "2022-10-26 11:34:59.789371"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 3], ["score", nil], ["created_at", "2022-10-26 11:34:59.807264"], ["updated_at", "2022-10-26 11:34:59.807264"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 4], ["score", nil], ["created_at", "2022-10-26 11:34:59.825353"], ["updated_at", "2022-10-26 11:34:59.825353"]]
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 1], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:34:59.862775"], ["updated_at", "2022-10-26 11:34:59.862775"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 2], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:34:59.880686"], ["updated_at", "2022-10-26 11:34:59.880686"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 3], ["student_id", 2], ["score", nil], ["created_at", "2022-10-26 11:34:59.896388"], ["updated_at", "2022-10-26 11:34:59.896388"]]
+  [1m[36mTRANSACTION (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 4], ["student_id", 1], ["score", nil], ["created_at", "2022-10-26 11:34:59.911017"], ["updated_at", "2022-10-26 11:34:59.911017"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" INNER JOIN "student_assesments" ON "assessments"."id" = "student_assesments"."assessment_id" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" INNER JOIN "student_assignments" ON "assignments"."id" = "student_assignments"."assignment_id" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 1]]
