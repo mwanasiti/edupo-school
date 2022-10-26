@@ -13,7 +13,7 @@ function StudentView() {
   //get request
 
   useEffect(() => {
-    fetch("/students")
+    fetch("http://localhost:3000/students")
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
@@ -26,7 +26,7 @@ function StudentView() {
   return (
 
     <div className='container'>
-         <p> This will be the Student's view after Logging in</p>
+         <p>Welcome Students </p>
          <StudentGrid isLoading={isLoading} students={students} />
       </div>
 

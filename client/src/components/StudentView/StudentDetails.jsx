@@ -5,7 +5,7 @@ const StudentDetails = ({student}) => {
     <div className='card'>
     <div className='card-inner'>
       <div className='card-front'>
-        <img src={student.img} alt='' />
+        <img src={student.image} alt='' />
         <h1>{student.full_name}</h1>
       </div>
       <div className='card-back'>

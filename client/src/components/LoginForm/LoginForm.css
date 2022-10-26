@@ -1,13 +1,21 @@
 .form-container {
   min-height: 70vh;
   background-color: #4F72A7;
+  background-repeat: no-repeat;
   width: 60vw;
   max-width: 600px;
   min-width: 400px;
   margin: 60px auto;
-  border-radius: 20px;
-}
+  border-radius: 100px;
 
+}
+.input {
+  background-color: rgb(23, 199, 243);
+}
+.input-label {
+  font-size: 30px;
+  margin: 5px
+}
 @media (max-width: 700px) {
   .edit-form {
     width: 85%;
