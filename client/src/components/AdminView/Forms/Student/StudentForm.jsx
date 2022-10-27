@@ -1,116 +1,529 @@
-import { Button, Container, FormControl, FormControlLabel, FormHelperText, FormLabel, Input, InputLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField} from '@material-ui/core'
-import { Dashboard, Delete, Edit, Save, Send, ViewAgenda } from '@material-ui/icons'
-import { borderRadius } from '@mui/system';
-import React from 'react'
-
-
-
-const useStyles = makeStyles(theme=>({
-  button:{
+import {
+  Button,
+  Container,
+  FormLabel,
+  Input,
+  InputLabel,
+  makeStyles,
+  OutlinedInput,
+  Radio,
+  RadioGroup,
+  TextField,
+} from "@material-ui/core";
+import {
+  Dashboard,
+  Delete,
+  Edit,
+  Save,
+  Send,
+  ViewAgenda,
+} from "@material-ui/icons";
+// import { borderRadius } from "@mui/system";
+import React, { useState } from "react";
+// import StudentData from "../../Views /StudentData";
+const useStyles = makeStyles((theme) => ({
+  button: {
     color: "white",
-    backgroundColor: "black"
-  }, 
-  container:{
+    backgroundColor: "black",
+  },
+  container: {
     paddingTop: theme.spacing(3),
-  }
+  },
 }));
-
-
 function StudentForm() {
+  const [errors, setErrors] = useState([]);
+  const [role, setRole] = useState("student");
+  const [gender, setGender] = useState("");
+  const [image, setImage] = useState("");
+  const [parent_id, setParentID] = useState("2");
+  const [phone_no, setPhoneNumber] = useState("");
+  const [admission_no, setAdmissionNo] = useState("");
+  const [subject_id, setSubjectID] = useState(1);
+  const [full_name, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [classroom_id, setClassroomID] = useState(1);
+  const [username, setUserName] = useState("");
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("/students", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        role,
+        gender,
+        image,
+        parent_id,
+        phone_no,
+        admission_no,
+        subject_id,
+        full_name,
+        email,
+        password,
+        classroom_id,
+        username
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((data) => {
+          // setStudents([...products, data]);
+          console.log(data);
+          // navigate("/manage_products");
+        });
+      } else {
+        res.json().then((err) => setErrors(err.errors));
+        console.log(err);
+      }
+    });
+  }
   const classes = useStyles();
   return (
-  
-    <Container className={classes.container}>
-    <div>
-    
-    {/* <FormControl>
-      <OutlinedInput placeholder="Gender" />
-      <OutlinedInput placeholder="Image" />
-      <OutlinedInput placeholder="Parent Id" />
-      <OutlinedInput placeholder="Phone Number" />
-      <OutlinedInput placeholder="Admission Number" />
-      <OutlinedInput placeholder="Subject ID" />
-      <OutlinedInput placeholder="Full Name" />
-      <OutlinedInput placeholder="Email" />
-      <Button variant="contained" color="primary" size="large" startIcon={<Save/>}>Save</Button>
-    </FormControl> */}
-    {/* // BUTTONS */}
-    {/* <Button variant="outlined" color="secondary"size="large" startIcon={<Delete/>}>Delete</Button>
+    <>
+      <Container className={classes.container}>
+        {/* // BUTTONS */}
+        {/* <Button variant="outlined" color="secondary"size="large" startIcon={<Delete/>}>Delete</Button>
     <Button variant="outlined" color="secondary"  size="large" startIcon={<Send />}>Submit</Button>
-    <Button variant="outlined"  size="large" startIcon={<Edit />}className ={classes.button}>Edit</Button>  
+    <Button variant="outlined"  size="large" startIcon={<Edit />}className ={classes.button}>Edit</Button>
     <Button variant="outlined" color="secondary" size="large" startIcon={<Dashboard/>}>Dashboard</Button>
     <Button variant="outlined" color="secondary" size="large" startIcon={<Save/>}>Save</Button> */}
-    
-    
-    </div>
-    <form className={classes.form} autoComplete="off" style={{border:"1px solid grey", borderRadius:"10px", padding:"10px", alignText:"center", marginLeft:"200px", width:"600px"}}>
-    <div className={classes.item}>
-    <FormLabel id="demo-radio-buttons-group-label">Gender:</FormLabel>
-   
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-  <label class="form-check-label" for="flexRadioDefault1"> Male </label>
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
-  <label class="form-check-label" for="flexRadioDefault2"> Female</label>
-</div>
-
-{/* <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
-  <label class="form-check-label" for="flexRadioDefault2"> Female</label>
-</div> */}
-    {/* <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-    size ="small"
-  >
-    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
-    
-  </RadioGroup>  */}
-    </div>
-    {/* IMAGE */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Image:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter image url" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* PARENT ID */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Parent ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Parent id" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* PHONE NO */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Phone Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Phone number" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* ADDMISSION NO */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Admission Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Admission number" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* SUBJECT ID */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Subject ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Subject ID" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* FULL NAME */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Full Name:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Name" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* EMAIL */}
-     <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Email:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter email address" size="small" style={{width:"100%"}}/>
-      </div>
-      <div>
-      <Button variant="contained" color="primary" size="large" startIcon={<Save/>} style={{width:"400px", marginTop:"15px", alignItems:"center", marginLeft:"40px"}}>Save</Button>
-      </div>
-    </form>
-    </Container>
-    
-  )
+        <h1 style={{ alignText: "center" }}>STUDENT FORM</h1>
+        <form
+          className={classes.form}
+          autoComplete="off"
+          style={{
+            border: "1px solid grey",
+            borderRadius: "10px",
+            padding: "30px",
+            alignText: "center",
+            width: "500px",
+            marginTop: "10px",
+          }}
+          onSubmit={handleSubmit}
+        >
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">Gender:</FormLabel>
+            <br></br>
+            {/* GENDER */}
+            {/* <div class="form-check"> */}
+              <input
+                class="form-check-input"
+                type="radio"
+                id="true"
+                name="gender"
+                value={true}
+                onChange={(e) => setGender(e.target.value)}
+              />
+              <label class="form-check-label" for="true">
+                Male
+              </label>
+              <input
+                class="form-check-input"
+                type="radio"
+                id="false"
+                name="gender"
+                value={false}
+                onChange={(e) => setGender(e.target.value)}
+              />
+              <label class="form-check-label" for="false">
+                {" "}
+                Female
+              </label>
+            {/* </div> */}
+          </div>
+          {/* IMAGE */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">Image:</FormLabel>
+            <TextField
+              id="outlined-basic1"
+              variant="outlined"
+              label="Enter image url"
+              size="small"
+              style={{ width: "100%" }}
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+            />
+          </div>
+          {/* PARENT ID */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Parent ID:
+            </FormLabel>
+            <TextField
+              id="outlined-basic2"
+              variant="outlined"
+              label="Enter Parent id"
+              size="small"
+              style={{ width: "100%" }}
+              value={parent_id}
+              onChange={(e) => setParentID(e.target.value)}
+            />
+          </div>
+          {/* PHONE NO */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Phone Number:
+            </FormLabel>
+            <TextField
+              id="outlined-basic3"
+              variant="outlined"
+              label="Enter Phone number"
+              size="small"
+              style={{ width: "100%" }}
+              value={phone_no}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+          {/* ADDMISSION NO */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Admission Number:
+            </FormLabel>
+            <TextField
+              id="outlined-basic4"
+              variant="outlined"
+              label="Enter Admission number"
+              size="small"
+              style={{ width: "100%" }}
+              value={admission_no}
+              onChange={(e) => setAdmissionNo(e.target.value)}
+            />
+          </div>
+          {/* SUBJECT ID */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Subject ID:
+            </FormLabel>
+            <TextField
+              id="outlined-basic5"
+              variant="outlined"
+              label="Enter Subject ID"
+              size="small"
+              style={{ width: "100%" }}
+              value={subject_id}
+              onChange={(e) => setSubjectID(e.target.value)}
+            />
+          </div>
+          {/* FULL NAME */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Full Name:
+            </FormLabel>
+            <TextField
+              id="outlined-basic6"
+              variant="outlined"
+              label="Enter Name"
+              size="small"
+              style={{ width: "100%" }}
+              value={full_name}
+              onChange={(e) => setFullName(e.target.value)}
+            />
+          </div>
+          {/* EMAIL */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">Email:</FormLabel>
+            <TextField
+              id="outlined-basic7"
+              variant="outlined"
+              label="Enter email address"
+              size="small"
+              style={{ width: "100%" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          {/* PASSWORD */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">Password:</FormLabel>
+            <TextField
+              id="outlined-basic8"
+              variant="outlined"
+              label="Enter password"
+              size="small"
+              style={{ width: "100%" }}
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          {/* CLASSROOMID */}
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              Classrooom ID:
+            </FormLabel>
+            <TextField
+              id="outlined-basic9"
+              variant="outlined"
+              label="Enter classroom id"
+              size="small"
+              style={{ width: "100%" }}
+              value={classroom_id}
+              onChange={(e) => setClassroomID(e.target.value)}
+            />
+          </div>
+          <div className={classes.item}>
+            <FormLabel id="demo-radio-buttons-group-label">
+              UserName
+            </FormLabel>
+            <TextField
+              id="outlined-basic9"
+              variant="outlined"
+              label="Enter student's username"
+              size="small"
+              style={{ width: "100%" }}
+              value={username}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+          </div>
+          {/* ERRORS */}
+          {errors.map((error) => {
+            return (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                role="alert"
+              >
+                <span className="block sm:inline">{error}</span>
+              </div>
+            );
+          })}
+          <div>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              style={{
+                width: "400px",
+                marginTop: "15px",
+                alignItems: "center",
+              }}
+              type="submit"
+            >
+              Submit
+            </Button>
+          </div>
+        </form>
+      </Container>
+    </>
+  );
 }
+export default StudentForm;
 
-export default StudentForm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { Button, Container, FormLabel, Input, InputLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField} from '@material-ui/core'
+// import { Dashboard, Delete, Edit, Save, Send, ViewAgenda } from '@material-ui/icons'
+// import { borderRadius } from '@mui/system';
+// import React, { useEffect, useState } from 'react'
+// import StudentData from '../../Views /StudentData';
+
+
+
+// const useStyles = makeStyles(theme=>({
+//   button:{
+//     color: "white",
+//     backgroundColor: "black"
+//   }, 
+//   container:{
+//     paddingTop: theme.spacing(3),
+//   }
+// }));
+
+
+// function StudentForm() {
+//   const [student, setStudent] = useState({});
+
+//   const [students, setStudents] = useState([]);
+
+//   function handleChange(e) {
+//     setStudent({...student,[e.target.name]: e.target.value});
+
+//   }
+
+//   const handleFormSubmission =async (e, func) =>{
+//     e.preventDefault();
+
+//     const URL = func == 'create' 
+//     ? `/students`
+//       : `student/${student?.id}`;
+
+
+//     const method = func === 'create' ? "POST" : "PUT";
+
+//     try{
+//       const resp = await fetch(URL, {method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(student)});
+//       if (resp.status === 200) setStudent({});
+//     }
+//     catch (error) {
+//       console.log(error)
+//     }
+//   }; 
+
+//   useEffect(() => {
+//     (async () => {
+//       try {
+//         const resp = await fetch("/students");
+
+//       const json = await resp.json();
+
+//       if (resp.status === 200) setStudents(json)
+//       } catch (error) {
+//         setStudents([])
+//       }
+
+//     })();
+//   }, []);
+
+
+//   const classes = useStyles();
+//   return (
+//   <>
+//     <Container className={classes.container}>
+    
+    
+    
+//     {/* // BUTTONS */}
+//     {/* <Button variant="outlined" color="secondary"size="large" startIcon={<Delete/>}>Delete</Button>
+//     <Button variant="outlined" color="secondary"  size="large" startIcon={<Send />}>Submit</Button>
+//     <Button variant="outlined"  size="large" startIcon={<Edit />}className ={classes.button}>Edit</Button>  
+//     <Button variant="outlined" color="secondary" size="large" startIcon={<Dashboard/>}>Dashboard</Button>
+//     <Button variant="outlined" color="secondary" size="large" startIcon={<Save/>}>Save</Button> */}
+    
+    
+//     <h1 style={{alignText:"center"}}>STUDENT FORM</h1>
+//     <form className={classes.form} 
+//     autoComplete="off" 
+//     style={{border:"1px solid grey", borderRadius:"10px", padding:"30px", alignText:"center", width:"500px", marginTop:"10px"}}
+//     method  ="POST"
+//     >
+//     <div className={classes.item}>
+//     <FormLabel id="demo-radio-buttons-group-label">Gender:</FormLabel>
+//    {/* GENDER */}
+// <div class="form-check">
+//   <input class="form-check-input" type="radio" id="flexRadioDefault1"
+//     name="gender"
+//     value={student.gender}
+//     onChange={handleChange}
+//   />
+//   <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+//   <input class="form-check-input" type="radio" id="flexRadioDefault2"
+//     name="gender"
+        
+//   />
+//   <label class="form-check-label" for="flexRadioDefault2"> Female{" "}</label>
+// </div>
+
+
+//     </div>
+//     {/* IMAGE */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Image:</FormLabel>
+//         <TextField id="outlined-basic1" variant="outlined" label="Enter image url" size="small" style={{width:"100%"}}
+//        value={student.image}
+//        onChange={handleChange}
+//         />
+
+//       </div>
+//     {/* PARENT ID */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Parent ID:</FormLabel>
+//         <TextField id="outlined-basic2" variant="outlined" label="Enter Parent id" size="small" style={{width:"100%"}}
+//          value ={student.parent_id}
+//          onChange={handleChange} 
+//         />
+//       </div>
+//     {/* PHONE NO */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Phone Number:</FormLabel>
+//         <TextField id="outlined-basic3" variant="outlined" label="Enter Phone number" size="small" style={{width:"100%"}}
+//           value ={student.phone_no}
+//           onChange={handleChange}
+//         />
+//       </div>
+//     {/* ADDMISSION NO */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Admission Number:</FormLabel>
+//         <TextField id="outlined-basic4" variant="outlined" label="Enter Admission number" size="small" style={{width:"100%"}}
+//          value ={student.admission_no}
+//          onChange={handleChange}
+//         />
+//       </div>
+//     {/* SUBJECT ID */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Subject ID:</FormLabel>
+//         <TextField id="outlined-basic5" variant="outlined" label="Enter Subject ID" size="small" style={{width:"100%"}}
+//           value ={student.subject_id}
+//           onChange={handleChange}
+//         />
+//       </div>
+//     {/* FULL NAME */}
+//     <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Full Name:</FormLabel>
+//         <TextField id="outlined-basic6" variant="outlined" label="Enter Name" size="small" style={{width:"100%"}}
+//           value ={student.full_name}
+//           onChange={handleChange}
+//         />
+//       </div>
+//     {/* EMAIL */}
+//      <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Email:</FormLabel>
+//         <TextField id="outlined-basic7" variant="outlined" label="Enter email address" size="small" style={{width:"100%"}}
+//         value ={student.email}
+//         onChange={handleChange}
+//         />
+//       </div>
+//       {/* PASSWORD */}
+//       <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Password:</FormLabel>
+//         <TextField id="outlined-basic8" variant="outlined" label="Enter password" size="small" style={{width:"100%"}}
+//           name="password"
+//               type="password"
+//               value ={student.password}
+//               onChange={handleChange}  
+//         />
+//       </div>
+
+//       {/* CLASSROOMID */}
+//       <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Classrooom ID:</FormLabel>
+//         <TextField id="outlined-basic9" variant="outlined" label="Enter classroom id" size="small" style={{width:"100%"}}
+//           onChange={handleChange}
+//               />
+//       </div>
+
+//       <div className={classes.item}>
+//       <FormLabel id="demo-radio-buttons-group-label">Username:</FormLabel>
+//         <TextField id="outlined-basic9" variant="outlined" label="Enter username" size="small" style={{width:"100%"}}
+//           value ={student.username}
+//           onChange={handleChange}
+//              />
+//       </div>
+      
+//       <div>
+//       <Button variant="contained" color="primary" size="large"  style={{width:"400px", marginTop:"15px", alignItems:"center"}} type="submit"
+//       onClick={(e) => handleFormSubmission(e, student?.id ? 'update': 'create')}
+//       >Submit</Button>
+//       </div>
+//     </form>
+//     </Container>
+    
+//     </>
+//   )
+// }
+
+// export default StudentForm
