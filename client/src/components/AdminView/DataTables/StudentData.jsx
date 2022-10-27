@@ -1,173 +1,112 @@
 import React from 'react'
-import {
-  TableContainer, 
-  Table, 
-  TableHead, 
-  TableBody, 
-  TableRow, 
-  TableCell,
-   Paper
-  } from "@mui/material"
-import { Face } from '@material-ui/icons'
+import { Box, Typography } from '@mui/material'
+import { DataGrid } from '@mui/x-data-grid'
+import './View.css'
+
+
+const columns = [
+  { field: 'id', headerName: 'ID', width: 90 },
+  
+  {
+    field: 'gender',
+    headerName: 'Gender',
+    width: 150,
+    editable: true,
+  },
+  {field: "user", headerName: "Image", width:230, 
+  renderCell:(params)=>{
+    return(
+      <div  className='cellImg'>
+        {/* <img  src="https://i.pinimg.com/564x/17/21/81/172181825b9ed4311d32f55a166ce295.jpg" alt=" Avatar"/> */}
+        <img src="https://i.pinimg.com/564x/2b/a8/4b/2ba84bfa0347c31c59d35299af93de12.jpg" alt="person"/>
+          {params.row.username}
+      </div>
+    )
+  }},
+  {
+    field: 'parent_id',
+    headerName: 'Parent ID',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'phone_no',
+    headerName: 'Phone Number',
+    // type: 'number',
+    width: 110,
+    editable: true,
+  },
+  {
+    field: 'admission_no',
+    headerName: 'Admission Number',
+    // type: 'number',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'fullname',
+    headerName: 'FullName',
+    // type: 'text',
+    width: 150,
+    editable: true,
+  },
+  
+  {
+    field: 'email',
+    headerName: 'Email',
+    // type: 'email',
+    width: 150,
+    editable: true,
+  }
+  
+  // {
+  //   field: 'fullName',
+  //   headerName: 'Full name',
+  //   description: 'This column has a value getter and is not sortable.',
+  //   sortable: false,
+  //   width: 160,
+  //   valueGetter: (params) =>
+  //     `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  // },
+];
+
+const rows = [
+  { id:1,gender:"Female", parent_id:"PICTURE", phone_no:"074168868123",admission_no:"23 mperide",subject_id:"1",  fullname:"Jona Monica",email:"jon@gmail.com"},
+  { id:2,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 wide",subject_id:"1", fullname:"MauPete ",email:"mau@gmail.com"},
+  { id:3,gender:"Female", parent_id:"PICTURE", phone_no:"07417811683",admission_no:"2jumstside",subject_id:"1", fullname:"Joaness Burg ",email:"jon@gmail.com"},
+  { id:4,gender:"Female", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 woyide",subject_id:"1", fullname:"Petero Jui ",email:"jones@gmail.com"},
+  { id:5,gender:"Male", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23 wejride",subject_id:"1", fullname:"Wonderl Proof ",email:"proof@gmail.com"},
+  { id:6,gender:"Female", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23justside",subject_id:"1", fullname:"Joyous Occasion ",email:"jon@gmail.com"},
+  { id:7,gender:"Male", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23 wppoyide",subject_id:"1", fullname:"Won Bin",email:"won@gmail.com"},
+  { id:8,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 weyide",subject_id:"1", fullname:"Jun Pyo",email:"jun@gmail.com"},
+  { id:9,gender:"Female", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23 werside",subject_id:"1", fullname:"Shae Pri",email:"prin@gmail.com"},
+  { id:10,gender:"Female", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23 side",subject_id:"1", fullname:"Markus",email:"markusn@gmail.com"},
+  { id:12,gender:"Male", parent_id:"PICTURE", phone_no:"074687816823",admission_no:"23 ertside",subject_id:"1", fullname:" Jamal nski",email:"jamal@gmail.com"},
+  { id:13,gender:"Male", parent_id:"PICTURE", phone_no:"06841781123",admission_no:"23 wide",subject_id:"1", fullname:"Princess ski",email:"ski@gmail.com"},
+  { id:14,gender:"Female", parent_id:"PICTURE", phone_no:"0741781123",admission_no:"23jre",subject_id:"1", fullname:"Jo ki",email:"ki@gmail.com"},
+  { id:15,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumpertside",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:16,gender:"Female", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 side",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:17,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumpede",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:18,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumpertside",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:19,gender:"Female", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jrtside",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:20,gender:"Female", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumside",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:21,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumpide",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:22,gender:"Male", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jumpide",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+  { id:23,gender:"Female", parent_id:"PICTURE", phone_no:"07468781123",admission_no:"23 jutside",subject_id:"1", fullname:"Jonathan Krasinski",email:"jon@gmail.com"},
+
+];
 
 function StudentData() {
   return (
-    <TableContainer component= {Paper} style={{"marginLeft":"20px"}}>
-    {/* <h1>Helo</h1> */} 
-  
-<Table aria-label='student table'>
-<TableHead>
-  <TableRow>
-  <TableCell>GENDER</TableCell>
-  <TableCell>IMAGE</TableCell>
-  <TableCell>PARENT ID</TableCell>
-  <TableCell>PHONE NUMBER</TableCell>
-  <TableCell>ADMISSION NUMBER</TableCell>
-  <TableCell>SUBJECT ID</TableCell>
-  <TableCell>FULL NAME</TableCell>
-  <TableCell>EMAIL</TableCell>
-  <TableCell>PASSWORD</TableCell>
-  <TableCell>USERNAME</TableCell>
-  </TableRow>
-</TableHead>
-<TableBody>
-  {
-    tableData.map(row => (
-      <TableRow key= {row.id} sx = {{"&:last-child td, &:last-child th": {border :0}}}>
-      <TableCell>{row.gender}</TableCell>
-      <TableCell><Face/></TableCell>
-      <TableCell>{row.parent_id}</TableCell>
-      <TableCell>{row.phone_no}</TableCell>
-      <TableCell>{row.admission_no}</TableCell>
-      <TableCell>{row.subject_id}</TableCell>
-      <TableCell>{row.full_name}</TableCell>
-      <TableCell>{row.email}</TableCell>
-      <TableCell>{row.password}</TableCell>
-      <TableCell>{row.username}</TableCell>
-      
-
-      </TableRow>
-    ))
-  }
-</TableBody>
-
-</Table>
-    </TableContainer>
+ <DataGrid
+  rows={rows}
+  columns={columns}
+  pageSize={8}
+  rowsPerPageOptions={[5]}
+  checkboxSelection
+  style={{marginLeft:"50px", marginTop:"20px", height:"600px"}} 
+ />
   )
 }
-const tableData = [{
-  "gender": "Bigender",
-  "image": "F",
-  "parent_id": 1,
-  "phone_no": "725-337-4258",
-  "admission_no": 1,
-  "subject_id": 12,
-  "full_name": "Odella Biddlestone",
-  "email": "obiddlestone0@wired.com",
-  "password": "Os7tdFe72",
-  "username": "obiddlestone0"
-}, {
-  "gender": "Female",
-  "image": "M",
-  "parent_id": 2,
-  "phone_no": "464-570-0145",
-  "admission_no": 2,
-  "subject_id": 11,
-  "full_name": "Gwynne Brodeau",
-  "email": "gbrodeau1@spiegel.de",
-  "password": "vyqvS1LyTju6",
-  "username": "gbrodeau1"
-}, {
-  "gender": "Female",
-  "image": "F",
-  "parent_id": 3,
-  "phone_no": "163-897-5822",
-  "admission_no": 3,
-  "subject_id": 53,
-  "full_name": "Taryn McKyrrelly",
-  "email": "tmckyrrelly2@google.ca",
-  "password": "8B7aKCiA6xH",
-  "username": "tmckyrrelly2"
-}, {
-  "gender": "Bigender",
-  "image": "M",
-  "parent_id": 4,
-  "phone_no": "336-902-3458",
-  "admission_no": 4,
-  "subject_id": 7,
-  "full_name": "Kipp Mill",
-  "email": "kmill3@samsung.com",
-  "password": "hJCE4EqzmDp",
-  "username": "kmill3"
-}, {
-  "gender": "Female",
-  "image": "M",
-  "parent_id": 5,
-  "phone_no": "606-552-4594",
-  "admission_no": 5,
-  "subject_id": 53,
-  "full_name": "Candis Ipgrave",
-  "email": "cipgrave4@wiley.com",
-  "password": "ba2eNIeU",
-  "username": "cipgrave4"
-}, {
-  "gender": "Male",
-  "image": "M",
-  "parent_id": 6,
-  "phone_no": "944-450-8624",
-  "admission_no": 6,
-  "subject_id": 41,
-  "full_name": "Shea Burril",
-  "email": "sburril5@adobe.com",
-  "password": "opzCqPnt",
-  "username": "sburril5"
-}, {
-  "gender": "Male",
-  "image": "M",
-  "parent_id": 7,
-  "phone_no": "431-598-0467",
-  "admission_no": 7,
-  "subject_id": 31,
-  "full_name": "Ingemar MacGow",
-  "email": "imacgow6@npr.org",
-  "password": "iYH3WSlKBM",
-  "username": "imacgow6"
-}, {
-  "gender": "Female",
-  "image": "F",
-  "parent_id": 8,
-  "phone_no": "354-646-6314",
-  "admission_no": 8,
-  "subject_id": 47,
-  "full_name": "Corella Yedall",
-  "email": "cyedall7@naver.com",
-  "password": "cwJ3RVOM7eFU",
-  "username": "cyedall7"
-}, {
-  "gender": "Male",
-  "image": "F",
-  "parent_id": 9,
-  "phone_no": "744-932-5682",
-  "admission_no": 9,
-  "subject_id": 57,
-  "full_name": "Matias Downes",
-  "email": "mdownes8@oakley.com",
-  "password": "BsUiruhwKK",
-  "username": "mdownes8"
-}, {
-  "gender": "Male",
-  "image": "M",
-  "parent_id": 10,
-  "phone_no": "145-296-8163",
-  "admission_no": 10,
-  "subject_id": 7,
-  "full_name": "Colin Harder",
-  "email": "charder9@mysql.com",
-  "password": "OeBndFP",
-  "username": "charder9"
-}]
-
-
-
 
 export default StudentData
