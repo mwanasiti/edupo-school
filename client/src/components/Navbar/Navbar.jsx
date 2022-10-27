@@ -72,13 +72,12 @@ function Navbar({ user, setUser }) {
         </h1>
       ) : null}
       {user ? (
-        <button
-          className="btn btn-danger"
-          data-mdb-ripple-color="dark"
+        <button style={{fontFamily:'inherit', fontWeight:'bolder'}}
+          className="btn-lg btn-dark" data-mdb-ripple-color="dark"
           onClick={handleLogout}
         >
-          Logout
-          <FaPowerOff className="inline ml-2 mb-1" />
+          LOGOUT
+          <FaPowerOff style={{color:'#000080'}} className="inline ml-2 mb-1" />
         </button>
       ) : (
         <Link

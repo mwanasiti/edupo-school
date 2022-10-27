@@ -28,13 +28,13 @@ function Home() {
             
             <div className="card-body">
               <h5 style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'25px', color:'#000080'}} className="card-title">ABOUT US</h5>
-              <p className="card-text">
+              <p style={{fontWeight:'normal', fontFamily:'cursive', fontSize:'18px'}} className="card-text">
                 This is a wider card with supporting text below as a natural lead-in to
                 additional content. This content is a little bit longer.
               </p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Founder Ali Mariam</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Founder Ali Mariam</small>
             </div>
           </div>
         </div>
@@ -42,10 +42,10 @@ function Home() {
           <div className="card h-100">
             <div className="card-body">
               <h5 style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'25px', color:'#000080'}} className="card-title">OUR MOTTO</h5>
-              <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p style={{fontWeight:'normal', fontFamily:'cursive', fontSize:'18px'}} className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Principal Alias Leighton</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Principal Alias Leighton</small>
             </div>
           </div>
         </div>
@@ -54,14 +54,14 @@ function Home() {
             
             <div className="card-body">
               <h5 style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'25px', color:'#000080'}} className="card-title">CONTACT US</h5>
-              <p className="card-text">
+              <p style={{fontWeight:'normal', fontFamily:'cursive', fontSize:'18px'}} className="card-text">
                 This is a wider card with supporting text below as a natural lead-in to
                 additional content. This card has even longer content than the first to show
                 that equal height action.
               </p>
             </div>
             <div className="card-footer">
-              <small className="text-muted">Faculty ABDCEFG</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Faculty ABDCEFG</small>
             </div>
           </div>
         </div>
