@@ -17,7 +17,7 @@ function Home() {
               <p>for parents, students and staff. A module-based approach allows</p>
               <p>your school to build a system to grow to your exact needs. From<p> 
                 </p> new student admissions to end-of-year exams and assessments.</p>
-              </div>
+              </div>m
               </div>
             </div>
           </div>
