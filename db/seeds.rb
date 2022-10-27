@@ -32,8 +32,8 @@ classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 3)
 puts "Done Seeding Classrooms"
 
 puts "Seeding Students..."
-student = Student.create(role: "student",  gender: "true", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
-student = Student.create(role: "student",  gender: "false", image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+student = Student.create(role: "student",  gender: "Female", image: "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
+student = Student.create(role: "student",  gender: "Male", image: "https://thumbs.dreamstime.com/b/young-woman-student-avatar-icon-vector-isolated-female-user-silhouette-girl-wearing-eyeglasses-portrait-flat-faceless-person-head-223352495.jpg", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
 # student = Student.create(role: "student",  gender: "female", image: "", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
 puts "Done Seeding Students"
 
