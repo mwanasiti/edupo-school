@@ -1,8 +1,9 @@
+
 import React from 'react'
 
 function TeacherForm() {
   return (
-    <div>TeacherForm</div>
+   <div>TForm</div>
   )
 }
 

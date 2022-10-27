@@ -2,6 +2,7 @@ import { Grid } from '@material-ui/core'
 import React from 'react'
 import Dashboard from './Dashboard/Dashboard'
 import ParentView from './DataTables/ParentView'
+import StudentData from './DataTables/StudentData'
 
 import Adminbar from './Forms/Adminbar'
 
@@ -21,10 +22,10 @@ function AdminView() {
       </Grid>
      
       <Grid item sm={7} xs={10} lg={9}>
-      {/* <StudentData /> */}
+      <StudentData />
       {/* <Dashboard/> */}
       {/* <TeacherView/> */}
-      <ParentView/>
+      {/* <ParentView/> */}
       </Grid>
       </Grid>
    
