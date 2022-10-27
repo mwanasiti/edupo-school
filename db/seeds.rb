@@ -5,7 +5,7 @@ teacher1 = Teacher.create(username: "deno", email: "deno@gmail.com", role: "teac
 teacher2 = Teacher.create(username: "jose", email: "jose@gmail.com", role: "teacher", password: "jose", full_name: "Joseph Otwoma")
 teacher3 = Teacher.create(username: "bob", email: "bob@gmail.com", role: "teacher", password: "bob", full_name: "Bob Ross")
 puts "Done Seeding Teachers"
-puts "Seeding Parents..."
+puts "Seeding Parents..." #
 parent1 = Parent.create(role: "parent", address:"23 west", phone_no: "12345", full_name:"Monica Lewinski",email:"monica@gmail.com",password:"jon", username: "jon")
 parent2 = Parent.create(username: "okech", email: "okech@gmail.com", role: "parent", password: "okech", full_name: "Mana jonte")
 parent3 = Parent.create(username: "tim", email: "tim@gmail.com", role: "parent", password: "parent", full_name: "Tim Kut")
