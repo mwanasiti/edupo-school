@@ -111,10 +111,10 @@ function LoginForm({ setUser }) {
 
   return (
     <div className="form-container">
-      <h1 className="text-center p-6 text-4xl font-medium">LOGIN</h1>
+      <h1 style={{fontFamily:'cursive', fontWeight:'bolder', color:'#000080', fontSize:'40px'}} className="text-center p-6 text-4xl font-medium">LOGIN</h1>
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
-        <label htmlFor="username" className="text-l">
-          UserName:
+        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="username" className="text-l">
+          Username:
         </label>
         <input
           required
@@ -124,7 +124,7 @@ function LoginForm({ setUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password" className="mt-5 text-xl">
+        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="password" className="mt-5 text-xl">
           Password:
         </label>
         <input
@@ -144,7 +144,7 @@ function LoginForm({ setUser }) {
             </div>
           );
         })}
-        <h2 className="text-center mt-6 py-6 text-xl ">Log in as:</h2>
+        <h2 style={{fontSize:'30px'}} className="text-center mt-6 py-6 text-xl ">Log in as:</h2>
 
         <div className="flex gap-4 flex-wrap">
           <button
@@ -161,14 +161,14 @@ function LoginForm({ setUser }) {
           >
             Teacher
           </button>
-          <button
+          <button style={{marginBottom:'10px'}}
             type="submit"
             onClick={handleStudentSubmit}
             className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
           >
             Student
           </button>{" "}
-          <button
+          <button style={{marginBottom:'10px'}}
             type="submit"
             onClick={handleParentSubmit}
             className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"

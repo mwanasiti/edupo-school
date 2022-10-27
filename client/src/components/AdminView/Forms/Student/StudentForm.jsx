@@ -72,40 +72,40 @@ function StudentForm() {
     {/* IMAGE */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Image:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter image url" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
       </div>
     {/* PARENT ID */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Parent ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Parent id" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
       </div>
     {/* PHONE NO */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Phone Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Phone number" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
       </div>
     {/* ADDMISSION NO */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Admission Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Admission number" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined" size="small" style={{width:"100%"}}/>
       </div>
     {/* SUBJECT ID */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Subject ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Subject ID" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
       </div>
     {/* FULL NAME */}
     <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Full Name:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter Name" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined" size="small" style={{width:"100%"}}/>
       </div>
     {/* EMAIL */}
      <div className={classes.item}>
       <FormLabel id="demo-radio-buttons-group-label">Email:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" label="Enter email address" size="small" style={{width:"100%"}}/>
+        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
       </div>
       <div>
-      <Button variant="contained" color="primary" size="large" startIcon={<Save/>} style={{width:"400px", marginTop:"15px", alignItems:"center", marginLeft:"40px"}}>Save</Button>
+      <Button variant="contained" color="primary" size="large" startIcon={<Save/>} style={{width:"400px", marginTop:"15px", alignItems:"center", marginLeft:"80px"}}>Save</Button>
       </div>
     </form>
     </Container>
