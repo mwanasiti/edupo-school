@@ -88,7 +88,7 @@ function Navbar({ user, setUser }) {
           }}
           to="/login"
         >
-          <FaUserCircle className="inline mr-2  mb-1" />
+          <FaUserCircle style={{backgroundColor:'#000080'}} className="inline mr-2  mb-1" />
           Login
         </Link>
       )}
