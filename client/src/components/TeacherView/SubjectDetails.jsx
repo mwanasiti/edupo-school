@@ -59,7 +59,7 @@ function SubjectDetails({  }) {
 
                     :
 
-                    <p className='my-8'>Your professor hasn't posted a syllabus yet!</p>
+                    <p className='my-8'>Your professor  hasn't posted a syllabus yet!</p>
                     
                 
                 }
