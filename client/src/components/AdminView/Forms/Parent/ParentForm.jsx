@@ -14,7 +14,16 @@ function ParentForm() {
         <div className="right"> 
         <form>
         <div className="formInput">
-          <label></label>
+          <label>Gender</label>
+        </div>
+        <div className="formInput">
+          <label>Gender</label>
+        </div>
+        <div className="formInput">
+          <label>Gender</label>
+        </div>
+        <div className="formInput">
+          <label>Gender</label>
         </div>
         </form>
         </div>
