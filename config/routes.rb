@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   #   GET A PARENT'S STUDENT
   get "/student_parent", to: "students#student_parent"
+
+  # GET A PARENT'S STUDENT ASSESSMENTS
+  get "/par_stu_assesments/:id", to: "student_assesments#par_stu_assesments"
   
 
     # ADMIN AUTH

@@ -36870,3 +36870,708 @@ Processing by StudentsController#student_parent as */*
 Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 1.4ms | Allocations: 5414)
 
 
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:20:08 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.71ms)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 1.4ms | Allocations: 5408)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:20:09 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.64ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 1.3ms | Allocations: 5408)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:20:13 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.44ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 1.4ms | Allocations: 5427)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:20:13 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.94ms)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 1.4ms | Allocations: 5427)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:21:45 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.18ms)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 1.6ms | Allocations: 5432)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:21:45 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.25ms)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 1.2ms | Allocations: 5432)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:24:47 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.13ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 1.4ms | Allocations: 5424)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:24:47 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.14ms)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 1.3ms | Allocations: 5425)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:24:55 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.5ms)
+Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 1.5ms | Allocations: 5419)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:24:55 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.85ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 1.1ms | Allocations: 5419)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:25:12 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.2ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.52ms)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 1.6ms | Allocations: 5416)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-28 16:25:12 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers]   [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.69ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 1.1ms | Allocations: 5417)
+
+
+Started GET "/student_assignments" for ::1 at 2022-10-28 16:27:47 +0300
+Processing by StudentAssignmentsController#index as HTML
+  [1m[36mStudentAssignment Load (0.3ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments"[0m
+  ↳ app/controllers/student_assignments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.12ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.4ms | Allocations: 6189)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar, "full_name" varchar, "password_digest" varchar, "user_name" varchar, "role" varchar, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assessments"[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "classrooms"[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "parents"[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assesments"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assessment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assignments"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" varchar, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "classroom_id" varchar, "username" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "subject_teachers"[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "subjects"[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" varchar, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221026165751)[0m
+  [1m[35m (7.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221019110524),
+(20221019110545),
+(20221019110600),
+(20221019110639),
+(20221019110803),
+(20221019121614),
+(20221019121629),
+(20221019121657),
+(20221019121720),
+(20221021103729),
+(20221021103856),
+(20221021103946),
+(20221021200752),
+(20221021200850),
+(20221021201048),
+(20221021201435),
+(20221021201605),
+(20221021201706),
+(20221021201857),
+(20221021201951),
+(20221024075245),
+(20221024080209),
+(20221024080227),
+(20221024080241),
+(20221024082145),
+(20221026100706);
+
+[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-28 13:31:22.885566"], ["updated_at", "2022-10-28 13:31:22.885566"]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "69ceefb5846fcf3bf2893ebf1931c06b5e1cd457"], ["created_at", "2022-10-28 13:31:22.901590"], ["updated_at", "2022-10-28 13:31:22.901590"]]
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "admins"[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "email" varchar, "full_name" varchar, "password_digest" varchar, "user_name" varchar, "role" varchar, "username" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assessments"[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "total" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "assignments"[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "subject_teacher_id" integer, "due_date" date, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "classrooms"[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "teacher_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "parents"[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "address" varchar, "phone_no" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assesments"[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "student_assesments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "assessment_id" integer, "student_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "student_assignments"[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "student_assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "assignment_id" integer, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" varchar, "image" varchar, "parent_id" integer, "phone_no" varchar, "admission_no" integer, "subject_id" integer, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "classroom_id" varchar, "username" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "subject_teachers"[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "subject_teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teacher_id" integer, "subject_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "subjects"[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar, "gender" varchar, "image" varchar, "phone_no" varchar, "address" varchar, "full_name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221026165751)[0m
+  [1m[35m (9.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221019110524),
+(20221019110545),
+(20221019110600),
+(20221019110639),
+(20221019110803),
+(20221019121614),
+(20221019121629),
+(20221019121657),
+(20221019121720),
+(20221021103729),
+(20221021103856),
+(20221021103946),
+(20221021200752),
+(20221021200850),
+(20221021201048),
+(20221021201435),
+(20221021201605),
+(20221021201706),
+(20221021201857),
+(20221021201951),
+(20221024075245),
+(20221024080209),
+(20221024080227),
+(20221024080241),
+(20221024082145),
+(20221026100706);
+
+[0m
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-28 13:31:23.146991"], ["updated_at", "2022-10-28 13:31:23.146991"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-10-28 13:31:23.165030"], ["key", "environment"]]
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "69ceefb5846fcf3bf2893ebf1931c06b5e1cd457"], ["created_at", "2022-10-28 13:31:23.181456"], ["updated_at", "2022-10-28 13:31:23.181456"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Create (0.2ms)[0m  [1m[32mINSERT INTO "admins" ("created_at", "updated_at", "email", "full_name", "password_digest", "user_name", "role", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", "2022-10-28 13:31:23.429905"], ["updated_at", "2022-10-28 13:31:23.429905"], ["email", "angelastephen14@gmail.com"], ["full_name", nil], ["password_digest", "[FILTERED]"], ["user_name", nil], ["role", "admin"], ["username", "admin"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Dennis Mburu"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "deno@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", "Male"], ["image", "https://i.pinimg.com/564x/34/aa/f3/34aaf33fd9272867c7045f5b8eb495cb.jpg"], ["phone_no", nil], ["address", nil], ["full_name", "Dennis Mburu"], ["email", "deno@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:23.698183"], ["updated_at", "2022-10-28 13:31:23.698183"], ["username", "deno"]]
+  [1m[36mTRANSACTION (15.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Joseph Otwoma"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "jose@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", "true"], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Joseph Otwoma"], ["email", "jose@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:23.919542"], ["updated_at", "2022-10-28 13:31:23.919542"], ["username", "jose"]]
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."full_name" = ? LIMIT ?[0m  [["full_name", "Bob Ross"], ["LIMIT", 1]]
+  [1m[36mTeacher Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "teachers" WHERE "teachers"."email" = ? LIMIT ?[0m  [["email", "bob@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "teachers" ("role", "gender", "image", "phone_no", "address", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "teacher"], ["gender", nil], ["image", nil], ["phone_no", nil], ["address", nil], ["full_name", "Bob Ross"], ["email", "bob@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:24.142582"], ["updated_at", "2022-10-28 13:31:24.142582"], ["username", "bob"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Monica Lewinski"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "monica@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", "23 west"], ["phone_no", "12345"], ["full_name", "Monica Lewinski"], ["email", "monica@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:24.380413"], ["updated_at", "2022-10-28 13:31:24.380413"], ["username", "jon"]]
+  [1m[36mTRANSACTION (15.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Mana jonte"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "okech@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Mana jonte"], ["email", "okech@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:24.605238"], ["updated_at", "2022-10-28 13:31:24.605238"], ["username", "okech"]]
+  [1m[36mTRANSACTION (15.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."full_name" = ? LIMIT ?[0m  [["full_name", "Tim Kut"], ["LIMIT", 1]]
+  [1m[36mParent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "parents" WHERE "parents"."email" = ? LIMIT ?[0m  [["email", "tim@gmail.com"], ["LIMIT", 1]]
+  [1m[36mParent Create (0.2ms)[0m  [1m[32mINSERT INTO "parents" ("role", "address", "phone_no", "full_name", "email", "password_digest", "created_at", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "parent"], ["address", nil], ["phone_no", nil], ["full_name", "Tim Kut"], ["email", "tim@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:24.832428"], ["updated_at", "2022-10-28 13:31:24.832428"], ["username", "tim"]]
+  [1m[36mTRANSACTION (15.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marine Biology"], ["created_at", "2022-10-28 13:31:24.867671"], ["updated_at", "2022-10-28 13:31:24.867671"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sociology"], ["created_at", "2022-10-28 13:31:24.880856"], ["updated_at", "2022-10-28 13:31:24.880856"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.3ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Development Studies"], ["created_at", "2022-10-28 13:31:24.895054"], ["updated_at", "2022-10-28 13:31:24.895054"]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubject Create (0.2ms)[0m  [1m[32mINSERT INTO "subjects" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Communications"], ["created_at", "2022-10-28 13:31:24.909106"], ["updated_at", "2022-10-28 13:31:24.909106"]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.2ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Pegion"], ["teacher_id", 1], ["created_at", "2022-10-28 13:31:24.968253"], ["updated_at", "2022-10-28 13:31:24.968253"]]
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.3ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Dove"], ["teacher_id", 2], ["created_at", "2022-10-28 13:31:24.983476"], ["updated_at", "2022-10-28 13:31:24.983476"]]
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClassroom Create (0.4ms)[0m  [1m[32mINSERT INTO "classrooms" ("name", "teacher_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sparrow"], ["teacher_id", 3], ["created_at", "2022-10-28 13:31:25.001793"], ["updated_at", "2022-10-28 13:31:25.001793"]]
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Angela Kanyi"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "kanyi@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", "Female"], ["image", "https://thumbs.dreamstime.com/b/young-woman-student-avatar-icon-vector-isolated-female-user-silhouette-girl-wearing-eyeglasses-portrait-flat-faceless-person-head-223352495.jpg"], ["parent_id", 1], ["phone_no", "0707777772"], ["admission_no", 12543], ["subject_id", 1], ["full_name", "Angela Kanyi"], ["email", "kanyi@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:25.260134"], ["updated_at", "2022-10-28 13:31:25.260134"], ["classroom_id", "1"], ["username", "angela"]]
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."full_name" = ? LIMIT ?[0m  [["full_name", "Harry Potter"], ["LIMIT", 1]]
+  [1m[36mStudent Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "students" WHERE "students"."email" = ? LIMIT ?[0m  [["email", "harry@gmail.com"], ["LIMIT", 1]]
+  [1m[36mStudent Create (0.2ms)[0m  [1m[32mINSERT INTO "students" ("role", "gender", "image", "parent_id", "phone_no", "admission_no", "subject_id", "full_name", "email", "password_digest", "created_at", "updated_at", "classroom_id", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["role", "student"], ["gender", "Male"], ["image", "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg"], ["parent_id", 1], ["phone_no", "12345678"], ["admission_no", 12544], ["subject_id", 2], ["full_name", "Harry Potter"], ["email", "harry@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2022-10-28 13:31:25.490474"], ["updated_at", "2022-10-28 13:31:25.490474"], ["classroom_id", "2"], ["username", "harry"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.2ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 1], ["created_at", "2022-10-28 13:31:25.528143"], ["updated_at", "2022-10-28 13:31:25.528143"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.4ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 2], ["subject_id", 2], ["created_at", "2022-10-28 13:31:25.548165"], ["updated_at", "2022-10-28 13:31:25.548165"]]
+  [1m[36mTRANSACTION (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.6ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 3], ["subject_id", 3], ["created_at", "2022-10-28 13:31:25.569143"], ["updated_at", "2022-10-28 13:31:25.569143"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSubject Load (0.1ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mSubjectTeacher Create (0.3ms)[0m  [1m[32mINSERT INTO "subject_teachers" ("teacher_id", "subject_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["teacher_id", 1], ["subject_id", 4], ["created_at", "2022-10-28 13:31:25.588885"], ["updated_at", "2022-10-28 13:31:25.588885"]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.3ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bones"], ["subject_teacher_id", 1], ["due_date", nil], ["created_at", "2022-10-28 13:31:25.627592"], ["updated_at", "2022-10-28 13:31:25.627592"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "social communication"], ["subject_teacher_id", 2], ["due_date", nil], ["created_at", "2022-10-28 13:31:25.645151"], ["updated_at", "2022-10-28 13:31:25.645151"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "business development"], ["subject_teacher_id", 3], ["due_date", nil], ["created_at", "2022-10-28 13:31:25.662024"], ["updated_at", "2022-10-28 13:31:25.662024"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "assignments" ("name", "subject_teacher_id", "due_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Oral skills"], ["subject_teacher_id", 4], ["due_date", nil], ["created_at", "2022-10-28 13:31:25.678150"], ["updated_at", "2022-10-28 13:31:25.678150"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Final Project"], ["subject_teacher_id", 1], ["total", 100], ["created_at", "2022-10-28 13:31:25.717306"], ["updated_at", "2022-10-28 13:31:25.717306"]]
+  [1m[36mTRANSACTION (8.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.2ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 2], ["total", 100], ["created_at", "2022-10-28 13:31:25.734567"], ["updated_at", "2022-10-28 13:31:25.734567"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.2ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Capstone Project"], ["subject_teacher_id", 3], ["total", 100], ["created_at", "2022-10-28 13:31:25.749635"], ["updated_at", "2022-10-28 13:31:25.749635"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSubjectTeacher Load (0.1ms)[0m  [1m[34mSELECT "subject_teachers".* FROM "subject_teachers" WHERE "subject_teachers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mAssessment Create (0.4ms)[0m  [1m[32mINSERT INTO "assessments" ("name", "subject_teacher_id", "total", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Main Exam"], ["subject_teacher_id", 4], ["total", 100], ["created_at", "2022-10-28 13:31:25.765163"], ["updated_at", "2022-10-28 13:31:25.765163"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 1], ["score", nil], ["created_at", "2022-10-28 13:31:25.809082"], ["updated_at", "2022-10-28 13:31:25.809082"]]
+  [1m[36mTRANSACTION (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.2ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 1], ["assignment_id", 2], ["score", nil], ["created_at", "2022-10-28 13:31:25.826280"], ["updated_at", "2022-10-28 13:31:25.826280"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 3], ["score", nil], ["created_at", "2022-10-28 13:31:25.844615"], ["updated_at", "2022-10-28 13:31:25.844615"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudentAssignment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assignments" ("student_id", "assignment_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["student_id", 2], ["assignment_id", 4], ["score", nil], ["created_at", "2022-10-28 13:31:25.861387"], ["updated_at", "2022-10-28 13:31:25.861387"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 1], ["student_id", 1], ["score", nil], ["created_at", "2022-10-28 13:31:25.910780"], ["updated_at", "2022-10-28 13:31:25.910780"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 2], ["student_id", 1], ["score", nil], ["created_at", "2022-10-28 13:31:25.930727"], ["updated_at", "2022-10-28 13:31:25.930727"]]
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.3ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 3], ["student_id", 2], ["score", nil], ["created_at", "2022-10-28 13:31:25.948378"], ["updated_at", "2022-10-28 13:31:25.948378"]]
+  [1m[36mTRANSACTION (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mStudentAssesment Create (0.4ms)[0m  [1m[32mINSERT INTO "student_assesments" ("assessment_id", "student_id", "score", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["assessment_id", 4], ["student_id", 2], ["score", nil], ["created_at", "2022-10-28 13:31:25.966704"], ["updated_at", "2022-10-28 13:31:25.966704"]]
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/student_assignments" for ::1 at 2022-10-28 16:31:32 +0300
+Processing by StudentAssignmentsController#index as HTML
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments"[0m
+  ↳ app/controllers/student_assignments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.19ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 1.4ms | Allocations: 6067)
+
+
+Started GET "/student_assesments" for ::1 at 2022-10-28 16:31:47 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.5ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (15.35ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 1.6ms | Allocations: 6141)
+
+
+Started GET "/student_assesments" for ::1 at 2022-10-28 16:32:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.3ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (86.1ms)
+Completed 200 OK in 138ms (Views: 111.7ms | ActiveRecord: 3.1ms | Allocations: 86772)
+
+
+Started GET "/par_stu_assesments/1" for ::1 at 2022-10-28 16:43:06 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/par_stu_assesments/1"):
+  
+Started GET "/par_stu_assesments/1" for ::1 at 2022-10-28 16:44:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/par_stu_assesments/1"):
+  
+Started GET "/par_stu_assesments" for ::1 at 2022-10-28 16:45:01 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as HTML
+  [1m[36mStudentAssesment Load (0.3ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" IS NULL[0m
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 20ms (Views: 3.3ms | ActiveRecord: 1.4ms | Allocations: 3176)
+
+
+Started GET "/par_stu_assesments/1" for ::1 at 2022-10-28 16:45:31 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudentAssesment Load (0.2ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 1]]
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (44.58ms)
+Completed 200 OK in 58ms (Views: 47.2ms | ActiveRecord: 4.5ms | Allocations: 21174)
+
+
+Started GET "/par_stu_assesments" for ::1 at 2022-10-28 16:46:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/par_stu_assesments"):
+  
