@@ -33099,3 +33099,166 @@ Processing by StudentAssignmentsController#show as HTML
 Completed 404 Not Found in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 583)
 
 
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:07:46 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.2ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.95ms)
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 0.7ms | Allocations: 6259)
+
+
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:14:14 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.1ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 4941)
+
+
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:15:12 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.2ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.73ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.4ms | Allocations: 37713)
+
+
+  
+NoMethodError (undefined method `subject' for #<StudentAssesment:0x00007ff20cbd7d50>):
+  
+app/controllers/student_assesments_controller.rb:6:in `index'
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:15:22 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.1ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (59.27ms)
+Completed 200 OK in 69ms (Views: 65.4ms | ActiveRecord: 3.4ms | Allocations: 36076)
+
+
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:16:48 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.2ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (46.05ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 4.2ms | Allocations: 22879)
+
+
+  
+NoMethodError (undefined method `total' for #<StudentAssesment:0x0000560adf340a18>):
+  
+app/controllers/student_assesments_controller.rb:6:in `index'
+Started GET "/student_assesments" for ::1 at 2022-10-28 15:17:23 +0300
+Processing by StudentAssesmentsController#index as HTML
+  [1m[36mStudentAssesment Load (0.1ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments"[0m
+  ↳ app/controllers/student_assesments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.1ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (39.0ms)
+Completed 200 OK in 51ms (Views: 47.2ms | ActiveRecord: 3.4ms | Allocations: 23829)
+
+
+Started GET "/student_assignments" for ::1 at 2022-10-28 15:18:25 +0300
+Processing by StudentAssignmentsController#index as HTML
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments"[0m
+  ↳ app/controllers/student_assignments_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.18ms)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 1.6ms | Allocations: 5296)
+
+
+Started GET "/student_assignments" for ::1 at 2022-10-28 15:21:23 +0300
+Processing by StudentAssignmentsController#index as HTML
+  [1m[36mStudentAssignment Load (0.1ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments"[0m
+  ↳ app/controllers/student_assignments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (45.9ms)
+Completed 200 OK in 59ms (Views: 54.0ms | ActiveRecord: 3.5ms | Allocations: 35563)
+
+
+Started GET "/student_assignments/2" for ::1 at 2022-10-28 15:22:00 +0300
+Processing by StudentAssignmentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudentAssesment Load (0.3ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/student_assignments_controller.rb:10:in `show'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered StudentAssesmentSerializer with ActiveModelSerializers::Adapter::Attributes (12.73ms)
+Completed 200 OK in 26ms (Views: 13.5ms | ActiveRecord: 1.7ms | Allocations: 9007)
+
+
+Started GET "/student_assignments" for ::1 at 2022-10-28 15:22:07 +0300
+Processing by StudentAssignmentsController#index as HTML
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments"[0m
+  ↳ app/controllers/student_assignments_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.94ms)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 1.2ms | Allocations: 6066)
+
+
