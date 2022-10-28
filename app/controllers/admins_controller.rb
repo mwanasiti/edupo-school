@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+    rescue_from ActiveRecord::RecordInvalid, with: :not_found_response
+    #skip_before_action :authorize, only: [:index, :create]
     def index
         admins = Admin.all
         render json: admins

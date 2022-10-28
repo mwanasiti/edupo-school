@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import FormControlLabel from '@material-ui/core/FormControlLabel';
+// import Checkbox from '@material-ui/core/Checkbox';
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -111,46 +111,11 @@ function LoginForm({ setUser }) {
 
   return (
     <div className="form-container">
-      <h1 className="text-center p-6 text-4xl font-medium">LOGIN</h1>
+      <h1 style={{fontFamily:'cursive', fontWeight:'bolder', color:'#000080', fontSize:'40px'}} className="text-center p-6 text-4xl font-medium">LOGIN</h1>
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
-        <label htmlFor="username" className="text-l">
-          UserName:
+        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="username" className="text-l">
+          Username:
         </label>
-
-        {/* <Grid>
-            <Paper elevation={10} style={paperStyle}>
-                <Grid align='center'>
-                     <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
-                    <h2>Sign In</h2>
-                </Grid>
-                <TextField label='Username' placeholder='Enter username' fullWidth required/>
-                <TextField label='Password' placeholder='Enter password' type='password' fullWidth required/>
-                <FormControlLabel
-                    control={
-                    <Checkbox
-                        name="checkedB"
-                        color="primary"
-                    />
-                    }
-                    label="Remember me"
-                 />
-                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
-                <Typography >
-                     <Link href="#" >
-                        Forgot password ?
-                </Link>
-                </Typography>
-                <Typography > Do you have an account ?
-                     <Link href="#" >
-                        Sign Up 
-                </Link>
-                </Typography>
-            </Paper>
-        </Grid>
-         */}
-
-
-      
         <input
           required
           className=" mt-2 h-8 rounded-lg"
@@ -159,7 +124,7 @@ function LoginForm({ setUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password" className="mt-5 text-xl">
+        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="password" className="mt-5 text-xl">
           Password:
         </label>
         <input
@@ -179,7 +144,7 @@ function LoginForm({ setUser }) {
             </div>
           );
         })}
-        <h2 className="text-center mt-6 py-6 text-xl ">Log in as:</h2>
+        <h2 style={{fontSize:'30px'}} className="text-center mt-6 py-6 text-xl ">Log in as:</h2>
 
         <div className="flex gap-4 flex-wrap">
           <button
@@ -196,14 +161,14 @@ function LoginForm({ setUser }) {
           >
             Teacher
           </button>
-          <button
+          <button style={{marginBottom:'10px'}}
             type="submit"
             onClick={handleStudentSubmit}
             className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
           >
             Student
           </button>{" "}
-          <button
+          <button style={{marginBottom:'10px'}}
             type="submit"
             onClick={handleParentSubmit}
             className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
