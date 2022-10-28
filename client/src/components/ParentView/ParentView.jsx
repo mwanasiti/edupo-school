@@ -16,7 +16,6 @@ function ParentView() {
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
-        console.log(data)
       });
   }, []);
 
