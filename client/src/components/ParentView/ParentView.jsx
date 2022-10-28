@@ -1,7 +1,13 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function ParentView() {
+
+  const navigate = useNavigate()
 
   const [students, setStudents] = useState([])
 
@@ -47,6 +53,12 @@ if (students.length === 0)
           <th scope="col" className="py-3 px-6">
             Class Teacher
           </th>
+          <th scope="col" className="py-3 px-6">
+            Assignments
+          </th>
+          <th scope="col" className="py-3 px-6">
+            Assessments
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -67,6 +79,16 @@ if (students.length === 0)
             <td className="py-4 px-6">{student.admission_no}</td>
             <td className="py-4 px-6">{student.classroom}</td>
             <td className="py-4 px-6">{student.teacher}</td>
+            <td className='ml-5'>
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${student.id}`)}>Assignments</Button>
+
+
+            </td>
+            <td className="py-4 px-6">
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assessments/${student.id}`)}>Assessments</Button>
+
+
+            </td>
 
           </tr>
         ))}
