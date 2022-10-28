@@ -2603,3 +2603,192 @@ puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
 puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
 puma (5.6.5) lib/puma/server.rb:443:in `process_client'
 puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStudents (20221019110524)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110524"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateParents (20221019110545)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "parents" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110545"]]
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeachers (20221019110600)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110600"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSubjects (20221019110639)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "subjects" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110639"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateClassrooms (20221019110803)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "classrooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019110803"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssessments (20221019121614)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121614"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAssignments (20221019121629)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121629"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAdmins (20221019121657)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "admins" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121657"]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20221019121720)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221019121720"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-10-23 15:15:44.327099"], ["updated_at", "2022-10-23 15:15:44.327099"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+Started POST "/teacher_login" for 127.0.0.1 at 2022-10-23 18:20:30 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/teacher_login"):
+  
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-23 18:20:44 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/admin_login"):
+  
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/student_auth"):
+  
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/teacher_auth"):
+  
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-23 18:20:47 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin_auth"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/parent_auth"):
+  
