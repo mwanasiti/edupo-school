@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 // import { UserContext } from "../context/user";
 // import SyllabusForm from './SyllabusForm';
-// import DeleteConfirmation from './DeleteConfirmation';
+import DeleteConfirmation from '../../components/TeacherView/DeleteConfirmation';
 function SubjectDetails({  }) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [course, setCourse] = useState([])

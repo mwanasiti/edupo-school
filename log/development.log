@@ -18729,3 +18729,131 @@ Processing by PersistenceController#student as */*
 Completed 401 Unauthorized in 10ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 761)
 
 
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#parent as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 38ms (Views: 18.4ms | ActiveRecord: 1.9ms | Allocations: 4016)
+
+
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (Views: 4.0ms | ActiveRecord: 10.0ms | Allocations: 1385)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Processing by PersistenceController#teacher as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 53ms (Views: 12.5ms | ActiveRecord: 1.9ms | Allocations: 4235)
+
+
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 401 Unauthorized in 8ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 1416)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Completed 401 Unauthorized in 46ms (Views: 6.6ms | ActiveRecord: 4.7ms | Allocations: 3936)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 6ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 820)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-28 21:28:03 +0300
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#student as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 12ms (Views: 4.9ms | ActiveRecord: 0.1ms | Allocations: 1487)
+
+
+Completed 401 Unauthorized in 11ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 1306)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-28 21:28:15 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-28 21:28:15 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 5ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 763)
+
+
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 23ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1860)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+Processing by PersistenceController#student as */*
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+Processing by PersistenceController#parent as */*
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Processing by PersistenceController#teacher as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 17ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1542)
+
+
+  [1m[36mParent Load (1.0ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 16ms (Views: 0.7ms | ActiveRecord: 1.0ms | Allocations: 1591)
+
+
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 35ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 3492)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 18ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 2043)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+Processing by PersistenceController#parent as */*
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-28 21:28:16 +0300
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Processing by PersistenceController#student as */*
+Completed 401 Unauthorized in 7ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1188)
+
+
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.38ms)
+Completed 401 Unauthorized in 14ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 974)
+
+
