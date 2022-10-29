@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_26_165751) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_124353) do
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_26_165751) do
   create_table "assignments", force: :cascade do |t|
     t.string "name"
     t.integer "subject_teacher_id"
-    t.date "due_date"
+    t.string "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

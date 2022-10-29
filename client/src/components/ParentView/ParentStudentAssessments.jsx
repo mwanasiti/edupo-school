@@ -22,14 +22,13 @@ function ParentStudentAssessments() {
           .then((res) => res.json())
           .then((data) => {
             setAssesments(data);
-            console.log(data)
           });
       }, []);
 
 
   return (
     <>
-      <div>A Parent's Student Assessments View</div>
+      {/* <div>A Parent's Student Assessments View</div> */}
       <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>

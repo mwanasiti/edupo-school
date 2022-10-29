@@ -49,10 +49,10 @@ puts "Done Seeding Subject teachers"
 
 puts "Seeding Assignments"
 
-assignment1 = Assignment.create(name: "bones", subject_teacher_id: 1, due_date: "1 week")
-assignment2 = Assignment.create(name: "social communication", subject_teacher_id: 2, due_date: "2 weeks")
-assignment3 = Assignment.create(name: "business development", subject_teacher_id: 3, due_date: "1 week")
-assignment4 = Assignment.create(name: "Oral skills", subject_teacher_id: 4, due_date: "1 week")
+assignment1 = Assignment.create(name: "bones", subject_teacher_id: 1, due_date: "2022-11-04" )
+assignment2 = Assignment.create(name: "social communication", subject_teacher_id: 2, due_date: "2022-11-04" )
+assignment3 = Assignment.create(name: "business development", subject_teacher_id: 3, due_date: "2022-11-04" )
+assignment4 = Assignment.create(name: "Oral skills", subject_teacher_id: 4, due_date: "2022-11-04" )
 
 puts "Done Seeding Assignments"
 
@@ -73,7 +73,7 @@ student_assignment2 = StudentAssignment.create(student_id:1, assignment_id:2)
 student_assignment3 = StudentAssignment.create(student_id:2, assignment_id:3)
 student_assignment4 = StudentAssignment.create(student_id:2, assignment_id:4)
 student_assignment5 = StudentAssignment.create(student_id:3, assignment_id:2, score: 15)
-student_assignment6 = StudentAssignment.create(student_id:3, assignment_id:3, score: 15)
+student_assignment6 = StudentAssignment.create(student_id:3, assignment_id:3, score: 0)
 
 puts "Done Seeding Student Assignments"
 
