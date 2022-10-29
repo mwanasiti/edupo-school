@@ -4,7 +4,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function SyllabusForm( { course, setCourse } ) {
-    const history = useHistory();
+    const history = useNavigate();
     const { id } = useParams();
     const [text, setText] = useState("")
 
@@ -23,7 +23,7 @@ function SyllabusForm( { course, setCourse } ) {
         })
         .then(res => res.json())
         .then(syllabus => {
-            setCourse({title: course.title, syllabus: syllabus})
+            setSubject({title: subject.title, syllabus: syllabus})
             history.push(`/syllabus/${syllabus.id}`);
         })
     };
