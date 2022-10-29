@@ -1,15 +1,15 @@
 import React, { useState, useEffect} from "react";
 
-const CourseContext = React.createContext();
+const SubjectContext = React.createContext();
 
-function CourseProvider({ children }) {
-    const [currentCourse, setCurrentCourse] = useState(null);
+function SubjectProvider({ children }) {
+    const [currentSubject, setCurrentSubject] = useState(null);
 
     return (
-      <CourseContext.Provider value={{ currentCourse, setCurrentCourse }}>
+      <SubjectContext.Provider value={{ currentSubject, setCurrentSubject }}>
         {children}
-      </CourseContext.Provider>
+      </SubjectContext.Provider>
     );
   }
 
-export { CourseContext, CourseProvider };
+export { SubjectContext, SubjectProvider };
