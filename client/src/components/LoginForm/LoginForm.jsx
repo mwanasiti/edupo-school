@@ -1,3 +1,40 @@
+import React, { useState } from "react";
+import "./LoginForm.css";
+import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box sx={{ p: 3 }}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
+  };
+}
 function LoginForm({ setUser }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -98,7 +135,7 @@ function LoginForm({ setUser }) {
   }
   return (
     <div className="form-container">
-      <h1 className="text-center p-6 text-4xl font-medium ">LOGIN</h1>
+      <h3 className="text-center p-6 text-4xl font-medium ">LOGIN</h3>
       {/* <h1 className="text-center p-6 text-4xl font-medium text-black">Select User: </h1> */}
       <Box
         sx={{
@@ -113,15 +150,15 @@ function LoginForm({ setUser }) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab sx={{ color: "white" }} label="Admin" {...a11yProps(0)} />
-          <Tab sx={{ color: "white" }} label="Teacher" {...a11yProps(1)} />
-          <Tab sx={{ color: "white" }} label="Student" {...a11yProps(2)} />
-          <Tab sx={{ color: "white" }} label="Parent" {...a11yProps(3)} />
+          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Admin" {...a11yProps(0)} />
+          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Teacher" {...a11yProps(1)} />
+          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Student" {...a11yProps(2)} />
+          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Parent" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
-        <label htmlFor="username" className="text-xl">
-          UserName:
+        <label style={{color:'#ACBABF'}} htmlFor="username" className="text-xl">
+          Username:
         </label>
         <input
           required
@@ -131,7 +168,7 @@ function LoginForm({ setUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="password" className="mt-5 text-xl">
+        <label style={{color:'#ACBABF'}} htmlFor="password" className="mt-5 text-xl">
           Password:
         </label>
         <input
