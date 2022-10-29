@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/user";
 import { CourseContext } from "../../context/subject";
 import { useEffect, useState } from "react";
-// import CourseForm from './CourseForm'
+import CourseForm from '../../components/TeacherView/SubjectForm'
 
 function SubjectList( ){
     const { user } = useContext(UserContext)
