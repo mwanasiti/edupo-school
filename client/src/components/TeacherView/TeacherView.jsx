@@ -10,7 +10,7 @@ function TeacherView() {
       {/* This will be the Teacher's view after Logging in */}
       {/* <Assignment />  */}
       <SubjectDetails />
-      < Syllabus/>
+      {/* < Syllabus/> */}
     </div>
   )
 }
