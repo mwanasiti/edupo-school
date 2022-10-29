@@ -23,7 +23,7 @@ function SubjectDetails({  }) {
 
     if (!isLoaded) return <h2>Loading...</h2>
 
-    function handleDeleteCourse() {
+    function handleDeleteSubject() {
 
         fetch(`/subjects/${id}`, {
             method:'DELETE'
@@ -51,7 +51,7 @@ function SubjectDetails({  }) {
 
                 : 
 
-                    user.admin ?
+                    user.teacher ?
                     <>
                         <h2 className='my-8'>Begin building your course by adding a description for your class.</h2> 
                         <SyllabusForm subject={subject} setSubject={setSubject}/>
@@ -89,7 +89,7 @@ function SubjectDetails({  }) {
                 </p>
                 
 
-                {user?.admin ? 
+                {user?.teacher ? 
                     <>
                     
                     <p className='my-8'>
@@ -110,7 +110,7 @@ function SubjectDetails({  }) {
                 }
             </div>
 
-                {user?. admin ?
+                {user?. teacher ?
 
                 
                     <button onClick={handleToggle} class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 ml-5">Delete Subject</button>
