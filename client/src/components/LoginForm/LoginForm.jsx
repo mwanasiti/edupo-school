@@ -1,21 +1,12 @@
-import React, { useState } from "react";
-import "./LoginForm.css";
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
-// import Checkbox from '@material-ui/core/Checkbox';
-// import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
-const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
-const avatarStyle={backgroundColor:'#1bbd7e'}
-const btnstyle={margin:'8px 0'}
-
 function LoginForm({ setUser }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
+  const [value, setValue] = useState(1);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   function handleAdminSubmit(e) {
     e.preventDefault();
     fetch("/admin_login", {
@@ -38,7 +29,6 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   function handleTeacherSubmit(e) {
     e.preventDefault();
     fetch("/teacher_login", {
@@ -61,8 +51,7 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
-  function handleStudentSubmit(e){
+  function handleStudentSubmit(e) {
     e.preventDefault();
     fetch("/student_login", {
       method: "POST",
@@ -77,6 +66,7 @@ function LoginForm({ setUser }) {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
+          console.log(user);
         });
         navigate("/student");
       } else {
@@ -84,9 +74,7 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
-
-  function handleParentSubmit(e){
+  function handleParentSubmit(e) {
     e.preventDefault();
     fetch("/parent_login", {
       method: "POST",
@@ -108,27 +96,46 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   return (
     <div className="form-container">
-      <h1 style={{fontFamily:'cursive', fontWeight:'bolder', color:'#000080', fontSize:'40px'}} className="text-center p-6 text-4xl font-medium">LOGIN</h1>
+      <h1 className="text-center p-6 text-4xl font-medium ">LOGIN</h1>
+      {/* <h1 className="text-center p-6 text-4xl font-medium text-black">Select User: </h1> */}
+      <Box
+        sx={{
+          borderBottom: 2,
+          borderColor: "divider",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab sx={{ color: "white" }} label="Admin" {...a11yProps(0)} />
+          <Tab sx={{ color: "white" }} label="Teacher" {...a11yProps(1)} />
+          <Tab sx={{ color: "white" }} label="Student" {...a11yProps(2)} />
+          <Tab sx={{ color: "white" }} label="Parent" {...a11yProps(3)} />
+        </Tabs>
+      </Box>
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
-        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="username" className="text-l">
-          Username:
+        <label htmlFor="username" className="text-xl">
+          UserName:
         </label>
         <input
           required
-          className=" mt-2 h-8 rounded-lg"
+          className=" mt-2 h-8 rounded-lg text-black"
           type="text"
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label style={{fontSize:'25px', fontWeight:'bold', color:'#fff'}} htmlFor="password" className="mt-5 text-xl">
+        <label htmlFor="password" className="mt-5 text-xl">
           Password:
         </label>
         <input
-          className="mt-2 h-8 rounded-lg"
+          className="mt-2 h-8 rounded-lg text-black"
           type="password"
           name="password"
           value={password}
@@ -144,41 +151,48 @@ function LoginForm({ setUser }) {
             </div>
           );
         })}
-        <h2 style={{fontSize:'30px'}} className="text-center mt-6 py-6 text-xl ">Log in as:</h2>
-
-        <div className="flex gap-4 flex-wrap">
-          <button
-            type="submit"
-            onClick={handleAdminSubmit}
-            className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
-          >
-            Admin
-          </button>
-          <button
-            type="submit"
-            onClick={handleTeacherSubmit}
-            className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
-          >
-            Teacher
-          </button>
-          <button style={{marginBottom:'10px'}}
-            type="submit"
-            onClick={handleStudentSubmit}
-            className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
-          >
-            Student
-          </button>{" "}
-          <button style={{marginBottom:'10px'}}
-            type="submit"
-            onClick={handleParentSubmit}
-            className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
-          >
-            Parent
-          </button>
+        {/* <h2 className="text-center mt-6 py-6 text-xl ">Log in as:</h2> */}
+        <div className="flex justify-center">
+          <TabPanel value={value} index={0}>
+            <button
+              type="submit"
+              onClick={handleAdminSubmit}
+              // className="bg-[#1C1AB1] hover:bg-blue-700 mt-2 w-1/3 mx-auto text-white font-bold py-2 px-4 rounded"
+              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white font-bold py-2 px-4 rounded"
+            >
+              Log in
+            </button>
+          </TabPanel>
+          <TabPanel value={value} index={1}>
+            <button
+              type="submit"
+              onClick={handleTeacherSubmit}
+              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white font-bold py-2 px-4 rounded"
+            >
+              Log in
+            </button>
+          </TabPanel>
+          <TabPanel value={value} index={2}>
+            <button
+              type="submit"
+              onClick={handleStudentSubmit}
+              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white font-bold py-2 px-4 rounded"
+            >
+              Log in
+            </button>
+          </TabPanel>
+          <TabPanel value={value} index={3}>
+            <button
+              type="submit"
+              onClick={handleParentSubmit}
+              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white font-bold py-2 px-4 rounded"
+            >
+              Log in
+            </button>
+          </TabPanel>
         </div>
       </form>
     </div>
   );
 }
-
 export default LoginForm;
