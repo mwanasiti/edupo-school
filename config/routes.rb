@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 
   # GET A PARENT'S STUDENT ASSESSMENTS
   get "/par_stu_assesments/:id", to: "student_assesments#par_stu_assesments"
+
+  # GET A PARENT'S STUDENT ASSIGNMENTS
+  get "par_stu_assignments/:id", to: "student_assignments#par_stu_assignments"
   
 
     # ADMIN AUTH

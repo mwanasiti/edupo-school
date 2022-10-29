@@ -52,8 +52,8 @@ function ParentStudentAssessments() {
               </TableCell>
               <TableCell align="right">{row.assessment}</TableCell>
               <TableCell align="right">{row.total}</TableCell>
-              <TableCell align="right">{row.score ? row.score : "Not Marked"}</TableCell>
-              <TableCell align="right">{row.score > 40 ? "Pass" : "Fail"}</TableCell>
+              <TableCell align="right">{row.score ? row.score : 0}</TableCell>
+              <TableCell align="right">{row.score >= 40 ? <h1 className="text-green-600">PASS</h1> : <h1 className="text-red-500">FAIL</h1>}</TableCell>
             </TableRow>
           ))}
         </TableBody>

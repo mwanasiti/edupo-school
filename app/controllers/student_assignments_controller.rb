@@ -11,6 +11,11 @@ class StudentAssignmentsController < ApplicationController
         render json: student_assignment
     end
 
+    def par_stu_assignments
+        student_assignments = StudentAssignment.where(student_id: params[:id])
+        render json: student_assignments
+    end
+
     def render_record_not_found
         render json: {error: "Student Assignment not found"}, status: 404
     end
