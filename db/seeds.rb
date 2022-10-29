@@ -36,8 +36,18 @@ classroom3 = Classroom.create(name: 'Sparrow', teacher_id: 3)
 puts "Done Seeding Classrooms"
 
 puts "Seeding Students..."
-student = Student.create(role: "student",  gender: "female", image: "https://images.unsplash.com/photo-1523825036634-aab3cce05919?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrJTIwd29tYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
-student = Student.create(role: "student",  gender: "male", image: "https://images.unsplash.com/photo-1546525848-3ce03ca516f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmxhY2slMjBtYW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+student1 = Student.create(role: "student",  gender: "female", image: "https://thumbs.dreamstime.com/b/young-woman-student-avatar-icon-vector-isolated-female-user-silhouette-girl-wearing-eyeglasses-portrait-flat-faceless-person-head-223352495.jpg", parent_id: 1, phone_no: "0707777772", admission_no: "12543", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "angela", classroom_id: 1, username: "angela")
+student2 = Student.create(role: "student",  gender: "female", image: "https://thumbs.dreamstime.com/b/female-user-profile-avatar-woman-character-screen-saver-happy-emotions-female-user-profile-avatar-199601144.jpg", parent_id: 1, phone_no: "072210902", admission_no: "7081", subject_id: 3, full_name: "Nina Simone", email: "nina@gmail.com", password: "nina", classroom_id: 1, username: "nina")
+student3 = Student.create(role: "student",  gender: "female", image: "https://static.vecteezy.com/system/resources/previews/004/773/704/original/a-girl-s-face-with-a-beautiful-smile-a-female-avatar-for-a-website-and-social-network-vector.jpg", parent_id: 2, phone_no: "0721090806", admission_no: "7082", subject_id: 2, full_name: "Louise Belcher", email: "Louise@gmail.com", password: "louise", classroom_id: 1, username: "louise")
+student4 = Student.create(role: "student",  gender: "male", image: "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg", parent_id: 1, phone_no: "0707777772", admission_no: "7086", subject_id: 1, full_name: "Dennis Mburu", email: "deno@gmail.com", password: "deno", classroom_id: 1, username: "deno")
+student5 = Student.create(role: "student",  gender: "female", image: "https://img.freepik.com/premium-vector/beautiful-girl-with-blue-hair-avatar-woman-social-network_499739-618.jpg", parent_id: 1, phone_no: "070799999", admission_no: "7073", subject_id: 1, full_name: "Elee Silver ", email: "elee@gmail.com", password: "elee", classroom_id: 1, username: "elee")
+student6 = Student.create(role: "student",  gender: "female", image:"https://img.freepik.com/premium-vector/portrait-caucasian-woman-avatar-female-person-vector-icon-adult-flat-style-headshot_605517-25.jpg?w=360", parent_id: 1, phone_no: "070788888", admission_no: "7090", subject_id: 1, full_name: "Tina Turner ", email: "Tina@gmail.com", password: "tina", classroom_id: 1, username: "tina")
+student7 = Student.create(role: "student",  gender: "female", image: "https://img.freepik.com/premium-vector/portrait-redhead-woman-avatar-female-person-vector-icon-adult-flat-style_605517-158.jpg", parent_id: 1, phone_no: "0707666662", admission_no: "7900", subject_id: 1, full_name: "Valentine Rose", email: "valentine@gmail.com", password: "valentine", classroom_id: 1, username: "valentine")
+student8 = Student.create(role: "student",  gender: "femal", image: "https://img.freepik.com/premium-vector/portrait-caucasian-woman-avatar-female-person-vector-icon-adult-flat-style-headshot_605517-18.jpg", parent_id: 3, phone_no: "0700000072", admission_no: "6666", subject_id: 1, full_name: "Berry Brown", email: "berry@gmail.com", password: "Berry", classroom_id: 1, username: "Berry")
+student9 = Student.create(role: "student",  gender: "female", image: "https://previews.123rf.com/images/elisaart/elisaart2110/elisaart211000008/176389543-girl-avatar-face-of-a-student-schoolgirl-isolated-on-a-white-background-cartoon-style-vector-illustr.jpg", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+student10 = Student.create(role: "student",  gender: "male", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Hy7fOrAjiEtgHwrpb969lel309cEpasXpg&usqp=CAU", parent_id: 2, phone_no: "0790801673", admission_no: "7083", subject_id: 3, full_name: "lucas brown", email: "lucas@gmail.com", password: "lucas", classroom_id: 1, username: "lucas")
+student11 = Student.create(role: "student",  gender: "male", image: "https://cdn2.vectorstock.com/i/1000x1000/20/76/man-avatar-profile-vector-21372076.jpg", parent_id: 1, phone_no: "12345678", admission_no: "12544", subject_id: 2, full_name: "Harry Potter", email: "harry@gmail.com", password: "harry", classroom_id: 2, username: "harry")
+
 # student = Student.create(role: "student",  gender: "female", image: "", parent_id: 1, phone_no: "12345", admission_no: "1", subject_id: 1, full_name: "Angela Kanyi", email: "kanyi@gmail.com", password: "ali", classroom_id: 1, username: "ali")
 puts "Done Seeding Students"
 
@@ -75,7 +85,7 @@ student_assignment3 = StudentAssignment.create(student_id:2, assignment_id:2)
 student_assignment4 = StudentAssignment.create(student_id:2, assignment_id:2)
 puts "Done Seeding Student Assignments"
 
-puts "Seeding Student Assessments"
-student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id: )
-
+# puts "Seeding Student Assessments"
+# student_assessment1 = StudentAssesment.create(student_id: 1, assessment_id:1)
+# puts "Done Seeding Student Assessments"
 
