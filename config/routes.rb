@@ -2,14 +2,22 @@ Rails.application.routes.draw do
   resources :subject_teachers
   resources :student_assesments
   resources :student_assignments
-  resources :admins
-  resources :assignments
-  resources :assessments
-  resources :classrooms, only: [:index, :show]
-  resources :subjects, only: [:index, :show]
-  resources :teachers
-  resources :parents
-  resources :students
+  resources :users, only: [:index, :show, :update, :create]
+  resources :admins, only: [:index, :show, :update, :create]
+  resources :assignments, only: [:index, :show, :update, :create]
+  resources :assessments, only: [:index, :show, :update, :create]
+  resources :classrooms, only: [:index, :show, :update, :create]
+  resources :subjects, only: [:index, :show, :update, :create]
+  resources :teachers, only: [:index, :show, :update, :create]
+  resources :parents, only: [:index, :show, :update, :create]
+  resources :students, only: [:index, :show, :update, :create]
+  # resources :assignments
+  # resources :assessments
+  # resources :classrooms, only: [:index, :show]
+  # resources :subjects, only: [:index, :show]
+  # resources :teachers
+  # resources :parents
+  # resources :students
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -18,6 +26,12 @@ Rails.application.routes.draw do
 
   #   GET A PARENT'S STUDENT
   get "/student_parent", to: "students#student_parent"
+
+  # GET A PARENT'S STUDENT ASSESSMENTS
+  get "/par_stu_assesments/:id", to: "student_assesments#par_stu_assesments"
+
+  # GET A PARENT'S STUDENT ASSIGNMENTS
+  get "par_stu_assignments/:id", to: "student_assignments#par_stu_assignments"
   
 
     # ADMIN AUTH

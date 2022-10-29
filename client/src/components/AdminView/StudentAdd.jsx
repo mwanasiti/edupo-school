@@ -9,10 +9,11 @@ function StudentAdd() {
   const [parent_id, setParentID] = useState("2");
   const [phone_no, setPhoneNumber] = useState("");
   const [admission_no, setAdmissionNo] = useState("");
-  const [subject_id, setSubjectID] = useState("");
+  const [subject_id, setSubjectID] = useState(1);
   const [full_name, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [classroom_id, setClassroomID] = useState(1)
 
   // const [students, setStudents] = useState([])
 
@@ -114,16 +115,6 @@ function StudentAdd() {
             />
           </fieldset>
 
-          <fieldset className="flex flex-col">
-            <label htmlFor="phone_no">Phone Number</label>
-            <input
-              className="text-black mt-2 h-8 p-1"
-              name="phone_no"
-              type="number"
-              value={phone_no}
-              onChange={(e) => setStock(e.target.value)}
-            />
-          </fieldset>
 
           <fieldset className="flex flex-col">
             <label htmlFor="subject_id">Subject ID</label>
@@ -166,6 +157,17 @@ function StudentAdd() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+            />
+          </fieldset>
+
+          <fieldset className="flex flex-col">
+            <label htmlFor="classroom_id">Classroom</label>
+            <input
+              className="text-black mt-2 h-8 p-1"
+              name="classroom"
+              type="number"
+              value={classroom_id}
+              onChange={(e) => setClassroomID(e.target.value)}
             />
           </fieldset>
 

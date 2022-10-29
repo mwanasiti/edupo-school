@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_29_124353) do
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email"
     t.string "full_name"
     t.string "password_digest"
-    t.string "username"
-    t.string "role"
     t.string "user_name"
+    t.string "role"
+    t.string "username"
   end
 
   create_table "assessments", force: :cascade do |t|
@@ -33,7 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
   create_table "assignments", force: :cascade do |t|
     t.string "name"
     t.integer "subject_teacher_id"
-    t.date "due_date"
+    t.string "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
   end
 
   create_table "student_assesments", force: :cascade do |t|
-    t.integer "assesment_id"
+    t.integer "assessment_id"
     t.integer "student_id"
     t.integer "score"
     t.datetime "created_at", null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "students", force: :cascade do |t|
     t.string "role"
-    t.boolean "gender"
+    t.string "gender"
     t.string "image"
     t.integer "parent_id"
     t.string "phone_no"
@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "teachers", force: :cascade do |t|
     t.string "role"
-    t.boolean "gender"
+    t.string "gender"
     t.string "image"
     t.string "phone_no"
     t.string "address"
@@ -115,7 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "user_name"
   end
 
   create_table "users", force: :cascade do |t|

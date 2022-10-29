@@ -1,5 +1,8 @@
 class StudentsController < ApplicationController
   # before_action :set_student, only: [:show, :edit, :update, :destroy]
+
+  rescue_from ActiveRecord::RecordInvalid, with: :render_unproccessable_entity
+
   def index
       students = Student.all
       render json: students, status: :ok
@@ -14,8 +17,14 @@ class StudentsController < ApplicationController
   end
 # CREATE
 def create
-  student = Student.create(student_params)
-  render json: student, status: :created
+  @admin = Admin.find_by(id: session[:admin_id])
+  if @admin
+    student = Student.create!(student_params)
+    render json: student, status: :created
+
+  else
+    render json: {errors: ["Only Admins can Create Add New Students"]}
+  end
 end
 #UPDATE
   def update
@@ -50,7 +59,16 @@ def student_parent
 end
 
 private
+
+def render_unproccessable_entity(invalid)
+  render  json: {errors: invalid.record.errors.full_messages}, status: 422
+end
+
+def render_not_found_response
+  render json: {errors: ["Record Not Found"]}
+end
+
   def student_params
-  params.permit(:role, :gender, :username, :image, :parent_id, :phone_no, :admission_no, :subject_id, :full_name, :email, :password, :classroom_id)
+    params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id, :username)
   end
 end

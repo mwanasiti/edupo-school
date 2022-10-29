@@ -72,6 +72,21 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/students": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/par_stu_assesments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/par_stu_assignments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });
