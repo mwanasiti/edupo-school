@@ -11,7 +11,7 @@ function TeacherView() {
       {/* <Assignment />  */}
       {/* <SubjectDetails /> */}
       {/* < Syllabus/> */}
-      < CourseList />
+      < SubjectList/>
     </div>
   )
 }
