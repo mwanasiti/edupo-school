@@ -1,7 +1,7 @@
 import React from 'react'
 // import Assignment from './Assignment.jsx'
 import SubjectDetails from '../../components/TeacherView/SubjectDetails'
-import Syllabus from './Syllabus'
+import Syllabus from '../../components/TeacherView/Syllabus'
 
 
 function TeacherView() {
@@ -9,8 +9,8 @@ function TeacherView() {
     <div>
       {/* This will be the Teacher's view after Logging in */}
       {/* <Assignment />  */}
-      <SubjectDetails />
-      {/* < Syllabus/> */}
+      {/* <SubjectDetails /> */}
+      < Syllabus/>
     </div>
   )
 }

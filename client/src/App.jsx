@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
 import TeacherView from "./components/TeacherView/TeacherView";
+// import Syllabus from "./components/TeacherView/Syllabus";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -55,6 +56,8 @@ function App() {
           <Route path="/parent" element={<ParentView />} />
           <Route path="/admin" element={<AdminView />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
+
+          {/* <Route path="/syllabus/:id" element={<Syllabus/>} /> */}
         </Routes>
       </main>
       <Footer />
