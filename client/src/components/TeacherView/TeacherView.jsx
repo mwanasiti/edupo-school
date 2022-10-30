@@ -25,11 +25,33 @@ if (subjects.length === 0)
 
   return (
     <>
-       <h1 className="text-center p-3 text-black text-xl font-bold">
-    SUBJECT NAME
-  </h1>
 
-  <div className="overflow-x-auto relative dark">
+<h1 className="text-center p-3 text-black text-xl font-bold"> Add subjects you will be teaching the class</h1>
+    <td className="text-center p-3 text-black text-xl font-bold">
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${student.id}`)}>ADD SUBJECT</Button>
+
+
+            </td>
+
+  {/* <div>
+  <td className='ml-5'>
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${assignment.id}`)}>Assignments</Button>
+
+
+            </td>
+            <td className='ml-5'>
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${assessment.id}`)}>Assessment</Button>
+
+
+            </td>   
+            <td className='ml-5'>
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${classroom.id}`)}>classroom</Button>
+
+
+            </td>         
+  </div> */}
+
+  {/* <div className="overflow-x-auto relative dark">
     <table className="">
       <thead className="">
         <tc>
@@ -46,7 +68,7 @@ if (subjects.length === 0)
         </tc>
       </thead>
       </table>
-  </div>  
+  </div>   */}
 
     </>
   );
