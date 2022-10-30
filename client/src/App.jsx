@@ -9,6 +9,7 @@ import ParentStudentAssessments from "./components/ParentView/ParentStudentAsses
 import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
 import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
+import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherView from "./components/TeacherView/TeacherView";
 
 function App() {
@@ -61,7 +62,8 @@ function App() {
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
 
-
+          <Route path="/subject-students/:id" element={<SubjectStudents/>} />
+          
         </Routes>
       </main>
       <Footer />
