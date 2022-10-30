@@ -26,8 +26,16 @@ Rails.application.routes.draw do
 
   #   GET A PARENT'S STUDENT
   get "/student_parent", to: "students#student_parent"
-  
 
+  # GET A PARENT'S STUDENT ASSESSMENTS
+  get "/par_stu_assesments/:id", to: "student_assesments#par_stu_assesments"
+
+  # GET A PARENT'S STUDENT ASSIGNMENTS
+  get "par_stu_assignments/:id", to: "student_assignments#par_stu_assignments"
+  
+  # GET A TEACHER'S SUBJECTS
+  get "teacher_subjects", to: "subject_teachers#teacher_subjects"
+  
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"
     delete "/admin_logout", to: "admin_sessions#destroy"

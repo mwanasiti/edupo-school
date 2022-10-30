@@ -1,31 +1,34 @@
-import React,{useState, useEffect} from 'react'
-// import Assignment from './Assignment.jsx'
-import SubjectDetails from '../../components/TeacherView/SubjectDetails'
-
-
+import React from "react";
+import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 function TeacherView() {
 
-  const [teachers, setteachers] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
+
+  const [subjects, setSubjects] = useState([])
+
+  useEffect(() => {
+    fetch("/teacher_subjects")
+      .then((res) => res.json())
+      .then((data) => {
+        setSubjects(data);
+      });
+  }, []);
 
 
-  // fetch
+if (subjects.length === 0)
+  return(
+    <h1 className="text-center p-3 text-black text-xl font-bold"> You Currently Do not Teach any Subjects at Edupo School</h1>
+  );
 
-  useEffect(() =>{
-    fetch('/teachers ${id}',{
-      
-    })
-  })
   return (
-    <div>
-      {/* This will be the Teacher's view after Logging in */}
-      
-      <SubjectDetails />
-      
-      {/* < SubjectList/> */}
-    </div>
-  )
+    <>
+      <div>This will be the Teacher's view after Logging in</div>
+
+    </>
+  );
 }
-View
-export default TeacherView
+
+export default TeacherView;

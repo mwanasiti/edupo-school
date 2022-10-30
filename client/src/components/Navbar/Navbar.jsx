@@ -52,7 +52,7 @@ function Navbar({ user, setUser }) {
   return (
     <nav
       className="flex items-center justify-between flex-wrap bg-our-black p-6"
-      style={{ backgroundColor: "#fff", color:'#000' }}
+      style={{ backgroundColor: "#fff" }}
     >
       <Link
         to="/"
@@ -61,23 +61,25 @@ function Navbar({ user, setUser }) {
           fontSize: "35px",
           fontWeight: "bolder",
           fontFamily: "cursive",
-          color: "#000080",
+          color: "black",
         }}
       >
-        EDUPO SCHOOL
+        EDUPO
       </Link>
       {user ? (
         <h1 className=" text-black hover:text-black-200 ">
           Hi {user.username}
         </h1>
       ) : null}
+
       {user ? (
-        <button style={{fontFamily:'inherit', fontWeight:'bolder'}}
-          className="btn-lg btn-dark" data-mdb-ripple-color="dark"
+        <button
+          className="btn btn-danger"
+          data-mdb-ripple-color="dark"
           onClick={handleLogout}
         >
-          LOGOUT
-          <FaPowerOff style={{color:'#000080'}} className="inline ml-2 mb-1" />
+          Logout
+          <FaPowerOff className="inline ml-2 mb-1" />
         </button>
       ) : (
         <Link
@@ -95,4 +97,5 @@ function Navbar({ user, setUser }) {
     </nav>
   );
 }
+
 export default Navbar;

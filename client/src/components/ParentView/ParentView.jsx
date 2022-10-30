@@ -1,23 +1,52 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
 function ParentView() {
   const [students, setStudents] = useState([])
+=======
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
+
+
+
+function ParentView() {
+
+  const navigate = useNavigate()
+
+  const [students, setStudents] = useState([])
+
+>>>>>>> origin/deno
   useEffect(() => {
     fetch("/student_parent")
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
+<<<<<<< HEAD
         console.log(data)
       });
   }, []);
+=======
+      });
+  }, []);
+
+
+>>>>>>> origin/deno
 if (students.length === 0)
   return(
     <h1 className="text-center p-3 text-black text-xl font-bold"> You have not enrolled any of your children to Edupo School</h1>
   );
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/deno
   return (
     <>     <h1 className="text-center p-3 text-black text-xl font-bold">
     These are your students
   </h1>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/deno
   <div className="overflow-x-auto relative dark">
     <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
       <thead className="text-gray-700 uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400">
@@ -35,11 +64,24 @@ if (students.length === 0)
             Admission Number
           </th>
           <th scope="col" className="py-3 px-6">
+<<<<<<< HEAD
             Classroom
+=======
+            Classroom 
+>>>>>>> origin/deno
           </th>
           <th scope="col" className="py-3 px-6">
             Class Teacher
           </th>
+<<<<<<< HEAD
+=======
+          <th scope="col" className="py-3 px-6">
+            Assignments
+          </th>
+          <th scope="col" className="py-3 px-6">
+            Assessments
+          </th>
+>>>>>>> origin/deno
         </tr>
       </thead>
       <tbody>
@@ -60,6 +102,20 @@ if (students.length === 0)
             <td className="py-4 px-6">{student.admission_no}</td>
             <td className="py-4 px-6">{student.classroom}</td>
             <td className="py-4 px-6">{student.teacher}</td>
+<<<<<<< HEAD
+=======
+            <td className='ml-5'>
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${student.id}`)}>Assignments</Button>
+
+
+            </td>
+            <td className="py-4 px-6">
+            <Button variant="contained" onClick={() => navigate(`/par-stu-assessments/${student.id}`)}>Assessments</Button>
+
+
+            </td>
+
+>>>>>>> origin/deno
           </tr>
         ))}
       </tbody>
