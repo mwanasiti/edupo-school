@@ -45716,3 +45716,604 @@ Processing by StudentAssignmentsController#par_stu_assignments as */*
 Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 3470)
 
 
+Started DELETE "/parent_logout" for 127.0.0.1 at 2022-10-29 15:59:09 +0300
+Processing by ParentSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 188)
+
+
+Started GET "/par_stu_assignments/3" for ::1 at 2022-10-29 17:24:37 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.1ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.2ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 3704)
+
+
+Started GET "/par_stu_assignments/3" for ::1 at 2022-10-29 17:24:39 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.1ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (6.96ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 3465)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#student as */*
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 401 Unauthorized in 93ms (Views: 31.3ms | ActiveRecord: 1.9ms | Allocations: 20908)
+
+
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 401 Unauthorized in 131ms (Views: 2.0ms | ActiveRecord: 1.8ms | Allocations: 27205)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 401 Unauthorized in 139ms (Views: 2.0ms | ActiveRecord: 1.1ms | Allocations: 28373)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.5ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 401 Unauthorized in 15ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 1426)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-29 21:09:42 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Completed 401 Unauthorized in 10ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1273)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-29 21:09:43 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.5ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 7ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1103)
+
+
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 218ms (Views: 0.9ms | ActiveRecord: 1.0ms | Allocations: 40212)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-29 21:09:43 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 401 Unauthorized in 6ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 841)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2022-10-29 21:11:36 +0300
+Processing by ParentSessionsController#create as */*
+  Parameters: {"username"=>"okech", "password"=>"[FILTERED]", "parent_session"=>{"username"=>"okech", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."username" = ? LIMIT ?[0m  [["username", "okech"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Parent (0.65ms)
+Completed 200 OK in 348ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 17839)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:37 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.6ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.4ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (64.11ms)
+Completed 200 OK in 115ms (Views: 97.9ms | ActiveRecord: 6.5ms | Allocations: 45550)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:37 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.2ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.08ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 1.3ms | Allocations: 3379)
+
+
+Started GET "/par_stu_assignments/3" for 127.0.0.1 at 2022-10-29 21:11:44 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.4ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (35.93ms)
+Completed 200 OK in 70ms (Views: 53.7ms | ActiveRecord: 4.6ms | Allocations: 34958)
+
+
+Started GET "/par_stu_assignments/3" for 127.0.0.1 at 2022-10-29 21:11:44 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.2ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.54ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 1.1ms | Allocations: 3471)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:47 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.4ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.32ms)
+Completed 200 OK in 26ms (Views: 20.4ms | ActiveRecord: 1.6ms | Allocations: 3389)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:47 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.17ms)
+Completed 200 OK in 37ms (Views: 30.3ms | ActiveRecord: 1.4ms | Allocations: 3392)
+
+
+Started GET "/par_stu_assesments/3" for 127.0.0.1 at 2022-10-29 21:11:49 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssesment Load (0.4ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (33.88ms)
+Completed 200 OK in 67ms (Views: 52.9ms | ActiveRecord: 3.4ms | Allocations: 34047)
+
+
+Started GET "/par_stu_assesments/3" for 127.0.0.1 at 2022-10-29 21:11:49 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssesment Load (0.2ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers]   [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.2ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.79ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 1.0ms | Allocations: 3458)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:51 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.4ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.57ms)
+Completed 200 OK in 24ms (Views: 17.7ms | ActiveRecord: 1.5ms | Allocations: 3376)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:11:51 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (11.87ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 1.4ms | Allocations: 3376)
+
+
+Started DELETE "/parent_logout" for 127.0.0.1 at 2022-10-29 21:22:08 +0300
+Processing by ParentSessionsController#destroy as */*
+Completed 204 No Content in 1ms (Allocations: 182)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2022-10-29 21:22:24 +0300
+Processing by ParentSessionsController#create as */*
+  Parameters: {"username"=>"okech", "password"=>"[FILTERED]", "parent_session"=>{"username"=>"okech", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."username" = ? LIMIT ?[0m  [["username", "okech"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Parent (0.69ms)
+Completed 200 OK in 329ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1080)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:22:24 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.7ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.6ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.7ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.5ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (18.65ms)
+Completed 200 OK in 31ms (Views: 22.1ms | ActiveRecord: 3.1ms | Allocations: 3581)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:22:24 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.51ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 3372)
+
+
+Started GET "/par_stu_assesments/3" for 127.0.0.1 at 2022-10-29 21:22:59 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssesment Load (0.6ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers]   [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.6ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.25ms)
+Completed 200 OK in 28ms (Views: 24.2ms | ActiveRecord: 2.6ms | Allocations: 3580)
+
+
+Started GET "/par_stu_assesments/3" for 127.0.0.1 at 2022-10-29 21:22:59 +0300
+Processing by StudentAssesmentsController#par_stu_assesments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssesment Load (0.4ms)[0m  [1m[34mSELECT "student_assesments".* FROM "student_assesments" WHERE "student_assesments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assesments_controller.rb:16:in `par_stu_assesments'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssessment Load (0.3ms)[0m  [1m[34mSELECT "assessments".* FROM "assessments" WHERE "assessments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assesment_serializer.rb:9:in `assessment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.92ms)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 1.4ms | Allocations: 3457)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:23:28 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.4ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.4ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.32ms)
+Completed 200 OK in 28ms (Views: 21.1ms | ActiveRecord: 1.8ms | Allocations: 3380)
+
+
+Started GET "/student_parent" for 127.0.0.1 at 2022-10-29 21:23:28 +0300
+Processing by StudentsController#student_parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:51:in `student_parent'
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."parent_id" = ?[0m  [["parent_id", 2]]
+  ↳ app/controllers/students_controller.rb:54:in `student_parent'
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:9:in `teacher'
+[active_model_serializers]   [1m[36mSubject Load (0.3ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects" WHERE "subjects"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_serializer.rb:13:in `subject'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.87ms)
+Completed 200 OK in 29ms (Views: 22.0ms | ActiveRecord: 1.7ms | Allocations: 3380)
+
+
+Started GET "/par_stu_assignments/3" for 127.0.0.1 at 2022-10-29 21:23:31 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.6ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.7ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.4ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.56ms)
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 2.2ms | Allocations: 3527)
+
+
+Started GET "/par_stu_assignments/3" for 127.0.0.1 at 2022-10-29 21:23:31 +0300
+Processing by StudentAssignmentsController#par_stu_assignments as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStudentAssignment Load (0.3ms)[0m  [1m[34mSELECT "student_assignments".* FROM "student_assignments" WHERE "student_assignments"."student_id" = ?[0m  [["student_id", 3]]
+  ↳ app/controllers/student_assignments_controller.rb:16:in `par_stu_assignments'
+[active_model_serializers]   [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers]   [1m[36mCACHE Student Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:5:in `student'
+[active_model_serializers]   [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/student_assignment_serializer.rb:9:in `assignment'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.15ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 1.2ms | Allocations: 3469)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#student as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 401 Unauthorized in 38ms (Views: 3.9ms | ActiveRecord: 1.0ms | Allocations: 19765)
+
+
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 62ms (Views: 1.9ms | ActiveRecord: 1.0ms | Allocations: 27148)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 1327)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 7ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 2186)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#admin as */*
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.74ms)
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 4.1ms | ActiveRecord: 1.0ms | Allocations: 54410)
+
+
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 7ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1844)
+
+
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 154ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 58814)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#teacher as */*
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 9ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 2220)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.35ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1623)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 3ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 913)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#teacher as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.37ms)
+Completed 401 Unauthorized in 6ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 1736)
+
+
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 401 Unauthorized in 5ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 997)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.5ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 943)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 401 Unauthorized in 3ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 850)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-30 10:10:10 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 850)
+
+
+Started DELETE "/teacher_logout" for 127.0.0.1 at 2022-10-30 10:10:13 +0300
+Processing by TeacherSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 200)
+
+
+Started POST "/teacher_login" for 127.0.0.1 at 2022-10-30 10:10:22 +0300
+Processing by TeacherSessionsController#create as */*
+  Parameters: {"username"=>"deno", "password"=>"[FILTERED]", "teacher_session"=>{"username"=>"deno", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."username" = ? LIMIT ?[0m  [["username", "deno"], ["LIMIT", 1]]
+  ↳ app/controllers/teacher_sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Teacher (0.34ms)
+Completed 200 OK in 203ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 1085)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAssociation (20221030023111)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassessments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "subject_id" integer DEFAULT NULL, "total" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aassessments" ("id","name","subject_id","total","created_at","updated_at")
+                     SELECT "id","name","subject_teacher_id","total","created_at","updated_at" FROM "assessments"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "assessments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "assessments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "subject_id" integer DEFAULT NULL, "total" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "assessments" ("id","name","subject_id","total","created_at","updated_at")
+                     SELECT "id","name","subject_id","total","created_at","updated_at" FROM "aassessments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aassessments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassignments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "subject_id" integer DEFAULT NULL, "due_date" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aassignments" ("id","name","subject_id","due_date","created_at","updated_at")
+                     SELECT "id","name","subject_teacher_id","due_date","created_at","updated_at" FROM "assignments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "assignments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "assignments" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "subject_id" integer DEFAULT NULL, "due_date" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "assignments" ("id","name","subject_id","due_date","created_at","updated_at")
+                     SELECT "id","name","subject_id","due_date","created_at","updated_at" FROM "aassignments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aassignments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221030023111"]]
+  [1m[36mTRANSACTION (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
