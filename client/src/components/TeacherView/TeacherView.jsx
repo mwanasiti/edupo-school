@@ -65,7 +65,7 @@ function TeacherView() {
                     }
                   >
                     {" "}
-                    View Students
+                    View My Students
                   </Button>
                 </TableCell>
               </TableRow>
