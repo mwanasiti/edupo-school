@@ -47,6 +47,7 @@ def destroy
   end
 end
 
+  #   GET A PARENT'S STUDENTS
   def student_parent
     @parent = Parent.find_by(id: session[:parent_id])
     if @parent
@@ -56,6 +57,12 @@ end
     render json: {errors: ["Please Log in as parent to view your students"]}, status: 401  
     end
   end
+
+    # GET A SUBJECT'S STUDENTS
+    def subject_students
+      students = Student.where(subject_id: params[:id])
+      render json: students
+    end
 
 private
 
