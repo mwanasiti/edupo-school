@@ -1,5 +1,5 @@
 class StudentAssesmentSerializer < ActiveModel::Serializer
-  attributes :id, :score, :student, :assessment, :total
+  attributes :id, :score, :student, :assessment, :total, :subject
 
   def student
     self.object.student.full_name
@@ -11,5 +11,9 @@ class StudentAssesmentSerializer < ActiveModel::Serializer
 
   def total
     self.object.assessment.total
+  end
+
+  def subject
+    self.object.assessment.subject.name
   end
 end

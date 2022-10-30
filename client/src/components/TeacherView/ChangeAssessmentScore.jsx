@@ -34,10 +34,17 @@ function ChangeAssessmentScore() {
             {assesment.student}
           </span>
         </p>
+        
         <p className="m-2 font-bold text-xl">
           Assessment:{" "}
           <span className="text-lg font-light text-neutral-900 ml-4">
             {assesment.assessment}
+          </span>
+        </p>
+        <p className="m-2 font-bold text-xl">
+          Subject:{" "}
+          <span className="text-lg font-light text-neutral-900 ml-4">
+            {assesment.subject}
           </span>
         </p>
         <p className="m-2 font-bold text-xl">
