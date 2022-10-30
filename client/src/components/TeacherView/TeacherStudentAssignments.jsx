@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -13,7 +11,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
-
 
 function TeacherStudentAssignments() {
   const navigate = useNavigate();
@@ -37,11 +34,12 @@ function TeacherStudentAssignments() {
             <TableRow>
               <TableCell>Student Name</TableCell>
               <TableCell align="right">Assignment</TableCell>
+              <TableCell align="right">Subject</TableCell>
+
               <TableCell align="right">Due Date</TableCell>
               <TableCell align="right">Score</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Change Score</TableCell>
-
             </TableRow>
           </TableHead>
           <TableBody>
@@ -54,6 +52,8 @@ function TeacherStudentAssignments() {
                   {row.student}
                 </TableCell>
                 <TableCell align="right">{row.assignment}</TableCell>
+                <TableCell align="right">{row.subject}</TableCell>
+
                 <TableCell align="right">{row.due_date}</TableCell>
                 <TableCell align="right">{row.score ? row.score : 0}</TableCell>
                 <TableCell align="right">

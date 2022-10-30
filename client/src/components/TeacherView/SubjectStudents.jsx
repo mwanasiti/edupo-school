@@ -46,22 +46,22 @@ function SubjectStudents() {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Subject Name</TableCell>
-              <TableCell align="right">Student Name</TableCell>
+              <TableCell>Student Name</TableCell>
+              <TableCell align="right">Subject Name</TableCell>
               <TableCell align="right">View Assignments</TableCell>
               <TableCell align="right">View Assessments</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {students.map((row) => (
-              <TableRow
+              <TableRow 
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
-                  {row.subject}
+                <TableCell component="th" scope="row" >
+                  {row.full_name}
                 </TableCell>
-                <TableCell align="right">{row.full_name}</TableCell>
+                <TableCell align="right">{row.subject}</TableCell>
 
                 <TableCell align="right">
                   <Button

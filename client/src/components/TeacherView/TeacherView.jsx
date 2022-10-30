@@ -21,6 +21,7 @@ function TeacherView() {
       .then((res) => res.json())
       .then((data) => {
         setSubjects(data);
+        console.log(data)
       });
   }, []);
 
