@@ -11,7 +11,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-import Box from "@mui/material/Box";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
+
 
 function AddAssignment() {
   const [assignments, setAssignments] = useState([]);
@@ -59,6 +61,23 @@ function AddAssignment() {
     });
   }
 
+  function handleAssignmentDelete(id){
+    fetch(`/assignments/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+            if (data.errors) {
+                setErrors(data.errors)
+            }
+          const updatedAssignments = assignments.filter(
+            (assignment) => assignment.id !== data.id
+          );
+          setAssignments(updatedAssignments);
+        });
+  }
+
   if (assignments.length === 0)
     return (
       <h1 className="text-center p-3 text-black text-xl font-bold">
@@ -72,13 +91,16 @@ function AddAssignment() {
       <h1 className="text-center p-3 text-black text-xl font-bold">
         {subjectName} Assignments
       </h1>
-      <div className="w-2/3 mx-auto">
+      {/* <div className="w-2/3 mx-auto"> */}
+      <div className="">
         <TableContainer component={Paper} >
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell align="center">Assignment Name</TableCell>
-                {/* <TableCell align="right">Subject Name</TableCell> */}
+                <TableCell >Assignment Name</TableCell>
+                <TableCell align="right">Due Date</TableCell>
+                <TableCell align="right">Edit</TableCell>
+                <TableCell align="right">Delete</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -87,10 +109,12 @@ function AddAssignment() {
                   key={row.id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row" align="center">
+                  <TableCell component="th" scope="row" >
                     {row.name}
                   </TableCell>
-                  {/* <TableCell align="right">{row.subject}</TableCell> */}
+                  <TableCell align="right">{row.due_date}</TableCell>
+                  <TableCell align="right"><button><EditIcon /></button></TableCell>
+                  <TableCell align="right"><button onClick={() => handleAssignmentDelete(row.id)}><DeleteForeverRoundedIcon /></button></TableCell>
                 </TableRow>
               ))}
             </TableBody>
