@@ -46,7 +46,7 @@ function TeacherView() {
             <TableRow>
               <TableCell>Subject Name</TableCell>
               <TableCell align="right">View Students</TableCell>
-              <TableCell align="right">Add Assignment</TableCell>
+              <TableCell align="right">View Assignments</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -76,7 +76,7 @@ function TeacherView() {
                       navigate(`/add-assignment/${row.subject_id}`)
                     }
                   >
-                    Add Assignment
+                    View Assignments
                   </Button>
                 </TableCell>
               </TableRow>

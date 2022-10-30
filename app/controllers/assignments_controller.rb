@@ -24,8 +24,14 @@ def create
   assignment = Assignment.create(assignment_params)
   render json: assignment,  status: :created
 end
-# DESTROY
 
+def update
+  assignment = Assignment.find(params[:id])
+  assignment.update(assignment_params)
+  render json: assignment, status: 201
+end
+
+# DESTROY
 def destroy
   assignment =Assignment.find_by(id: params[:id])
   if assignment 

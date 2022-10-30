@@ -12,6 +12,7 @@ import StudentView from "./components/StudentView/StudentView";
 import AddAssignment from "./components/TeacherView/AddAssignment";
 import ChangeAssessmentScore from "./components/TeacherView/ChangeAssessmentScore";
 import ChangeAssignmentScore from "./components/TeacherView/ChangeAssignmentScore";
+import EditAssignment from "./components/TeacherView/EditAssignment";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
@@ -76,6 +77,9 @@ function App() {
           <Route path="/change-assignment-score/:id" element={<ChangeAssignmentScore/>} />
 
           <Route path="/add-assignment/:id" element={<AddAssignment/>} />
+
+          <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
+
 
 
 

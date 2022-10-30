@@ -113,7 +113,7 @@ function AddAssignment() {
                     {row.name}
                   </TableCell>
                   <TableCell align="right">{row.due_date}</TableCell>
-                  <TableCell align="right"><button><EditIcon /></button></TableCell>
+                  <TableCell align="right"><button onClick={() => navigate(`/edit-assignment/${row.id}`)}><EditIcon /></button></TableCell>
                   <TableCell align="right"><button onClick={() => handleAssignmentDelete(row.id)}><DeleteForeverRoundedIcon /></button></TableCell>
                 </TableRow>
               ))}
@@ -133,18 +133,18 @@ function AddAssignment() {
           </label>
           <input
             required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-1/3 pl-2 mx-auto"
+            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
             type="text"
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="date" className="text-lg">
+          <label htmlFor="date" className="text-lg mt-3">
             Due Date:
           </label>
           <input
             required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-1/3 pl-2 mx-auto"
+            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
             type="date"
             name="date"
             placeholder="yy-mm-dd"
