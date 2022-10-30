@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 
-  #   GET A PARENT'S STUDENT
+  #   GET A PARENT'S STUDENTS
   get "/student_parent", to: "students#student_parent"
 
   # GET A PARENT'S STUDENT ASSESSMENTS
@@ -35,6 +35,10 @@ Rails.application.routes.draw do
   
   # GET A TEACHER'S SUBJECTS
   get "teacher_subjects", to: "subject_teachers#teacher_subjects"
+
+    # GET A SUBJECT'S STUDENTS
+    get "subject_students/:id", to: "students#subject_students"  # GET A SUBJECT'S STUDENTS
+    get "subject_students/:id", to: "students#subject_students"
   
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"

@@ -33,7 +33,7 @@ function ParentStudentAssignments() {
         <TableHead>
           <TableRow>
             <TableCell>Student Name</TableCell>
-            <TableCell align="right">Assessment</TableCell>
+            <TableCell align="right">Assignment</TableCell>
             <TableCell align="right">Due Date</TableCell>
             <TableCell align="right">Score</TableCell>
             <TableCell align="right">Status</TableCell>

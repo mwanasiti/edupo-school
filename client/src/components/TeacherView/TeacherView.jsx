@@ -1,13 +1,20 @@
 import React from "react";
-import { useState, useEffect } from 'react';
-import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
+
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 function TeacherView() {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const [subjects, setSubjects] = useState([])
+  const [subjects, setSubjects] = useState([]);
 
   useEffect(() => {
     fetch("/teacher_subjects")
@@ -17,61 +24,54 @@ function TeacherView() {
       });
   }, []);
 
-
-if (subjects.length === 0)
-  return(
-    <h1 className="text-center p-3 text-black text-xl font-bold"> You Currently Do not Teach any Subjects at Edupo School</h1>
-  );
+  if (subjects.length === 0)
+    return (
+      <h1 className="text-center p-3 text-black text-xl font-bold">
+        {" "}
+        You Currently Do not Teach any Subjects at Edupo School
+      </h1>
+    );
 
   return (
     <>
+      {/* <div>This will be the Teacher's view after Logging in</div> */}
 
-<h1 className="text-center p-3 text-black text-xl font-bold"> Your  Subjects</h1>
-    <td className="text-center p-3 text-black text-xl font-bold">
-            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${student.id}`)}>ADD SUBJECT</Button>
+      <h1 className="text-center p-3 text-black text-xl font-bold">
+        My Subjects
+      </h1>
 
-
-            </td>
-  
-            
-
-  {/* <div>
-  <td className='ml-5'>
-            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${assignment.id}`)}>Assignments</Button>
-
-
-            </td>
-            <td className='ml-5'>
-            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${assessment.id}`)}>Assessment</Button>
-
-
-            </td>   
-            <td className='ml-5'>
-            <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${classroom.id}`)}>classroom</Button>
-
-
-            </td>         
-  </div> */}
-
-  {/* <div className="overflow-x-auto relative dark">
-    <table className="">
-      <thead className="">
-        <tc>
-          <th scope="col" className="py-3 px-6">
-            ASSIGNMENT
-          </th>
-          <th scope="col" className="py-3 px-6">
-            ASSESSMENT
-          </th>
-          <th scope="col" className="py-3 px-6">
-            CLASSROOMS
-          </th>
-        
-        </tc>
-      </thead>
-      </table>
-  </div>   */}
-
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Subject Name</TableCell>
+              <TableCell align="right">View Students</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {subjects.map((row) => (
+              <TableRow
+                key={row.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.subject}
+                </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    onClick={() =>
+                      navigate(`/subject-students/${row.subject_id}`)
+                    }
+                  >
+                    View My Students
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </>
   );
 }
