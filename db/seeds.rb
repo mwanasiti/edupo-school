@@ -66,9 +66,9 @@ puts "Done Seeding Assignments"
 
 puts "Seeding Assessments"
 assessment1 = Assessment.create(name: "Project - E-Commerce Site", subject_id: 1, total: 100)
-assessment2 = Assessment.create(name: "Project - Blog Website", subject_id: 2, total: 100)
-assessment3 = Assessment.create(name: "Build Simple key-Logger", subject_id: 3, total: 100)
-assessment4 = Assessment.create(name: "Malware Reverse Engineering", subject_id: 4, total: 100)
+assessment2 = Assessment.create(name: "Project - Blog Website", subject_id: 1, total: 100)
+assessment3 = Assessment.create(name: "Build Simple key-Logger", subject_id: 2, total: 100)
+assessment4 = Assessment.create(name: "Malware Reverse Engineering", subject_id: 2, total: 100)
 puts "Done Seeding Assessments"
 
 
