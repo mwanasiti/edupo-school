@@ -21,7 +21,6 @@ function TeacherView() {
       .then((res) => res.json())
       .then((data) => {
         setSubjects(data);
-        console.log(data)
       });
   }, []);
 
@@ -47,6 +46,7 @@ function TeacherView() {
             <TableRow>
               <TableCell>Subject Name</TableCell>
               <TableCell align="right">View Students</TableCell>
+              <TableCell align="right">Add Assignment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -66,6 +66,17 @@ function TeacherView() {
                     }
                   >
                     View My Students
+                  </Button>
+                </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="success"
+                    onClick={() =>
+                      navigate(`/add-assignment/${row.subject_id}`)
+                    }
+                  >
+                    Add Assignment
                   </Button>
                 </TableCell>
               </TableRow>

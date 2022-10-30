@@ -36,9 +36,12 @@ Rails.application.routes.draw do
   # GET A TEACHER'S SUBJECTS
   get "teacher_subjects", to: "subject_teachers#teacher_subjects"
 
-    # GET A SUBJECT'S STUDENTS
-    get "subject_students/:id", to: "students#subject_students"  # GET A SUBJECT'S STUDENTS
-    get "subject_students/:id", to: "students#subject_students"
+  # GET A SUBJECT'S STUDENTS
+  get "subject_students/:id", to: "students#subject_students"  # GET A SUBJECT'S STUDENTS
+  get "subject_students/:id", to: "students#subject_students"
+
+  # GET A SUBJECT'S ASSIGNMENTS
+  get "subject_assignments/:id", to: "assignments#subject_assignments"
   
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"

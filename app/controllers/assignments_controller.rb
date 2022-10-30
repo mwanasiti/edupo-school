@@ -34,6 +34,13 @@ def destroy
   end
 
 end
+
+# GET A SUBJECT'S ASSIGNMENTS
+def subject_assignments
+  assignments = Assignment.where(subject_id: params[:id])
+  render json: assignments
+end
+
    private
    def assignment_params
     params.permit(:name, :subject_teacher_id, :due_date)
