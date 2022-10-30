@@ -9,6 +9,7 @@ import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
 import TeacherView from "./components/TeacherView/TeacherView";
 // import Syllabus from "./components/TeacherView/Syllabus";
+// import SubjectList from "./components/TeacherView/SubjectList";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -57,7 +58,7 @@ function App() {
           <Route path="/admin" element={<AdminView />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
 
-          {/* <Route path="/syllabus/:id" element={<Syllabus/>} /> */}
+          {/* <Route path="/subjectlist" element={<SubjectList/>} /> */}
         </Routes>
       </main>
       <Footer />
