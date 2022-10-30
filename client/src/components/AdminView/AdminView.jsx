@@ -3,8 +3,12 @@ import React from 'react'
 import Dashboard from './Dashboard/Dashboard'
 import ParentView from './DataTables/ParentView'
 import StudentData from './DataTables/StudentData'
+import TeacherView from './DataTables/TeacherView'
 
 import Adminbar from './Forms/Adminbar'
+import ParentForm from './Forms/Parent/ParentForm'
+import StudentForm from './Forms/Student/StudentForm'
+import TeacherForm from './Forms/Teacher/TeacherForm'
 
 
 
@@ -22,10 +26,13 @@ function AdminView() {
       </Grid>
      
       <Grid item sm={7} xs={10} lg={9}>
-      <StudentData />
-      {/* <Dashboard/> */}
+      <StudentForm/>
+      {/* <ParentForm/> */}
+      {/* <StudentData /> */}
+      {/* <Dashboard /> */}
       {/* <TeacherView/> */}
       {/* <ParentView/> */}
+      {/* <TeacherForm/> */}
       </Grid>
       </Grid>
    
