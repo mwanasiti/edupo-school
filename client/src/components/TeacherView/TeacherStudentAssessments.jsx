@@ -1,6 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,6 +15,7 @@ import Button from "@mui/material/Button";
 
 
 function TeacherStudentAssessments() {
+  const navigate = useNavigate();
   const params = useParams();
   const {id} = params
   const [assesments, setAssesments] = useState([])
@@ -59,7 +62,7 @@ function TeacherStudentAssessments() {
                     variant="contained"
                     color="success"
                     onClick={() =>
-                      navigate(`/subject-students/${row.subject_id}`)
+                      navigate(`/change-assessment-score/${row.id}`)
                     }
                   >
                     Change Score

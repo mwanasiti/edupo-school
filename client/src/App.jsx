@@ -9,6 +9,8 @@ import ParentStudentAssessments from "./components/ParentView/ParentStudentAsses
 import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
 import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
+import ChangeAssessmentScore from "./components/TeacherView/ChangeAssessmentScore";
+import ChangeAssignmentScore from "./components/TeacherView/ChangeAssignmentScore";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
@@ -68,6 +70,11 @@ function App() {
 
           <Route path="/my-students-assessments/:id" element={<TeacherStudentAssessments/>} />
           <Route path="/my-students-assignments/:id" element={<TeacherStudentAssignments/>} />
+
+          <Route path="/change-assessment-score/:id" element={<ChangeAssessmentScore/>} />
+          <Route path="/change-assignment-score/:id" element={<ChangeAssignmentScore/>} />
+
+
 
         </Routes>
       </main>
