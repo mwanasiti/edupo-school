@@ -37,7 +37,8 @@ function ChangeAssessmentScore() {
           r.json().then((data) => {
             setAssesment(data);
           });
-          navigate(`/my-students-assessments/${id}`);
+        //   navigate(`/my-students-assessments/${id}`);
+        navigate(-1)
         } else {
           r.json().then((err) => setErrors(err.errors));
         }
