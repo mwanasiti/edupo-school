@@ -26,12 +26,14 @@ if (subjects.length === 0)
   return (
     <>
 
-<h1 className="text-center p-3 text-black text-xl font-bold"> Add subjects you will be teaching the class</h1>
+<h1 className="text-center p-3 text-black text-xl font-bold"> Your  Subjects</h1>
     <td className="text-center p-3 text-black text-xl font-bold">
             <Button variant="contained" onClick={() => navigate(`/par-stu-assignments/${student.id}`)}>ADD SUBJECT</Button>
 
 
             </td>
+  
+            
 
   {/* <div>
   <td className='ml-5'>
