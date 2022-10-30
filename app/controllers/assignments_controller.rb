@@ -1,5 +1,8 @@
 class AssignmentsController < ApplicationController
 # before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
+rescue_from ActiveRecord::RecordInvalid, with: :render_unproccessable_entity
+
 def index
   assignments = Assignment.all
   render json: assignments
@@ -34,8 +37,23 @@ def destroy
   end
 
 end
+
+# GET A SUBJECT'S ASSIGNMENTS
+def subject_assignments
+  assignments = Assignment.where(subject_id: params[:id])
+  render json: assignments
+end
+
    private
    def assignment_params
-    params.permit(:name, :subject_teacher_id, :due_date)
+    params.permit(:name, :subject_id, :due_date)
    end
+
+    def render_record_not_found
+        render json: {error: "Student Assessment not found"}, status: 404
+    end
+
+    def render_unproccessable_entity(invalid)
+        render  json: {errors: invalid.record.errors.full_messages}, status: 422
+    end
 end

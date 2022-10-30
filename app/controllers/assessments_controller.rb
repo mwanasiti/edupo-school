@@ -37,6 +37,6 @@ class AssessmentsController < ApplicationController
     end
        private
        def assesment_params
-        params.permit(:name, :subject_teacher_id, :total)
+        params.permit(:name, :subject_id, :total)
        end
 end
