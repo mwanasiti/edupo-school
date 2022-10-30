@@ -64,7 +64,6 @@ function TeacherView() {
                       navigate(`/subject-students/${row.subject_id}`)
                     }
                   >
-                    {" "}
                     View My Students
                   </Button>
                 </TableCell>
