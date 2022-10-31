@@ -28,35 +28,23 @@ function TeacherStudentAssignments() {
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
-        // setStudent(data[0].student);
-        // setSubject(data[0].subject);
-        // fetch(`/subject_assignments/${data[0].subject_id}`)
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     setSubjectAssignments(data);
-        //     // console.log(data);
-        //   });
+
       });
   }, []);
 
-  // if (assignments.length === 0) {
   useEffect(() => {
     fetch(`/students/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        // setSubjectAssignments(data);
-        console.log(data);
         setStudent(data.full_name);
         setSubject(data.subject);
         fetch(`/subject_assignments/${data.subject_id}`)
           .then((res) => res.json())
           .then((data) => {
             setSubjectAssignments(data);
-            // console.log(data);
           });
       });
   }, []);
-  // }
 
   function handleAddStudentAnAssignment(e) {
     e.preventDefault();
@@ -74,7 +62,6 @@ function TeacherStudentAssignments() {
         r.json().then((data) => {
           setAssignments([...assignments, data]);
         });
-        //   navigate(-1)
       } else {
         r.json().then((err) => setErrors(err.errors));
       }

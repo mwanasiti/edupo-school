@@ -17,6 +17,11 @@ function TeacherStudentAssessments() {
   const params = useParams();
   const { id } = params;
   const [assesments, setAssesments] = useState([]);
+  const [subjectAssesments, setSubjectAssesments] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [assessment_id, setAssessmentID] = useState(1);
+  const [student, setStudent] = useState("");
+  const [subject, setSubject] = useState("");
 
   useEffect(() => {
     fetch(`/par_stu_assesments/${id}`)
@@ -25,6 +30,42 @@ function TeacherStudentAssessments() {
         setAssesments(data);
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`/students/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setStudent(data.full_name);
+        setSubject(data.subject);
+        fetch(`/subject_assessments/${data.subject_id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setSubjectAssesments(data);
+          });
+      });
+  }, []);
+
+  function handleAddStudentAnAssesment(e) {
+    e.preventDefault();
+    fetch("/student_assesments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        student_id: id,
+        assessment_id,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          setAssesments([...assesments, data]);
+        });
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
 
   return (
     <>
@@ -80,6 +121,62 @@ function TeacherStudentAssessments() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+          Give Student an Assessment
+          <hr></hr>
+        </h1>
+        <form className="flex flex-col text-center font-black p-4">
+          <p className="m-2  font-bold text-xl text-black">
+            Name:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {student}
+            </span>
+          </p>
+          <p className="m-2  font-bold text-xl text-black">
+            Subject:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {subject}
+            </span>
+          </p>
+          <label htmlFor="assesment" className="text-lg text-black mt-2">
+            Select Assessment:
+            <br></br>
+            <select
+              name="assesment"
+              value={assessment_id}
+              onChange={(e) => setAssessmentID(e.target.value)}
+              className="mt-3 p-1 bg-neutral-200 rounded"
+            >
+              {subjectAssesments.map((assesment) => (
+                <option key={assesment.id} value={assesment.id}>
+                  {assesment.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          {errors.map((error) => {
+            return (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                role="alert"
+              >
+                <span className="block sm:inline">{error}</span>
+              </div>
+            );
+          })}
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            className="w-1/3 mt-4 mx-auto"
+            onClick={handleAddStudentAnAssesment}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
     </>
   );
 }
