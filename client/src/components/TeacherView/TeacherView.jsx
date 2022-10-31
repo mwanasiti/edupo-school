@@ -124,7 +124,7 @@ function TeacherView() {
         </Table>
       </TableContainer>
 
-      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+      {/* <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Add New Subject
           <hr></hr>
@@ -161,7 +161,7 @@ function TeacherView() {
             Submit
           </Button>
         </form>
-      </div>
+      </div> */}
     </>
   );
 }
