@@ -3,34 +3,34 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
 
-function EditAssignment() {
+function EditAssessment() {
   const [errors, setErrors] = useState([]);
 
   const navigate = useNavigate();
   const params = useParams();
   const { id } = params;
   const [name, setName] = useState("");
-  const [due_date, setDate] = useState("");
+  const [total, setTotal] = useState(100);
 
   useEffect(() => {
-    fetch(`/assignments/${id}`)
+    fetch(`/assessments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setName(data.name);
-        setDate(data.due_date);
+        setTotal(data.total);
       });
   }, []);
 
-  function handleAssignmentSubmit(e) {
+  function handleAssessmentSubmit(e) {
     e.preventDefault();
-    fetch(`/assignments/${id}`, {
+    fetch(`/assessments/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         name,
-        due_date,
+        total,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -47,12 +47,12 @@ function EditAssignment() {
     <>
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
-          Add New Assignment
+          Edit Assessment
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
           <label htmlFor="name" className="text-lg">
-            Assignment Name:
+            Assessment Name:
           </label>
           <input
             required
@@ -62,17 +62,16 @@ function EditAssignment() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="date" className="text-lg mt-4">
-            Due Date:
+          <label htmlFor="total" className="text-lg mt-4">
+            Total:
           </label>
           <input
             required
             className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="date"
-            name="date"
-            placeholder="yy-mm-dd"
-            value={due_date}
-            onChange={(e) => setDate(e.target.value)}
+            type="number"
+            name="total"
+            value={total}
+            onChange={(e) => setTotal(e.target.value)}
           />
           {errors.map((error) => {
             return (
@@ -89,7 +88,7 @@ function EditAssignment() {
             color="success"
             type="submit"
             className="w-1/3 mt-4 mx-auto"
-            onClick={handleAssignmentSubmit}
+            onClick={handleAssessmentSubmit}
           >
             Submit
           </Button>
@@ -99,4 +98,4 @@ function EditAssignment() {
   );
 }
 
-export default EditAssignment;
+export default EditAssessment;

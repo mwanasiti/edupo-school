@@ -24,6 +24,12 @@ class AssessmentsController < ApplicationController
       assesment = Assessment.create(assesment_params)
       render json: assesment,  status: :created
     end
+
+    def update
+      assessment = Assessment.find(params[:id])
+      assessment.update(assesment_params)
+      render json: assessment, status: 201
+    end
     # DESTROY
     
     def destroy
