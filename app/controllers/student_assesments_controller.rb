@@ -23,6 +23,12 @@ class StudentAssesmentsController < ApplicationController
         render json: student_assesment, status: 201
     end
 
+    def destroy
+        student_assesment = StudentAssesment.find(params[:id])
+        student_assesment.destroy
+        render json: student_assesment
+    end
+
     def par_stu_assesments
         student_assesments = StudentAssesment.where(student_id: params[:id])
         render json: student_assesments

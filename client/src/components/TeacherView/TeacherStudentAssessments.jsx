@@ -67,6 +67,23 @@ function TeacherStudentAssessments() {
     });
   }
 
+  function handleAssesmentDelete(id) {
+    fetch(`/student_assesments/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        const updatedAssesments = assesments.filter(
+          (assesment) => assesment.id !== data.id
+        );
+        setAssesments(updatedAssesments);
+      });
+  }
+
   return (
     <>
       {/* <div>TeacherStudentAssessments</div> */}
@@ -82,6 +99,7 @@ function TeacherStudentAssessments() {
               <TableCell align="right">Score</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Change Score</TableCell>
+              <TableCell align="right">UN-assign</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -114,6 +132,15 @@ function TeacherStudentAssessments() {
                     }
                   >
                     Change Score
+                  </Button>
+                </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => handleAssesmentDelete(row.id)}
+                  >
+                    UN-ASSIGN
                   </Button>
                 </TableCell>
               </TableRow>
