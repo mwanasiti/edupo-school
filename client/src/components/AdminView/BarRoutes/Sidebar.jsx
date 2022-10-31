@@ -5,15 +5,17 @@ import { SideData } from "./SideData";
 function Sidebar() {
   return (
     <div className="sidebar">
-    <h1>Sidebar</h1>
-      <ul>
+   
+      <ul className="sidebarlist" >
         {
             SideData.map((val, key) => {
           return (
-            <li key={key} onClick={()=>{window.location.pathname = val.link}}>
+            <li key={key} onClick={()=>{window.location.pathname = val.link}}  className="row"
+            id={window.location.pathname == val.link ? "active": "  "}
+            >
               {" "}
-              <div>{val.icon}</div>{" "}
-              <div>{val.title}</div>{"  "}
+              <div id="icon">{val.icon}</div>{" "}
+              <div id="title">{val.title}</div>{"  "}
             </li>
           );
         })}
