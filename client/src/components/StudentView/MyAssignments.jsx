@@ -23,6 +23,8 @@ function MyAssignments() {
   return (
     <>
       {/* <div>A Parent's Student Assignments View</div> */}
+      <h1 className="text-center p-3 text-black text-xl font-bold" >MY ASSIGNMENTS</h1>
+
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>

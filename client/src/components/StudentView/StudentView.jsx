@@ -28,10 +28,9 @@ function StudentView() {
   return (
 
     <div className='container'>
-         <p> This will be the Student's view after Logging in</p>
-         <StudentGrid isLoading={isLoading} students={students} />
+         {/* <p> This will be the Student's view after Logging in</p> */}
+         {/* <StudentGrid isLoading={isLoading} students={students} /> */}
          <MyAssignments />
-         <h1>MY ASSESSMENTS</h1> 
          <MyAssessments />
       </div>
 

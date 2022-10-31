@@ -23,6 +23,7 @@ function MyAssessments() {
   return (
     <>
       {/* <div>A Parent's Student Assessments View</div> */}
+      <h1 className="text-center p-3 text-black text-xl font-bold" >MY ASSESSMENTS</h1>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
