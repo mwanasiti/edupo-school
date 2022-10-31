@@ -13,7 +13,7 @@ function Sidebar() {
     <div className='sidebar'>
     <div className="sidebarWrapper">
       <div className='sidebarMenu'>
-        <h3  className='sidebarTitle'>Admin Forms</h3>
+        <p  className='sidebarTitle'>Admin Forms</p>
         <ul className='sidebarList'>
           <li className='sidebarListItem active'onClick={() => {
           navigate("/dashboard");
@@ -46,7 +46,7 @@ function Sidebar() {
         </ul>
       </div>
       <div className='sidebarMenu'>
-        <h3  className='sidebarTitle'>DataTables</h3>
+        <p  className='sidebarTitle'>DataTables</p>
         <ul className='sidebarList'>
           
           <li className='sidebarListItem'  onClick={() => {
@@ -76,7 +76,7 @@ function Sidebar() {
         </ul>
       </div>
       <div className='sidebarMenu'>
-        <h3  className='sidebarTitle'>Admin</h3>
+        <p className='sidebarTitle'>Admin</p>
         <ul className='sidebarList'>
           
           <li className='sidebarListItem'  onClick={() => {

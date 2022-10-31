@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-<<<<<<< HEAD
 # puts "Seeding Admin.."
 # admin = Admin.create(username: "admin", email: "admin@gmail.com", role: "admin", password: "admin")
 # puts "Done Seeding Admin"
@@ -51,7 +50,6 @@ puts "Done Seeding Students"
 # Classroom.create(name: "Sparrow", teacher_id: 1)
 
 # Teacher.create(role: "teacher", gender: "female", image:"https://i.pinimg.com/564x/8f/fe/23/8ffe23f25c98188f6ac63aaca13ccd37.jpg", phone_no:"4567", address: "44ruby", full_name: "Salma Salim", email: "salma@gmail.com", password:"bob", username:"bob")
-=======
 
 puts "Seeding Admin"
 admin = Admin.create(username: "admin", email: "angelastephen14@gmail.com", role: "admin", password: "admin")
@@ -140,4 +138,3 @@ puts "Done Seeding Student Assessments"
 
 
 puts "Completed All Seeding"
->>>>>>> deno

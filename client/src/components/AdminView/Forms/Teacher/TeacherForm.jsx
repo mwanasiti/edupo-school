@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Button, Grid } from "@material-ui/core";
 import React, { useState } from "react";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
@@ -97,14 +96,3 @@ function TeacherForm() {
 }
 
 export default TeacherForm;
-=======
-import React from 'react'
-
-function TeacherForm() {
-  return (
-    <div>TeacherForm</div>
-  )
-}
-
-export default TeacherForm
->>>>>>> deno
