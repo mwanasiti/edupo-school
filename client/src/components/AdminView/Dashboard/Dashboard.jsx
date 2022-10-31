@@ -1,34 +1,26 @@
-
-import { BorderColor, Group, Person, School } from '@mui/icons-material'
-import { Box, Card, CardContent, Typography,  } from '@mui/material'
-import React from 'react'
+import { Grid } from "@material-ui/core";
+import { BorderColor, Group, Person, School } from "@mui/icons-material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
+import React from "react";
+import Sidebar from "../BarRoutes/Sidebar";
+import "./../BarRoutes/Side.css";
+import "./Dashboard.css";
 
 function Dashboard() {
   return (
-
-    <Box style={{width:"100px", marginLeft:"100px"}} >
-      <Card style={{background:"grey", marginTop:"40px", width:"200px", height:"150px"}}>
-        <CardContent>
-          <Typography gutterBottom variant='h7' component='div' ><School/>Students </Typography>
-        </CardContent>
-      </Card>
-      <Card style={{background:"green", marginTop:"10px", width:"200px" , height:"150px"}}>
-        <CardContent>
-          <Typography gutterBottom variant='h7' component='div'><BorderColor/> Teachers </Typography>
-        </CardContent>
-      </Card>
-      <Card style={{background:"pink", marginTop:"10px", width:"200px" , height:"150px"}}>
-        <CardContent>
-          <Typography gutterBottom variant='h7' component='div'><Person/>Parents </Typography>
-        </CardContent>
-      </Card>
-      <Card style={{background:"purple", marginTop:"10px", width:"200px" , height:"150px"}}>
-        <CardContent>
-          <Typography gutterBottom variant='h7' component='div'><Group/>Staff </Typography>
-        </CardContent>
-      </Card>
-    </Box>
-  )
+    <div className="bigParent">
+      <Grid container>
+        <Grid item sm={4} xs={2} lg={2}>
+          <Sidebar />
+        </Grid>
+        <Grid item sm={4} xs={2} lg={2}>
+          <div className="home">
+          Dashboard
+          </div>
+        </Grid>
+      </Grid>
+    </div>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
