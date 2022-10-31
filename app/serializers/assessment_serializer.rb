@@ -1,3 +1,3 @@
 class AssessmentSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :subject_teacher_id, :total
 end
