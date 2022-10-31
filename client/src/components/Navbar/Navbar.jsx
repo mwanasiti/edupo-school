@@ -52,7 +52,11 @@ function Navbar({ user, setUser }) {
   return (
     <nav
       className="flex items-center justify-between flex-wrap bg-our-black p-6"
+<<<<<<< HEAD
       style={{ backgroundColor: "#fff" }}
+=======
+      style={{ backgroundColor: "#FFFDD0", color:'#000' }}
+>>>>>>> origin/mariam
     >
       <Link
         to="/"
@@ -67,7 +71,7 @@ function Navbar({ user, setUser }) {
         EDUPO
       </Link>
       {user ? (
-        <h1 className=" text-black hover:text-black-200 ">
+        <h1 style={{fontSize:'20px', fontFamily:'cursive', fontWeight:'bold'}} className=" text-black hover:text-black-200 ">
           Hi {user.username}
         </h1>
       ) : null}
