@@ -19,18 +19,36 @@ function TeacherStudentAssignments() {
   const [assignments, setAssignments] = useState([]);
   const [subjectAssignments, setSubjectAssignments] = useState([]);
   const [errors, setErrors] = useState([]);
-  const [assignment_id, setAssignmentID] = useState("");
-  const [student, setStudent] = useState('')
-  const [subject, setSubject] = useState('')
+  const [assignment_id, setAssignmentID] = useState(1);
+  const [student, setStudent] = useState("");
+  const [subject, setSubject] = useState("");
 
   useEffect(() => {
     fetch(`/par_stu_assignments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
-        setStudent(data[0].student)
-        setSubject(data[0].subject)
-        fetch(`/subject_assignments/${data[0].subject_id}`)
+        // setStudent(data[0].student);
+        // setSubject(data[0].subject);
+        // fetch(`/subject_assignments/${data[0].subject_id}`)
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     setSubjectAssignments(data);
+        //     // console.log(data);
+        //   });
+      });
+  }, []);
+
+  // if (assignments.length === 0) {
+  useEffect(() => {
+    fetch(`/students/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // setSubjectAssignments(data);
+        console.log(data);
+        setStudent(data.full_name);
+        setSubject(data.subject);
+        fetch(`/subject_assignments/${data.subject_id}`)
           .then((res) => res.json())
           .then((data) => {
             setSubjectAssignments(data);
@@ -38,6 +56,7 @@ function TeacherStudentAssignments() {
           });
       });
   }, []);
+  // }
 
   function handleAddStudentAnAssignment(e) {
     e.preventDefault();
@@ -48,7 +67,7 @@ function TeacherStudentAssignments() {
       },
       body: JSON.stringify({
         student_id: id,
-        assignment_id
+        assignment_id,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -60,6 +79,23 @@ function TeacherStudentAssignments() {
         r.json().then((err) => setErrors(err.errors));
       }
     });
+  }
+
+  function handleAssignmentDelete(id) {
+    fetch(`/student_assignments/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        const updatedAssignments = assignments.filter(
+          (assignment) => assignment.id !== data.id
+        );
+        setAssignments(updatedAssignments);
+      });
   }
 
   return (
@@ -76,6 +112,7 @@ function TeacherStudentAssignments() {
               <TableCell align="right">Score</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Change Score</TableCell>
+              <TableCell align="right">UN-assign</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -110,6 +147,15 @@ function TeacherStudentAssignments() {
                     Change Score
                   </Button>
                 </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => handleAssignmentDelete(row.id)}
+                  >
+                    UN-ASSIGN
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -122,18 +168,18 @@ function TeacherStudentAssignments() {
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-        <p className="m-2  font-bold text-xl text-black">
-          Name:{" "}
-          <span className="text-lg font-light text-neutral-900 ml-4">
-            {student}
-          </span>
-        </p>
-        <p className="m-2  font-bold text-xl text-black">
-          Subject:{" "}
-          <span className="text-lg font-light text-neutral-900 ml-4">
-            {subject}
-          </span>
-        </p>
+          <p className="m-2  font-bold text-xl text-black">
+            Name:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {student}
+            </span>
+          </p>
+          <p className="m-2  font-bold text-xl text-black">
+            Subject:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {subject}
+            </span>
+          </p>
           <label htmlFor="assignment" className="text-lg text-black mt-2">
             Select Assignment:
             <br></br>
@@ -144,7 +190,9 @@ function TeacherStudentAssignments() {
               className="mt-3 p-1 bg-neutral-200 rounded"
             >
               {subjectAssignments.map((assignment) => (
-                <option key={assignment.id} value={assignment.id}>{assignment.name}</option>
+                <option key={assignment.id} value={assignment.id}>
+                  {assignment.name}
+                </option>
               ))}
             </select>
           </label>

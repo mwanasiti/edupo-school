@@ -18,10 +18,17 @@ class StudentAssignmentsController < ApplicationController
         render json: student_assignment, status: 201
     end
 
+    def destroy
+        student_assignment = StudentAssignment.find(params[:id])
+        student_assignment.destroy
+        render json: student_assignment
+    end
+
     def par_stu_assignments
         student_assignments = StudentAssignment.where(student_id: params[:id])
         render json: student_assignments
     end
+    
 
     def create
         student_assignment = StudentAssignment.create(student_assignment_params)
