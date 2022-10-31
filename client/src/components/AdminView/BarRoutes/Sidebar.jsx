@@ -1,27 +1,97 @@
-import React from "react";
-import "./Side.css";
-import { SideData } from "./SideData";
+import { Dashboard, Group, Person, School, Settings } from '@material-ui/icons'
+import { useNavigate } from "react-router-dom";
+import React from 'react'
+import './Side.css'
+
+
+
 
 function Sidebar() {
+  let navigate = useNavigate();
+  
   return (
-    <div className="sidebar">
-   
-      <ul className="sidebarlist" >
-        {
-            SideData.map((val, key) => {
-          return (
-            <li key={key} onClick={()=>{window.location.pathname = val.link}}  className="row"
-            id={window.location.pathname == val.link ? "active": "  "}
-            >
-              {" "}
-              <div id="icon">{val.icon}</div>{" "}
-              <div id="title">{val.title}</div>{"  "}
-            </li>
-          );
-        })}
-      </ul>
+    <div className='sidebar'>
+    <div className="sidebarWrapper">
+      <div className='sidebarMenu'>
+        <h3  className='sidebarTitle'>Admin Forms</h3>
+        <ul className='sidebarList'>
+          <li className='sidebarListItem active'onClick={() => {
+          navigate("/dashboard");
+        }}>
+            <Dashboard className='sidebarIcon' />
+            Dashboard
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/addteacher");
+        }}>
+            <Person className='sidebarIcon'/>
+            Teacher
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/addstudent");
+        }}>
+            <School className='sidebarIcon'/>
+            Student
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/addparent");
+        }}>
+            <Person className='sidebarIcon'/>
+            Parent
+          </li>
+          <li className='sidebarListItem'>
+            <Group className='sidebarIcon'/>
+            Staff
+          </li>
+        </ul>
+      </div>
+      <div className='sidebarMenu'>
+        <h3  className='sidebarTitle'>DataTables</h3>
+        <ul className='sidebarList'>
+          
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/teachertable");
+        }}>
+            <Person className='sidebarIcon'/>
+            Teacher Table
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/studenttable");
+        }}>
+            <School className='sidebarIcon'/>
+            Student Table
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/parenttable");
+        }}>
+            <Person className='sidebarIcon'/>
+            Parent Table
+          </li>
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/stafftable");
+        }}>
+            <Group className='sidebarIcon'/>
+            Staff Table
+          </li>
+        </ul>
+      </div>
+      <div className='sidebarMenu'>
+        <h3  className='sidebarTitle'>Admin</h3>
+        <ul className='sidebarList'>
+          
+          <li className='sidebarListItem'  onClick={() => {
+          navigate("/settings");
+        }}>
+            <Settings className='sidebarIcon'/>
+            Settings
+          </li>
+          
+        </ul>
+      </div>
     </div>
-  );
+   
+    </div>
+  )
 }
 
-export default Sidebar;
+export default Sidebar
