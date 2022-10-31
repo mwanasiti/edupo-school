@@ -18,6 +18,11 @@ class StudentAssesmentsController < ApplicationController
         render json: student_assesment, status: 201
     end
 
+    def create
+        student_assesment = StudentAssesment.create(student_assesments_params)
+        render json: student_assesment, status: 201
+    end
+
     def par_stu_assesments
         student_assesments = StudentAssesment.where(student_id: params[:id])
         render json: student_assesments
