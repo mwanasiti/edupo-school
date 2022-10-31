@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Button, Grid } from "@material-ui/core";
 import React from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
@@ -67,3 +68,14 @@ function ParentForm() {
 }
 
 export default ParentForm;
+=======
+import React from 'react'
+
+function ParentForm() {
+  return (
+    <div>ParentForm</div>
+  )
+}
+
+export default ParentForm
+>>>>>>> deno

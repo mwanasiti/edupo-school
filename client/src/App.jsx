@@ -10,9 +10,22 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import LoginForm from "./components/LoginForm/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
+import ParentStudentAssessments from "./components/ParentView/ParentStudentAssessments";
+import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
 import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
+import AddAssessment from "./components/TeacherView/AddAssessment";
+import AddAssignment from "./components/TeacherView/AddAssignment";
+import ChangeAssessmentScore from "./components/TeacherView/ChangeAssessmentScore";
+import ChangeAssignmentScore from "./components/TeacherView/ChangeAssignmentScore";
+import EditAssessment from "./components/TeacherView/EditAssessment";
+import EditAssignment from "./components/TeacherView/EditAssignment";
+import SubjectStudents from "./components/TeacherView/SubjectStudents";
+import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
+import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
 import TeacherView from "./components/TeacherView/TeacherView";
+// import Syllabus from "./components/TeacherView/Syllabus";
+// import SubjectList from "./components/TeacherView/SubjectList";
 
 
 
@@ -68,12 +81,37 @@ function App() {
           <Route path="/admin" element={<AdminView />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
 
+<<<<<<< HEAD
           {/* ADMIN ROUTES */}
           
         <Route  path='/dashboard' element={<Dashboard/>}/>
         <Route  path='/addstudent' element={<StudentForm/>}/>
         <Route  path='/addteacher' element={<TeacherForm/>}/>
         <Route  path='/addparent' element={<ParentForm/>}/>
+=======
+          <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
+          <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
+
+          <Route path="/subject-students/:id" element={<SubjectStudents/>} />
+
+          <Route path="/my-students-assessments/:id" element={<TeacherStudentAssessments/>} />
+          <Route path="/my-students-assignments/:id" element={<TeacherStudentAssignments/>} />
+
+          <Route path="/change-assessment-score/:id" element={<ChangeAssessmentScore/>} />
+          <Route path="/change-assignment-score/:id" element={<ChangeAssignmentScore/>} />
+
+          <Route path="/add-assignment/:id" element={<AddAssignment/>} />
+          <Route path="/add-assessment/:id" element={<AddAssessment/>} />
+
+
+          <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
+          <Route path="/edit-assessment/:id" element={<EditAssessment/>} />
+
+
+
+
+
+>>>>>>> deno
         </Routes>
       </main>
       <Footer />
