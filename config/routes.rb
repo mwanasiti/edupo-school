@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :update, :create]
   resources :admins, only: [:index, :show, :update, :create]
   resources :assignments, only: [:index, :show, :update, :create, :destroy]
-  resources :assessments, only: [:index, :show, :update, :create]
+  resources :assessments, only: [:index, :show, :update, :create, :destroy]
   resources :classrooms, only: [:index, :show, :update, :create]
   resources :subjects, only: [:index, :show, :update, :create]
   resources :teachers, only: [:index, :show, :update, :create]
@@ -42,6 +42,9 @@ Rails.application.routes.draw do
 
   # GET A SUBJECT'S ASSIGNMENTS
   get "subject_assignments/:id", to: "assignments#subject_assignments"
+
+    # GET A SUBJECT'S ASSESSMENTS
+    get "subject_assessments/:id", to: "assessments#subject_assessments"
   
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"

@@ -47,6 +47,7 @@ function TeacherView() {
               <TableCell>Subject Name</TableCell>
               <TableCell align="right">View Students</TableCell>
               <TableCell align="right">View Assignments</TableCell>
+              <TableCell align="right">View Assessments</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -77,6 +78,17 @@ function TeacherView() {
                     }
                   >
                     View Assignments
+                  </Button>
+                </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="success"
+                    onClick={() =>
+                      navigate(`/add-assessment/${row.subject_id}`)
+                    }
+                  >
+                    View Assessments
                   </Button>
                 </TableCell>
               </TableRow>
