@@ -81,14 +81,12 @@ function App() {
           <Route path="/admin" element={<AdminView />} />
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
 
-<<<<<<< HEAD
           {/* ADMIN ROUTES */}
           
         <Route  path='/dashboard' element={<Dashboard/>}/>
         <Route  path='/addstudent' element={<StudentForm/>}/>
         <Route  path='/addteacher' element={<TeacherForm/>}/>
         <Route  path='/addparent' element={<ParentForm/>}/>
-=======
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
 
@@ -111,7 +109,6 @@ function App() {
 
 
 
->>>>>>> deno
         </Routes>
       </main>
       <Footer />
