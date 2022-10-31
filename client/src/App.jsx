@@ -13,6 +13,7 @@ import AddAssessment from "./components/TeacherView/AddAssessment";
 import AddAssignment from "./components/TeacherView/AddAssignment";
 import ChangeAssessmentScore from "./components/TeacherView/ChangeAssessmentScore";
 import ChangeAssignmentScore from "./components/TeacherView/ChangeAssignmentScore";
+import EditAssessment from "./components/TeacherView/EditAssessment";
 import EditAssignment from "./components/TeacherView/EditAssignment";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
@@ -82,6 +83,8 @@ function App() {
 
 
           <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
+          <Route path="/edit-assessment/:id" element={<EditAssessment/>} />
+
 
 
 
