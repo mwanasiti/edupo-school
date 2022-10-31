@@ -18,39 +18,50 @@ function TeacherStudentAssignments() {
   const { id } = params;
   const [assignments, setAssignments] = useState([]);
   const [subjectAssignments, setSubjectAssignments] = useState([]);
-  const [subject_id, setSubjectId] = useState("hey")
+  const [errors, setErrors] = useState([]);
+  const [assignment_id, setAssignmentID] = useState("");
 
   useEffect(() => {
     fetch(`/par_stu_assignments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
-        setSubjectId(data[0].subject_id)
-        console.log(subject_id)
-        // console.log(data);
-        fetch(`/subject_assessments/${data[0].subject_id}`)
+ 
+        fetch(`/subject_assignments/${data[0].subject_id}`)
           .then((res) => res.json())
           .then((data) => {
             setSubjectAssignments(data);
 
-            // console.log(data)
+            console.log(data);
           });
       });
   }, []);
 
-
-
-  // useEffect(() => {
-  //   fetch(`/subject_assessments/${assessment[0].subject_id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setSubjectAssignments(data);
-  //     });
-  // }, []);
+  function handleAddStudentAnAssignment() {
+    e.preventDefault();
+    fetch("/assignments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        student_id: id,
+        assignment_id
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          setAssignments([...assignments, data]);
+        });
+        //   navigate(-1)
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
 
   return (
     <>
-      <div>TeacherStudentAssignments</div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -102,6 +113,48 @@ function TeacherStudentAssignments() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+          Add Student an Assignment
+          <hr></hr>
+        </h1>
+        <form className="flex flex-col text-center font-black p-4">
+          <label htmlFor="assignment" className="text-lg text-black">
+            Select Assignment:
+            <br></br>
+            <select
+              name="assignment"
+              value={assignment_id}
+              onChange={(e) => setAssignmentID(e.target.value)}
+              className="mt-3 p-1 bg-neutral-200 rounded"
+            >
+              {subjectAssignments.map((assignment) => (
+                <option value={assignment.id}>{assignment.name}</option>
+              ))}
+            </select>
+          </label>
+          {errors.map((error) => {
+            return (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                role="alert"
+              >
+                <span className="block sm:inline">{error}</span>
+              </div>
+            );
+          })}
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            className="w-1/3 mt-4 mx-auto"
+            onClick={handleAddStudentAnAssignment}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
     </>
   );
 }
