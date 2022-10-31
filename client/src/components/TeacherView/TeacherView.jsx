@@ -15,6 +15,9 @@ function TeacherView() {
   const navigate = useNavigate();
 
   const [subjects, setSubjects] = useState([]);
+  const [name, setName] = useState([])
+  const [errors, setErrors] = useState([]);
+
 
   useEffect(() => {
     fetch("/teacher_subjects")
@@ -23,6 +26,30 @@ function TeacherView() {
         setSubjects(data);
       });
   }, []);
+
+
+  function handleSubjectSubmit(e) {
+    e.preventDefault();
+    fetch("/new_subject_teacher", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          setSubjects([...subjects, data]);
+        });
+        setName("");
+        //   navigate(-1)
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
 
   if (subjects.length === 0)
     return (
@@ -96,6 +123,45 @@ function TeacherView() {
           </TableBody>
         </Table>
       </TableContainer>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+          Add New Subject
+          <hr></hr>
+        </h1>
+        <form className="flex flex-col text-center font-black p-4">
+          <label htmlFor="name" className="text-lg">
+            Subject Name:
+          </label>
+          <input
+            required
+            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          {errors.map((error) => {
+            return (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                role="alert"
+              >
+                <span className="block sm:inline">{error}</span>
+              </div>
+            );
+          })}
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            className="w-1/3 mt-4 mx-auto"
+            onClick={handleSubjectSubmit}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
     </>
   );
 }
