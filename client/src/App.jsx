@@ -58,7 +58,7 @@ function App() {
       <main className="min-h-[92vh]">
       <Navbar user={user} setUser={setUser} />
     
-      {/* <Sidebar /> */}
+      
         
         <Routes>
           <Route path="/" element={<Home />} />

@@ -20,29 +20,7 @@ function AdminView() {
   
   return (
     <div>
-  
-     {/* <p> This will be the Admin's view after Logging in <br/></p> */}
-
-      <Grid container>
-      <Grid item sm={4} xs={2} lg={2}>
-      {/* <Adminbar/> */}
-      {/* <Sidebar/> */}
-      </Grid>
-      <Grid item sm={7} xs={10} lg={9}>
-      
-      {/* <StudentForm/> */}
-      {/* <ParentForm/> */}
-      {/* <StudentData /> */}
-      {/* <Dashboard /> */}
-      {/* <TeacherView/> */}
-      {/* <ParentView/> */}
-      {/* <TeacherForm/> */}
-      </Grid>
-      </Grid>
-   
-    
-    {/* <StudentForm/>
-    <StudentAdd/> */}
+<Dashboard/>
     </div>
   )
 }

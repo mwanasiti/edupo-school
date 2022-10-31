@@ -28482,3 +28482,1987 @@ Processing by PersistenceController#parent as */*
 Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 772)
 
 
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Completed 401 Unauthorized in 67ms (Views: 1.8ms | ActiveRecord: 2.6ms | Allocations: 2089)
+
+
+  [1m[36mAdmin Load (0.8ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#teacher as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 27ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2809)
+
+
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 21ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 2186)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 12ms (Views: 1.7ms | ActiveRecord: 1.3ms | Allocations: 2192)
+
+
+Completed 200 OK in 50ms (Views: 6.6ms | ActiveRecord: 6.3ms | Allocations: 3529)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:44:55 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 835)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:44:56 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.6ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 815)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+  [1m[36mAdmin Load (4.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 11ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1828)
+
+
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 4.6ms | Allocations: 1730)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 766)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 766)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 766)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:45:10 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 831)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 823)
+
+
+Completed 401 Unauthorized in 24ms (Views: 20.7ms | ActiveRecord: 0.3ms | Allocations: 3318)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:45:16 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:45:16 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:45:16 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:45:16 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 777)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Processing by PersistenceController#teacher as */*
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1321)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 871)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 829)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 792)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 774)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 818)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 774)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.5ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 774)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:45:57 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 774)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 12ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 774)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#student as */*
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1026)
+
+
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 7ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1259)
+
+
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 14ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2301)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 789)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 14:47:30 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1528)
+
+
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 924)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by PersistenceController#teacher as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 298ms (Views: 2.0ms | ActiveRecord: 166.3ms | Allocations: 2912)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 74ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3595)
+
+
+Completed 401 Unauthorized in 41ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 2132)
+
+
+Completed 200 OK in 41ms (Views: 7.5ms | ActiveRecord: 2.1ms | Allocations: 1864)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 807)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:22:47 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#student as */*
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1283)
+
+
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 10ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1340)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (1.0ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 811)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 768)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+Processing by PersistenceController#teacher as */*
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:27:48 +0300
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 929)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 776)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 776)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Processing by PersistenceController#parent as */*
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1234)
+
+
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1380)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 22ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 841)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 789)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:28:07 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 786)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 820)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 774)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 7ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1846)
+
+
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 946)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:29:09 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 811)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Completed 401 Unauthorized in 15ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1176)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 15:29:21 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:01:59 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:01:59 +0300
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (1.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:01:59 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:01:59 +0300
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Processing by PersistenceController#parent as */*
+Completed 200 OK in 61ms (Views: 7.8ms | ActiveRecord: 15.9ms | Allocations: 2558)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:02:00 +0300
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 61ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1929)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 11ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 829)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:02:00 +0300
+Completed 401 Unauthorized in 246ms (Views: 30.9ms | ActiveRecord: 1.1ms | Allocations: 7105)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 805)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:02:00 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 794)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 7ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 829)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:02:00 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 837)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 817)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1027)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (1.0ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 817)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:02:46 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 9ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 9ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 776)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 21ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:03:14 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 766)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 7ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 800)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 21ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1714)
+
+
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 913)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 766)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 766)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 16:03:15 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 766)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:26:29 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:26:29 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:26:29 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:26:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 85ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 20673)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:26:30 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 701)
+
+
+  [1m[36mTeacher Load (0.5ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 147ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 26018)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:26:30 +0300
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 193ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 33714)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:26:30 +0300
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 747)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 684)
+
+
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 316ms (Views: 0.4ms | ActiveRecord: 1.4ms | Allocations: 38826)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:26:30 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 684)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:26:32 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 305ms (Views: 2.7ms | ActiveRecord: 1.4ms | Allocations: 17118)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:27:03 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:27:07 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 298ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 803)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 909)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 837)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 829)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 766)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 767)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 809)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:27:20 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:27:23 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:27:31 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 329ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 803)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:28:17 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:28:17 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:28:17 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:28:17 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 102ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 19147)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 137ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 23512)
+
+
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 151ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 25051)
+
+
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 377ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 33401)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:28:18 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (1.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 684)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:28:18 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 684)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:28:18 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 702)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:28:18 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 684)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:28:21 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 329ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 17117)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:28:42 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 189)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:28:47 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 293ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 803)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:29:35 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 6ms (ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:29:38 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.6ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 306ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 807)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (81.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#student as */*
+Completed 200 OK in 128ms (Views: 1.5ms | ActiveRecord: 81.9ms | Allocations: 2955)
+
+
+  [1m[36mTeacher Load (4.6ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 26ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 2541)
+
+
+Completed 401 Unauthorized in 25ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 2473)
+
+
+Completed 401 Unauthorized in 39ms (Views: 0.4ms | ActiveRecord: 5.4ms | Allocations: 3879)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:30:10 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 773)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Processing by PersistenceController#parent as */*
+Completed 401 Unauthorized in 21ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2544)
+
+
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1198)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:30:12 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:30:16 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 307ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 812)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:31:24 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:31:24 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:31:24 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:31:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+  [1m[36mAdmin Load (0.9ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 179ms (Views: 1.7ms | ActiveRecord: 2.2ms | Allocations: 33166)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:31:24 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 779)
+
+
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 326ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 42763)
+
+
+Completed 200 OK in 370ms (Views: 0.6ms | ActiveRecord: 2.6ms | Allocations: 50143)
+
+
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 382ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 52618)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:31:25 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:31:25 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:31:25 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 763)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 796)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:31:26 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 190)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:31:28 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 280ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 945)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:32:09 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 10ms (ActiveRecord: 0.0ms | Allocations: 179)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:32:24 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 303ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 800)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Processing by PersistenceController#admin as */*
+Processing by PersistenceController#teacher as */*
+  [1m[36mAdmin Load (0.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1343)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 9ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1748)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 827)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1420)
+
+
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 919)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 1019)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 762)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:32:46 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:32:51 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 181)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 818)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 777)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 15ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 867)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 822)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 777)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:33:37 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 842)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (1.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1213)
+
+
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 24ms (Views: 7.7ms | ActiveRecord: 1.3ms | Allocations: 1205)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:33:50 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 315ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 803)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 10ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 962)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 770)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.7ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 770)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 766)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 766)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 766)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:34:03 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 766)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 762)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:34:23 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:34:24 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:34:24 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 12ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 777)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:35:29 +0300
+Processing by PersistenceController#student as */*
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 2327)
+
+
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 17ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1683)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1041)
+
+
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2132)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 8ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:36:22 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 173)
+
+
+Started POST "/teacher_login" for 127.0.0.1 at 2022-10-31 22:36:30 +0300
+Processing by TeacherSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "teacher_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/teacher_sessions_controller.rb:4:in `create'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 675)
+
+
+Started POST "/teacher_login" for 127.0.0.1 at 2022-10-31 22:36:50 +0300
+Processing by TeacherSessionsController#create as */*
+  Parameters: {"username"=>"jon", "password"=>"[FILTERED]", "teacher_session"=>{"username"=>"jon", "password"=>"[FILTERED]"}}
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."username" = ? LIMIT ?[0m  [["username", "jon"], ["LIMIT", 1]]
+  ↳ app/controllers/teacher_sessions_controller.rb:4:in `create'
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 511)
+
+
+Started POST "/parent_login" for 127.0.0.1 at 2022-10-31 22:36:52 +0300
+Processing by ParentSessionsController#create as */*
+  Parameters: {"username"=>"jon", "password"=>"[FILTERED]", "parent_session"=>{"username"=>"jon", "password"=>"[FILTERED]"}}
+  [1m[36mParent Load (0.9ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."username" = ? LIMIT ?[0m  [["username", "jon"], ["LIMIT", 1]]
+  ↳ app/controllers/parent_sessions_controller.rb:4:in `create'
+Completed 200 OK in 347ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 15120)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:38:10 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (1.7ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 300ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 799)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 789)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 789)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 773)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (1.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 936)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 773)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 777)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:39:01 +0300
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 785)
+
+
+  [1m[36mParent Load (1.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 200 OK in 30ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 2073)
+
+
+Started DELETE "/parent_logout" for 127.0.0.1 at 2022-10-31 22:39:02 +0300
+Processing by ParentSessionsController#destroy as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:39:05 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 260ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 816)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 684)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Processing by PersistenceController#student as */*
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 684)
+
+
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+Completed 401 Unauthorized in 197ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 3351)
+
+
+Processing by PersistenceController#student as */*
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Processing by PersistenceController#teacher as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 12ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 2140)
+
+
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 14ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 2789)
+
+
+Completed 401 Unauthorized in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 1337)
+
+
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:40:22 +0300
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Processing by PersistenceController#parent as */*
+Completed 401 Unauthorized in 29ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 3273)
+
+
+  [1m[36mParent Load (0.1ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 10ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 863)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:40:32 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 320ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 729)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 12ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1210)
+
+
+  [1m[36mAdmin Load (6.4ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 6.4ms | Allocations: 1514)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 841)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 817)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2339)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:41:44 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 768)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 10ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:41:52 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:41:52 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:41:52 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 772)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:41:52 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:41:53 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:41:53 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:41:53 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:41:53 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2244)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1231)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 762)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 760)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 760)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 760)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:42:04 +0300
+Processing by PersistenceController#parent as */*
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 770)
+
+
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 34ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2181)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:42:11 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:42:15 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 397ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 848)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:42:30 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 187)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:42:32 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 510ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 810)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:42:43 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (1.0ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 791)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 762)
+
+
+Started DELETE "/admin_logout" for 127.0.0.1 at 2022-10-31 22:43:23 +0300
+Processing by AdminSessionsController#destroy as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 167)
+
+
+Started POST "/admin_login" for 127.0.0.1 at 2022-10-31 22:43:29 +0300
+Processing by AdminSessionsController#create as */*
+  Parameters: {"username"=>"admin", "password"=>"[FILTERED]", "admin_session"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."username" = ? LIMIT ?[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/admin_sessions_controller.rb:6:in `create'
+Completed 201 Created in 403ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 803)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Processing by PersistenceController#admin as */*
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 0.3ms | Allocations: 2066)
+
+
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 19ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1812)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 7ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 877)
+
+
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Processing by PersistenceController#admin as */*
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1057)
+
+
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1435)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:46:49 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 798)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 6ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:49:14 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:49:14 +0300
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:49:14 +0300
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:49:14 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 764)
+
+
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Processing by PersistenceController#teacher as */*
+Processing by PersistenceController#admin as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAdmin Load (0.3ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 401 Unauthorized in 9ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 1326)
+
+
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 1237)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:49:14 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.3ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 893)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:49:15 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 765)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:49:15 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 774)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:49:15 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 764)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 5ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 782)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.2ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/teacher_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Started GET "/student_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#student as */*
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:19:in `student'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Started GET "/admin_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#admin as */*
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:3:in `admin'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 782)
+
+
+Processing by PersistenceController#teacher as */*
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:11:in `teacher'
+Completed 401 Unauthorized in 4ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 782)
+
+
+Started GET "/parent_auth" for 127.0.0.1 at 2022-10-31 22:53:18 +0300
+Processing by PersistenceController#parent as */*
+  [1m[36mParent Load (0.4ms)[0m  [1m[34mSELECT "parents".* FROM "parents" WHERE "parents"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/persistence_controller.rb:27:in `parent'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 782)
+
+
