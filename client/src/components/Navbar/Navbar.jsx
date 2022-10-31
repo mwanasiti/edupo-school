@@ -63,8 +63,11 @@ function Navbar({ user, setUser }) {
           fontFamily: "cursive",
           color: "#000080",
         }}
-      >
+        >
+        <div>
         EDUPO SCHOOL
+        <i class="fas fa-graduation-cap"></i>
+        </div>
       </Link>
       {user ? (
         <h1 style={{fontSize:'20px', fontFamily:'cursive', fontWeight:'bold'}} className=" text-black hover:text-black-200 ">
