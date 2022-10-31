@@ -46,7 +46,7 @@ function LoginForm({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState("");
+  //const [email, setEmail] = useState("");
 
   const [value, setValue] = useState(1);
 
@@ -88,7 +88,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
-        email,
+        //email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -112,7 +112,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
-        email,
+        //email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -137,7 +137,7 @@ function LoginForm({ setUser }) {
       body: JSON.stringify({
         username,
         password,
-        email,
+        //email,
       }),
     }).then((r) => {
       if (r.ok) {
@@ -169,10 +169,10 @@ function LoginForm({ setUser }) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab sx={{ color: "white" }} label="Admin" {...a11yProps(0)} />
-          <Tab sx={{ color: "white" }} label="Teacher" {...a11yProps(1)} />
-          <Tab sx={{ color: "white" }} label="Student" {...a11yProps(2)} />
-          <Tab sx={{ color: "white" }} label="Parent" {...a11yProps(3)} />
+          <Tab sx={{ color: "black" }} label="Admin" {...a11yProps(0)} />
+          <Tab sx={{ color: "black" }} label="Teacher" {...a11yProps(1)} />
+          <Tab sx={{ color: "black" }} label="Student" {...a11yProps(2)} />
+          <Tab sx={{ color: "black" }} label="Parent" {...a11yProps(3)} />
         </Tabs>
       </Box>
 
@@ -190,16 +190,8 @@ function LoginForm({ setUser }) {
         />
         
 
-        <label htmlFor="email" className="mt-5 text-xl">
-          email
-        </label>
-        <input
-          className="mt-2 h-8 rounded-lg"
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+      
+        
         <label htmlFor="password" className="mt-5 text-xl">
           Password:
         </label>
@@ -246,7 +238,7 @@ function LoginForm({ setUser }) {
             <button
               type="submit"
               onClick={handleStudentSubmit}
-              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white font-bold py-2 px-4 rounded"
+              className="bg-[#1C1AB1] hover:bg-blue-700 mt-2  mx-auto text-white  font-bold py-2 px-4 rounded"
             >
               Log in
             </button>

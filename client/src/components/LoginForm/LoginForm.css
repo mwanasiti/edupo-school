@@ -1,12 +1,18 @@
-.form-container {
-  min-height: 70vh;
-  background-color: #000080;
+.form-container{
+  min-height: 50vh;
+  /* background-color: whitesmoke; */
   width: 60vw;
   max-width: 600px;
   min-width: 400px;
   margin: 60px auto;
-  border-radius: 20px;
-  color: white
+  /* border-radius: 90px; */
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  border: 0.5px solid pink;
+    border-radius: 50px;
+   
+    /* align-items: center; */
+  
 }
 
 input{
@@ -21,6 +27,7 @@ input{
   font-size: 30px;
   margin: 5px
 }
+
 @media (max-width: 700px) {
   .edit-form {
     width: 85%;
