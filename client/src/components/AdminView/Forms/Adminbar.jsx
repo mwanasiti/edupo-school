@@ -51,8 +51,9 @@ function Adminbar() {
         <Dashboard className={classes.icon} /> Dashboard
         {/* <Typography className={classes.text}>Dashboard</Typography> */}
       </div>
-      <div className={classes.item} 
-      onClick={() => {
+      <div
+        className={classes.item}
+        onClick={() => {
           navigate("/addstudent");
         }}
       >
@@ -66,15 +67,17 @@ function Adminbar() {
       >
         <BorderColor className={classes.icon} /> Teacher
       </div>
-      <div className={classes.item} 
-      onClick={() => {
+      <div
+        className={classes.item}
+        onClick={() => {
           navigate("/addparent");
         }}
       >
         <Person className={classes.icon} /> Parent
       </div>
-      <div className={classes.item}
-      onClick={() => {
+      <div
+        className={classes.item}
+        onClick={() => {
           navigate("/addstaff");
         }}
       >
