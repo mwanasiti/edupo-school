@@ -57,6 +57,18 @@ end
     end
   end
 
+
+  # GET LOGGED IN STUDENT'S ASSIGNMENTS
+  def logged_student_assignments
+    @student = Student.find_by(id: session[:student_id])
+    if @student
+      assignments = StudentAssignment.where(student_id: @student.id)
+      render json: assignments
+    else
+      render json: {errors: ["Please Log in as a Student to view your Assignments"]}
+    end
+  end
+
     # GET A SUBJECT'S STUDENTS
     def subject_students
       students = Student.where(subject_id: params[:id])

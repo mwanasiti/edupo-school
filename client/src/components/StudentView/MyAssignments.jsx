@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,47 +9,23 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Button from "@mui/material/Button";
 
-function TeacherStudentAssignments() {
-  const navigate = useNavigate();
+function MyAssignments() {
   const params = useParams();
   const { id } = params;
   const [assignments, setAssignments] = useState([]);
-  const [subjectAssignments, setSubjectAssignments] = useState([]);
-  const [subject_id, setSubjectId] = useState("hey")
 
   useEffect(() => {
-    fetch(`/par_stu_assignments/${id}`)
+    fetch("logged_student_assignments")
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
-        setSubjectId(data[0].subject_id)
-        console.log(subject_id)
-        // console.log(data);
-        fetch(`/subject_assessments/${data[0].subject_id}`)
-          .then((res) => res.json())
-          .then((data) => {
-            setSubjectAssignments(data);
-
-            // console.log(data)
-          });
       });
   }, []);
 
-
-
-  // useEffect(() => {
-  //   fetch(`/subject_assessments/${assessment[0].subject_id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setSubjectAssignments(data);
-  //     });
-  // }, []);
-
   return (
     <>
-      <div>TeacherStudentAssignments</div>
+      {/* <div>A Parent's Student Assignments View</div> */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -62,7 +37,6 @@ function TeacherStudentAssignments() {
               <TableCell align="right">Due Date</TableCell>
               <TableCell align="right">Score</TableCell>
               <TableCell align="right">Status</TableCell>
-              <TableCell align="right">Change Score</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -86,17 +60,6 @@ function TeacherStudentAssignments() {
                     <h1 className="text-red-500">NOT SUBMITTED</h1>
                   )}
                 </TableCell>
-                <TableCell align="right">
-                  <Button
-                    variant="contained"
-                    color="success"
-                    onClick={() =>
-                      navigate(`/change-assignment-score/${row.id}`)
-                    }
-                  >
-                    Change Score
-                  </Button>
-                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -106,4 +69,4 @@ function TeacherStudentAssignments() {
   );
 }
 
-export default TeacherStudentAssignments;
+export default MyAssignments;

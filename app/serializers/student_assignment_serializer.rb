@@ -1,5 +1,5 @@
 class StudentAssignmentSerializer < ActiveModel::Serializer
-  attributes :id, :score, :student, :assignment, :due_date, :subject
+  attributes :id, :score, :student, :assignment, :due_date, :subject, :subject_id
 
   def student
     self.object.student.full_name
@@ -15,6 +15,10 @@ class StudentAssignmentSerializer < ActiveModel::Serializer
 
   def subject
     self.object.assignment.subject.name
+  end
+
+  def subject_id
+    self.object.assignment.subject_id
   end
 
 end

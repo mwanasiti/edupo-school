@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import MyAssignments from './MyAssignments';
 //import axios from 'axios'
 import StudentGrid from './StudentGrid'
 // import "./Student.css"
@@ -17,7 +18,7 @@ function StudentView() {
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
-        console.log(data)
+        // console.log(data)
         setIsLoading(false)
       });
   }, []);
@@ -28,6 +29,7 @@ function StudentView() {
     <div className='container'>
          <p> This will be the Student's view after Logging in</p>
          <StudentGrid isLoading={isLoading} students={students} />
+         <MyAssignments />
       </div>
 
 

@@ -45,6 +45,9 @@ Rails.application.routes.draw do
 
     # GET A SUBJECT'S ASSESSMENTS
     get "subject_assessments/:id", to: "assessments#subject_assessments"
+
+    # GET A LOGGED IN STUDENT'S ASSIGNMENTS
+    get "logged_student_assignments", to: "students#logged_student_assignments"
   
     # ADMIN AUTH
     post "/admin_login", to: "admin_sessions#create"
