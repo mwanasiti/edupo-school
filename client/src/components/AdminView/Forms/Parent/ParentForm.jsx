@@ -1,10 +1,17 @@
-import { Button } from "@material-ui/core";
+import { Button, Grid } from "@material-ui/core";
 import React from "react";
+import Sidebar from "../../BarRoutes/Sidebar";
 import "./Parent.css";
 
 function ParentForm() {
   return (
-    <div className="new">
+    <div className="bigParent">
+      <Grid container>
+        <Grid item sm={4} xs={2} lg={2}>
+          <Sidebar />
+        </Grid>
+        <Grid item sm={7} xs={10} lg={9}>
+        <div className="new">
       <div className="top">
         <h1>Add Parent</h1>
       </div>
@@ -52,6 +59,10 @@ function ParentForm() {
         </div>
       </div>
     </div>
+        </Grid>
+      </Grid>
+    </div>
+    
   );
 }
 
