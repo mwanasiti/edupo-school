@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :student_assignments
   resources :users, only: [:index, :show, :update, :create]
   resources :admins, only: [:index, :show, :update, :create]
-  resources :assignments, only: [:index, :show, :update, :create]
+  resources :assignments, only: [:index, :show, :update, :create, :destroy]
   resources :assessments, only: [:index, :show, :update, :create]
   resources :classrooms, only: [:index, :show, :update, :create]
   resources :subjects, only: [:index, :show, :update, :create]

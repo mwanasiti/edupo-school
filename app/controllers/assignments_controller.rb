@@ -24,14 +24,24 @@ def create
   assignment = Assignment.create(assignment_params)
   render json: assignment,  status: :created
 end
-# DESTROY
 
+def update
+  assignment = Assignment.find(params[:id])
+  assignment.update(assignment_params)
+  render json: assignment, status: 201
+end
+
+# DESTROY
 def destroy
   assignment =Assignment.find_by(id: params[:id])
-
   if assignment 
-    assignment.destroy
-    head :no_content 
+    student_assignments = StudentAssignment.where(assignment_id: assignment.id)
+    if student_assignments.length > 0
+      render json: {errors: ["Cannot Delete Assignment right now as there are students already assigned to it"]}
+    else
+      assignment.destroy
+      render json: assignment
+    end
   else
    render json: {error: "Assignment not found"}, status: :not_found
   end
