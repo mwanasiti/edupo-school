@@ -63,8 +63,8 @@ function LoginForm({ setUser }) {
       },
       body: JSON.stringify({
         username,
-        password,
-        email,
+        password
+       
       }),
     }).then((r) => {
       if (r.ok) {
@@ -87,7 +87,7 @@ function LoginForm({ setUser }) {
       },
       body: JSON.stringify({
         username,
-        password,
+        password
         //email,
       }),
     }).then((r) => {
@@ -111,7 +111,7 @@ function LoginForm({ setUser }) {
       },
       body: JSON.stringify({
         username,
-        password,
+        password
         //email,
       }),
     }).then((r) => {
@@ -136,7 +136,7 @@ function LoginForm({ setUser }) {
       },
       body: JSON.stringify({
         username,
-        password,
+        password
         //email,
       }),
     }).then((r) => {
@@ -153,7 +153,7 @@ function LoginForm({ setUser }) {
 
   return (
     <div className="form-container">
-      <h1 className="text-center p-6 text-4xl font-medium ">LOGIN</h1>
+      <h1 className="text-center p-6 text-4xl font-bolder font-size-60px ">LOGIN</h1>
       {/* <h1 className="text-center p-6 text-4xl font-medium text-black">Select User: </h1> */}
 
       <Box
@@ -163,7 +163,9 @@ function LoginForm({ setUser }) {
           display: "flex",
           justifyContent: "center",
         }}
-      >
+        // sx={{'& .MuiTextField-root': { m: 1, width: '25ch' },}} 
+        >
+      
         <Tabs
           value={value}
           onChange={handleChange}
@@ -178,22 +180,23 @@ function LoginForm({ setUser }) {
 
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
         <label htmlFor="username" className="text-xl">
-          UserName:
+         username
         </label>
         <input
           required
           className=" mt-2 h-8 rounded-lg text-black"
-          type="text"
+          type="username"
           name="username"
+          label="username"
+          variant="outlined"
+          autoComplete="on"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        
-
       
-        
+
         <label htmlFor="password" className="mt-5 text-xl">
-          Password:
+          password
         </label>
         <input
           className="mt-2 h-8 rounded-lg text-black"
