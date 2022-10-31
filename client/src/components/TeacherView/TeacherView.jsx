@@ -11,22 +11,22 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+
 function TeacherView() {
   const navigate = useNavigate();
 
   const [subjects, setSubjects] = useState([]);
-  const [name, setName] = useState([])
+  const [name, setName] = useState([]);
   const [errors, setErrors] = useState([]);
-
 
   useEffect(() => {
     fetch("/teacher_subjects")
       .then((res) => res.json())
       .then((data) => {
         setSubjects(data);
+        console.log(data)
       });
   }, []);
-
 
   function handleSubjectSubmit(e) {
     e.preventDefault();
@@ -49,6 +49,23 @@ function TeacherView() {
         r.json().then((err) => setErrors(err.errors));
       }
     });
+  }
+
+  function handleSubjectRemove(id){
+    fetch(`/subject_teachers/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        const updatedSubjects = subjects.filter(
+          (subject) => subject.id !== data.id
+        );
+        setSubjects(updatedSubjects);
+      });
   }
 
   if (subjects.length === 0)
@@ -75,6 +92,7 @@ function TeacherView() {
               <TableCell align="right">View Students</TableCell>
               <TableCell align="right">View Assignments</TableCell>
               <TableCell align="right">View Assessments</TableCell>
+              <TableCell align="right">Delete Subject</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -118,13 +136,35 @@ function TeacherView() {
                     View Assessments
                   </Button>
                 </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => handleSubjectRemove(row.id)}
+                  >
+                    Remove Subject
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
 
-      {/* <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        {errors.map((error) => {
+          return (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+              role="alert"
+            >
+              <span className="block sm:inline">{error}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Add New Subject
           <hr></hr>
@@ -141,16 +181,7 @@ function TeacherView() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          {errors.map((error) => {
-            return (
-              <div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
-                role="alert"
-              >
-                <span className="block sm:inline">{error}</span>
-              </div>
-            );
-          })}
+
           <Button
             variant="contained"
             color="success"
@@ -161,7 +192,7 @@ function TeacherView() {
             Submit
           </Button>
         </form>
-      </div> */}
+      </div>
     </>
   );
 }

@@ -18,6 +18,21 @@ class SubjectTeachersController < ApplicationController
         render json: subject_teacher, status: 201
     end
 
+    def destroy
+        subject_teacher = SubjectTeacher.find_by(id: params[:id])
+        if subject_teacher 
+          student_assignments = Student.where(subject_id: subject_teacher.subject_id)
+          if student_assignments.length > 0
+            render json: {errors: ["Cannot Remove Subject right now as you have students currently doing it"]}
+          else
+            subject_teacher.destroy
+            render json: subject_teacher
+          end
+        else
+         render json: {error: "Subject Teacher not found"}, status: :not_found
+        end
+    end
+
     private
 
     def subject_teacher_params
