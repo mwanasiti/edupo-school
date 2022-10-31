@@ -9,6 +9,14 @@ import ParentStudentAssessments from "./components/ParentView/ParentStudentAsses
 import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
 import ParentView from "./components/ParentView/ParentView";
 import StudentView from "./components/StudentView/StudentView";
+import AddAssessment from "./components/TeacherView/AddAssessment";
+import AddAssignment from "./components/TeacherView/AddAssignment";
+import ChangeAssessmentScore from "./components/TeacherView/ChangeAssessmentScore";
+import ChangeAssignmentScore from "./components/TeacherView/ChangeAssignmentScore";
+import EditAssignment from "./components/TeacherView/EditAssignment";
+import SubjectStudents from "./components/TeacherView/SubjectStudents";
+import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
+import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
 import TeacherView from "./components/TeacherView/TeacherView";
 
 function App() {
@@ -61,6 +69,22 @@ function App() {
 
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
+
+          <Route path="/subject-students/:id" element={<SubjectStudents/>} />
+
+          <Route path="/my-students-assessments/:id" element={<TeacherStudentAssessments/>} />
+          <Route path="/my-students-assignments/:id" element={<TeacherStudentAssignments/>} />
+
+          <Route path="/change-assessment-score/:id" element={<ChangeAssessmentScore/>} />
+          <Route path="/change-assignment-score/:id" element={<ChangeAssignmentScore/>} />
+
+          <Route path="/add-assignment/:id" element={<AddAssignment/>} />
+          <Route path="/add-assessment/:id" element={<AddAssessment/>} />
+
+
+          <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
+
+
 
 
         </Routes>

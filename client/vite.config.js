@@ -5,7 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-
     proxy: {
       "/admin_login": {
         target: "http://localhost:3000",
@@ -61,7 +60,7 @@ export default defineConfig({
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,
-      },      
+      },
       "/parent_auth": {
         target: "http://localhost:3000",
         changeOrigin: true,
@@ -83,6 +82,46 @@ export default defineConfig({
         secure: false,
       },
       "/par_stu_assignments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/teacher_subjects": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/subject_students": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/student_assesments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/student_assignments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/subject_assignments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/subject_assessments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/assignments": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/assessments": {
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,
