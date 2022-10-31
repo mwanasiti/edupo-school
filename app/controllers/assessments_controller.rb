@@ -1,5 +1,7 @@
 class AssessmentsController < ApplicationController
     # before_action :set_grade, only: [:show, :edit, :update, :destroy]
+    rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unproccessable_entity
 
     def index
       assesments = Assessment.all
@@ -35,8 +37,24 @@ class AssessmentsController < ApplicationController
       end
     
     end
-       private
-       def assesment_params
-        params.permit(:name, :subject_id, :total)
-       end
+
+    # GET A SUBJECT'S ASSESSMENTS
+    def subject_assessments
+      assessments = Assessment.where(subject_id: params[:id])
+      render json: assessments
+    end
+
+
+    private
+    def assesment_params
+       params.permit(:name, :subject_id, :total)
+    end
+
+    def render_record_not_found
+        render json: {error: "Student Assessment not found"}, status: 404
+    end
+
+    def render_unproccessable_entity(invalid)
+        render  json: {errors: invalid.record.errors.full_messages}, status: 422
+    end
 end
