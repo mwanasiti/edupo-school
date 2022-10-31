@@ -23,6 +23,11 @@ class StudentAssignmentsController < ApplicationController
         render json: student_assignments
     end
 
+    def create
+        student_assignment = StudentAssignment.create(student_assignment_params)
+        render json: student_assignment, status: 201
+    end
+
     # GET LOGGED IN STUDENT'S ASSIGNMENTS
     def logged_student_assignments
         @student = Student.find_by(id: session[:student_id])

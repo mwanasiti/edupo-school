@@ -20,26 +20,28 @@ function TeacherStudentAssignments() {
   const [subjectAssignments, setSubjectAssignments] = useState([]);
   const [errors, setErrors] = useState([]);
   const [assignment_id, setAssignmentID] = useState("");
+  const [student, setStudent] = useState('')
+  const [subject, setSubject] = useState('')
 
   useEffect(() => {
     fetch(`/par_stu_assignments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
- 
+        setStudent(data[0].student)
+        setSubject(data[0].subject)
         fetch(`/subject_assignments/${data[0].subject_id}`)
           .then((res) => res.json())
           .then((data) => {
             setSubjectAssignments(data);
-
-            console.log(data);
+            // console.log(data);
           });
       });
   }, []);
 
-  function handleAddStudentAnAssignment() {
+  function handleAddStudentAnAssignment(e) {
     e.preventDefault();
-    fetch("/assignments", {
+    fetch("/student_assignments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -116,11 +118,23 @@ function TeacherStudentAssignments() {
 
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
-          Add Student an Assignment
+          Assign Student an Assignment
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="assignment" className="text-lg text-black">
+        <p className="m-2  font-bold text-xl text-black">
+          Name:{" "}
+          <span className="text-lg font-light text-neutral-900 ml-4">
+            {student}
+          </span>
+        </p>
+        <p className="m-2  font-bold text-xl text-black">
+          Subject:{" "}
+          <span className="text-lg font-light text-neutral-900 ml-4">
+            {subject}
+          </span>
+        </p>
+          <label htmlFor="assignment" className="text-lg text-black mt-2">
             Select Assignment:
             <br></br>
             <select
@@ -130,7 +144,7 @@ function TeacherStudentAssignments() {
               className="mt-3 p-1 bg-neutral-200 rounded"
             >
               {subjectAssignments.map((assignment) => (
-                <option value={assignment.id}>{assignment.name}</option>
+                <option key={assignment.id} value={assignment.id}>{assignment.name}</option>
               ))}
             </select>
           </label>
