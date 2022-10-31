@@ -26,7 +26,7 @@ function AdminView() {
       <Grid container>
       <Grid item sm={4} xs={2} lg={2}>
       {/* <Adminbar/> */}
-      <Sidebar/>
+      {/* <Sidebar/> */}
       </Grid>
       <Grid item sm={7} xs={10} lg={9}>
       
