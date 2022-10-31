@@ -30,8 +30,13 @@ class AssessmentsController < ApplicationController
       assesment =Assessment.find_by(id: params[:id])
     
       if assesment 
-        assesment.destroy
-        head :no_content 
+        student_assesments = StudentAssesment.where(assessment_id: assesment.id)
+        if student_assesments.length > 0
+          render json: {errors: ["Cannot Delete Assignment right now as there are students already assigned to it"]}
+        else
+          assesment.destroy
+          render json: assesment 
+        end
       else
        render json: {error: "Assessment not found"}, status: :not_found
       end

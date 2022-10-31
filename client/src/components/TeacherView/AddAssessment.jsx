@@ -24,7 +24,7 @@ function AddAssessment() {
   const { id } = params;
   const [subjectName, setSubjectName] = useState("undefined");
   const [name, setName] = useState("");
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(100);
 
   useEffect(() => {
     fetch(`/subject_assessments/${id}`)
@@ -53,7 +53,7 @@ function AddAssessment() {
           setAssessments([...assessments, data]);
         });
         setName("");
-        setDate("");
+        setTotal("");
         //   navigate(-1)
       } else {
         r.json().then((err) => setErrors(err.errors));
