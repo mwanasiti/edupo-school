@@ -2,13 +2,13 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className='container'>
+    <div>
       <div className='row'>
      
           <div
             className="bg-image hover-overlay ripple"
             style={{backgroundImage: "url('https://www.thoughtco.com/thmb/TCFXTqf8HO5k1XwR7UjqWiGnygI=/3000x1868/filters:fill(auto,1)/womangraduating-57471d735f9b58723d59fe16.jpg')", 
-            height: '100vh', backgroundSize:'cover'}}>
+            height: '100vh', width:"100%" }}>
           <div className="mask" style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}>
               <div className="h-100">
               <h1 style={{fontWeight:'bold', fontFamily:'cursive', color:'white', fontSize:'50px', marginTop:'170px', display:'inherit', marginLeft:'700px'}}> <p>OUR MANAGEMENT</p>SYSTEM</h1>
