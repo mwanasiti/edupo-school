@@ -23,6 +23,17 @@ class StudentAssesmentsController < ApplicationController
         render json: student_assesments
     end
 
+    # GET LOGGED IN STUDENT'S ASSESSMENTS
+    def logged_student_assessments
+        @student = Student.find_by(id: session[:student_id])
+    if @student
+      assessments = StudentAssesment.where(student_id: @student.id)
+      render json: assessments
+    else
+      render json: {errors: ["Please Log in as a Student to view your Assignments"]}
+    end
+    end
+
     private
     def render_record_not_found
         render json: {error: "Student Assessment not found"}, status: 404

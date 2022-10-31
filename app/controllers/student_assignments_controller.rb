@@ -23,6 +23,17 @@ class StudentAssignmentsController < ApplicationController
         render json: student_assignments
     end
 
+    # GET LOGGED IN STUDENT'S ASSIGNMENTS
+    def logged_student_assignments
+        @student = Student.find_by(id: session[:student_id])
+    if @student
+      assignments = StudentAssignment.where(student_id: @student.id)
+      render json: assignments
+    else
+      render json: {errors: ["Please Log in as a Student to view your Assignments"]}
+    end
+    end
+
     private
 
     def render_record_not_found

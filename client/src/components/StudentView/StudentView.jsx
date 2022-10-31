@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import MyAssessments from './MyAssessments';
 import MyAssignments from './MyAssignments';
 //import axios from 'axios'
 import StudentGrid from './StudentGrid'
@@ -30,6 +31,8 @@ function StudentView() {
          <p> This will be the Student's view after Logging in</p>
          <StudentGrid isLoading={isLoading} students={students} />
          <MyAssignments />
+         <h1>MY ASSESSMENTS</h1> 
+         <MyAssessments />
       </div>
 
 

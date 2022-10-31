@@ -1,5 +1,4 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Table from "@mui/material/Table";
@@ -11,8 +10,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 function MyAssignments() {
-  const params = useParams();
-  const { id } = params;
   const [assignments, setAssignments] = useState([]);
 
   useEffect(() => {
