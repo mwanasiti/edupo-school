@@ -52,11 +52,7 @@ function Navbar({ user, setUser }) {
   return (
     <nav
       className="flex items-center justify-between flex-wrap bg-our-black p-6"
-<<<<<<< HEAD
-      style={{ backgroundColor: "#fff" }}
-=======
       style={{ backgroundColor: "#FFFDD0", color:'#000' }}
->>>>>>> origin/mariam
     >
       <Link
         to="/"
