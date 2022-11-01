@@ -54,6 +54,7 @@ function EditAssignment() {
           <label htmlFor="name" className="text-lg">
             Assignment Name:
           </label>
+          
           <input
             required
             className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
@@ -84,6 +85,9 @@ function EditAssignment() {
               </div>
             );
           })}
+
+
+          
           <Button
             variant="contained"
             color="success"
@@ -93,6 +97,8 @@ function EditAssignment() {
           >
             Submit
           </Button>
+
+          
         </form>
       </div>
     </>
