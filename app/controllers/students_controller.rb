@@ -161,17 +161,29 @@ end
       # else
       # render json: {errors: ["student id not available"]}, status: 401
       # end
-    end 
-private
-def render_unproccessable_entity(invalid)
-  render  json: {errors: invalid.record.errors.full_messages}, status: 422
-end
-def render_not_found_response
-  render json: {errors: ["Record Not Found"]}
-end
-  def student_params
-    params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id, :username)
+    # end 
   end
+    def student_details
+      student = Student.find(session[:student_id])
+    if student
+      student.update!(student_params)
+      render json: student
+    else
+      render json: {error: "Student not found"}, status: :not_found
+    end
+  end
+  
+private
+  def render_unproccessable_entity(invalid)
+    render  json: {errors: invalid.record.errors.full_messages}, status: 422
+  end
+  def render_not_found_response
+    render json: {errors: ["Record Not Found"]}
+  end
+    def student_params
+      params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id, :username)
+    end
+  
 
 end
 
