@@ -1,11 +1,27 @@
 import React from 'react'
 //import axios from 'axios'
 import StudentGrid from './StudentGrid'
+import { useState, useEffect } from "react";
+
 import "./Student.css"
 // import {useParams } from "react-router-dom";
-function StudentView({student}) {
+function StudentView() {
 
-  // const [student, setStudent] = useState({})
+  const [student, setStudent] = useState({})
+
+
+  useEffect(() => {
+    console.log("whYY")
+    fetch("studentId")
+      .then((res) => res.json())
+      .then((data) => {
+        setStudent(data);
+        console.log("hey", data)
+      });
+  }, []);
+  
+
+
   // const [isLoading, setIsLoading] = useState(true)
 
 
@@ -23,6 +39,11 @@ function StudentView({student}) {
   //       // setIsLoading(false)
   //     });
   // }, []);
+
+
+  
+
+  
 
 
   return (
