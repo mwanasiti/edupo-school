@@ -6,11 +6,12 @@
   min-width: 400px;
   margin: 60px auto;
   /* border-radius: 90px; */
-  color: black;
+  color: white;
   font-family: 'Roboto', sans-serif;
   border: 0.5px dotted  #4e60ff;
   border-radius: 50px;
   font-size: 15px;
+  background-color: black;
  
    
     /* align-items: center; */
@@ -20,7 +21,7 @@
 
 .input {
 
-  background-color: rgb(23, 199, 243);
+  background-color: black;
 }
 .input-label {
   font-size: 30px;

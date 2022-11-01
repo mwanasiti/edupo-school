@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import Assignment from './Assignment.jsx'
-// import AssignmentList from '../TeacherView/AssignmentList'
-// import EditorContainer from './EditorContainer.jsx'
-=======
 import React from "react";
 import { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
@@ -17,7 +11,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
->>>>>>> 7478511941374ff2f8bdb94a1abd0aaa8481d3d6
 
 function TeacherView() {
   const navigate = useNavigate();
@@ -85,13 +78,6 @@ function TeacherView() {
 
   return (
     <>
-<<<<<<< HEAD
-      This will be the Teacher's view after Logging in
-     
-      {/* <Assignment />  */}
-    </>
-  )
-=======
       {/* <div>This will be the Teacher's view after Logging in</div> */}
 
       <h1 className="text-center p-3 text-black text-xl font-bold">
@@ -209,7 +195,6 @@ function TeacherView() {
       </div>
     </>
   );
->>>>>>> 7478511941374ff2f8bdb94a1abd0aaa8481d3d6
 }
 
 export default TeacherView;
