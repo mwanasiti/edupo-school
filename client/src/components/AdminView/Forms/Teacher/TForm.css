@@ -29,14 +29,21 @@
 
 .teachform{
 /* background: pink; */
+display: flex;
+justify-content: space-between ;
 padding: 30px;
 align-items: center;
-margin-left: 20px;
-/* border: 1px solid #000000; */
 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 border-radius: 20px;
  }
-
+.parent-form-wrapper-left{
+    /* background-color: peachpuff; */
+    width: 50%;
+}
+.parent-form-wrapper-right{
+/* background-color: aquamarine; */
+width: 50%;
+}
 .heading{
     font-weight: bolder;
     color: black;
