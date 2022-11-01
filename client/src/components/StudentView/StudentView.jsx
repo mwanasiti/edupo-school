@@ -52,7 +52,7 @@ function StudentView() {
   return (
 
     <div className='container'>
-         <p>Welcome</p>
+         {/* <p>Welcome</p> */}
          <StudentGrid student={student} />
 <MyAssignments />
 <MyAssesments />
