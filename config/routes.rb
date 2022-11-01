@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
    get "/studentId", to: "students#student_id"
 
+   #UPDATE STUDENT DETAILS
+   patch "/studentDetails", to: "students#student_details"
+
 
   #   GET A LOGGED IN PARENT'S STUDENTS
   get "/student_parent", to: "students#student_parent"
