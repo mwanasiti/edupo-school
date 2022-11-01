@@ -1,4 +1,4 @@
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, Input } from "@material-ui/core";
 import React, { useState } from "react";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
 import "./TForm.css";
@@ -11,7 +11,7 @@ function TeacherForm() {
     gender: "",
     image: "",
     phone_no: "",
-    address: "", 
+    address: "",
     full_name: "",
     email: "",
     password: "",
@@ -24,11 +24,10 @@ function TeacherForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("form")
-    
-  
+    console.log("form");
 
-    axios.post("/teachers", {
+    axios
+      .post("/teachers", {
         gender: data.gender,
         image: data.image,
         phone_no: data.phone_no,
@@ -50,12 +49,135 @@ function TeacherForm() {
           <Sidebar />
         </Grid>
 
-        <Grid item sm={4} xs={2} lg={2}>
-          <div className="new">
-            <div className="">
-              {/* <h1>Add Teacher</h1> */}
-            </div>
-            <div className="">
+        <Grid item sm={4} xs={2} lg={9}>
+          <div className="teacherTopic">Add Teacher</div>
+          <div className="bigMzazi">
+            <form onSubmit={handleSubmit} className="mzaziform">
+
+              <div className="parent-form-wrapper-left">
+                <div className="formInput">
+                  <h1
+                    style={{ marginLeft: "190px", marginBottom: "20px" }}
+                    className="heading"
+                  >
+                    TEACHER FORM
+                  </h1>
+                  <label>Gender:</label>
+                  {/* <input type="text" placeholder="Address" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter gender" />
+                  </div>
+                </div>
+                <div className="formInput">
+                  <label>Image:</label>
+                  {/* <input type="text" placeholder="Phone_number" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter image link" />
+                  </div>
+                </div>
+                <div className="formInput">
+                  <label>Phone:</label>
+                  {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter phone number" />
+                  </div>
+                </div>
+                <div className="formInput">
+                  <label>Address:</label>
+                  {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter address" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="parent-form-wrapper-right">
+                <div className="formInput">
+                  <label>Name:</label>
+                  {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter full name" />
+                  </div>
+                </div>
+                <div className="formInput">
+                  <label>Email:</label>
+                  {/* <input type="text" placeholder="Email"onChange={handleChange} /> */}
+                  <div>
+                    <Input placeholder="Enter email address" />
+                  </div>
+                </div>
+                <div className="formInput">
+                  <label>Password:</label>
+                  {/* <input type="password" onChange={handleChange}/> */}
+                  <div>
+                    <Input placeholder="Enter password" type="password" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="formInput">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    width: "450px",
+                    marginBottom: "25px",
+                    marginLeft: "30px",
+                    alignItems: "center",
+                  }}
+                  type="submit"
+                >
+                  Send
+                </Button>
+              </div>
+            </form>
+
+            {/* <form className="teachform">
+          <p className="heading">TEACHER FORM</p>
+          <div className="displayer">
+          Gender:<Input placeholder="Enter gender "  style={{marginLeft:"20px"}}/>
+          </div>
+          <div className="displayer">
+          Image:<Input placeholder="Enter image link"  style={{marginLeft:"20px"}}/>
+          </div>
+
+          <div className="displayer">
+          Phone:<Input placeholder="Enter phone number"  style={{marginLeft:"20px"}}/>
+          </div>
+          <div className="displayer">
+          Address:<Input placeholder="Enter address"  style={{marginLeft:"20px"}}/>
+          </div>
+          <div className="displayer">
+          Name:<Input placeholder="Enter fullname"  style={{marginLeft:"20px"}}/>
+          </div>
+          <div className="displayer">
+          Email:<Input placeholder="Enter email address"  style={{marginLeft:"20px"}}/>
+          </div>
+
+          <div className="displayer">
+          Password:<Input placeholder="Enter password"  style={{marginLeft:"20px"}}/>
+          </div>
+          <div className="displayer">
+          <Button
+                      variant="contained"
+                      color="primary"
+                      style={{
+                        width: "200px",
+                        
+                        marginLeft: "19px",
+                        alignItems: "center",
+                      }}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+
+          </div>
+          </form> */}
+          </div>
+          {/* <div className="new"> */}
+
+          {/* <div className="">
               <div className="">
                 <img
                   src={
@@ -111,7 +233,7 @@ function TeacherForm() {
                       color="primary"
                       style={{
                         width: "450px",
-                        // marginTop: "15px",
+                        
                         marginLeft: "55px",
                         alignItems: "center",
                       }}
@@ -122,8 +244,8 @@ function TeacherForm() {
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </Grid>
       </Grid>
     </div>

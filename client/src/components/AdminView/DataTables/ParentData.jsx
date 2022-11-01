@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import './View.css'
+import { Grid } from '@material-ui/core';
+import Sidebar from '../BarRoutes/Sidebar';
 
   
 const columns = [
@@ -98,7 +100,13 @@ const rows = [
 
 function ParentData() {
   return (
- <DataGrid
+    <div>
+      <Grid container>
+        <Grid item sm={4} xs={2} lg={2}>
+          <Sidebar/>
+        </Grid>
+        <Grid item sm={4} xs={2} lg={9}>
+        <DataGrid
   rows={rows}
   columns={columns}
   pageSize={5}
@@ -106,6 +114,10 @@ function ParentData() {
   checkboxSelection
   style={{marginLeft:"20px", marginTop:"20px", height:"500px"}}
  />
+        </Grid>
+      </Grid>
+    </div>
+ 
   )
 }
 

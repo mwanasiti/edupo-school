@@ -39,7 +39,9 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent
           </li>
-          <li className='sidebarListItem'>
+          <li className='sidebarListItem ' onClick={() => {
+          navigate("/addstaff");
+        }} >
             <Group className='sidebarIcon'/>
             Staff
           </li>

@@ -7,8 +7,9 @@ import ParentData from "./components/AdminView/DataTables/ParentData";
 import ParentView from "./components/AdminView/DataTables/ParentData";
 import StudentData from "./components/AdminView/DataTables/StudentData";
 import TeacherData from "./components/AdminView/DataTables/TeacherData";
-import TeacherView from "./components/AdminView/DataTables/TeacherData";
+
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
+import StaffForm from "./components/AdminView/Forms/Staff/StaffForm";
 import StudentForm from "./components/AdminView/Forms/Student/StudentForm";
 import TeacherForm from "./components/AdminView/Forms/Teacher/TeacherForm";
 import Footer from "./components/Footer/Footer";
@@ -28,6 +29,7 @@ import EditAssignment from "./components/TeacherView/EditAssignment";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
+import TeacherView from "./components/TeacherView/TeacherView";
 // import Syllabus from "./components/TeacherView/Syllabus";
 // import SubjectList from "./components/TeacherView/SubjectList";
 
@@ -91,12 +93,13 @@ function App() {
         <Route  path='/addstudent' element={<StudentForm/>}/>
         <Route  path='/addteacher' element={<TeacherForm/>}/>
         <Route  path='/addparent' element={<ParentForm/>}/>
+        <Route  path='/addstaff' element={<StaffForm/>}/>
         <Route  path='/studenttable' element={<StudentData/>}/>
         <Route  path='/parenttable' element={<ParentData/>}/>
         <Route  path='/teachertable' element={<TeacherData/>}/>
 
 
-
+{/* END OF ADMIN ROUTES */}
 
 
 

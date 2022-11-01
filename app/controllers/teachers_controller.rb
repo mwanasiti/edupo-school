@@ -53,7 +53,4 @@ private
     end
 
 end
-<<<<<<< HEAD
 
-=======
->>>>>>> deno

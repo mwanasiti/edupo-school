@@ -2,6 +2,8 @@ import React from 'react'
 import { Box, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import './View.css'
+import { Grid } from '@material-ui/core';
+import Sidebar from '../BarRoutes/Sidebar';
 
 
 const columns = [
@@ -13,7 +15,7 @@ const columns = [
     width: 150,
     editable: true,
   },
-  {field: "user", headerName: "Image", width:230, 
+  {field: "user", headerName: "Image", width:150,
   renderCell:(params)=>{
     return(
       <div  className='cellImg'>
@@ -98,7 +100,13 @@ const rows = [
 
 function StudentData() {
   return (
- <DataGrid
+ <div >
+ <Grid container>
+ <Grid item sm={4} xs={2} lg={2}>
+  <Sidebar/>
+ </Grid>
+  <Grid item sm={4} xs={2} lg={9}>
+  <DataGrid
   rows={rows}
   columns={columns}
   pageSize={8}
@@ -106,6 +114,10 @@ function StudentData() {
   checkboxSelection
   style={{marginLeft:"50px", marginTop:"20px", height:"600px"}} 
  />
+  </Grid>
+ </Grid>
+
+ </div>
   )
 }
 
