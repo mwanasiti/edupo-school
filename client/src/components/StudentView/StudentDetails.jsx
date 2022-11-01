@@ -1,29 +1,39 @@
-import React, {useEffect, useState } from 'react'
-const StudentDetails = () => {
+import React from 'react'
+const StudentDetails = ({student}) => {
 
-  const [student, setStudent] = useState({})
+  // const [student, setStudent] = useState({})
 
   // useEffect(() => {
   //   fetch(`/student_id`)
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setStudent(data)
-  //       console.log("fetchinf ",data)
+     
   //       // setIsLoading(false)
   //     });
   // }, []);
-  useEffect(() => {
-    fetch(`/studentId`)
-      .then((res) => res.json())
-      .then((data) => {
-        // setAssignment(data);
-        // setScore(data.score);
-        console.log("fetchinf ",data)
-      });
-  }, []);
 
-  console.log(" student ", student)
 
+
+
+//   useEffect(() => {
+//     const fetchStudent = async () => {
+//       const result = await axios(
+//         '/studentId'
+//       )
+// t
+//       console.log( 'annyone' , result.data)
+//       setStudent(result.data)
+//       // setIsLoading(false)
+
+//       }
+      
+//       fetchStudent()
+//     }, [])
+
+
+  // console.log(" student ", student)
+  // .catch(error => (console.log(error)))
   
   return (
     <div className='card'>
