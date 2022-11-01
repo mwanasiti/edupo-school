@@ -15,7 +15,7 @@ position: absolute;
     height: 300px;
 }
 .new{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-top: 20px;
     padding: 20px;
     margin-left: 20px;
@@ -25,4 +25,7 @@ position: absolute;
 }
 .area input{
     margin-top: 20px;
+    margin-left: 30px;
+    border: 1px solid grey;
+    border-radius: 5px;
 }
