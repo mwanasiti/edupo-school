@@ -1,4 +1,4 @@
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, Input } from "@material-ui/core";
 import React, { useState } from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
 import "./Parent.css";
@@ -43,10 +43,68 @@ function ParentForm() {
           <Sidebar />
         </Grid>
         <Grid item sm={7} xs={10} lg={9}>
-          <div className="new">
-            <div className="">
-              <h1>Add Parent</h1>
+        <div className="parentTopic">
+              <p>Add Parent</p>
+             </div>
+            <div className="parentform">
+            <form onSubmit={handleSubmit} className="mzaziform">
+                  <div className="formInput">
+                  <h1 style={{marginLeft:"190px", marginBottom:"20px"}} className="heading">PARENT FORM</h1>
+                    <label>Address:</label>
+                    {/* <input type="text" placeholder="Address" onChange={handleChange}/> */}
+                    <div>
+                    <Input placeholder="Enter address"/>
+                    </div>
+                    
+                  </div>
+                  <div className="formInput">
+                    <label>Phone Number:</label>
+                    {/* <input type="text" placeholder="Phone_number" onChange={handleChange}/> */}
+                    <div>
+                    <Input placeholder="Enter phone number"/>
+                    </div>
+                  </div>
+                  <div className="formInput">
+                    <label>Full Name:</label>
+                    {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                    <div>
+                    <Input placeholder="Enter full name"/>
+                    </div>
+                  </div>
+                  <div className="formInput">
+                    <label>Email:</label>
+                    {/* <input type="text" placeholder="Email"onChange={handleChange} /> */}
+                    <div>
+                    <Input placeholder="Enter email address"/>
+                    </div>
+                  </div>
+                  <div className="formInput">
+                    <label>Password:</label>
+                    {/* <input type="password" onChange={handleChange}/> */}
+                    <div>
+                    <Input placeholder="Enter password" type="password"/>
+                    </div>
+                    
+                  </div>
+                  <div className="formInput">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      style={{
+                        width: "450px",
+                        marginBottom: "25px",
+                        marginLeft: "30px",
+                        alignItems: "center",
+                      }}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+                  </div>
+                </form>
             </div>
+          {/* <div className="new">
+            
             <div className="bottom">
               <div className="left">
                 left
@@ -95,7 +153,7 @@ function ParentForm() {
                 </form>
               </div>
             </div>
-          </div>
+          </div> */}
         </Grid>
       </Grid>
     </div>

@@ -1,65 +1,27 @@
-.new{
-    width: 100%;
-    /* display: flex; */
+.parentTopic{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: grey;
+    margin-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    border-radius: 10px;
+    margin-left: 70px;
+}
+.mzaziform{
+    /* padding: 4%; */
+    /* text-align: center; */
+   align-items: center;
     /* background: pink; */
-
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin-left: 60px;
+    /* padding: 15px; */
 }
-.newContainew{
-    /* flex: 6 */
-    display: flex;
-}
-.top{
-    border: 1px solid black;
-    /* box-shadow: 5px 10px; */
-    /* box-shadow: 5px 10px #888888; */
-    /* box-shadow: 2px 4px 10px 1px rgba (201,201,201, 0.47); */
-    padding: 10px;
-    margin: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.bottom{
-    border: 1px solid black;
-    border-radius: 30px;
-    /* box-shadow: 5px 10px; */
-    /* box-shadow: 5px 10px #888888; */
-    /* box-shadow: 2px 4px 10px 1px rgba (201,201,201, 0.47); */
-    padding: 10px;
-    margin: 20px;
-    display: flex;
-}
-.left{
-    flex: 1;
-    margin-bottom: 150px;
-    margin-right: 60px;
-    /* border: 1px solid black; */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.right{
-    flex: 2;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-h1{
-    color: black;
-    /* font-family: monospace; */
-    
-}
-img{
-    width:100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 .formInput input{
-    border: 1px solid grey;
+    /* border: 1px solid rgb(213, 209, 209); */
     border-radius: 5px;
     display: flex;
     /* align-items: center; */
@@ -69,4 +31,11 @@ img{
 }
 .formInput{
     margin-top: 15px;
+    margin-left: 180px;
 }
+/* .parent-form-wrapper-left{
+    background: pink;
+}
+.parent-form-wrapper-right{
+    background: peachpuff;
+} */

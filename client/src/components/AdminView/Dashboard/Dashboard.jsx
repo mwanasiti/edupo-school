@@ -15,7 +15,7 @@ function Dashboard() {
         <Grid item sm={4} xs={2} lg={2}>
           <Sidebar />
         </Grid>
-        <Grid item sm={4} xs={2} lg={2}>
+        <Grid item sm={4} xs={2} lg={9}>
           <div className="widgets">
           {/* TEACHERS */}
             <div className="widget">

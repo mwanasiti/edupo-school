@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField } from "@material-ui/core";
+import { Button, Container, Grid, Input, TextField } from "@material-ui/core";
 import { DriveFolderUpload, Email } from "@mui/icons-material";
 import React, { useState } from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
@@ -57,98 +57,163 @@ function StudentForm() {
         </Grid>
         <Grid item sm={7} xs={10} lg={9}>
           {/* <h1>Student Form</h1> */}
+          <div className="studentTopic">Add Student</div>
           <div className="new">
-            <form>
+            <form className="formstd">
+            <p className="heading">STUDENT FORM</p>
               <div className="juu_left">
                 <div className="area">
-                  <label>Gender</label>
-                  <input value={data.gender}
+                  {/* <label>Gender: </label> */}
+                  {/* <input value={data.gender}
                     name="gender"
                       type="text"
                       placeholder="Gender"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                     Gender: <Input placeholder="Enter gender"  style={{marginLeft:"20px"}}
+                      name="gender"
+                      type="text"
+                      onChange={handleChange}
+                     />
                 </div>
                 <div className="area">
-                  <label>Image</label>
-                  <input value={data.image}
+                  {/* <label>Image:</label> */}
+                  {/* <input value={data.image}
                     name="image"
                       type="text"
                       placeholder="Image"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                     Image: <Input   style={{marginLeft:"30px"}}
+                      name="image"
+                      type="text"
+                      placeholder="Enter image link"
+                      onChange={handleChange}
+                     />
                 </div>
                 <div className="area">
-                  <label>Parent ID</label>
-                  <input value={data.parent_id}
+                  {/* <label>Parent ID</label> */}
+                  {/* <input value={data.parent_id}
                     name="parent_id"
                       type="text"
                       placeholder="ParentId"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                     Parent: <Input placeholder="Enter Parent ID"  style={{marginLeft:"30px"}}
+                      name="parent_id"
+                      type="text"
+              
+                      onChange={handleChange}
+                     />
                 </div>
                 <div className="area">
-                  <label>Phone_number</label>
-                  <input value={data.phone_no}
+                  {/* <label>Phone_number</label> */}
+                  {/* <input value={data.phone_no}
                     name="phone_no"
                       type="text"
                       placeholder="Phone Number"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Phone:<Input placeholder="Enter phone no"  style={{marginLeft:"30px"}}
+                        name="phone_no"
+                      type="text"
+                      onChange={handleChange}
+                      />
                 </div>
                 <div className="area">
-                  <label>Admission Number</label>
-                  <input value={data.admission_no}
+                  {/* <label>Admission Number</label> */}
+                  {/* <input value={data.admission_no}
                     name="admission_no"
                       type="text"
                       placeholder="admission_no"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                    RegNo:<Input   style={{marginLeft:"30px"}}
+                      name="admission_no"
+                      type="text"
+                      placeholder="Enter admission_no"
+                      onChange={handleChange}
+                    />
                 </div>
                 <div className="area">
-                  <label>Subject ID</label>
-                  <input value={data.subject_id}
+                  {/* <label>Subject</label> */}
+                  {/* <input value={data.subject_id}
                     name="subject_id"
                       type="text"
-                      placeholder="Suubject Id"
-                      onChange={handleChange}/>
+                      placeholder="Subject Id"
+                      onChange={handleChange}/> */}
+                      Subject:<Input   style={{marginLeft:"30px"}}
+                        name="subject_id"
+                      type="text"
+                      placeholder="Enter Subject Id"
+                      onChange={handleChange}
+                      />
                 </div>
               </div>
               <div className="chini_right">
               <div className="area">
-                  <label>FullName</label>
+                  {/* <label>FullName</label>
                   <input value={data.full_name}
                     name="full_name"
                       type="text"
                       placeholder="Full name"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Name:  <Input   style={{marginLeft:"30px"}}
+                        name="full_name"
+                      type="text"
+                      placeholder=" Enter Full name"
+                      onChange={handleChange}
+                      />
                 </div>
                 <div className="area">
-                  <label>Email</label>
+                  {/* <label>Email</label>
                   <input value={data.email}
                     name="email"
                       type="text"
                       placeholder="Email"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Email:  <Input  style={{marginLeft:"30px"}}
+                        name="email"
+                      type="text"
+                      placeholder="Enter Email"
+                      onChange={handleChange}
+                      />
                 </div>
                 <div className="area">
-                  <label>Password</label>
+                  {/* <label>Password</label>
                   <input value={data.password}
                     name="password"
                       type="password"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Password:<Input placeholder="Enter Password"  style={{marginLeft:"30px"}}
+                        name="password"
+                      type="password"
+                      onChange={handleChange}
+                      />
                 </div>
                 <div className="area">
-                  <label>Classroom ID</label>
+                  {/* <label>Classroom ID</label>
                   <input value={data.classroom_id}
                     name="classroom_id"
                       type="text"
                       placeholder="Classroom  ID"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Classroom:<Input  style={{marginLeft:"30px"}}
+                        name="classroom_id"
+                      type="text"
+                      placeholder="Enter Classroom  ID"
+                      onChange={handleChange}
+                      />
                 </div>
                 
                 <div className="area">
-                  <label>Username</label>
+                  {/* <label>Username</label>
                   <input value={data.username}
                     name="username"
                       type="text"
                       placeholder="Username"
-                      onChange={handleChange}/>
+                      onChange={handleChange}/> */}
+                      Username:<Input   style={{marginLeft:"30px"}}
+                        name="username"
+                      type="text"
+                      placeholder="Enter Username"
+                      onChange={handleChange}
+                      />
                 </div>
                 
                 
@@ -158,7 +223,7 @@ function StudentForm() {
                       color="primary"
                       style={{
                         width: "550px",
-                        marginTop: "15px",
+                        marginTop: "25px",
                         marginLeft: "200px",
                         alignItems: "center",
                       }}
