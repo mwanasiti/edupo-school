@@ -57,6 +57,9 @@ end
     end
   end
 
+
+
+
     # GET A SUBJECT'S STUDENTS
     def subject_students
       students = Student.where(subject_id: params[:id])
