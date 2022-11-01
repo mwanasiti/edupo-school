@@ -43,6 +43,7 @@ function StudentForm() {
         password: data.password,
         classroom_id: data.classroom_id,
         username: data.username,
+        role:"student"
       })
       .then((response) => {
         setData(response);
@@ -59,8 +60,9 @@ function StudentForm() {
           {/* <h1>Student Form</h1> */}
           <div className="studentTopic">Add Student</div>
           <div className="new">
-            <form className="formstd">
-            <p className="heading">STUDENT FORM</p>
+          
+            <form className="formstd" onSubmit={handleSubmit}>
+            
               <div className="juu_left">
                 <div className="area">
                   {/* <label>Gender: </label> */}
@@ -216,21 +218,23 @@ function StudentForm() {
                       />
                 </div>
                 
-                
-              </div>
-              <Button
+                <div className="area">
+                <Button
                       variant="contained"
                       color="primary"
                       style={{
-                        width: "550px",
-                        marginTop: "25px",
-                        marginLeft: "200px",
+                        width: "150px",
+                        marginTop: "35px",
+                        marginLeft: "20px",
                         alignItems: "center",
                       }}
                       type="submit"
                     >
                       Send
                     </Button>
+              </div>
+              </div>
+              
 
             </form>
           </div>
