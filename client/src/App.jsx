@@ -3,6 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import AdminView from "./components/AdminView/AdminView";
 import Sidebar from "./components/AdminView/BarRoutes/Sidebar";
 import Dashboard from "./components/AdminView/Dashboard/Dashboard";
+import ParentData from "./components/AdminView/DataTables/ParentData";
+import ParentView from "./components/AdminView/DataTables/ParentData";
+import StudentData from "./components/AdminView/DataTables/StudentData";
+import TeacherData from "./components/AdminView/DataTables/TeacherData";
+import TeacherView from "./components/AdminView/DataTables/TeacherData";
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
 import StudentForm from "./components/AdminView/Forms/Student/StudentForm";
 import TeacherForm from "./components/AdminView/Forms/Teacher/TeacherForm";
@@ -12,7 +17,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
 import ParentStudentAssessments from "./components/ParentView/ParentStudentAssessments";
 import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
-import ParentView from "./components/ParentView/ParentView";
+
 import StudentView from "./components/StudentView/StudentView";
 import AddAssessment from "./components/TeacherView/AddAssessment";
 import AddAssignment from "./components/TeacherView/AddAssignment";
@@ -23,7 +28,6 @@ import EditAssignment from "./components/TeacherView/EditAssignment";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
-import TeacherView from "./components/TeacherView/TeacherView";
 // import Syllabus from "./components/TeacherView/Syllabus";
 // import SubjectList from "./components/TeacherView/SubjectList";
 
@@ -87,6 +91,15 @@ function App() {
         <Route  path='/addstudent' element={<StudentForm/>}/>
         <Route  path='/addteacher' element={<TeacherForm/>}/>
         <Route  path='/addparent' element={<ParentForm/>}/>
+        <Route  path='/studenttable' element={<StudentData/>}/>
+        <Route  path='/parenttable' element={<ParentData/>}/>
+        <Route  path='/teachertable' element={<TeacherData/>}/>
+
+
+
+
+
+
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
 
