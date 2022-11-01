@@ -19,6 +19,8 @@ import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
 import TeacherView from "./components/TeacherView/TeacherView";
+//import SubmitAssignments from "./components/StudentView/SubmitAssignment";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -70,6 +72,8 @@ function App() {
 
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
+      
+          
 
           <Route path="/subject-students/:id" element={<SubjectStudents/>} />
 
@@ -85,6 +89,8 @@ function App() {
 
           <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
           <Route path="/edit-assessment/:id" element={<EditAssessment/>} />
+
+          
 
 
 
