@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
 //import axios from 'axios'
-import StudentGrid from './StudentGrid'
+import StudentGrid from './StudentGrid';
 import { useState, useEffect } from "react";
+import MyAssignments from './MyAssignments';
+import MyAssesments from './MyAssessments';
 
 import "./Student.css"
 // import {useParams } from "react-router-dom";
 function StudentView() {
 
   const [student, setStudent] = useState({})
+
 
 
   useEffect(() => {
@@ -51,6 +54,8 @@ function StudentView() {
     <div className='container'>
          <p>Welcome</p>
          <StudentGrid student={student} />
+<MyAssignments />
+<MyAssesments />
       </div>
 
 
