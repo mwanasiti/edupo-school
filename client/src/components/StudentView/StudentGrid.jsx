@@ -1,12 +1,13 @@
 import React from 'react';
 import StudentDetails from './StudentDetails'
-const StudentGrid = ( { isLoading}) => {
+const StudentGrid = ( { isLoading, student}) => {
  
+     console.log(student)
   return isLoading ? (
        <h1>Loading...</h1>
        ) : (
     <section className='card'>
-     <StudentDetails /> 
+     <StudentDetails student={student}/> 
  
 
   </section>
