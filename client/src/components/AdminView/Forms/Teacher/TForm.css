@@ -1,0 +1,87 @@
+#file{
+    border: none;
+    cursor: pointer;
+}
+.new{
+    width: 100%;
+    /* display: flex; */
+    /* background: pink; */
+
+}
+.newContainew{
+    /* flex: 6 */
+    display: flex;
+}
+.top{
+    border: 1px solid black;
+    /* box-shadow: 5px 10px; */
+    /* box-shadow: 5px 10px #888888; */
+    /* box-shadow: 2px 4px 10px 1px rgba (201,201,201, 0.47); */
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bottom{
+    border: 1px solid black;
+    border-radius: 30px;
+    /* box-shadow: 5px 10px; */
+    /* box-shadow: 5px 10px #888888; */
+    /* box-shadow: 2px 4px 10px 1px rgba (201,201,201, 0.47); */
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+}
+.left{
+    flex: 1;
+    margin-bottom: 150px;
+    margin-right: 5px;
+    /* border: 1px solid black; */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right{
+    flex: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    color: black;
+    /* font-family: monospace; */
+    
+}
+img{
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.formInput input{
+    /* border: none; */
+    border: 1px solid grey;
+    border-radius: 5px;
+    display: flex;
+    margin-left: 3px;
+    width: 500px;
+    height: 40px;
+}
+.formInput{
+    margin-top: 9px;
+   
+}
+/* form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+.formInput label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

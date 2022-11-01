@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_023111) do
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "assessments", force: :cascade do |t|
     t.string "name"
-    t.integer "subject_teacher_id"
+    t.integer "subject_id"
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -32,8 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
-    t.integer "subject_teacher_id"
-    t.date "due_date"
+    t.integer "subject_id"
+    t.string "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "students", force: :cascade do |t|
     t.string "role"
-    t.boolean "gender"
+    t.string "gender"
     t.string "image"
     t.integer "parent_id"
     t.string "phone_no"
@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_24_082145) do
 
   create_table "teachers", force: :cascade do |t|
     t.string "role"
-    t.boolean "gender"
+    t.string "gender"
     t.string "image"
     t.string "phone_no"
     t.string "address"

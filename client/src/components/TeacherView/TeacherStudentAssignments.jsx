@@ -17,17 +17,76 @@ function TeacherStudentAssignments() {
   const params = useParams();
   const { id } = params;
   const [assignments, setAssignments] = useState([]);
+  const [subjectAssignments, setSubjectAssignments] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [assignment_id, setAssignmentID] = useState(1);
+  const [student, setStudent] = useState("");
+  const [subject, setSubject] = useState("");
 
   useEffect(() => {
     fetch(`/par_stu_assignments/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setAssignments(data);
+
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`/students/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setStudent(data.full_name);
+        setSubject(data.subject);
+        fetch(`/subject_assignments/${data.subject_id}`)
+          .then((res) => res.json())
+          .then((data) => {
+            setSubjectAssignments(data);
+          });
+      });
+  }, []);
+
+  function handleAddStudentAnAssignment(e) {
+    e.preventDefault();
+    fetch("/student_assignments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        student_id: id,
+        assignment_id,
+      }),
+    }).then((r) => {
+      if (r.ok) {
+        r.json().then((data) => {
+          setAssignments([...assignments, data]);
+        });
+      } else {
+        r.json().then((err) => setErrors(err.errors));
+      }
+    });
+  }
+
+  function handleAssignmentDelete(id) {
+    fetch(`/student_assignments/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        const updatedAssignments = assignments.filter(
+          (assignment) => assignment.id !== data.id
+        );
+        setAssignments(updatedAssignments);
+      });
+  }
+
   return (
     <>
-      <div>TeacherStudentAssignments</div>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
@@ -40,6 +99,7 @@ function TeacherStudentAssignments() {
               <TableCell align="right">Score</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Change Score</TableCell>
+              <TableCell align="right">UN-assign</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -74,11 +134,76 @@ function TeacherStudentAssignments() {
                     Change Score
                   </Button>
                 </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => handleAssignmentDelete(row.id)}
+                  >
+                    UN-ASSIGN
+                  </Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+          Assign Student an Assignment
+          <hr></hr>
+        </h1>
+        <form className="flex flex-col text-center font-black p-4">
+          <p className="m-2  font-bold text-xl text-black">
+            Name:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {student}
+            </span>
+          </p>
+          <p className="m-2  font-bold text-xl text-black">
+            Subject:{" "}
+            <span className="text-lg font-light text-neutral-900 ml-4">
+              {subject}
+            </span>
+          </p>
+          <label htmlFor="assignment" className="text-lg text-black mt-2">
+            Select Assignment:
+            <br></br>
+            <select
+              name="assignment"
+              value={assignment_id}
+              onChange={(e) => setAssignmentID(e.target.value)}
+              className="mt-3 p-1 bg-neutral-200 rounded"
+            >
+              {subjectAssignments.map((assignment) => (
+                <option key={assignment.id} value={assignment.id}>
+                  {assignment.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          {errors.map((error) => {
+            return (
+              <div
+                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                role="alert"
+              >
+                <span className="block sm:inline">{error}</span>
+              </div>
+            );
+          })}
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            className="w-1/3 mt-4 mx-auto"
+            onClick={handleAddStudentAnAssignment}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
     </>
   );
 }

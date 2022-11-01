@@ -1,116 +1,308 @@
-import { Button, Container, FormControl, FormControlLabel, FormHelperText, FormLabel, Input, InputLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField} from '@material-ui/core'
-import { Dashboard, Delete, Edit, Save, Send, ViewAgenda } from '@material-ui/icons'
-import { borderRadius } from '@mui/system';
-import React from 'react'
-
-
-
-const useStyles = makeStyles(theme=>({
-  button:{
-    color: "white",
-    backgroundColor: "black"
-  }, 
-  container:{
-    paddingTop: theme.spacing(3),
-  }
-}));
-
+import { Button, Container, Grid, TextField } from "@material-ui/core";
+import { DriveFolderUpload, Email } from "@mui/icons-material";
+import React, { useState } from "react";
+import Sidebar from "../../BarRoutes/Sidebar";
+import axios from "axios";
+import "./Student.css";
 
 function StudentForm() {
-  const classes = useStyles();
-  return (
-  
-    <Container className={classes.container}>
-    <div>
-    
-    {/* <FormControl>
-      <OutlinedInput placeholder="Gender" />
-      <OutlinedInput placeholder="Image" />
-      <OutlinedInput placeholder="Parent Id" />
-      <OutlinedInput placeholder="Phone Number" />
-      <OutlinedInput placeholder="Admission Number" />
-      <OutlinedInput placeholder="Subject ID" />
-      <OutlinedInput placeholder="Full Name" />
-      <OutlinedInput placeholder="Email" />
-      <Button variant="contained" color="primary" size="large" startIcon={<Save/>}>Save</Button>
-    </FormControl> */}
-    {/* // BUTTONS */}
-    {/* <Button variant="outlined" color="secondary"size="large" startIcon={<Delete/>}>Delete</Button>
-    <Button variant="outlined" color="secondary"  size="large" startIcon={<Send />}>Submit</Button>
-    <Button variant="outlined"  size="large" startIcon={<Edit />}className ={classes.button}>Edit</Button>  
-    <Button variant="outlined" color="secondary" size="large" startIcon={<Dashboard/>}>Dashboard</Button>
-    <Button variant="outlined" color="secondary" size="large" startIcon={<Save/>}>Save</Button> */}
-    
-    
-    </div>
-    <form className={classes.form} autoComplete="off" style={{border:"1px solid grey", borderRadius:"10px", padding:"10px", alignText:"center", marginLeft:"200px", width:"600px"}}>
-    <div className={classes.item}>
-    <FormLabel id="demo-radio-buttons-group-label">Gender:</FormLabel>
-   
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-  <label class="form-check-label" for="flexRadioDefault1"> Male </label>
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"/>
-  <label class="form-check-label" for="flexRadioDefault2"> Female</label>
-</div>
+  const [file, setFile] = useState("");
+  const [data, setData] = useState({
+    gender: "",
+    image: "",
+    parent_id: "",
+    phone_no: "",
+    admission_no: "",
+    subject_id: "",
+    full_name: "",
+    email: "",
+    password: "",
+    classroom_id: "",
+    username: "",
+  });
 
-{/* <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
-  <label class="form-check-label" for="flexRadioDefault2"> Female</label>
-</div> */}
-    {/* <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="female"
-    name="radio-buttons-group"
-    size ="small"
-  >
-    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("form");
+
+    axios
+      .post("/students", {
+        gender: data.gender,
+        image: data.image,
+        parent_id: data.parent_id,
+        phone_no: data.phone_no,
+        admission_no: data.admission_no,
+        subject_id: data.subject_id,
+        full_name: data.full_name,
+        email: data.email,
+        password: data.password,
+        classroom_id: data.classroom_id,
+        username: data.username,
+      })
+      .then((response) => {
+        setData(response);
+      });
+  };
+
+  return (
+    <div className="bigParent">
+      <Grid container>
+        <Grid item sm={4} xs={2} lg={2}>
+          <Sidebar />
+        </Grid>
+        <Grid item sm={7} xs={10} lg={9}>
+          {/* <h1>Student Form</h1> */}
+          <div className="new">
+            <form>
+              <div className="juu_left">
+                <div className="area">
+                  <label>Gender</label>
+                  <input value={data.gender}
+                    name="gender"
+                      type="text"
+                      placeholder="Gender"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Image</label>
+                  <input value={data.image}
+                    name="image"
+                      type="text"
+                      placeholder="Image"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Parent ID</label>
+                  <input value={data.parent_id}
+                    name="parent_id"
+                      type="text"
+                      placeholder="ParentId"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Phone_number</label>
+                  <input value={data.phone_no}
+                    name="phone_no"
+                      type="text"
+                      placeholder="Phone Number"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Admission Number</label>
+                  <input value={data.admission_no}
+                    name="admission_no"
+                      type="text"
+                      placeholder="admission_no"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Subject ID</label>
+                  <input value={data.subject_id}
+                    name="subject_id"
+                      type="text"
+                      placeholder="Suubject Id"
+                      onChange={handleChange}/>
+                </div>
+              </div>
+              <div className="chini_right">
+              <div className="area">
+                  <label>FullName</label>
+                  <input value={data.full_name}
+                    name="full_name"
+                      type="text"
+                      placeholder="Full name"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Email</label>
+                  <input value={data.email}
+                    name="email"
+                      type="text"
+                      placeholder="Email"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Password</label>
+                  <input value={data.password}
+                    name="password"
+                      type="password"
+                      onChange={handleChange}/>
+                </div>
+                <div className="area">
+                  <label>Classroom ID</label>
+                  <input value={data.classroom_id}
+                    name="classroom_id"
+                      type="text"
+                      placeholder="Classroom  ID"
+                      onChange={handleChange}/>
+                </div>
+                
+                <div className="area">
+                  <label>Username</label>
+                  <input value={data.username}
+                    name="username"
+                      type="text"
+                      placeholder="Username"
+                      onChange={handleChange}/>
+                </div>
+                
+                
+              </div>
+              <Button
+                      variant="contained"
+                      color="primary"
+                      style={{
+                        width: "550px",
+                        marginTop: "15px",
+                        marginLeft: "200px",
+                        alignItems: "center",
+                      }}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+
+            </form>
+          </div>
+          {/* <div className="new">
+            <div className="top">
+              <h1>Add Student</h1>
+            </div>
+            <div className="bottom">
+              <div className="right">
+
+
+                <form onSubmit={handleSubmit}>
+
+
+                  <div className="formInput">
+                    <label>Gender:</label>
+                    <input value={data.gender}
+                    name="gender"
+                      type="text"
+                      placeholder="Address"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="formInput">
+                    <label>Image:</label>
+                    <input value={data.image}
+                    name="image"
+                      type="text"
+                      placeholder="Address"
+                      onChange={handleChange}
+                    />
     
-  </RadioGroup>  */}
+                  </div>
+                  <div className="formInput">
+                    <label>Parent Id:</label>
+                    <input value={data.parent_id}
+                    name="parent_id"
+                      type="text"
+                      placeholder="Address"
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div className="formInput">
+                    <label>Phone Number:</label>
+                    <input value={data.phone_no}
+                    name="phone_no"
+                      type="text"
+                      placeholder="Phone_number"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="formInput">
+                    <label>Admission Number:</label>
+                    <input value={data.admission_no}
+                    name="admission_no"
+                      type="text"
+                      placeholder="Address"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div className="formInput">
+                    <label>Subject Id:</label>
+                    <input value={data.subject_id}
+                    name="subject_id"
+                      type="text"
+                      placeholder="Address"
+                      onChange={handleChange}
+                    />
+                  </div>
+
+
+                
+                    <div className="formInput">
+                      <label>Full Name:</label>
+                      <input value={data.full_name}
+                      name="full_name"
+                        type="text"
+                        placeholder="Full Name"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="formInput">
+                      <label>Email:</label>
+                      <input value={data.email}
+                      name="email"
+                        type="text"
+                        placeholder="Email"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="formInput">
+                      <label>Password:</label>
+                      <input value={data.password} name="password" type="password" onChange={handleChange} />
+                    </div>
+                    <div className="formInput">
+                      <label>Classroom Id:</label>
+                      <input value={data.classroom_id}
+                      name="classroom_id"
+                        type="text"
+                        placeholder="classroom id"
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="formInput">
+                      <label>Username:</label>
+                      <input value={data.username}
+                      name="username"
+                        type="text"
+                        placeholder="username"
+                        onChange={handleChange}
+                      />
+                    </div>
+                  
+                  <div className="formInput">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      style={{
+                        width: "450px",
+                        // marginTop: "15px",
+                        marginLeft: "55px",
+                        alignItems: "center",
+                      }}
+                      type="submit"
+                    >
+                      Send
+                    </Button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> */}
+        </Grid>
+      </Grid>
     </div>
-    {/* IMAGE */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Image:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
-      </div>
-    {/* PARENT ID */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Parent ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
-      </div>
-    {/* PHONE NO */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Phone Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
-      </div>
-    {/* ADDMISSION NO */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Admission Number:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* SUBJECT ID */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Subject ID:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
-      </div>
-    {/* FULL NAME */}
-    <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Full Name:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined" size="small" style={{width:"100%"}}/>
-      </div>
-    {/* EMAIL */}
-     <div className={classes.item}>
-      <FormLabel id="demo-radio-buttons-group-label">Email:</FormLabel>
-        <TextField id="outlined-basic" variant="outlined"  size="small" style={{width:"100%"}}/>
-      </div>
-      <div>
-      <Button variant="contained" color="primary" size="large" startIcon={<Save/>} style={{width:"400px", marginTop:"15px", alignItems:"center", marginLeft:"80px"}}>Save</Button>
-      </div>
-    </form>
-    </Container>
-    
-  )
+  );
 }
 
-export default StudentForm
+export default StudentForm;

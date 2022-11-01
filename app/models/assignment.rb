@@ -1,3 +1,3 @@
 class Assignment < ApplicationRecord
-      belongs_to :subject_teacher
+      belongs_to :subject
 end
