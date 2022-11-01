@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-
-const StudentDetails = ({student}) => {
-=======
 import React, {useEffect, useState } from 'react'
 const StudentDetails = () => {
 
@@ -30,16 +25,11 @@ const StudentDetails = () => {
   console.log(" student ", student)
 
   
->>>>>>> origin/angela
   return (
     <div className='card'>
     <div className='card-inner'>
       <div className='card-front'>
-<<<<<<< HEAD
-        <img src={student.img} alt='' />
-=======
         <img src={student.image} alt='' />
->>>>>>> origin/angela
         <h1>{student.full_name}</h1>
       </div>
       <div className='card-back'>

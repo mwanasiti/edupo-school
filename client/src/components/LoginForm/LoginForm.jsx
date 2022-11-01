@@ -40,11 +40,8 @@ function LoginForm({ setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-<<<<<<< HEAD
-=======
   //const [email, setEmail] = useState("");
 
->>>>>>> origin/angela
   const [value, setValue] = useState(1);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -144,11 +141,7 @@ function LoginForm({ setUser }) {
   }
   return (
     <div className="form-container">
-<<<<<<< HEAD
-      <h3 className="text-center p-6 text-4xl font-medium ">LOGIN</h3>
-=======
       <h1 className="text-center p-6 text-4xl font-bolder font-size-60px ">LOGIN</h1>
->>>>>>> origin/angela
       {/* <h1 className="text-center p-6 text-4xl font-medium text-black">Select User: </h1> */}
       <Box
         sx={{
@@ -165,27 +158,15 @@ function LoginForm({ setUser }) {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-<<<<<<< HEAD
-          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Admin" {...a11yProps(0)} />
-          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Teacher" {...a11yProps(1)} />
-          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Student" {...a11yProps(2)} />
-          <Tab sx={{ color: "white", fontWeight:'bolder' }} label="Parent" {...a11yProps(3)} />
-=======
           <Tab sx={{ color: "black" }} label="Admin" {...a11yProps(0)} />
           <Tab sx={{ color: "black" }} label="Teacher" {...a11yProps(1)} />
           <Tab sx={{ color: "black" }} label="Student" {...a11yProps(2)} />
           <Tab sx={{ color: "black" }} label="Parent" {...a11yProps(3)} />
->>>>>>> origin/angela
         </Tabs>
       </Box>
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
-<<<<<<< HEAD
-        <label style={{color:'#ACBABF'}} htmlFor="username" className="text-xl">
-          Username:
-=======
         <label htmlFor="username" className="text-xl">
          username
->>>>>>> origin/angela
         </label>
         <input
           required
@@ -198,15 +179,10 @@ function LoginForm({ setUser }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-<<<<<<< HEAD
-        <label style={{color:'#ACBABF'}} htmlFor="password" className="mt-5 text-xl">
-          Password:
-=======
       
 
         <label htmlFor="password" className="mt-5 text-xl">
           password
->>>>>>> origin/angela
         </label>
         <input
           className="mt-2 h-8 rounded-lg text-black"

@@ -66,11 +66,8 @@ function Navbar({ user, setUser }) {
       >
         EDUPO
       </Link>
-<<<<<<< HEAD
-=======
       
       
->>>>>>> origin/angela
       {user ? (
         <h1 style={{fontSize:'20px', fontFamily:'cursive', fontWeight:'bold'}} className=" text-black hover:text-black-200 ">
           Hi {user.username}
