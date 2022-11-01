@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
 import "./Parent.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ParentForm() {
+  let navigate = useNavigate()
   const [parent, setParent] = useState({
     address: "",
     phone_no: "",
@@ -24,15 +26,17 @@ function ParentForm() {
     console.log("form");
 
     axios.post("/parents", {
-        address: data.address,
-        phone_no: data.phone_no,
-        full_name: data.full_name,
-        email: data.email,
-        password: data.password,
-        username: data.username,
+        address: parent.address,
+        phone_no: parent.phone_no,
+        full_name: parent.full_name,
+        email: parent.email,
+        password: parent.password,
+        username: parent.username,
+        role:"parent"
       })
       .then((response) => {
         setParent(response);
+        navigate("/parenttable")
       });
   };
 
@@ -53,7 +57,9 @@ function ParentForm() {
                     <label>Address:</label>
                     {/* <input type="text" placeholder="Address" onChange={handleChange}/> */}
                     <div>
-                    <Input placeholder="Enter address"/>
+                    <Input placeholder="Enter address" name="address"
+                      type="text"
+                      onChange={handleChange}/>
                     </div>
                     
                   </div>
@@ -61,30 +67,54 @@ function ParentForm() {
                     <label>Phone Number:</label>
                     {/* <input type="text" placeholder="Phone_number" onChange={handleChange}/> */}
                     <div>
-                    <Input placeholder="Enter phone number"/>
+                    <Input placeholder="Enter phone number" 
+                    name="phone_no"
+                      type="text"
+                     
+                      onChange={handleChange}/>
                     </div>
                   </div>
                   <div className="formInput">
                     <label>Full Name:</label>
                     {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
                     <div>
-                    <Input placeholder="Enter full name"/>
+                    <Input placeholder="Enter full name" 
+                    name="full_name"
+                      type="text"
+                      
+                      onChange={handleChange}/>
                     </div>
                   </div>
                   <div className="formInput">
                     <label>Email:</label>
                     {/* <input type="text" placeholder="Email"onChange={handleChange} /> */}
                     <div>
-                    <Input placeholder="Enter email address"/>
+                    <Input placeholder="Enter email address"
+                     name="email"
+                      type="text"
+                  
+                      onChange={handleChange}/>
                     </div>
                   </div>
                   <div className="formInput">
                     <label>Password:</label>
                     {/* <input type="password" onChange={handleChange}/> */}
                     <div>
-                    <Input placeholder="Enter password" type="password"/>
+                    <Input placeholder="Enter password" 
+                    type="password" 
+                      name="password"
+                      onChange={handleChange}
+                    />
                     </div>
-                    
+                    <div className="formInput">
+                  
+                      Username:<Input   style={{marginLeft:"30px"}}
+                        name="username"
+                      type="text"
+                      placeholder="Enter Username"
+                      onChange={handleChange}
+                      />
+                </div>
                   </div>
                   <div className="formInput">
                     <Button
@@ -103,57 +133,7 @@ function ParentForm() {
                   </div>
                 </form>
             </div>
-          {/* <div className="new">
-            
-            <div className="bottom">
-              <div className="left">
-                left
-                <img
-                  src="https://i.pinimg.com/564x/a9/cc/d7/a9ccd7f3b82fc8b70c6d75a299302001.jpg"
-                  alt="profile"
-                />
-              </div>
-              <div className="right">
-                <form onSubmit={handleSubmit}>
-                  <div className="formInput">
-                    <label>Address:</label>
-                    <input type="text" placeholder="Address" onChange={handleChange}/>
-                  </div>
-                  <div className="formInput">
-                    <label>Phone Number:</label>
-                    <input type="text" placeholder="Phone_number" onChange={handleChange}/>
-                  </div>
-                  <div className="formInput">
-                    <label>Full Name:</label>
-                    <input type="text" placeholder="Full Name" onChange={handleChange}/>
-                  </div>
-                  <div className="formInput">
-                    <label>Email:</label>
-                    <input type="text" placeholder="Email"onChange={handleChange} />
-                  </div>
-                  <div className="formInput">
-                    <label>Password:</label>
-                    <input type="password" onChange={handleChange}/>
-                  </div>
-                  <div className="formInput">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      style={{
-                        width: "450px",
-                        // marginTop: "15px",
-                        marginLeft: "55px",
-                        alignItems: "center",
-                      }}
-                      type="submit"
-                    >
-                      Send
-                    </Button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div> */}
+          
         </Grid>
       </Grid>
     </div>
