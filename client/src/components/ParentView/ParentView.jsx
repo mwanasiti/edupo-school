@@ -24,12 +24,10 @@ if (students.length === 0)
   return(
     <h1 className="text-center p-3 text-black text-xl font-bold"> You have not enrolled any of your children to Edupo School</h1>
   );
-
   return (
     <>     <h1 className="text-center p-3 text-black text-xl font-bold">
     These are your students
   </h1>
-
   <div className="overflow-x-auto relative dark">
     <table className="w-full text-lg text-left text-gray-500 dark:text-gray-400">
       <thead className="text-gray-700 uppercase bg-blue-500 dark:bg-gray-700 dark:text-gray-400">
@@ -97,5 +95,4 @@ if (students.length === 0)
   </>
   )
 }
-
 export default ParentView

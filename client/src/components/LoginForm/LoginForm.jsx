@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
-
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -27,20 +24,17 @@ function TabPanel(props) {
     </div>
   );
 }
-
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
 };
-
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-
 function LoginForm({ setUser }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -49,11 +43,9 @@ function LoginForm({ setUser }) {
   //const [email, setEmail] = useState("");
 
   const [value, setValue] = useState(1);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   function handleAdminSubmit(e) {
     e.preventDefault();
     fetch("/admin_login", {
@@ -77,7 +69,6 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   function handleTeacherSubmit(e) {
     e.preventDefault();
     fetch("/teacher_login", {
@@ -101,7 +92,6 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   function handleStudentSubmit(e) {
     e.preventDefault();
     fetch("/student_login", {
@@ -126,7 +116,6 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   function handleParentSubmit(e) {
     e.preventDefault();
     fetch("/parent_login", {
@@ -150,12 +139,10 @@ function LoginForm({ setUser }) {
       }
     });
   }
-
   return (
     <div className="form-container">
       <h1 className="text-center p-6 text-4xl font-bolder font-size-60px ">LOGIN</h1>
       {/* <h1 className="text-center p-6 text-4xl font-medium text-black">Select User: </h1> */}
-
       <Box
         sx={{
           borderBottom: 2,
@@ -177,7 +164,6 @@ function LoginForm({ setUser }) {
           <Tab sx={{ color: "black" }} label="Parent" {...a11yProps(3)} />
         </Tabs>
       </Box>
-
       <form className=" w-2/3 my-6 mx-auto flex flex-col">
         <label htmlFor="username" className="text-xl">
          username
@@ -216,7 +202,6 @@ function LoginForm({ setUser }) {
           );
         })}
         {/* <h2 className="text-center mt-6 py-6 text-xl ">Log in as:</h2> */}
-
         <div className="flex justify-center">
           <TabPanel value={value} index={0}>
             <button
@@ -260,5 +245,4 @@ function LoginForm({ setUser }) {
     </div>
   );
 }
-
 export default LoginForm;

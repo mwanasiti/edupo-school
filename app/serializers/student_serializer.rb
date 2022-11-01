@@ -1,5 +1,5 @@
 class StudentSerializer < ActiveModel::Serializer
-  attributes :id, :full_name, :image, :email, :admission_no, :phone_no, :teacher, :classroom, :username, :role, :subject
+  attributes :id, :full_name, :image, :email, :admission_no, :phone_no, :teacher, :classroom, :username, :role, :subject ,:subject_id
 
   def classroom
     self.object.classroom.name

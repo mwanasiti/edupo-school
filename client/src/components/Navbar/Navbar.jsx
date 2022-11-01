@@ -2,10 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaPowerOff } from "react-icons/fa";
-
 function Navbar({ user, setUser }) {
   const navigate = useNavigate();
-
   function handleLogout() {
     switch (user.role) {
       case "admin":
@@ -51,11 +49,10 @@ function Navbar({ user, setUser }) {
         break;
     }
   }
-
   return (
     <nav
       className="flex items-center justify-between flex-wrap bg-our-black p-6"
-      style={{ backgroundColor: "#fff" }}
+      style={{ backgroundColor: "#FFFDD0", color:'#000' }}
     >
       <Link
         to="/"
@@ -72,7 +69,7 @@ function Navbar({ user, setUser }) {
       
       
       {user ? (
-        <h1 className=" text-black hover:text-black-200 ">
+        <h1 style={{fontSize:'20px', fontFamily:'cursive', fontWeight:'bold'}} className=" text-black hover:text-black-200 ">
           Hi {user.username}
         </h1>
       ) : null}

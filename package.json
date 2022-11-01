@@ -8,5 +8,14 @@
     "@mui/material": "^5.10.11",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.2"
+  },
+  "devDependencies": {
+    "vite": "^3.1.8",
+    "vite-plugin-ruby": "^3.1.2",
+    "@mui/material": "^5.10.10",
+    "@mui/x-data-grid": "^5.17.8",
+    "react-icons": "^4.6.0",
+    "react-router-dom": "^6.4.2",
+    "use-context": "^0.0.1"
   }
 }
