@@ -7,7 +7,6 @@ import ParentData from "./components/AdminView/DataTables/ParentData";
 import ParentView from "./components/AdminView/DataTables/ParentData";
 import StudentData from "./components/AdminView/DataTables/StudentData";
 import TeacherData from "./components/AdminView/DataTables/TeacherData";
-import TeacherView from "./components/AdminView/DataTables/TeacherData";
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
 import StudentForm from "./components/AdminView/Forms/Student/StudentForm";
 import TeacherForm from "./components/AdminView/Forms/Teacher/TeacherForm";
@@ -28,6 +27,7 @@ import EditAssignment from "./components/TeacherView/EditAssignment";
 import SubjectStudents from "./components/TeacherView/SubjectStudents";
 import TeacherStudentAssessments from "./components/TeacherView/TeacherStudentAssessments";
 import TeacherStudentAssignments from "./components/TeacherView/TeacherStudentAssignments"
+import TeacherView from "./components/TeacherView/TeacherView";
 // import Syllabus from "./components/TeacherView/Syllabus";
 // import SubjectList from "./components/TeacherView/SubjectList";
 
