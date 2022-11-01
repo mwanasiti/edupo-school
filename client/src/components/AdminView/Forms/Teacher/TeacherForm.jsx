@@ -7,6 +7,41 @@ import Sidebar from "../../BarRoutes/Sidebar";
 function TeacherForm() {
   const [file, setFile] = useState("");
   // console.log(file);
+  const [teacher, setTeacher] = useState({
+    gender: "",
+    image: "",
+    phone_no: "",
+    address: "", 
+    full_name: "",
+    email: "",
+    password: "",
+    username: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setTeacher({ ...teacher, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("form")
+    
+  
+
+    axios.post("/teachers", {
+        gender: data.gender,
+        image: data.image,
+        phone_no: data.phone_no,
+        address: data.address,
+        full_name: data.full_name,
+        email: data.email,
+        password: data.password,
+        username: data.username,
+      })
+      .then((response) => {
+        setTeacher(response);
+      });
+  };
 
   return (
     <div>
@@ -17,11 +52,11 @@ function TeacherForm() {
 
         <Grid item sm={4} xs={2} lg={2}>
           <div className="new">
-            <div className="top">
-              <h1>Add Teacher</h1>
+            <div className="">
+              {/* <h1>Add Teacher</h1> */}
             </div>
-            <div className="bottom">
-              <div className="left">
+            <div className="">
+              <div className="">
                 <img
                   src={
                     file
@@ -31,7 +66,7 @@ function TeacherForm() {
                   alt="profile"
                 />
               </div>
-              <div className="right">
+              <div className="">
                 <form>
                   <div className="formInput">
                     <label>Gender:</label>
