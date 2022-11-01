@@ -56,7 +56,7 @@ function StudentForm() {
           <Sidebar />
         </Grid>
         <Grid item sm={7} xs={10} lg={9}>
-          <h1>Student Form</h1>
+          {/* <h1>Student Form</h1> */}
           <div className="new">
             <form>
               <div className="juu_left">
