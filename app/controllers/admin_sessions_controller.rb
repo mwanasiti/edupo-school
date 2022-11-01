@@ -2,7 +2,7 @@ class AdminSessionsController < ApplicationController
 
     #skip_before_action :authorize, only: :create
     def create
-        admin = Admin.find_by(email: params[:email])
+        admin = Admin.find_by(username: params[:username])
         
     if admin&.authenticate(params[:password])
             session[:admin_id] = admin.id
