@@ -16,10 +16,21 @@ class ParentsController < ApplicationController
 <<<<<<< HEAD
   def create
     parent = Parent.create(parent_params)
+<<<<<<< HEAD
 
     render json: parent,  status: :created
   end
 
+=======
+    render json: parent, status: :ok
+
+  end  
+
+
+     
+     # PATCH/PUT /parents/1
+  # PATCH/PUT /parents/1.json
+>>>>>>> origin/angela
   def update
     parent =Parent.find_by(id: params[:id])
     
@@ -65,8 +76,16 @@ end
 <<<<<<< HEAD
     private
     def parent_params
+<<<<<<< HEAD
       params.permit(:role,:address,:phone_no, :full_name, :email, :password)
 
+=======
+      params.require(:parent).permit(:name, :email, :password_digest, :phone, :address)
+    end
+
+    def not_found_response
+        render json: {error:"Parent not found"}, status: :not_found
+>>>>>>> origin/angela
     end
 end
 =======

@@ -83,6 +83,7 @@ function App() {
           <Route path="/student" element={<StudentView />} />
           <Route path="/parent" element={<ParentView />} />
           <Route path="/admin" element={<AdminView />} />
+        
           <Route path="/login" element={<LoginForm setUser={setUser} />} />
 
           {/* ADMIN ROUTES */}
@@ -102,6 +103,8 @@ function App() {
 
           <Route path="/par-stu-assignments/:id" element={<ParentStudentAssignments/>} />
           <Route path="/par-stu-assessments/:id" element={<ParentStudentAssessments/>} />
+      
+          
 
           <Route path="/subject-students/:id" element={<SubjectStudents/>} />
 
@@ -117,6 +120,8 @@ function App() {
 
           <Route path="/edit-assignment/:id" element={<EditAssignment/>} />
           <Route path="/edit-assessment/:id" element={<EditAssessment/>} />
+
+          
 
 
 

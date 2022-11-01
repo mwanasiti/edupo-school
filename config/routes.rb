@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  get "/studentId", to: "students#studentId"
+
 
   #   GET A LOGGED IN PARENT'S STUDENTS
   get "/student_parent", to: "students#student_parent"

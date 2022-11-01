@@ -14,7 +14,9 @@ class AdminsController < ApplicationController
         else
             not_found_response
         end
+
     end
+    
 
     private
 

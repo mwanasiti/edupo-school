@@ -2,9 +2,10 @@ class TeacherSessionsController < ApplicationController
 
     def create
         teacher = Teacher.find_by(username: params[:username])
+
         if teacher&.authenticate(params[:password])
             session[:teacher_id] = teacher.id
-            render json: teacher
+            render json: teacher, status: :created
         else
             render json: {errors: ["Invalid Username or Password"]}, status: 401
         end
