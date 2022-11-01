@@ -172,19 +172,7 @@ end
   def student_params
     params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id, :username)
   end
-<<<<<<< HEAD
-private
-def render_unproccessable_entity(invalid)
-  render  json: {errors: invalid.record.errors.full_messages}, status: 422
-end
-def render_not_found_response
-  render json: {errors: ["Record Not Found"]}
-end
-  def student_params
-    params.permit(:role, :gender, :image, :parent_id, :phone_no, :admission_no, :subject_id,:full_name,:email,:password, :classroom_id)
-  end
-=======
->>>>>>> origin/angela
+
 end
 
 
@@ -192,9 +180,3 @@ end
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> origin/angela
