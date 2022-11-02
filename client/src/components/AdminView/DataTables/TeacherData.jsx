@@ -114,6 +114,23 @@ function TeacherData() {
       .then((human) => setTeacherData(human));
   }, []);
 
+  function handleTeacherDelete(id){
+    fetch(`/teachers/${id}`,{
+      method: "DELETE",
+    })
+    .then((res)=> res.json())
+    .then((data)=>{
+      console.log(data);
+      if(data.errors){
+        setErrors(data.errors)
+      }
+      const  updatedTeachers = teacherData.filter(
+        (teacher)=> teacher.id !== data.id
+      );
+      setTeacherData(updatedTeachers);
+    });
+  }
+
   return (
     <div>
       <Grid container>
@@ -155,12 +172,14 @@ function TeacherData() {
                     {/* <TableCell> {human.password}</TableCell> */}
                     <TableCell> {human.username}</TableCell>
                     <TableCell>
-                      {" "}
-                      <Edit />
+                    <button > {" "}
+                      <Edit /></button>
+                     
                     </TableCell>
                     <TableCell>
-                      {" "}
-                      <Delete />{" "}
+                    <button onClick={()=>{handleTeacherDelete(human.id)}}> {" "}
+                      <Delete />{" "}</button>
+                      
                     </TableCell>
                   </TableRow>
                 ))}

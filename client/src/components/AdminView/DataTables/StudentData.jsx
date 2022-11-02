@@ -318,16 +318,20 @@ function StudentData() {
           <Sidebar />
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
-          <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"10px"}}>
+       <div className="studentTopic">
+        <p>Student Table</p>
+       </div>
+          <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px", height:"500px"}}>
+          
             <Table aria-label="simple table" >
               <TableHead>
                 <TableRow>
                   {/* <TableCell>Gender</TableCell> */}
                   <TableCell>Image</TableCell>
-                  <TableCell>Parent ID</TableCell>
+                  <TableCell>Parent</TableCell>
                   <TableCell>Phone Number</TableCell>
                   <TableCell>Admission Number</TableCell>
-                  <TableCell>Subject ID</TableCell>
+                  <TableCell>Subject</TableCell>
                   <TableCell>FullName</TableCell>
                   <TableCell>Email</TableCell>
                   {/* <TableCell>Password</TableCell> */}
@@ -341,10 +345,10 @@ function StudentData() {
                   <TableRow key={index}>
                     {/* <TableCell>{human.gender}</TableCell> */}
                     <TableCell><img src={human.image} alt="profile" style={{height:"35px"}}/> </TableCell>
-                    <TableCell>{human.parent_id}</TableCell>
+                    <TableCell>{human.parent}</TableCell>
                     <TableCell>{human.phone_no}</TableCell>
                     <TableCell>{human.admission_no}</TableCell>
-                    <TableCell> {human.subject_id}</TableCell>
+                    <TableCell> {human.subject}</TableCell>
                     <TableCell> {human.full_name}</TableCell>
                     <TableCell>{human.email}</TableCell>
                     {/* <TableCell> {human.password}</TableCell> */}
