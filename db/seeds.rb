@@ -177,12 +177,5 @@ student_assessment3 = StudentAssesment.create(student_id: 3, assessment_id: 3)
 student_assessment4 = StudentAssesment.create(student_id: 4, assessment_id: 4)
 puts "Done Seeding Student Assessments"
 puts "Completed All Seeding"
-<<<<<<< HEAD
-=======
 
 
-<<<<<<< HEAD
->>>>>>> origin/angela
-=======
-puts "Completed All Seeding"
->>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8

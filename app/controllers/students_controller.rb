@@ -163,7 +163,6 @@ end
       # end
     # end 
   end
-<<<<<<< HEAD
     def student_details
       student = Student.find(session[:student_id])
     if student
@@ -187,8 +186,6 @@ private
   
 
 end
-=======
->>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8
 
   
 end
