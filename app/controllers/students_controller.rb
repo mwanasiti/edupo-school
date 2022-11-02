@@ -40,9 +40,9 @@ def destroy
   student =Student.find_by(id: params[:id])
   if student
     student.destroy
-    head :no_content
+    render json: student
   else
-  render json: {error: "student not found"}, status: :not_found
+  render json: {errors: ["student not found"]}, status: :not_found
   end
 end
 

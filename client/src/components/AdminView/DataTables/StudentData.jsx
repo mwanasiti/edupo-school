@@ -16,6 +16,7 @@ import {
 import Sidebar from "../BarRoutes/Sidebar";
 import { Delete, Edit } from "@material-ui/icons";
 
+
 // const columns = [
 //   { field: "id", headerName: "ID", width: 90 },
 
@@ -304,12 +305,34 @@ import { Delete, Edit } from "@material-ui/icons";
 
 function StudentData() {
   const [studentData, setStudentData] = useState([]);
+  const [errors, setErrors] = useState([]);
+
 
   useEffect(() => {
     fetch("/students")
       .then((response) => response.json())
-      .then((human) => setStudentData(human));
+      .then((human) => {
+        setStudentData(human)
+        console.log(human)
+      });
   }, []);
+ 
+  function handleStudentDelete(id){
+    fetch(`/students/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        const updatedStudents = studentData.filter(
+          (student) => student.id !== data.id
+        );
+        setStudentData(updatedStudents);
+      });
+  }
 
   return (
     <div>
@@ -324,10 +347,10 @@ function StudentData() {
                 <TableRow>
                   {/* <TableCell>Gender</TableCell> */}
                   <TableCell>Image</TableCell>
-                  <TableCell>Parent ID</TableCell>
+                  <TableCell>Parent</TableCell>
                   <TableCell>Phone Number</TableCell>
                   <TableCell>Admission Number</TableCell>
-                  <TableCell>Subject ID</TableCell>
+                  <TableCell>Subject</TableCell>
                   <TableCell>FullName</TableCell>
                   <TableCell>Email</TableCell>
                   {/* <TableCell>Password</TableCell> */}
@@ -341,20 +364,33 @@ function StudentData() {
                   <TableRow key={index}>
                     {/* <TableCell>{human.gender}</TableCell> */}
                     <TableCell><img src={human.image} alt="profile" style={{height:"35px"}}/> </TableCell>
-                    <TableCell>{human.parent_id}</TableCell>
+                    <TableCell>{human.parent}</TableCell>
                     <TableCell>{human.phone_no}</TableCell>
                     <TableCell>{human.admission_no}</TableCell>
-                    <TableCell> {human.subject_id}</TableCell>
+                    <TableCell> {human.subject}</TableCell>
                     <TableCell> {human.full_name}</TableCell>
                     <TableCell>{human.email}</TableCell>
                     {/* <TableCell> {human.password}</TableCell> */}
                     <TableCell> {human.username}</TableCell>
-                    <TableCell>  <Edit/></TableCell>
-                    <TableCell>  <Delete/> </TableCell>
+                    <TableCell>  <button ><Edit/></button></TableCell>
+                    <TableCell>  <button onClick={() => handleStudentDelete(human.id)}><Delete/> </button></TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
+
+            <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        {errors.map((error) => {
+          return (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+              role="alert"
+            >
+              <span className="block sm:inline">{error}</span>
+            </div>
+          );
+        })}
+      </div>
             
           </TableContainer>
 
