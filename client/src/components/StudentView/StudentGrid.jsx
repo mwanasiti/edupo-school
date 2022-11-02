@@ -1,5 +1,5 @@
 import React from 'react';
-import EditStudentDetails from './EditStudentDetails';
+// import EditStudentDetails from './EditStudentDetails';
 import StudentDetails from './StudentDetails'
 const StudentGrid = ( { isLoading, student}) => {
  
