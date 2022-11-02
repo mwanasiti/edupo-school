@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
 import axios from "axios";
 import "./Student.css";
+import { useNavigate } from "react-router-dom";
 
 function StudentForm() {
+  let navigate = useNavigate()
   const [file, setFile] = useState("");
   const [data, setData] = useState({
     gender: "",
@@ -43,9 +45,11 @@ function StudentForm() {
         password: data.password,
         classroom_id: data.classroom_id,
         username: data.username,
+        role:"student"
       })
       .then((response) => {
         setData(response);
+        navigate("/studenttable")
       });
   };
 
@@ -59,8 +63,9 @@ function StudentForm() {
           {/* <h1>Student Form</h1> */}
           <div className="studentTopic">Add Student</div>
           <div className="new">
-            <form className="formstd">
-            <p className="heading">STUDENT FORM</p>
+          
+            <form className="formstd" onSubmit={handleSubmit}>
+            
               <div className="juu_left">
                 <div className="area">
                   {/* <label>Gender: </label> */}
@@ -214,23 +219,27 @@ function StudentForm() {
                       placeholder="Enter Username"
                       onChange={handleChange}
                       />
+                        <div className="formbutton">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    width: "150px",
+                    marginTop:"90px",
+                    // marginBottom: "5px",
+                    marginLeft: "-9px",
+                    alignItems: "center",
+                  }}
+                  type="submit"
+                >
+                  Send
+                </Button>
+              </div>
                 </div>
                 
                 
               </div>
-              <Button
-                      variant="contained"
-                      color="primary"
-                      style={{
-                        width: "550px",
-                        marginTop: "25px",
-                        marginLeft: "200px",
-                        alignItems: "center",
-                      }}
-                      type="submit"
-                    >
-                      Send
-                    </Button>
+              
 
             </form>
           </div>

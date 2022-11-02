@@ -1,14 +1,22 @@
 import { Grid } from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
 
-import { BorderColor, Group, Person, School } from "@mui/icons-material";
+import { BorderColor, Group, MoreVert, Person, School } from "@mui/icons-material";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../BarRoutes/Sidebar";
 import "./../BarRoutes/Side.css";
 import "./Dashboard.css";
 
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import Charts from "./Charts";
+import SchoolEvents from "./SchoolEvents";
+import { useNavigate } from "react-router-dom";
+
+
 function Dashboard() {
+let navigate  = useNavigate()
+
   return (
     <div className="bigParent">
       <Grid container>
@@ -27,7 +35,9 @@ function Dashboard() {
                   <span className="nambari">18</span>
                 </div>
                 <div className="ona">
-                  <span className="link">See all</span>
+                  <span className="link"  onClick={() => {
+          navigate("/teachertable")
+        }}  >See all</span>
                 </div>
                 <div className="go">
                   <KeyboardArrowUp />
@@ -49,7 +59,9 @@ function Dashboard() {
                   <span className="nambari">14</span>
                 </div>
                 <div className="ona">
-                  <span className="link">See all</span>
+                  <span className="link"  onClick={() => {
+          navigate("/studenttable");
+        }}>See all</span>
                 </div>
                 <div className="go">
                   <KeyboardArrowUp />
@@ -71,7 +83,9 @@ function Dashboard() {
                   <span className="nambari">10</span>
                 </div>
                 <div className="ona">
-                  <span className="link">See all</span>
+                  <span className="link"  onClick={() => {
+          navigate("/parenttable");
+        }}>See all</span>
                 </div>
                 <div className="go">
                   <KeyboardArrowUp />
@@ -106,6 +120,32 @@ function Dashboard() {
               
             </div>
             
+          </div>
+          <div className="featured">
+          <div className="graphs">
+          <div className="top">
+            <h1 className="title">Chart</h1>
+            
+          </div>
+          <div className="bottom">
+            <div className="featuredChart">
+            <Charts/>
+            </div>
+
+          </div>
+          </div>
+          {/* <div className="graphs">
+          <div className="top">
+            <h1 className="title">Calendar</h1>
+            
+          </div>
+          <div className="bottom">
+            <div className="featuredChart">
+            <SchoolEvents/>
+            </div>
+
+          </div>
+          </div> */}
           </div>
         </Grid>
       </Grid>

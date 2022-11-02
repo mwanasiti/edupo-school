@@ -145,6 +145,16 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+      "/parents": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/teachers": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
 });
