@@ -145,12 +145,20 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
+<<<<<<< HEAD
       "/studentId": {
+=======
+      "/parents": {
+>>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,
       },
+<<<<<<< HEAD
       "/studentDetails": {
+=======
+      "/teachers": {
+>>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,

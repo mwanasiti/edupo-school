@@ -13,7 +13,7 @@ function Sidebar() {
     <div className='sidebar'>
     <div className="sidebarWrapper">
       <div className='sidebarMenu'>
-        <p  className='sidebarTitle'>Admin Forms</p>
+        <p  className='sidebarTitle'>Home and Forms</p>
         <ul className='sidebarList'>
           <li className='sidebarListItem active'onClick={() => {
           navigate("/dashboard");
@@ -21,6 +21,7 @@ function Sidebar() {
             <Dashboard className='sidebarIcon' />
             Dashboard
           </li>
+          
           <li className='sidebarListItem'  onClick={() => {
           navigate("/addteacher");
         }}>
@@ -39,16 +40,16 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent
           </li>
-          <li className='sidebarListItem ' onClick={() => {
+          {/* <li className='sidebarListItem ' onClick={() => {
           navigate("/addstaff");
         }} >
             <Group className='sidebarIcon'/>
             Staff
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className='sidebarMenu'>
-        <p  className='sidebarTitle'>DataTables</p>
+        <p  className='sidebarTitle'>Data Tables</p>
         <ul className='sidebarList'>
           
           <li className='sidebarListItem'  onClick={() => {
@@ -69,15 +70,15 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent Table
           </li>
-          <li className='sidebarListItem'  onClick={() => {
+          {/* <li className='sidebarListItem'  onClick={() => {
           navigate("/stafftable");
         }}>
             <Group className='sidebarIcon'/>
             Staff Table
-          </li>
+          </li> */}
         </ul>
       </div>
-      <div className='sidebarMenu'>
+      {/* <div className='sidebarMenu'>
         <p className='sidebarTitle'>Admin</p>
         <ul className='sidebarList'>
           
@@ -89,7 +90,7 @@ function Sidebar() {
           </li>
           
         </ul>
-      </div>
+      </div> */}
     </div>
    
     </div>

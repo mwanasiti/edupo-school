@@ -14,6 +14,7 @@ class ParentsController < ApplicationController
   end
 # CREATE 
 <<<<<<< HEAD
+<<<<<<< HEAD
   def create
     parent = Parent.create(parent_params)
 <<<<<<< HEAD
@@ -44,6 +45,8 @@ class ParentsController < ApplicationController
   # DELELET
 def destroy
 =======
+=======
+>>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8
 def create
   parent = Parent.create(parent_params)
 
@@ -51,7 +54,6 @@ def create
 end
 
 def update
->>>>>>> deno
   parent =Parent.find_by(id: params[:id])
   
   if parent
@@ -74,6 +76,7 @@ end
 
 end
 <<<<<<< HEAD
+<<<<<<< HEAD
     private
     def parent_params
 <<<<<<< HEAD
@@ -89,10 +92,11 @@ end
     end
 end
 =======
+=======
+>>>>>>> 18549b55ece76080a2da0b9c4a50d9af61ccc1a8
   private
   def parent_params
-    params.permit(:role,:address,:phone_no, :full_name, :email, :password)
+    params.permit(:role,:address,:phone_no, :full_name, :email, :password, :username)
 
   end
 end
->>>>>>> deno

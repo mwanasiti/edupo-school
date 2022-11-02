@@ -4,7 +4,6 @@ import AdminView from "./components/AdminView/AdminView";
 import Sidebar from "./components/AdminView/BarRoutes/Sidebar";
 import Dashboard from "./components/AdminView/Dashboard/Dashboard";
 import ParentData from "./components/AdminView/DataTables/ParentData";
-import ParentView from "./components/AdminView/DataTables/ParentData";
 import StudentData from "./components/AdminView/DataTables/StudentData";
 import TeacherData from "./components/AdminView/DataTables/TeacherData";
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
@@ -17,6 +16,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import Navbar from "./components/Navbar/Navbar";
 import ParentStudentAssessments from "./components/ParentView/ParentStudentAssessments";
 import ParentStudentAssignments from "./components/ParentView/ParentStudentAssignments";
+import ParentView from "./components/ParentView/ParentView";
 
 import StudentView from "./components/StudentView/StudentView";
 import AddAssessment from "./components/TeacherView/AddAssessment";

@@ -50,7 +50,7 @@ end
    
 private
     def teacher_params
-      params.permit(:role, :gender, :image,:phone_no, :address, :full_name, :email, :password)
+      params.permit(:role, :gender, :image,:phone_no, :address, :full_name, :email, :password, :username)
     end
 
 
