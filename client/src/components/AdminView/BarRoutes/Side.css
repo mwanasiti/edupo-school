@@ -35,3 +35,9 @@
     margin-right: 5px;
     font-style: 20px;
 }
+.sidebarTitle{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: -9px;
+    border-bottom: 1px solid grey;
+}
