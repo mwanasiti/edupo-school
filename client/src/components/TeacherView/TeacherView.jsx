@@ -11,7 +11,6 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-
 function TeacherView() {
   const navigate = useNavigate();
 
@@ -24,7 +23,7 @@ function TeacherView() {
       .then((res) => res.json())
       .then((data) => {
         setSubjects(data);
-        console.log(data)
+        console.log(data);
       });
   }, []);
 
@@ -51,7 +50,7 @@ function TeacherView() {
     });
   }
 
-  function handleSubjectRemove(id){
+  function handleSubjectRemove(id) {
     fetch(`/subject_teachers/${id}`, {
       method: "DELETE",
     })
@@ -70,10 +69,40 @@ function TeacherView() {
 
   if (subjects.length === 0)
     return (
-      <h1 className="text-center p-3 text-black text-xl font-bold">
-        {" "}
-        You Currently Do not Teach any Subjects at Edupo School
-      </h1>
+      <>
+        <h1 className="text-center p-3 text-black text-xl font-bold">
+          You Currently Do not Teach any Subjects at Edupo School
+        </h1>
+        <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+          Add New Subject
+          <hr></hr>
+        </h1>
+        <form className="flex flex-col text-center font-black p-4">
+          <label htmlFor="name" className="text-lg">
+            Subject Name:
+          </label>
+          <input
+            required
+            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
+            type="text"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <Button
+            variant="contained"
+            color="success"
+            type="submit"
+            className="w-1/3 mt-4 mx-auto"
+            onClick={handleSubjectSubmit}
+          >
+            Submit
+          </Button>
+        </form>
+      </div>
+      </>
     );
 
   return (
