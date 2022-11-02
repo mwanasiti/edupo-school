@@ -56,6 +56,10 @@ Rails.application.routes.draw do
   
   # CREATE A NEW TEACHER SUBJECT
   post "/new_subject_teacher", to: "subject_teachers#new_teacher_subject"
+
+  # GET A LOGGED IN STUDENT"
+  get "/studentId", to: "students#student_id"
+
   
 
     # ADMIN AUTH
