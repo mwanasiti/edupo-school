@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function ParentForm() {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   const [parent, setParent] = useState({
     address: "",
     phone_no: "",
@@ -14,6 +14,7 @@ function ParentForm() {
     email: "",
     password: "",
     username: "",
+    
   });
 
   const handleChange = (e) => {
@@ -25,18 +26,19 @@ function ParentForm() {
     e.preventDefault();
     console.log("form");
 
-    axios.post("/parents", {
+    axios
+      .post("/parents", {
         address: parent.address,
         phone_no: parent.phone_no,
         full_name: parent.full_name,
         email: parent.email,
         password: parent.password,
         username: parent.username,
-        role:"parent"
+        role: "parent",
       })
       .then((response) => {
         setParent(response);
-        navigate("/parenttable")
+        navigate("/parenttable");
       });
   };
 
@@ -47,93 +49,113 @@ function ParentForm() {
           <Sidebar />
         </Grid>
         <Grid item sm={7} xs={10} lg={9}>
-        <div className="parentTopic">
-              <p>Add Parent</p>
-             </div>
-            <div className="parentform">
+          <div className="parentTopic">
+            <p>Add Parent</p>
+          </div>
+          <div className="parentform">
             <form onSubmit={handleSubmit} className="mzaziform">
-                  <div className="formInput">
-                  <h1 style={{marginLeft:"190px", marginBottom:"20px"}} className="heading">PARENT FORM</h1>
-                    <label>Address:</label>
-                    {/* <input type="text" placeholder="Address" onChange={handleChange}/> */}
-                    <div>
-                    <Input placeholder="Enter address" name="address"
+              <div classname="parent-right">
+                <div className="formInput">
+                  {/* <h1
+                    style={{ marginLeft: "190px", marginBottom: "10px" }}
+                    className="heading"
+                  >
+                    PARENT FORM
+                  </h1> */}
+                  <label style={{marginTop:"15px"}}>Address:</label>
+                  {/* <input type="text" placeholder="Address" onChange={handleChange}/> */}
+                  <div>
+                    <Input
+                      placeholder="Enter address"
+                      name="address"
                       type="text"
-                      onChange={handleChange}/>
-                    </div>
-                    
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="formInput">
-                    <label>Phone Number:</label>
-                    {/* <input type="text" placeholder="Phone_number" onChange={handleChange}/> */}
-                    <div>
-                    <Input placeholder="Enter phone number" 
-                    name="phone_no"
+                </div>
+                <div className="formInput">
+                  <label>Phone Number:</label>
+                  {/* <input type="text" placeholder="Phone_number" onChange={handleChange}/> */}
+                  <div>
+                    <Input
+                      placeholder="Enter phone number"
+                      name="phone_no"
                       type="text"
-                     
-                      onChange={handleChange}/>
-                    </div>
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="formInput">
-                    <label>Full Name:</label>
-                    {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
-                    <div>
-                    <Input placeholder="Enter full name" 
-                    name="full_name"
+                </div>
+                <div className="formInput">
+                  <label>Full Name:</label>
+                  {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                  <div>
+                    <Input
+                      placeholder="Enter full name"
+                      name="full_name"
                       type="text"
-                      
-                      onChange={handleChange}/>
-                    </div>
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="formInput">
-                    <label>Email:</label>
-                    {/* <input type="text" placeholder="Email"onChange={handleChange} /> */}
-                    <div>
-                    <Input placeholder="Enter email address"
-                     name="email"
+                </div>
+              </div>
+
+              <div className="parent-left">
+                <div className="formInput">
+                  <label>Email:</label>
+                  {/* <input type="text" placeholder="Email"onChange={handleChange} /> */}
+                  <div>
+                    <Input
+                      placeholder="Enter email address"
+                      name="email"
                       type="text"
-                  
-                      onChange={handleChange}/>
-                    </div>
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="formInput">
-                    <label>Password:</label>
-                    {/* <input type="password" onChange={handleChange}/> */}
-                    <div>
-                    <Input placeholder="Enter password" 
-                    type="password" 
+                </div>
+                <div className="formInput">
+                  <label>Password:</label>
+                  {/* <input type="password" onChange={handleChange}/> */}
+                  <div>
+                    <Input
+                      placeholder="Enter password"
+                      type="password"
                       name="password"
                       onChange={handleChange}
                     />
-                    </div>
-                    <div className="formInput">
-                  
-                      Username:<Input   style={{marginLeft:"30px"}}
-                        name="username"
-                      type="text"
-                      placeholder="Enter Username"
-                      onChange={handleChange}
-                      />
+                  </div>
                 </div>
+                <div className="formInput">
+                  <label>Username:</label>
+                  {/* <input type="text" placeholder="Full Name" onChange={handleChange}/> */}
+                  <div>
+                    <Input
+                      placeholder="Enter username"
+                      name="username"
+                      type="text"
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="formInput">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      style={{
-                        width: "450px",
-                        marginBottom: "25px",
-                        marginLeft: "30px",
-                        alignItems: "center",
-                      }}
-                      type="submit"
-                    >
-                      Send
-                    </Button>
-                  </div>
-                </form>
-            </div>
-          
+                </div>
+                
+              </div>
+
+              <div className="formInput">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    width: "450px",
+                    marginBottom: "25px",
+                    marginLeft: "30px",
+                    alignItems: "center",
+                  }}
+                  type="submit"
+                >
+                  Send
+                </Button>
+              </div>
+            </form>
+          </div>
         </Grid>
       </Grid>
     </div>
