@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import "./View.css";
 import Sidebar from "../BarRoutes/Sidebar";
-import Searcher from "../BarRoutes/Searcher";
+// import Searcher from "../BarRoutes/Searcher";
 
 import {
   Grid,
