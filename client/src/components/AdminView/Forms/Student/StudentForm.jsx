@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
 import axios from "axios";
 import "./Student.css";
+import { useNavigate } from "react-router-dom";
 
 function StudentForm() {
+  let navigate = useNavigate()
   const [file, setFile] = useState("");
   const [data, setData] = useState({
     gender: "",
@@ -47,6 +49,7 @@ function StudentForm() {
       })
       .then((response) => {
         setData(response);
+        navigate("/studenttable")
       });
   };
 
@@ -216,23 +219,25 @@ function StudentForm() {
                       placeholder="Enter Username"
                       onChange={handleChange}
                       />
+                        <div className="formbutton">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    width: "150px",
+                    marginTop:"90px",
+                    // marginBottom: "5px",
+                    marginLeft: "-9px",
+                    alignItems: "center",
+                  }}
+                  type="submit"
+                >
+                  Send
+                </Button>
+              </div>
                 </div>
                 
-                <div className="area">
-                <Button
-                      variant="contained"
-                      color="primary"
-                      style={{
-                        width: "150px",
-                        marginTop: "35px",
-                        marginLeft: "20px",
-                        alignItems: "center",
-                      }}
-                      type="submit"
-                    >
-                      Send
-                    </Button>
-              </div>
+                
               </div>
               
 

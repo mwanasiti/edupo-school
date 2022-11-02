@@ -4,8 +4,19 @@
 }
 .bigMzazi{
     /* background: peachpuff; */
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* border: 1px solid black; */
     margin-top: 20px;
+    padding: 20px;
     margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    /* margin-top: 20px;
+    margin-left: 20px;
+    position: relative; */
 }
 .teacherTopic{
     margin-top: 20px;
@@ -19,30 +30,32 @@
     border-radius: 10px;
     margin-left: 60px;
 }
-.displayer{
-    /* border: 1px solid black; */
+/* .displayer{
+    border: 1px solid black;
     margin-top: 20px;
-    margin-left: 250px;
+    margin-left: 20px;
     margin-bottom: 10px;
    
-}
+} */
 
 .teachform{
 /* background: pink; */
 display: flex;
 justify-content: space-between ;
-padding: 30px;
-align-items: center;
-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+padding: 0px;
+/* align-items: center; */
+/* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 border-radius: 20px;
  }
 .parent-form-wrapper-left{
-    /* background-color: peachpuff; */
-    width: 50%;
+    /* background: peachpuff; */
+padding: 0px;
+width: 400px;
 }
 .parent-form-wrapper-right{
-/* background-color: aquamarine; */
-width: 50%;
+    /* background: pink; */
+    padding: 0px;
+    width: 400px;
 }
 .heading{
     font-weight: bolder;

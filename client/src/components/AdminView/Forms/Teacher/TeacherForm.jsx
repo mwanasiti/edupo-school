@@ -44,6 +44,7 @@ function TeacherForm() {
       })
       .then((response) => {
         setTeacher(response);
+        navigate("/teachertable")
       });
   };
 
@@ -56,10 +57,9 @@ function TeacherForm() {
 
         <Grid item sm={4} xs={2} lg={9}>
           <div className="teacherTopic">Add Teacher</div>
+          
           <div className="bigMzazi">
-            <div>
-              <h1>TEACHER FORM</h1>
-            </div>
+            
             <form onSubmit={handleSubmit} className="teachform">
               {/* <div><h1>TEACHER FORM</h1></div> */}
 
@@ -163,7 +163,7 @@ function TeacherForm() {
                   {/* <input type="password" onChange={handleChange}/> */}
                   <div>
                     <Input
-                      placeholder="Enter password"
+                      placeholder="Enter username"
                       style={{ width: "80%" }}
                       name="username"
                       type="text"
@@ -171,16 +171,15 @@ function TeacherForm() {
                     />
                   </div>
                 </div>
-              </div>
-
-              <div className="formbutton">
+                <div className="formbutton">
                 <Button
                   variant="contained"
                   color="primary"
                   style={{
-                    width: "450px",
-                    marginBottom: "25px",
-                    marginLeft: "30px",
+                    width: "150px",
+                    marginTop:"40px",
+                    // marginBottom: "5px",
+                    marginLeft: "-9px",
                     alignItems: "center",
                   }}
                   type="submit"
@@ -188,6 +187,9 @@ function TeacherForm() {
                   Send
                 </Button>
               </div>
+              </div>
+
+             
             </form>
 
             {/* <form className="teachform">
@@ -232,7 +234,7 @@ function TeacherForm() {
 
           </div>
           </form> */}
-          </div>
+          </div> 
           {/* <div className="new"> */}
 
           {/* <div className="">
