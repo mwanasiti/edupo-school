@@ -262,6 +262,24 @@ function ParentData() {
       setParentData(person)
       );
   }, []);
+
+function handleParentDelete(id){
+  fetch(`/parents/${id}`, {
+    method: "DELETE",
+  })
+  .then((res)=> res.json())
+  .then((data)=>{
+    console.log(data);
+    if(data.errors){
+      setErrors(data.errors)
+    }
+    const updatedParents = parentData.filter(
+      (parent)=> parent.id !== data.id
+    );
+    setParentData(updatedParents)
+  });
+}
+
   return (
     <div>
       <Grid container>
@@ -299,8 +317,8 @@ function ParentData() {
                     <TableCell>{person.email}</TableCell>
                     {/* <TableCell> {person.password}</TableCell> */}
                     <TableCell> {person.username}</TableCell>
-                    <TableCell>  <Edit/></TableCell>
-                    <TableCell>  <Delete/> </TableCell>
+                    <TableCell>  <button onClick={()=>{handleParentDelete(person.id)}}><Edit/></button> </TableCell>
+                    <TableCell> <button onClick={()=>{handleParentDelete(person.id)}}><Delete/></button>  </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
