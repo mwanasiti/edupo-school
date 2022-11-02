@@ -1,5 +1,5 @@
 class StudentSerializer < ActiveModel::Serializer
-  attributes :id, :full_name, :image, :email, :admission_no, :phone_no, :teacher, :classroom, :username, :role, :subject ,:subject_id
+  attributes :id, :full_name, :image, :email, :admission_no, :phone_no, :teacher, :classroom, :username, :role, :subject ,:subject_id, :parent
 
   def classroom
     self.object.classroom.name
@@ -12,5 +12,9 @@ class StudentSerializer < ActiveModel::Serializer
   def subject
     self.object.subject.name
   end
+  def parent
+    self.object.parent.full_name
+  end
+  
 
 end
