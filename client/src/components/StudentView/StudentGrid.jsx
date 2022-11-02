@@ -1,4 +1,5 @@
 import React from 'react';
+import EditStudentDetails from './EditStudentDetails';
 import StudentDetails from './StudentDetails'
 const StudentGrid = ( { isLoading, student}) => {
  
@@ -8,7 +9,7 @@ const StudentGrid = ( { isLoading, student}) => {
        ) : (
     <section className='card'>
      <StudentDetails student={student}/> 
- 
+     <p className="username">Username: {username}</p>
 
   </section>
        )
