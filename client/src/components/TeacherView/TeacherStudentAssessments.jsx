@@ -118,9 +118,9 @@ function TeacherStudentAssessments() {
                 <TableCell align="right">{row.score ? row.score : 0}</TableCell>
                 <TableCell align="right">
                   {row.score >= 40 ? (
-                    <h1 className="text-green-600">PASS</h1>
+                    <h1 className="text-green-600 font-black">PASS</h1>
                   ) : (
-                    <h1 className="text-red-500">FAIL</h1>
+                    <h1 className="text-red-500 font-black">FAIL</h1>
                   )}
                 </TableCell>
                 <TableCell align="right">

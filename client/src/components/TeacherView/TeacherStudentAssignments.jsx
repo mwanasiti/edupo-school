@@ -118,9 +118,9 @@ function TeacherStudentAssignments() {
                 <TableCell align="right">{row.score ? row.score : 0}</TableCell>
                 <TableCell align="right">
                   {row.score ? (
-                    <h1 className="text-green-600">SUBMITTED</h1>
+                    <h1 className="text-green-600 font-black">GRADED</h1>
                   ) : (
-                    <h1 className="text-red-500">NOT SUBMITTED</h1>
+                    <h1 className="text-red-500 font-black">UNGRADED</h1>
                   )}
                 </TableCell>
                 <TableCell align="right">

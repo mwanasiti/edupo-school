@@ -13,26 +13,6 @@ class ParentsController < ApplicationController
       end
   end
 # CREATE 
-<<<<<<< HEAD
-  def create
-    parent = Parent.create(parent_params)
-
-    render json: parent,  status: :created
-  end
-
-  def update
-    parent =Parent.find_by(id: params[:id])
-    
-    if parent
-      parent.update(parent_params)
-      render json: parent        
-    else
-      render json: {error: "Parent not found"}, status: :not_found
-    end
-  end
-  # DELELET
-def destroy
-=======
 def create
   parent = Parent.create(parent_params)
 
@@ -40,7 +20,6 @@ def create
 end
 
 def update
->>>>>>> deno
   parent =Parent.find_by(id: params[:id])
   
   if parent
@@ -62,18 +41,9 @@ else
 end
 
 end
-<<<<<<< HEAD
-    private
-    def parent_params
-      params.permit(:role,:address,:phone_no, :full_name, :email, :password)
-
-    end
-end
-=======
   private
   def parent_params
-    params.permit(:role,:address,:phone_no, :full_name, :email, :password)
+    params.permit(:role,:address,:phone_no, :full_name, :email, :password, :username)
 
   end
 end
->>>>>>> deno
