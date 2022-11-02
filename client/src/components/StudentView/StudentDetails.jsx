@@ -43,8 +43,11 @@ const StudentDetails = ({student}) => {
         {/* <h1>{student.full_name}</h1> */}
       </div>
       <div className='card-back'>
-        <h2>{student.username}</h2>
+        {/* <h2>{student.username}</h2> */}
         <ul>
+        <li>
+            <strong>Username:</strong> {student.username}
+          </li>
           <li>
             <strong>Gender:</strong> {student.gender}
           </li>
