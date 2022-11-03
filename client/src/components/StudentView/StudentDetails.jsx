@@ -8,11 +8,7 @@ const StudentDetails = ({student}) => {
 //       )
 // t
 
-//       }
-//       fetchStudent()
-//     }, [])
-  // console.log(" student ", student)
-  // .catch(error => (console.log(error)))
+
   return (
     <div className='kard'>
     <div className='kard-inner'>
