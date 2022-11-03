@@ -31,7 +31,7 @@ function Home() {
               </p>
             </div>
             <div className="card-footer">
-              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Founder Ali Mariam</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Administrator: Steve Jobs</small>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Home() {
               <p style={{fontWeight:'normal', fontFamily:'cursive', fontSize:'18px'}} className="card-text">Our teachers will be responsible for classroom Management. They will be Assigning their Students Assignments and assessments and also grade them accordingly.</p>
             </div>
             <div className="card-footer">
-              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Principal Alias Leighton</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Head of teachers: Maya Angelou</small>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ function Home() {
               </p>
             </div>
             <div className="card-footer">
-              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Faculty ABDCEFG</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Student President: Elon Musk</small>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ function Home() {
               </p>
             </div>
             <div className="card-footer">
-              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Faculty ABDCEFG</small>
+              <small style={{fontWeight:'bold', fontFamily:'cursive', fontSize:'16px'}} className="text-muted">Parent Representative: Diana Rose</small>
             </div>
           </div>
         </div>
