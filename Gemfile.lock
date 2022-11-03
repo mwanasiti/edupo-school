@@ -160,14 +160,22 @@ GEM
     vite_rails (3.0.12)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
+<<<<<<< HEAD
     vite_ruby (3.2.8)
+=======
+    vite_ruby (3.2.9)
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
       dry-cli (~> 0.7.0)
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+<<<<<<< HEAD
     zeitwerk (2.6.3)
+=======
+    zeitwerk (2.6.4)
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 
 PLATFORMS
   x86_64-darwin-21

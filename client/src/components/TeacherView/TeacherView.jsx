@@ -11,6 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+import TextField from "@mui/material/TextField";
+
 function TeacherView() {
   const navigate = useNavigate();
 
@@ -73,35 +75,32 @@ function TeacherView() {
         <h1 className="text-center p-3 text-black text-xl font-bold">
           You Currently Do not Teach any Subjects at Edupo School
         </h1>
-        <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
-        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
-          Add New Subject
-          <hr></hr>
-        </h1>
-        <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="name" className="text-lg">
-            Subject Name:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+        <div className="w-3/5 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+          <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+            Add New Subject
+            <hr></hr>
+          </h1>
+          <form className="flex flex-col text-center font-black p-4">
+            <TextField
+              id="Subject Name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              label="Subject Name"
+              variant="outlined"
+              className="w-1/3 mx-auto"
+            />
 
-          <Button
-            variant="contained"
-            color="success"
-            type="submit"
-            className="w-1/3 mt-4 mx-auto"
-            onClick={handleSubjectSubmit}
-          >
-            Submit
-          </Button>
-        </form>
-      </div>
+            <Button
+              variant="contained"
+              color="success"
+              type="submit"
+              className="w-1/3 mt-4 mx-auto"
+              onClick={handleSubjectSubmit}
+            >
+              Submit
+            </Button>
+          </form>
+        </div>
       </>
     );
 
@@ -193,22 +192,19 @@ function TeacherView() {
         })}
       </div>
 
-      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+      <div className="w-3/5 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Add New Subject
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="name" className="text-lg">
-            Subject Name:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="text"
-            name="name"
-            value={name}
+          <TextField
+            id="Subject Name"
             onChange={(e) => setName(e.target.value)}
+            value={name}
+            label="Subject Name"
+            variant="outlined"
+            className="w-1/3 mx-auto"
           />
 
           <Button
