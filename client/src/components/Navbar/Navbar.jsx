@@ -64,7 +64,7 @@ function Navbar({ user, setUser }) {
           color: "#000080",
         }}
         >
-        <div>
+        <div style={{marginLeft:'-300px'}}>
         EDUPO SCHOOL
         <i class="fas fa-graduation-cap"></i>
         </div>
@@ -80,7 +80,7 @@ function Navbar({ user, setUser }) {
           onClick={handleLogout}
         >
           LOGOUT
-          <FaPowerOff style={{color:'#000080'}} className="inline ml-2 mb-1" />
+          <FaPowerOff style={{color:'#242B64'}} className="inline ml-2 mb-1" />
         </button>
       ) : (
         <Link

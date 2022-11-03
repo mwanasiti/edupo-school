@@ -229,6 +229,7 @@ function LoginForm({ setUser }) {
           </TabPanel>
         </div>
       </form>
+    
     </div>
   );
 }
