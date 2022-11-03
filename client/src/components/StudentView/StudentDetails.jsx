@@ -3,8 +3,7 @@ const StudentDetails = ({student}) => {
   
 //   useEffect(() => {
 //     const fetchStudent = async () => {
-//       const result = await axios(
-//         '/studentId'
+
 
 
   return (
