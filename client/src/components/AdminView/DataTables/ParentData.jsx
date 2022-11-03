@@ -70,7 +70,7 @@ function ParentData() {
             <Table aria-label="simple table">
               <TableHead style={{background:"#C0C0C0"}}>
                 <TableRow>
-                <TableCell>ID</TableCell>
+                <TableCell>I</TableCell>
                   <TableCell>Address</TableCell>
 
                   <TableCell>Phone Number</TableCell>
