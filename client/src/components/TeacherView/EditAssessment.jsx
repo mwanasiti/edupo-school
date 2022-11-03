@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import TextField from "@mui/material/TextField";
+
 
 function EditAssessment() {
   const [errors, setErrors] = useState([]);
@@ -62,25 +64,21 @@ function EditAssessment() {
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="name" className="text-lg">
-            Assessment Name:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="text"
-            name="name"
+        <TextField
+            id="Assessment Name"
+            label="Assessment Name"
+            variant="outlined"
+            className="w-1/3 mx-auto"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <label htmlFor="total" className="text-lg mt-4">
-            Total:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
+
+          <TextField
+            id="Total"
             type="number"
-            name="total"
+            label="Total"
+            variant="outlined"
+            className="w-1/3 mx-auto mt-3"
             value={total}
             onChange={(e) => setTotal(e.target.value)}
           />
