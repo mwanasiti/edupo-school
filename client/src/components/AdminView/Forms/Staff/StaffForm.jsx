@@ -32,7 +32,7 @@ function StaffForm() {
             <div className="upload">
             <Button variant="contained">Send</Button>
             </div>
-            
+            form
           </form>
           <div className="cards">
           Flex box cards
