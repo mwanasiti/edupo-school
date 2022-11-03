@@ -21,7 +21,7 @@ puts "Seeding Parents..."
 parent1 = Parent.create(role: "parent", address:"23 west", phone_no: "0755663344", full_name:"John Awiti",email:"jon@gmail.com",password:"jon", username: "jon")
 parent2 = Parent.create(username: "okech", address:"22 North", phone_no: "0733443322", email: "okech@gmail.com", role: "parent", password: "okech", full_name: "Okech Johnson")
 parent3 = Parent.create(username: "tim", address:"21 South", phone_no: "0744553344", email: "tim@gmail.com", role: "parent", password: "tim", full_name: "Tim Kut")
-puts "Done Seeding Parents"
+puts "Done Seeding Parents""
 
 puts "seeding Staffs"
 staff1 = Staff.create(full_name: "WednesdayAddams", department: "finance", image: "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg", phone_no: "0788888888", post: "Cler")
