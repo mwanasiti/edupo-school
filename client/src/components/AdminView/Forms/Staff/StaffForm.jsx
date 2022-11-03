@@ -33,7 +33,7 @@ function StaffForm() {
             <Button variant="contained">Send</Button>
             </div>
             
-          </form> staff
+          </form>
           <div className="cards">
           Flex box cards
           </div>
