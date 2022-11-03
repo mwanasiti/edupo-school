@@ -138,6 +138,9 @@ function TeacherData() {
           <Sidebar />
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
+        <div className="studentTopic">
+        <p>Teacher Table</p>
+       </div>
           <TableContainer
             component={Paper}
             style={{ marginLeft: "20px", marginTop: "20px" }}
@@ -162,7 +165,7 @@ function TeacherData() {
                   <TableRow key={index}>
                     <TableCell>{human.gender}</TableCell>
                     <TableCell>
-                      <img src={human.image} alt="profile" style={{height:"35px"}}/>
+                      <img src={human.image} alt="profile" style={{height:"65px"}}/>
                     </TableCell>
                     <TableCell>{human.phone_no}</TableCell>
                     <TableCell>{human.address} </TableCell>

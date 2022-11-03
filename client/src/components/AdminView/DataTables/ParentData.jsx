@@ -287,9 +287,12 @@ function handleParentDelete(id){
           <Sidebar />
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
+        <div className="studentTopic">
+        <p>Parent Table</p>
+       </div>
         <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px"}}>
             <Table aria-label="simple table" >
-              <TableHead>
+              <TableHead >
                 <TableRow>
               
                   <TableCell>Address</TableCell>

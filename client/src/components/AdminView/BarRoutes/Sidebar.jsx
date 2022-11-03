@@ -40,12 +40,12 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent
           </li>
-          {/* <li className='sidebarListItem ' onClick={() => {
+          <li className='sidebarListItem ' onClick={() => {
           navigate("/addstaff");
         }} >
             <Group className='sidebarIcon'/>
             Staff
-          </li> */}
+          </li>
         </ul>
       </div>
       <div className='sidebarMenu'>
@@ -70,12 +70,12 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent Table
           </li>
-          {/* <li className='sidebarListItem'  onClick={() => {
+          <li className='sidebarListItem'  onClick={() => {
           navigate("/stafftable");
         }}>
             <Group className='sidebarIcon'/>
             Staff Table
-          </li> */}
+          </li>
         </ul>
       </div>
       {/* <div className='sidebarMenu'>
@@ -94,7 +94,7 @@ function Sidebar() {
     </div>
    
     </div>
-  )
+  ) 
 }
 
 export default Sidebar

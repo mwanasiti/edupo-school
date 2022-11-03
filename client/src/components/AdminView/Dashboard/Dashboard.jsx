@@ -143,7 +143,6 @@ let navigate  = useNavigate()
             <div className="featuredChart">
             <SchoolEvents/>
             </div>
-
           </div>
           </div> */}
           </div>

@@ -314,10 +314,10 @@ function StudentData() {
   return (
     <div>
       <Grid container>
-        <Grid item sm={4} xs={2} lg={2}>
+        <Grid item sm={3} xs={2} lg={2}>
           <Sidebar />
         </Grid>
-        <Grid item sm={4} xs={2} lg={9}>
+        <Grid item sm={8} xs={2} lg={9}>
        <div className="studentTopic">
         <p>Student Table</p>
        </div>
@@ -361,6 +361,7 @@ function StudentData() {
             </Table>
             
           </TableContainer>
+
 
           {/* <DataGrid
   rows={rows}
