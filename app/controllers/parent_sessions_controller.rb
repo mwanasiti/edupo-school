@@ -5,7 +5,8 @@ class ParentSessionsController < ApplicationController
         
         if parent&.authenticate(params[:password])
             session[:parent_id] = parent.id
-            render json: parent
+            render json: parent, status: :created
+            
         else
             render json: {errors: ["Invalid Username or Password"]}, status: 401
         end

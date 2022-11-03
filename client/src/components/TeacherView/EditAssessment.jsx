@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "@mui/material/Button";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function EditAssessment() {
   const [errors, setErrors] = useState([]);
@@ -45,6 +46,16 @@ function EditAssessment() {
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Edit Assessment

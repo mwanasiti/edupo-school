@@ -116,6 +116,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
+    rack-cors (1.1.1)
+      rack (>= 2.0.0)
     rack-proxy (0.7.4)
       rack
     rack-test (2.0.2)
@@ -158,14 +160,14 @@ GEM
     vite_rails (3.0.12)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
-    vite_ruby (3.2.7)
+    vite_ruby (3.2.8)
       dry-cli (~> 0.7.0)
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.1)
+    zeitwerk (2.6.3)
 
 PLATFORMS
   x86_64-darwin-21
@@ -176,6 +178,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   debug
   puma (~> 5.0)
+  rack-cors
   rails (~> 7.0.4)
   sqlite3 (~> 1.4)
   tzinfo-data

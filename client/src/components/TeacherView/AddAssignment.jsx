@@ -13,6 +13,7 @@ import Paper from "@mui/material/Paper";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function AddAssignment() {
   const [assignments, setAssignments] = useState([]);
@@ -23,7 +24,7 @@ function AddAssignment() {
   const { id } = params;
   const [subjectName, setSubjectName] = useState("undefined");
   const [name, setName] = useState("");
-  const [due_date, setDate] = useState("");
+  const [due_date, setDate] = useState("2022-11-04");
 
   useEffect(() => {
     fetch(`/subject_assignments/${id}`)
@@ -52,7 +53,6 @@ function AddAssignment() {
           setAssignments([...assignments, data]);
         });
         setName("");
-        setDate("");
         //   navigate(-1)
       } else {
         r.json().then((err) => setErrors(err.errors));
@@ -80,65 +80,85 @@ function AddAssignment() {
   if (assignments.length === 0)
     return (
       <>
+        <div className="text-center mt-3">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => navigate("/teacher")}
+          >
+            <ArrowBackIcon />
+            Back to My Subjects
+          </Button>
+        </div>
         <h1 className="text-center p-3 text-black text-xl font-bold">
           There are currently No Assignments for this Subject this Subject in
           Edupo School
         </h1>
         <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
-        <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
-          Add New Assignment
-          <hr></hr>
-        </h1>
-        <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="name" className="text-lg">
-            Assignment Name:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <label htmlFor="date" className="text-lg mt-3">
-            Due Date:
-          </label>
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="date"
-            name="date"
-            placeholder="yy-mm-dd"
-            value={due_date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          {errors.map((error) => {
-            return (
-              <div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
-                role="alert"
-              >
-                <span className="block sm:inline">{error}</span>
-              </div>
-            );
-          })}
-          <Button
-            variant="contained"
-            color="success"
-            type="submit"
-            className="w-1/3 mt-4 mx-auto"
-            onClick={handleAssignmentSubmit}
-          >
-            Submit
-          </Button>
-        </form>
-      </div>
+          <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
+            Add New Assignment
+            <hr></hr>
+          </h1>
+          <form className="flex flex-col text-center font-black p-4">
+            <label htmlFor="name" className="text-lg">
+              Assignment Name:
+            </label>
+            <input
+              required
+              className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
+              type="text"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <label htmlFor="date" className="text-lg mt-3">
+              Due Date:
+            </label>
+            <input
+              required
+              className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
+              type="date"
+              name="date"
+              placeholder="yy-mm-dd"
+              value={due_date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            {errors.map((error) => {
+              return (
+                <div
+                  className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+                  role="alert"
+                >
+                  <span className="block sm:inline">{error}</span>
+                </div>
+              );
+            })}
+            <Button
+              variant="contained"
+              color="success"
+              type="submit"
+              className="w-1/3 mt-4 mx-auto"
+              onClick={handleAssignmentSubmit}
+            >
+              Submit
+            </Button>
+          </form>
+        </div>
       </>
     );
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       <h1 className="text-center p-3 text-black text-xl font-bold">
         {subjectName} Assignments
       </h1>
@@ -184,6 +204,19 @@ function AddAssignment() {
       </div>
 
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        {errors.map((error) => {
+          return (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+              role="alert"
+            >
+              <span className="block sm:inline">{error}</span>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Add New Assignment
           <hr></hr>
@@ -212,16 +245,7 @@ function AddAssignment() {
             value={due_date}
             onChange={(e) => setDate(e.target.value)}
           />
-          {errors.map((error) => {
-            return (
-              <div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
-                role="alert"
-              >
-                <span className="block sm:inline">{error}</span>
-              </div>
-            );
-          })}
+
           <Button
             variant="contained"
             color="success"

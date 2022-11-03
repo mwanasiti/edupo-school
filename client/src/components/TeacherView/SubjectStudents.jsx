@@ -13,6 +13,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
 function SubjectStudents() {
   const navigate = useNavigate();
   const params = useParams();
@@ -32,13 +34,33 @@ function SubjectStudents() {
   if (students.length === 0)
     return (
       <h1 className="text-center p-3 text-black text-xl font-bold">
-        {" "}
+        <div className="text-center mt-3">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => navigate("/teacher")}
+          >
+            <ArrowBackIcon />
+            Back to My Subjects
+          </Button>
+        </div>
         There are currently No students who take this Subject in Edupo School
       </h1>
     );
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
+
       <h1 className="text-center p-3 text-black text-xl font-bold">
         My Students currently Taking {subjectName}
       </h1>
@@ -54,11 +76,11 @@ function SubjectStudents() {
           </TableHead>
           <TableBody>
             {students.map((row) => (
-              <TableRow 
+              <TableRow
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row" >
+                <TableCell component="th" scope="row">
                   {row.full_name}
                 </TableCell>
                 <TableCell align="right">{row.subject}</TableCell>

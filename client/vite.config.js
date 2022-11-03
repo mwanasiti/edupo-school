@@ -135,12 +135,27 @@ export default defineConfig({
         changeOrigin: true,
         secure: false,
       },
-      "/parents": {
+      "/new_subject_teacher": {
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,
       },
-      "/teachers": {
+      "/subject_teachers": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/studentId": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/studentDetails": {
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+      },
+      "/studentId": {
         target: "http://localhost:3000",
         changeOrigin: true,
         secure: false,

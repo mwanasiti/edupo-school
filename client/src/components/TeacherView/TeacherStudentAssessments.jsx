@@ -11,6 +11,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function TeacherStudentAssessments() {
   const navigate = useNavigate();
@@ -86,6 +87,16 @@ function TeacherStudentAssessments() {
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       {/* <div>TeacherStudentAssessments</div> */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -118,9 +129,9 @@ function TeacherStudentAssessments() {
                 <TableCell align="right">{row.score ? row.score : 0}</TableCell>
                 <TableCell align="right">
                   {row.score >= 40 ? (
-                    <h1 className="text-green-600">PASS</h1>
+                    <h1 className="text-green-600 font-black">PASS</h1>
                   ) : (
-                    <h1 className="text-red-500">FAIL</h1>
+                    <h1 className="text-red-500 font-black">FAIL</h1>
                   )}
                 </TableCell>
                 <TableCell align="right">
