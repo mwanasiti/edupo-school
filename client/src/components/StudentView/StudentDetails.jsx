@@ -40,10 +40,10 @@ const StudentDetails = ({student}) => {
     <div className='kard-inner'>
       <div className='kard-front'>
         <img src={student.image} alt='' />
-        {/* <h1>{student.full_name}</h1> */}
+      
       </div>
       <div className='kard-back'>
-        {/* <h2>{student.username}</h2> */}
+     
         <ul>
         <li>
             <strong>Username:</strong> {student.username}

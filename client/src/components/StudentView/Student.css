@@ -30,7 +30,7 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  .kard:hover .card-inner {
+  .kard:hover .kard-inner {
     transform: rotateY(180deg);
   }
   .kard-front,
@@ -40,12 +40,15 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+
   }
   .kard-back {
     background-color: salmon;
     color: white;
     padding: 20px;
     transform: rotateY(180deg);
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
   }
   .kard li {
     list-style: none;
