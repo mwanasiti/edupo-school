@@ -34,9 +34,13 @@ def destroy
 parent =Parent.find_by(id: params[:id])
 
 if parent 
+  children = Student.where(parent_id: parent.id)
+  if children.length > 0
+    render json: {errors: ["Cannot Delete Parent right now as They currently Have a child/children already enrolled at Edupo School"]}
+  else
   parent.destroy
-  
   render json: parent
+  end
 else
  render json: {error: "Parent not found"}, status: :not_found
 end
