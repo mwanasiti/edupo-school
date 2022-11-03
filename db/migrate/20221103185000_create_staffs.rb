@@ -6,6 +6,7 @@ class CreateStaffs < ActiveRecord::Migration[7.0]
       t.string :image
       t.string :department
       t.string :phone_no
+      t.string :phone_no
 
       t.timestamps
     end
