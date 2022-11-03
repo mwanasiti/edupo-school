@@ -176,6 +176,10 @@ student_assessment2 = StudentAssesment.create(student_id: 2, assessment_id: 2)
 student_assessment3 = StudentAssesment.create(student_id: 3, assessment_id: 3)
 student_assessment4 = StudentAssesment.create(student_id: 4, assessment_id: 4)
 puts "Done Seeding Student Assessments"
+
+puts "seeding Staffs"
+staff1 = Staff.create(full_name: "WednesdayAddams", department: "finance", image: "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg", phone_no: "0788888888", post: "Clerk")
+puts "Done seeding staff"
 puts "Completed All Seeding"
 
 
