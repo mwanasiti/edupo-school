@@ -25,7 +25,7 @@ puts "Done Seeding Parents"
 
 puts "seeding Staffs"
 staff1 = Staff.create(full_name: "WednesdayAddams", department: "finance", image: "https://cdn1.vectorstock.com/i/1000x1000/10/95/cute-young-man-avatar-character-cartoon-style-vector-36081095.jpg", phone_no: "0788888888", post: "Cler")
-puts "Done seeding staff"
+puts "Done seeding staff
 
 
 puts "Seeding Subjects..."
