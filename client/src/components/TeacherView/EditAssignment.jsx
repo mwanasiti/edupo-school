@@ -64,23 +64,11 @@ function EditAssignment() {
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-<<<<<<< HEAD
-          <label htmlFor="name" className="text-lg">
-            Assignment Name:
-          </label>
-          
-          <input
-            required
-            className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-            type="text"
-            name="name"
-=======
           <TextField
             id="Assignment Name"
             label="Assignment Name"
             variant="outlined"
             className="w-1/3 mx-auto"
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
             value={name}
             onChange={(e) => setName(e.target.value)}
           />

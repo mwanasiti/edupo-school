@@ -12,18 +12,10 @@ import SchoolEvents from "./SchoolEvents";
 import { useNavigate } from "react-router-dom";
 function Dashboard() {
 let navigate  = useNavigate()
-<<<<<<< HEAD
-
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 const [teacheBoard, setTeacherBoard]=useState([])
 const [studentBoard, setStudentBoard]=useState([])
 const [parentBoard, setParentBoard]=useState([])
 const [staffBoard, setStaffBoard]=useState([])
-<<<<<<< HEAD
-
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // TEACHER BOARD
 useEffect(()=>{
  fetch("/teachers")
@@ -31,13 +23,7 @@ useEffect(()=>{
  .then((tboard)=>
  setTeacherBoard(tboard)
  )
-<<<<<<< HEAD
-
 },[])
-
-=======
-},[])
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // STUDENT BOARD
 useEffect(()=>{
   fetch("/students")
@@ -45,13 +31,7 @@ useEffect(()=>{
   .then((sboard)=>
   setStudentBoard(sboard)
   )
-<<<<<<< HEAD
- 
  },[])
-
-=======
- },[])
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // PARENT BOARD
 useEffect(()=>{
   fetch("/parents")
@@ -59,13 +39,7 @@ useEffect(()=>{
   .then((pboard)=>
   setParentBoard(pboard)
   )
-<<<<<<< HEAD
- 
  },[])
-
-=======
- },[])
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // STAFF BOARD
 // useEffect(()=>{
 //   fetch("/staff")
@@ -73,13 +47,7 @@ useEffect(()=>{
 //   .then((pboard)=>
 //   setParentBoard(pboard)
 //   )
-<<<<<<< HEAD
- 
 //  },[])
-
-=======
-//  },[])
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
   return (
     <div className="bigParent">
       <Grid container>
@@ -102,10 +70,6 @@ useEffect(()=>{
                   </div>
                   )
                 })}
-<<<<<<< HEAD
-                
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 <div className="ona">
                   <span className="link"  onClick={() => {
@@ -134,10 +98,6 @@ useEffect(()=>{
                   </div>
                   )
                 })}
-<<<<<<< HEAD
-                
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 
                 <div className="ona">
@@ -167,10 +127,6 @@ useEffect(()=>{
                   </div>
                   )
                 })}
-<<<<<<< HEAD
-                
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 
                 <div className="ona">
@@ -200,10 +156,6 @@ useEffect(()=>{
                   </div>
                   )
                 })}
-<<<<<<< HEAD
-                
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div> */}
                 <div className="ona">
                   <span className="link">See all</span>
@@ -244,8 +196,4 @@ useEffect(()=>{
     </div>
   );
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 export default Dashboard;
