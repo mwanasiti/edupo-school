@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show, :update, :create, :destroy]
   resources :parents, only: [:index, :show, :update, :create,  :destroy]
   resources :students, only: [:index, :show, :update, :create, :destroy]
+  resources :staffs, only: [:index, :show, :update, :create]
   # resources :assignments
   # resources :assessments
   # resources :classrooms, only: [:index, :show]
