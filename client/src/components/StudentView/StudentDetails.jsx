@@ -36,13 +36,13 @@ const StudentDetails = ({student}) => {
   // .catch(error => (console.log(error)))
   
   return (
-    <div className='card'>
-    <div className='card-inner'>
-      <div className='card-front'>
+    <div className='kard'>
+    <div className='kard-inner'>
+      <div className='kard-front'>
         <img src={student.image} alt='' />
         {/* <h1>{student.full_name}</h1> */}
       </div>
-      <div className='card-back'>
+      <div className='kard-back'>
         {/* <h2>{student.username}</h2> */}
         <ul>
         <li>
