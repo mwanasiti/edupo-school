@@ -59,7 +59,7 @@ function StudentData() {
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
        <div className="studentTopic">
-        <p>Student Table</p>
+        <p>Student Tabl</p>
        </div>
           <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px", height:"500px"}}>
           
