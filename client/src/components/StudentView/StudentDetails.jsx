@@ -2,7 +2,7 @@ import React from 'react'
 const StudentDetails = ({student}) => {
   
 //   useEffect(() => {
-//     const fetchStudent = async () => {
+
 
 
 
