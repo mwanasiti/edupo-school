@@ -1,10 +1,5 @@
 import React from 'react'
 const StudentDetails = ({student}) => {
-  
-//   useEffect(() => {
-
-
-
 
   return (
     <div className='kard'>
