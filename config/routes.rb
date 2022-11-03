@@ -31,28 +31,28 @@ Rails.application.routes.draw do
   get "/par_stu_assesments/:id", to: "student_assesments#par_stu_assesments"
 
   # GET A STUDENT'S ALL ASSIGNMENTS
-  get "par_stu_assignments/:id", to: "student_assignments#par_stu_assignments"
+  get "/par_stu_assignments/:id", to: "student_assignments#par_stu_assignments"
   
   # GET A LOGGED IN TEACHER'S SUBJECTS
-  get "teacher_subjects", to: "subject_teachers#teacher_subjects"
+  get "/teacher_subjects", to: "subject_teachers#teacher_subjects"
 
   # GET A SUBJECT'S STUDENTS
-  get "subject_students/:id", to: "students#subject_students" 
+  get "/subject_students/:id", to: "students#subject_students" 
   
   # GET A SUBJECT'S STUDENTS
-  get "subject_students/:id", to: "students#subject_students"
+  get "/subject_students/:id", to: "students#subject_students"
 
   # GET A SUBJECT'S ASSIGNMENTS
-  get "subject_assignments/:id", to: "assignments#subject_assignments"
+  get "/subject_assignments/:id", to: "assignments#subject_assignments"
 
     # GET A SUBJECT'S ASSESSMENTS
-    get "subject_assessments/:id", to: "assessments#subject_assessments"
+    get "/subject_assessments/:id", to: "assessments#subject_assessments"
 
     # GET A LOGGED IN STUDENT'S ASSIGNMENTS
-    get "logged_student_assignments", to: "student_assignments#logged_student_assignments"
+    get "/logged_student_assignments", to: "student_assignments#logged_student_assignments"
 
     # GET A LOGGED IN STUDENT'S ASSESSMENTS
-    get "logged_student_assessments", to: "student_assesments#logged_student_assessments"
+    get "/logged_student_assessments", to: "student_assesments#logged_student_assessments"
   
   # CREATE A NEW TEACHER SUBJECT
   post "/new_subject_teacher", to: "subject_teachers#new_teacher_subject"
