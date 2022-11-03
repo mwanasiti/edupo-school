@@ -19,7 +19,7 @@ class StaffsController < ApplicationController
     render json: staff,  status: :created
     end
 
-    #PAT
+    #PATCH
   def update
     staff = Staff.find(params[:id])
     staff.update(staff_params)
