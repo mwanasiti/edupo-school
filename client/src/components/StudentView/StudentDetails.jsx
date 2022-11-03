@@ -5,8 +5,6 @@ const StudentDetails = ({student}) => {
 //     const fetchStudent = async () => {
 //       const result = await axios(
 //         '/studentId'
-//       )
-// t
 
 
   return (
