@@ -9,12 +9,13 @@ function Home() {
             height: '100vh', width:"100%" }}>
           <div className="mask" style={{backgroundColor: "rgba(0, 0, 0, 0.6)"}}>
               <div className="h-100">
-              <h1 style={{fontWeight:'bold', fontFamily:'cursive', color:'white', fontSize:'50px', marginTop:'170px', display:'inherit', marginLeft:'390px'}}> OUR MANAGEMENT SYSTEM</h1>
-              <div style={{fontWeight:'normal', fontFamily:'cursive', color:'white', fontSize:'20px', marginTop:'17px', display:'inherit', marginLeft:'390px'}} className='paragraph'>
-              <p>Combining a single core database and suite of portals and apps for parents, students and staff.</p>
-              <p>A module-based approach allows your school to build a system</p>
-              <p>to grow to your exact needs. From new student admissions to <p>
-                </p> end-of-year exams and assessments.</p>
+              <h1 style={{fontWeight:'bold', fontFamily:'cursive', color:'white', fontSize:'50px', marginTop:'130px', display:'inherit', marginLeft:'200px'}}> OUR MANAGEMENT SYSTEM</h1>
+              <div style={{fontWeight:'normal', fontFamily:'cursive', color:'white', fontSize:'20px', marginTop:'17px', display:'inherit', marginLeft:'200px'}} className='paragraph'>
+              <p>Welcome to our school management application, that serves as our database and suite of portals for our beloved<p></p> 
+              parents, teachers and students. The main essence of this system is to; avail student specific data to teachers, in addition <p></p>to enabling them to easily assign tasks,
+               be it assignments or assessments. This system also enables them to keep track of student<p></p> progress. Enables students to have access to assignments and assignments as well as keep a record of their performance.
+               <p></p>And finally, this application enables parents to view the performance and keep a track of the progress of the students<p></p> they have enrolled in the school.
+               </p>
               </div>
               </div>
             </div>
