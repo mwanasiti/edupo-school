@@ -13,6 +13,8 @@ import Paper from "@mui/material/Paper";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import TextField from "@mui/material/TextField";
 
 function AddAssessment() {
   const [assessments, setAssessments] = useState([]);
@@ -79,38 +81,44 @@ function AddAssessment() {
   if (assessments.length === 0)
     return (
       <>
+        <div className="text-center mt-3">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => navigate("/teacher")}
+          >
+            <ArrowBackIcon />
+            Back to My Subjects
+          </Button>
+        </div>
         <h1 className="text-center p-3 text-black text-xl font-bold">
           There are currently No Assessments for this Subject this Subject in
           Edupo School
         </h1>
-        <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+        <div className="w-3/5 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
           <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
             Add New Assessment
             <hr></hr>
           </h1>
           <form className="flex flex-col text-center font-black p-4">
-            <label htmlFor="name" className="text-lg">
-              Assessmemt Name:
-            </label>
-            <input
-              required
-              className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-              type="text"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <label htmlFor="total" className="text-lg mt-3">
-              Total:
-            </label>
-            <input
-              required
-              className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
-              type="number"
-              name="total"
-              value={total}
-              onChange={(e) => setTotal(e.target.value)}
-            />
+          <TextField
+            id="Assessment Name"
+            label="Assessment Name"
+            variant="outlined"
+            className="w-1/3 mx-auto"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <TextField
+            id="Total"
+            type="number"
+            label="Total"
+            variant="outlined"
+            className="w-1/3 mx-auto mt-3"
+            value={total}
+            onChange={(e) => setTotal(e.target.value)}
+          />
             {errors.map((error) => {
               return (
                 <div
@@ -137,6 +145,16 @@ function AddAssessment() {
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       <h1 className="text-center p-3 text-black text-xl font-bold">
         {subjectName} Assessments
       </h1>
@@ -194,13 +212,13 @@ function AddAssessment() {
         })}
       </div>
 
-      <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
+      <div className="w-3/5 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
         <h1 className="text-center mt-3 p-3 text-black text-xl font-bold">
           Add New Assessment
           <hr></hr>
         </h1>
         <form className="flex flex-col text-center font-black p-4">
-          <label htmlFor="name" className="text-lg">
+          {/* <label htmlFor="name" className="text-lg">
             Assessmemt Name:
           </label>
           <input
@@ -219,6 +237,24 @@ function AddAssessment() {
             className=" mt-2 h-8 rounded-lg text-black bg-slate-300 w-2/3 pl-2 mx-auto"
             type="number"
             name="total"
+            value={total}
+            onChange={(e) => setTotal(e.target.value)}
+          /> */}
+          <TextField
+            id="Assessment Name"
+            label="Assessment Name"
+            variant="outlined"
+            className="w-1/3 mx-auto"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+
+          <TextField
+            id="Total"
+            type="number"
+            label="Total"
+            variant="outlined"
+            className="w-1/3 mx-auto mt-3"
             value={total}
             onChange={(e) => setTotal(e.target.value)}
           />

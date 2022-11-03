@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :assessments, only: [:index, :show, :update, :create, :destroy]
   resources :classrooms, only: [:index, :show, :update, :create]
   resources :subjects, only: [:index, :show, :update, :create]
-  resources :teachers, only: [:index, :show, :update, :create]
-  resources :parents, only: [:index, :show, :update, :create]
-  resources :students, only: [:index, :show, :update, :create]
+  resources :teachers, only: [:index, :show, :update, :create, :destroy]
+  resources :parents, only: [:index, :show, :update, :create,  :destroy]
+  resources :students, only: [:index, :show, :update, :create, :destroy]
   # resources :assignments
   # resources :assessments
   # resources :classrooms, only: [:index, :show]
@@ -57,6 +57,10 @@ Rails.application.routes.draw do
   
   # CREATE A NEW TEACHER SUBJECT
   post "/new_subject_teacher", to: "subject_teachers#new_teacher_subject"
+
+  # GET A LOGGED IN STUDENT"
+  get "/studentId", to: "students#student_id"
+
   
 
     # ADMIN AUTH
