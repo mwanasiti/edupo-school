@@ -1,5 +1,5 @@
 class StaffsController < ApplicationController
-    #GE
+    #GET
     def index
           staffs = Staff.all
           render json: staffs
