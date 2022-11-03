@@ -1,18 +1,17 @@
-import React from 'react'
+import React from 'react';
+// import EditStudentDetails from './EditStudentDetails';
 import StudentDetails from './StudentDetails'
-
-const StudentGrid = ( {students, isLoading}) => {
+const StudentGrid = ( { isLoading, student}) => {
+ 
+     console.log(student)
   return isLoading ? (
-       <h1>Loading...</h1> 
+       <h1>Loading...</h1>
        ) : (
-    <section className='cards'>
-    {students.map((student) => (
-        <StudentDetails key={student.student_id} student={student}></StudentDetails>
-    ))}
-
+    <section className='kard'>
+     <StudentDetails student={student}/> 
+    
 
   </section>
        )
 }
-
-export default StudentGrid
+export default StudentGrid;
