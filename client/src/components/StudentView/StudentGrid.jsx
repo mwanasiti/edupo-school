@@ -7,7 +7,7 @@ const StudentGrid = ( { isLoading, student}) => {
   return isLoading ? (
        <h1>Loading...</h1>
        ) : (
-    <section className='card'>
+    <section className='kards'>
      <StudentDetails student={student}/> 
      {/* <p className="username">Username: {username}</p> */}
 
