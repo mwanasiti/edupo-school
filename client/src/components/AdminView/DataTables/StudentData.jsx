@@ -58,7 +58,11 @@ function StudentData() {
           <Sidebar />
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
-          <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"10px"}}>
+       <div className="studentTopic">
+        <p>Student Table</p>
+       </div>
+          <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px", height:"500px"}}>
+          
             <Table aria-label="simple table" >
               <TableHead>
                 <TableRow>

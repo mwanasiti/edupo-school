@@ -13,6 +13,7 @@ import Paper from "@mui/material/Paper";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function AddAssignment() {
   const [assignments, setAssignments] = useState([]);
@@ -79,6 +80,16 @@ function AddAssignment() {
   if (assignments.length === 0)
     return (
       <>
+        <div className="text-center mt-3">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => navigate("/teacher")}
+          >
+            <ArrowBackIcon />
+            Back to My Subjects
+          </Button>
+        </div>
         <h1 className="text-center p-3 text-black text-xl font-bold">
           There are currently No Assignments for this Subject this Subject in
           Edupo School
@@ -138,6 +149,16 @@ function AddAssignment() {
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       <h1 className="text-center p-3 text-black text-xl font-bold">
         {subjectName} Assignments
       </h1>
@@ -183,16 +204,16 @@ function AddAssignment() {
       </div>
 
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">
-      {errors.map((error) => {
-            return (
-              <div
-                className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
-                role="alert"
-              >
-                <span className="block sm:inline">{error}</span>
-              </div>
-            );
-          })}
+        {errors.map((error) => {
+          return (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-3 text-center"
+              role="alert"
+            >
+              <span className="block sm:inline">{error}</span>
+            </div>
+          );
+        })}
       </div>
 
       <div className="w-2/3 mx-auto mt-10 rounded-lg shadow-xl shadow-neutral-400">

@@ -12,9 +12,10 @@ class StudentSerializer < ActiveModel::Serializer
   def subject
     self.object.subject.name
   end
-
+  
   def parent
     self.object.parent.full_name
   end
+  
 
 end

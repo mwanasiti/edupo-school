@@ -6,10 +6,13 @@ import Dashboard from "./components/AdminView/Dashboard/Dashboard";
 import ParentData from "./components/AdminView/DataTables/ParentData";
 import StudentData from "./components/AdminView/DataTables/StudentData";
 import TeacherData from "./components/AdminView/DataTables/TeacherData";
+import ParentEditForm from "./components/AdminView/Forms/Parent/ParentEditForm";
+
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
 import StaffForm from "./components/AdminView/Forms/Staff/StaffForm";
 import StudentEditForm from "./components/AdminView/Forms/Student/StudentEditForm";
 import StudentForm from "./components/AdminView/Forms/Student/StudentForm";
+import TeacherEditForm from "./components/AdminView/Forms/Teacher/TeacherEditForm";
 import TeacherForm from "./components/AdminView/Forms/Teacher/TeacherForm";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
@@ -99,6 +102,9 @@ function App() {
         <Route  path='/parenttable' element={<ParentData/>}/>
         <Route  path='/teachertable' element={<TeacherData/>}/>
         <Route  path='/studentedit/:id' element={<StudentEditForm/>}/>
+        <Route  path='/teacheredit/:id' element={<TeacherEditForm/>}/>
+        <Route  path='/parentedit/:id' element={<ParentEditForm/>}/>
+
 
 
 

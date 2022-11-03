@@ -13,6 +13,7 @@ import Paper from "@mui/material/Paper";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function AddAssessment() {
   const [assessments, setAssessments] = useState([]);
@@ -79,6 +80,16 @@ function AddAssessment() {
   if (assessments.length === 0)
     return (
       <>
+        <div className="text-center mt-3">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={() => navigate("/teacher")}
+          >
+            <ArrowBackIcon />
+            Back to My Subjects
+          </Button>
+        </div>
         <h1 className="text-center p-3 text-black text-xl font-bold">
           There are currently No Assessments for this Subject this Subject in
           Edupo School
@@ -137,6 +148,16 @@ function AddAssessment() {
 
   return (
     <>
+      <div className="text-center mt-3">
+        <Button
+          variant="contained"
+          color="success"
+          onClick={() => navigate("/teacher")}
+        >
+          <ArrowBackIcon />
+          Back to My Subjects
+        </Button>
+      </div>
       <h1 className="text-center p-3 text-black text-xl font-bold">
         {subjectName} Assessments
       </h1>
