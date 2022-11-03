@@ -64,7 +64,7 @@ function StudentData() {
           <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px", height:"500px"}}>
           
             <Table aria-label="simple table" >
-              <TableHead style={{background:"#C0C0C"}}>
+              <TableHead style={{background:"#C0C0C0"}}>
                 <TableRow>
                   <TableCell>ID</TableCell>
                   <TableCell>Image</TableCell>
