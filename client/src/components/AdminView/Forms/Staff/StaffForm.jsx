@@ -2,9 +2,27 @@ import { Button, Grid, Input, TextField, Typography } from "@material-ui/core";
 import React from "react";
 import Sidebar from "../../BarRoutes/Sidebar";
 import "./Staff.css";
+// import StaffGrid from "./StaffGrid";
 
-function StaffForm() {
+ function StaffForm() {
+//   const [staff, setStaff] = useState({})
+
+
+
+//   useEffect(() => {
+//     console.log("whYY")
+//     fetch("/staffs")
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setStaff(data);
+//         console.log("hey", data)
+//       });
+//   }, []);
+  
+
+
   return (
+
     <div className="bigStaff">
       <Grid container>
         <Grid item sm={4} xs={2} lg={2}>
@@ -36,6 +54,7 @@ function StaffForm() {
           </form>
           <div className="cards">
           Flex box cards
+          {/* <StaffGrid staff={staff} /> */}
           </div>
         </Grid>
       </Grid>

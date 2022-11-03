@@ -38,7 +38,7 @@ class AssessmentsController < ApplicationController
       if assesment 
         student_assesments = StudentAssesment.where(assessment_id: assesment.id)
         if student_assesments.length > 0
-          render json: {errors: ["Cannot Delete Assignment right now as there are students already assigned to it"]}
+          render json: {errors: ["Cannot Delete Assessment right now as there are students already assigned to it"]}
         else
           assesment.destroy
           render json: assesment 

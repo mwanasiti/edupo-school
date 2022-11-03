@@ -61,25 +61,28 @@ function Navbar({ user, setUser }) {
           fontSize: "35px",
           fontWeight: "bolder",
           fontFamily: "cursive",
-          color: "black",
+          color: "#000080",
         }}
-      >
-        EDUPO
+        >
+        < div style={{marginLeft: "-300px"}}>
+        EDUPO SCHOOL
+        <i class="fas fa-graduation-cap"></i>
+        </div>
       </Link>
+      
+      
       {user ? (
         <h1 style={{fontSize:'20px', fontFamily:'cursive', fontWeight:'bold'}} className=" text-black hover:text-black-200 ">
-          Hi {user.username}
+          Welcome {user.username}
         </h1>
       ) : null}
-
       {user ? (
-        <button
-          className="btn btn-danger"
-          data-mdb-ripple-color="dark"
+        <button style={{fontFamily:'inherit', fontWeight:'bolder'}}
+          className="btn-lg btn-dark" data-mdb-ripple-color="dark"
           onClick={handleLogout}
         >
-          Logout
-          <FaPowerOff className="inline ml-2 mb-1" />
+          LOGOUT
+          <FaPowerOff style={{color:'#000080'}} className="inline ml-2 mb-1" />
         </button>
       ) : (
         <Link
@@ -97,5 +100,4 @@ function Navbar({ user, setUser }) {
     </nav>
   );
 }
-
 export default Navbar;

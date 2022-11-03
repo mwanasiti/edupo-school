@@ -1,14 +1,13 @@
-
 class AdminSessionsController < ApplicationController
 
     #skip_before_action :authorize, only: :create
     def create
         admin = Admin.find_by(username: params[:username])
-
-        if admin&.authenticate(params[:password])
+        
+    if admin&.authenticate(params[:password])
             session[:admin_id] = admin.id
             render json: admin, status: :created
-        else
+         else
             render json: {errors: ["Invalid Username or Password"]}, status: 401
         end
     end
