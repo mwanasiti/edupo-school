@@ -40,7 +40,8 @@ def destroy
 
   if teacher 
     teacher.destroy
-    head :no_content 
+    
+    render json: teacher
   else
    render json: {error: "Teacher not found"}, status: :not_found
   end

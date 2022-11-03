@@ -35,7 +35,8 @@ parent =Parent.find_by(id: params[:id])
 
 if parent 
   parent.destroy
-  head :no_content 
+  
+  render json: parent
 else
  render json: {error: "Parent not found"}, status: :not_found
 end
