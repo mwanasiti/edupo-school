@@ -11,7 +11,7 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
+  TableHead, 
   TablePagination,
   TableRow,
 } from "@material-ui/core";
@@ -81,15 +81,11 @@ function TeacherData() {
                   <TableRow key={index}>
                     <TableCell>{human.gender}</TableCell>
                     <TableCell>
-<<<<<<< HEAD
-                      <img src={human.image} alt="profile" style={{height:"65px"}}/>
-=======
                       <img
                         src={human.image}
                         alt="profile"
                         style={{ height: "35px" }}
                       />
->>>>>>> 80cbb423b2d584d5026c5df88bde55658a9af9c3
                     </TableCell>
                     <TableCell>{human.phone_no}</TableCell>
                     <TableCell>{human.address} </TableCell>

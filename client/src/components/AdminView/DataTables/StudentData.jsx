@@ -11,15 +11,12 @@ import {
   TableContainer,
   TableHead,
   TablePagination,
-  TableRow,
+  TableRow, 
 } from "@material-ui/core";
 import Sidebar from "../BarRoutes/Sidebar";
 import { Delete, Edit } from "@material-ui/icons";
-<<<<<<< HEAD
 
-=======
 import { useNavigate } from "react-router-dom";
->>>>>>> 80cbb423b2d584d5026c5df88bde55658a9af9c3
 
 function StudentData() {
 

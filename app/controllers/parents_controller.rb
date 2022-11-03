@@ -2,7 +2,8 @@ class ParentsController < ApplicationController
   # before_action :set_parent, only: [:show, :edit, :update, :destroy]
   def index
       parents = Parent.all
-          render json: parent
+      if parents 
+          render json: parents
       else
           render json: {error: "No such parent"}, status: :not_found
       end

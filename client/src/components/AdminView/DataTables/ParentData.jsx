@@ -60,21 +60,12 @@ function ParentData() {
           <Sidebar />
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
-<<<<<<< HEAD
         <div className="studentTopic">
         <p>Parent Table</p>
        </div>
         <TableContainer component={Paper} style={{marginLeft:"20px", marginTop:"20px"}}>
             <Table aria-label="simple table" >
               <TableHead >
-=======
-          <TableContainer
-            component={Paper}
-            style={{ marginLeft: "20px", marginTop: "20px" }}
-          >
-            <Table aria-label="simple table">
-              <TableHead>
->>>>>>> 80cbb423b2d584d5026c5df88bde55658a9af9c3
                 <TableRow>
                   <TableCell>Address</TableCell>
 

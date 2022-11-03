@@ -17,10 +17,7 @@ class TeachersController < ApplicationController
   #  CREATE
     def create
       teacher = Teacher.create(teacher_params)
-      session[:is_teacher] = 1
-      if professor.save
-        UserMailer.welcome_email(professor).deliver_now
-      end
+      
       render json: teacher,  status: :created
 
     end
