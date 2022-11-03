@@ -24,14 +24,12 @@ const StudentDetails = ({student}) => {
   // console.log(" student ", student)
   // .catch(error => (console.log(error)))
   return (
-    <div className='card'>
-    <div className='card-inner'>
-      <div className='card-front'>
+    <div className='kard'>
+    <div className='kard-inner'>
+      <div className='kard-front'>
         <img src={student.image} alt='' />
-        {/* <h1>{student.full_name}</h1> */}
       </div>
-      <div className='card-back'>
-        {/* <h2>{student.username}</h2> */}
+      <div className='kard-back'>
         <ul>
         <li>
             <strong>Username:</strong> {student.username}
@@ -51,4 +49,4 @@ const StudentDetails = ({student}) => {
   </div>
   )
 }
-export default StudentDetails;
+export default StudentDetails
