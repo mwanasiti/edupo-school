@@ -75,7 +75,7 @@ function Sidebar() {
         }}>
             <Group className='sidebarIcon'/>
             Staff Table
-          </li> */}adding staff details
+          </li> */}
         </ul>
       </div>
       {/* <div className='sidebarMenu'>
