@@ -55,7 +55,7 @@ function TeacherData() {
         </Grid>
         <Grid item sm={4} xs={2} lg={9}>
         <div className="studentTopic">
-        <p>Teacher nTable</p>
+        <p>Teacher Table</p>
        </div>
           <TableContainer
             component={Paper}

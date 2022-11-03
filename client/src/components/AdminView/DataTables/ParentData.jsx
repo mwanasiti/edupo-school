@@ -71,7 +71,7 @@ function ParentData() {
               <TableHead style={{background:"#C0C0C0"}}>
                 <TableRow>
                 <TableCell>ID</TableCell>
-                  <TableCell>Address</TableCell>
+                  <TableCell>Addresss</TableCell>
 
                   <TableCell>Phone Number</TableCell>
 
