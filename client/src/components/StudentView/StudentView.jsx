@@ -4,7 +4,6 @@ import StudentGrid from './StudentGrid';
 import { useState, useEffect } from "react";
 import MyAssignments from './MyAssignments';
 import MyAssesments from './MyAssessments';
-
 import "./Student.css"
 // import {useParams } from "react-router-dom";
 function StudentView() {
