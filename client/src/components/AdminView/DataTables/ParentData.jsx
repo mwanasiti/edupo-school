@@ -18,8 +18,12 @@ import {
 } from "@material-ui/core";
 
 import { Delete, Edit } from "@material-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 function ParentData() {
+
+  let navigate = useNavigate();
+
   const [parentData, setParentData] = useState([]);
   const [errors, setErrors] = useState([]);
 
@@ -90,9 +94,7 @@ function ParentData() {
                     <TableCell>
                       {" "}
                       <button
-                        onClick={() => {
-                          handleParentDelete(person.id);
-                        }}
+                        onClick={() => navigate(`/parentedit/${person.id}`)}
                       >
                         <Edit />
                       </button>{" "}
