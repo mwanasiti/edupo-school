@@ -161,23 +161,23 @@ end
       render json: students
     end
 
-    def student_id
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+  #   def student_id
+  #     puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+  #     puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
 
-      puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+  #     puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
 
-      puts session[:student_id]
-      studentDetails =  Student.find(session[:student_id])
-      puts studentDetails
-      # if @student
-        # students = Student.where(parent_id: @parent.id)
-      render json: studentDetails
-      # else
-      # render json: {errors: ["student id not available"]}, status: 401
-      # end
-    # end 
-  end
+  #     puts session[:student_id]
+  #     studentDetails =  Student.find(session[:student_id])
+  #     puts studentDetails
+  #     # if @student
+  #       # students = Student.where(parent_id: @parent.id)
+  #     render json: studentDetails
+  #     # else
+  #     # render json: {errors: ["student id not available"]}, status: 401
+  #     # end
+  #   # end 
+  # end
     def student_details
       student = Student.find(session[:student_id])
     if student
@@ -203,7 +203,7 @@ private
 end
 
   
-end
+
 
 
 
