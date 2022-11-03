@@ -120,9 +120,9 @@ def destroy
   student =Student.find_by(id: params[:id])
   if student
     student.destroy
-    head :no_content
+    render json: student
   else
-  render json: {error: "student not found"}, status: :not_found
+  render json: {errors: ["student not found"]}, status: :not_found
   end
 end
   #   GET A PARENT'S STUDENTS
@@ -138,6 +138,21 @@ end
   end
 
 
+  def student_id
+    puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+    puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+    puts "XXXXXXXXXXXXXXXXXXXXXXXXX"
+    puts session[:student_id]
+    studentDetails =  Student.find(session[:student_id])
+    puts studentDetails
+    # if @student
+      # students = Student.where(parent_id: @parent.id)
+    render json: studentDetails
+    # else
+    # render json: {errors: ["student id not available"]}, status: 401
+    # end
+  # end
+end
 
 
     # GET A SUBJECT'S STUDENTS

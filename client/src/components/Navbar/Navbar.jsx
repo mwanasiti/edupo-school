@@ -64,7 +64,7 @@ function Navbar({ user, setUser }) {
           color: "#000080",
         }}
         >
-        <div>
+        < div style={{marginLeft: "-300px"}}>
         EDUPO SCHOOL
         <i class="fas fa-graduation-cap"></i>
         </div>

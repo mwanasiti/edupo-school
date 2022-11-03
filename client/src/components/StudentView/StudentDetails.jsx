@@ -61,8 +61,6 @@ const StudentDetails = ({student}) => {
       </div>
     </div>
   </div>
-   
   )
 }
-
 export default StudentDetails

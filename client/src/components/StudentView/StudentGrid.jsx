@@ -9,7 +9,7 @@ const StudentGrid = ( { isLoading, student}) => {
        ) : (
     <section className='card'>
      <StudentDetails student={student}/> 
-     <p className="username">Username: {username}</p>
+     {/* <p className="username">Username: {username}</p> */}
 
   </section>
        )
