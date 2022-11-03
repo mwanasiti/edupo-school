@@ -10,6 +10,7 @@ class Student < ApplicationRecord
     has_many :student_assesments
     has_many :assessments, through: :student_assesments
    
+    # validates :admission_no, presence: true, uniqueness: true
 
     validates :full_name, presence: true, uniqueness: true
     validates :full_name, length: { minimum: 3 }

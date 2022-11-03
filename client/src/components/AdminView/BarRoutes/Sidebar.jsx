@@ -70,12 +70,12 @@ function Sidebar() {
             <Person className='sidebarIcon'/>
             Parent Table
           </li>
-          <li className='sidebarListItem'  onClick={() => {
+          {/* <li className='sidebarListItem'  onClick={() => {
           navigate("/stafftable");
         }}>
             <Group className='sidebarIcon'/>
             Staff Table
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* <div className='sidebarMenu'>
