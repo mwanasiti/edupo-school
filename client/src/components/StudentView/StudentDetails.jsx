@@ -7,9 +7,7 @@ const StudentDetails = ({student}) => {
 //         '/studentId'
 //       )
 // t
-//       console.log( 'annyone' , result.data)
-//       setStudent(result.data)
-//       // setIsLoading(false)
+
 //       }
 //       fetchStudent()
 //     }, [])
