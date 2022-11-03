@@ -1,14 +1,6 @@
 import React from 'react'
 const StudentDetails = ({student}) => {
-  // const [student, setStudent] = useState({})
-  // useEffect(() => {
-  //   fetch(`/student_id`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setStudent(data)
-  //       // setIsLoading(false)
-  //     });
-  // }, []);
+  
 //   useEffect(() => {
 //     const fetchStudent = async () => {
 //       const result = await axios(
