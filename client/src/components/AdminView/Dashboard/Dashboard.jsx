@@ -12,7 +12,7 @@ import SchoolEvents from "./SchoolEvents";
 import { useNavigate } from "react-router-dom";
 function Dashboard() {
 let navigate  = useNavigate()
-const [teacheBoard, setTeacherBoard]=useState([])
+const [teacherBoard, setTeacherBoard]=useState([])
 const [studentBoard, setStudentBoard]=useState([])
 const [parentBoard, setParentBoard]=useState([])
 const [staffBoard, setStaffBoard]=useState([])
@@ -63,7 +63,7 @@ useEffect(()=>{
                   <span className="title">TEACHERS</span>
                 </div>
                 <div className="number">
-                {teacheBoard.slice(-1).map((tboard,index)=>{
+                {teacherBoard.slice(-1).map((tboard,index)=>{
                   return(
                   <div key={index}>
                   <span className="nambari">{tboard.id}</span>

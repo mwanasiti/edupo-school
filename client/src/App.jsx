@@ -9,7 +9,7 @@ import TeacherData from "./components/AdminView/DataTables/TeacherData";
 import ParentEditForm from "./components/AdminView/Forms/Parent/ParentEditForm";
 
 import ParentForm from "./components/AdminView/Forms/Parent/ParentForm";
-import StaffForm from "./components/AdminView/Forms/Staff/StaffForm";
+import StaffDetails from "./components/AdminView/Forms/Staff/StaffDetails";
 import StudentEditForm from "./components/AdminView/Forms/Student/StudentEditForm";
 import StudentForm from "./components/AdminView/Forms/Student/StudentForm";
 import TeacherEditForm from "./components/AdminView/Forms/Teacher/TeacherEditForm";
@@ -96,7 +96,7 @@ function App() {
         <Route  path='/addstudent' element={<StudentForm/>}/>
         <Route  path='/addteacher' element={<TeacherForm/>}/>
         <Route  path='/addparent' element={<ParentForm/>}/>
-        <Route  path='/addstaff' element={<StaffForm/>}/>
+        <Route  path='/addstaff' element={<StaffDetails/>}/>
         <Route  path='/studenttable' element={<StudentData/>}/>
         <Route  path='/parenttable' element={<ParentData/>}/>
         <Route  path='/teachertable' element={<TeacherData/>}/>

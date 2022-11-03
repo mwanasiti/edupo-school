@@ -1,8 +1,15 @@
+import { Grid } from '@material-ui/core';
 import React from 'react'
+import Sidebar from '../../BarRoutes/Sidebar'; 
 const StaffDetails = ({staff}) => {
 
   return (
-    <div className='kardi'>
+    <Grid container>
+        <Grid item sm={4} xs={2} lg={2}>
+          <Sidebar />
+        </Grid>
+        <Grid item sm={4} xs={2} lg={9}>
+        <div className='kardi'>
     <div className='kardi-inner'>
       <div className='kardi-front'>
         <img src={staff.image} alt='' />
@@ -27,6 +34,8 @@ const StaffDetails = ({staff}) => {
       </div>
     </div>
   </div>
+</Grid>
+</Grid>
   )
 }
 export default StaffDetails;
