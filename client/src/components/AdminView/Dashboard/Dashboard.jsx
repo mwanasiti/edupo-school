@@ -1,27 +1,29 @@
 import { Grid } from "@material-ui/core";
 import { KeyboardArrowUp } from "@material-ui/icons";
-
 import { BorderColor, Group, MoreVert, Person, School } from "@mui/icons-material";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import Sidebar from "../BarRoutes/Sidebar";
 import "./../BarRoutes/Side.css";
 import "./Dashboard.css";
-
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import Charts from "./Charts";
 import SchoolEvents from "./SchoolEvents";
 import { useNavigate } from "react-router-dom";
-
-
 function Dashboard() {
 let navigate  = useNavigate()
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 const [teacheBoard, setTeacherBoard]=useState([])
 const [studentBoard, setStudentBoard]=useState([])
 const [parentBoard, setParentBoard]=useState([])
 const [staffBoard, setStaffBoard]=useState([])
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // TEACHER BOARD
 useEffect(()=>{
  fetch("/teachers")
@@ -29,9 +31,13 @@ useEffect(()=>{
  .then((tboard)=>
  setTeacherBoard(tboard)
  )
+<<<<<<< HEAD
 
 },[])
 
+=======
+},[])
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // STUDENT BOARD
 useEffect(()=>{
   fetch("/students")
@@ -39,9 +45,13 @@ useEffect(()=>{
   .then((sboard)=>
   setStudentBoard(sboard)
   )
+<<<<<<< HEAD
  
  },[])
 
+=======
+ },[])
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // PARENT BOARD
 useEffect(()=>{
   fetch("/parents")
@@ -49,9 +59,13 @@ useEffect(()=>{
   .then((pboard)=>
   setParentBoard(pboard)
   )
+<<<<<<< HEAD
  
  },[])
 
+=======
+ },[])
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 // STAFF BOARD
 // useEffect(()=>{
 //   fetch("/staff")
@@ -59,9 +73,13 @@ useEffect(()=>{
 //   .then((pboard)=>
 //   setParentBoard(pboard)
 //   )
+<<<<<<< HEAD
  
 //  },[])
 
+=======
+//  },[])
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
   return (
     <div className="bigParent">
       <Grid container>
@@ -84,7 +102,10 @@ useEffect(()=>{
                   </div>
                   )
                 })}
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 <div className="ona">
                   <span className="link"  onClick={() => {
@@ -94,12 +115,10 @@ useEffect(()=>{
                 <div className="go">
                   <KeyboardArrowUp />
                 </div>
-
                 <div className="identifier">
                   <BorderColor className="icon" />
                 </div>
               </div>
-              
             </div>
             {/* STUDENTS */}
             <div className="widget">
@@ -115,7 +134,10 @@ useEffect(()=>{
                   </div>
                   )
                 })}
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 
                 <div className="ona">
@@ -126,12 +148,10 @@ useEffect(()=>{
                 <div className="go">
                   <KeyboardArrowUp />
                 </div>
-
                 <div className="identifier">
                   <School className="icon" />
                 </div>
               </div>
-              
             </div>
             {/* PARENTS */}
             <div className="widget">
@@ -147,7 +167,10 @@ useEffect(()=>{
                   </div>
                   )
                 })}
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div>
                 
                 <div className="ona">
@@ -158,12 +181,10 @@ useEffect(()=>{
                 <div className="go">
                   <KeyboardArrowUp />
                 </div>
-
                 <div className="identifier">
                   <Person className="icon" />
                 </div>
               </div>
-              
             </div>
             {/* STAFF */}
             <div className="widget">
@@ -179,7 +200,10 @@ useEffect(()=>{
                   </div>
                   )
                 })}
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
                 </div> */}
                 <div className="ona">
                   <span className="link">See all</span>
@@ -187,32 +211,26 @@ useEffect(()=>{
                 <div className="go">
                   <KeyboardArrowUp />
                 </div>
-
                 <div className="identifier">
                   <Group className="icon" />
                 </div>
               </div>
-              
             </div>
-            
           </div>
           <div className="featured">
           <div className="graphs">
           <div className="top">
             <h1 className="title">Chart</h1>
-            
           </div>
           <div className="bottom">
             <div className="featuredChart">
             <Charts/>
             </div>
-
           </div>
           </div>
           <div className="graphs">
           <div className="top">
             <h1 className="title">Calendar</h1>
-            
           </div>
           <div className="bottom">
             <div className="featuredChart">
@@ -226,5 +244,8 @@ useEffect(()=>{
     </div>
   );
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7808ff4a82feb5f5edb13b81a83797c378f4606a
 export default Dashboard;
