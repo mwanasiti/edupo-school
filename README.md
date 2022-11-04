@@ -28,6 +28,12 @@ Your product must use a React based frontend. Consult the following list for exa
 ## Project Name
 Edupo School
 
+
+## Live Link
+Both Front-end and backend have been deployed as one application, and the app can be accessed at https://ancient-crag-96879.herokuapp.com/
+Default username and password for admin is admin
+
+
 ## Author
 Ali Mariam, Dennis Mburu, Olivia Adongo, Angela Kanyi, John Okech
 
